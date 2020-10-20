@@ -1,0 +1,44 @@
+@import '../../utils/colors.scss';
+
+$navPadding: 6rem;
+.navigation{
+    width: 100%;
+    position: fixed;
+    background-color: $navy;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    *{
+        text-decoration: none;
+        color: $white;
+    }
+}
+.nav__logo a{
+    font-size: 1.5rem;
+}
+.navigation__nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    height: 100%;
+    padding: 0 $navPadding;
+}
+.nav__items a:hover,
+.nav__items a:active{
+    color:$yellow;
+}
+.nav__items ul{
+    list-style: none;
+    display: flex;
+}
+.nav__items li{
+    padding: 0 1rem ;
+}
+.nav__items{
+    display: none;
+}
+@media only screen and (min-width: 768px){
+    .nav__items{
+        display: block;
+    }
+}

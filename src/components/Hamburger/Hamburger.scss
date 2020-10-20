@@ -1,0 +1,30 @@
+@import '../../utils/colors.scss';
+
+
+.hamburger{
+    position: absolute;
+    z-index: 500;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 36px;
+    background:transparent;
+    border: none;
+    cursor: pointer;
+    &:focus{
+        outline: none;
+    }
+    span{
+        width: 30px;
+        height: 2px;
+        background-color: $yellow;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .hamburger{
+        display: none;
+    }
+}
