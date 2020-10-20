@@ -1,6 +1,7 @@
 @import '../../utils/colors.scss';
 
 $navPadding: 6rem;
+$mobilePadding: 10%;
 .navigation{
     width: 100%;
     position: fixed;
@@ -11,17 +12,23 @@ $navPadding: 6rem;
     *{
         text-decoration: none;
         color: $white;
+        font-family: Cormorant;
     }
 }
-.nav__logo a{
-    font-size: 1.5rem;
+.nav__logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
-.navigation__nav{
+.nav__logo img{
+    height: 50px;
+}
+    .navigation__nav{
     display: flex;
     align-items: center;
     justify-content:space-between ;
     height: 100%;
-    padding: 0 $navPadding;
+    padding: 0 $mobilePadding;
 }
 .nav__items a:hover,
 .nav__items a:active{
@@ -32,7 +39,9 @@ $navPadding: 6rem;
     display: flex;
 }
 .nav__items li{
-    padding: 0 1rem ;
+    margin: auto 0;
+    padding: 0 1rem;
+    text-align: center;
 }
 .nav__items{
     display: none;
@@ -40,5 +49,9 @@ $navPadding: 6rem;
 @media only screen and (min-width: 768px){
     .nav__items{
         display: block;
+    }
+        
+    .navigation__nav{
+        padding: 0 $navPadding;
     }
 }

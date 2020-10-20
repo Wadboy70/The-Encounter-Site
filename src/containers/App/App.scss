@@ -6,3 +6,19 @@
 .hidden{
     display: none;
 }
+@font-face {
+    font-family: 'Cormorant';
+    src: url("../../utils/fonts/CormorantGaramond-Medium.ttf") format("opentype");
+}
+@font-face {
+    font-family: 'FuturaBook';
+    src: url("../../utils/fonts/FuturaPTBook.otf") format("opentype");
+}
+@font-face {
+    font-family: 'FuturaMedium';
+    src: url("../../utils/fonts/FuturaPTMedium.otf") format("opentype");
+}
+@font-face {
+    font-family: 'FuturaDemi';
+    src: url("../../utils/fonts/FuturaPTDemi.otf") format("opentype");
+}

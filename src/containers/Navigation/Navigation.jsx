@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import Hamburger from '../../components/Hamburger/Hamburger';
+import logo from '../../utils/images/Logo.png';
 
 import './Navigation.scss';
 const Navigation = ({drawerToggleHandler}) => {
@@ -9,7 +10,11 @@ const Navigation = ({drawerToggleHandler}) => {
         <header className = 'navigation'>
             <nav className = 'navigation__nav'>
                 <div className = 'nav__logo'>
-                    <Link to = 'home'>Logo</Link>
+                    <Link to = 'home'>
+                        <img 
+                        src = {logo}
+                        alt = 'encounter logo'/>
+                    </Link>
                 </div>
                 <div className = 'nav__items'>
                     <ul>

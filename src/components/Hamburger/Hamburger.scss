@@ -2,12 +2,12 @@
 
 
 .hamburger{
-    position: absolute;
+    position: relative;
     z-index: 500;
-    right: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: flex-end;
     height: 24px;
     width: 36px;
     background:transparent;
@@ -16,10 +16,16 @@
     &:focus{
         outline: none;
     }
+    &:hover{
+        span{
+            background-color: $yellow;
+        }
+    }
     span{
         width: 30px;
         height: 2px;
-        background-color: $yellow;
+        background-color: $white;
+        transition: background-color .25s;
     }
 }
 

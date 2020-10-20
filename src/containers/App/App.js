@@ -13,13 +13,12 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation
-        drawerToggleHandler = {drawerToggleHandler}
-        drawerOpen = {drawerOpen}/>
       <SideDrawer
         drawerToggleHandler = {drawerToggleHandler}
         drawerOpen = {drawerOpen}/>
-        
+      <Navigation
+        drawerToggleHandler = {drawerToggleHandler}
+        drawerOpen = {drawerOpen}/>
     </div>
   );
 }

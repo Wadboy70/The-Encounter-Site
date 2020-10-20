@@ -1,0 +1,25 @@
+@import '../../utils/colors.scss';
+
+.button{
+    min-width: fit-content;
+    min-height: fit-content;
+    text-align: center;
+    // margin: 1.5rem;
+    cursor: pointer;
+}
+.transparent{
+    background-color: rgba(0,0,0,0);
+    border: none;
+}
+.small{
+    width: 20px;
+}
+.medium{
+    width: 50px;
+}
+.large{
+    width: 100px;
+}
+.whiteFont{
+    color: $white;
+}
