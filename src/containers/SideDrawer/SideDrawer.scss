@@ -12,11 +12,61 @@
     transition: transform .5s, opacity .6s;
     padding: 2rem;
     display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 15% 60% 20% 5% ;
+    grid-template-areas: 
+    'logo logo . cross'
+    '. nav nav nav'
+    '. social social .'
+    'bottomBorder bottomBorder bottomBorder bottomBorder'
+    ;
+}
+.sideNav__logo{
+    grid-area: logo;
+}
+.sideNav__cross{
+    grid-area: cross;
+    align-self: flex-start;
+    justify-self: flex-end;
+    font-size: 30px;
+}
+.sideNav__nav{
+    font-size: 1.5rem;
+    text-align: right;
+    grid-area: nav;
+    justify-self: flex-end;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    ul{
+        flex-direction: column;
+        justify-content: flex-end;
+        li{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            a{
+                padding: 0;
+            }
+        }
+    }
+    h1{
+        align-self: flex-end;
+        padding: 0 1rem;
+    }
+    
+    .nav__items{
+        display: flex;
+        height: 100%;
+    }
+}
+.sideNav__social{
+    grid-area: social;
+}
+.sideNav__bottomBorder{
+    grid-area: bottomBorder;
 }
 .hiddenNav{
     transform: translate3d(0,-100vh,0);
     opacity: 0;
-}
-.closeSidebarButton{
-    font-size: 30px;
 }

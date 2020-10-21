@@ -1,43 +1,19 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+import Nav from "../../components/Nav/Nav";
 import Hamburger from '../../components/Hamburger/Hamburger';
-import logo from '../../utils/images/Logo.png';
+import Logo from '../../components/Logo/Logo';
 
 import './Navigation.scss';
-const Navigation = ({drawerToggleHandler}) => {
+const Navigation = ({drawerToggleHandler, siteMap = []}) => {
     return (
         <header className = 'navigation'>
-            <nav className = 'navigation__nav'>
-                <div className = 'nav__logo'>
-                    <Link to = 'home'>
-                        <img 
-                        src = {logo}
-                        alt = 'encounter logo'/>
-                    </Link>
-                </div>
-                <div className = 'nav__items'>
-                    <ul>
-                        <li>
-                            <Link to = 'Home'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to = 'About'>About</Link>
-                        </li>
-                        <li>
-                            <Link to = 'LiveSermons'>Live Sermons</Link>
-                        </li>
-                        <li>
-                            <Link to = 'Calendar'>Calendar</Link>
-                        </li>
-                        <li>
-                            <Link to = 'PrayerRequests'>Prayer Requests</Link>
-                        </li>
-                    </ul>
-                </div>
-                
-                <Hamburger op = {drawerToggleHandler}/>
-            </nav>
+            <Nav siteMap = {siteMap} addedClasses = 'navigation__homeNav'>
+                <Logo/>
+            <Hamburger op = {drawerToggleHandler}/>
+
+            </Nav>
         </header>
     );
 };

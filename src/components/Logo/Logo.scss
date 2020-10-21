@@ -1,0 +1,16 @@
+@import '../../utils/colors.scss';
+.logo{
+    height: 70px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: $white;
+}
+.logo img{
+    margin-right: 5px;
+}
+.logo div{
+    display: flex;
+    flex-direction: column;
+}

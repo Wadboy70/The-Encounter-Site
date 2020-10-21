@@ -10,15 +10,20 @@ function App() {
   const drawerToggleHandler = () => {
     setDrawerOpen(!drawerOpen);
   };
+  const siteMap = ['Home', 'About', 'Live Sermon', 'Calendar', 'Prayer Request'];
 
   return (
     <div className="App">
       <SideDrawer
         drawerToggleHandler = {drawerToggleHandler}
-        drawerOpen = {drawerOpen}/>
+        drawerOpen = {drawerOpen}
+        siteMap = {siteMap}
+      />
       <Navigation
         drawerToggleHandler = {drawerToggleHandler}
-        drawerOpen = {drawerOpen}/>
+        drawerOpen = {drawerOpen}
+        siteMap = {siteMap}
+      />
     </div>
   );
 }

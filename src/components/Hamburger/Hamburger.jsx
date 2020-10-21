@@ -2,8 +2,8 @@ import React from 'react';
 
 import './Hamburger.scss';
 
-const Hamburger = ({op = () => {}}) => (
-    <button className = 'hamburger' onClick = {op}>
+const Hamburger = ({op = () => {}, addedClasses = ''}) => (
+    <button className = {`hamburger ${addedClasses}`} onClick = {op}>
         <span/>
         <span/>
         <span/>
