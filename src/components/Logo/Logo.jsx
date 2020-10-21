@@ -7,7 +7,7 @@ import './Logo.scss';
 
 const Logo = ({addedClass = '', op = () => {}}) => (
     <div className = {`logo ${addedClass}`} onClick = {op}>
-        <Link to = 'home'>
+        <Link to = '/'>
             <img 
             src = {logo}
             alt = 'encounter logo'/>

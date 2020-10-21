@@ -1,3 +1,4 @@
+@import '../../utils/colors.scss';
 *{
     margin: 0;
     padding: 0;
@@ -23,4 +24,10 @@
 @font-face {
     font-family: 'FuturaDemi';
     src: url("../../utils/fonts/FuturaPTDemi.otf") format("opentype");
+}
+.App{
+    padding-top: 10vh;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: $navy;
 }
