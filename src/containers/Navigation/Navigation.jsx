@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
 import Nav from "../../components/Nav/Nav";
 import Hamburger from '../../components/Hamburger/Hamburger';
 import Logo from '../../components/Logo/Logo';
@@ -11,8 +10,7 @@ const Navigation = ({drawerToggleHandler, siteMap = []}) => {
         <header className = 'navigation'>
             <Nav siteMap = {siteMap} addedClasses = 'navigation__homeNav'>
                 <Logo/>
-            <Hamburger op = {drawerToggleHandler}/>
-
+                <Hamburger op = {drawerToggleHandler}/>
             </Nav>
         </header>
     );

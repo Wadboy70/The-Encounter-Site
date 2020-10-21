@@ -10,19 +10,3 @@ $mobilePadding: 10%;
     left: 0;
     height: 10vh;
 }
-
-.navigation__homeNav{
-    padding: 0 $mobilePadding;
-}
-.nav__items{
-    display: none;
-}
-@media only screen and (min-width: 768px){
-    .nav__items{
-        display: block;
-    }
-        
-    .navigation__homeNav{
-        padding: 0 $navPadding;
-    }
-}

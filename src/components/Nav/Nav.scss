@@ -24,3 +24,50 @@
     padding: 0 1rem;
     text-align: center;
 }
+//SidebarNav
+.sideNav__nav{
+    font-size: 1.5rem;
+    text-align: right;
+    justify-self: flex-end;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    ul{
+        flex-direction: column;
+        justify-content: flex-end;
+        li{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            a{
+                padding: 0;
+            }
+        }
+    }
+    h1{
+        align-self: flex-end;
+        padding: 0 1rem;
+    }
+    
+    .nav__items{
+        display: flex;
+        height: 100%;
+    }
+}
+
+//HomeNav
+.navigation__homeNav{
+    padding: 0 10%;
+}
+.nav__items{
+    display: none;
+}
+@media only screen and (min-width: 768px){
+    .nav__items{
+        display: block;
+    }
+        
+    .navigation__homeNav{
+        padding: 0 6rem;
+    }
+}

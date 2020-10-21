@@ -1,15 +1,16 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Logo from '../../components/Logo/Logo';
 import Nav from '../../components/Nav/Nav';
+import Social from '../../components/Social/Social';
+import CopyrightBorder from '../../components/CopyrightBorder/CopyrightBorder';
 
 import './SideDrawer.scss';
 
 const SideDrawer = ({drawerToggleHandler, drawerOpen, siteMap}) => (
     <div className = {`sideNav ${drawerOpen ? '' : 'hiddenNav'}`}>
-        <Logo addedClass = 'sideNav__logo'/>
+        <Logo addedClass = 'sideNav__logo' op = {drawerToggleHandler}/>
         <Button 
             op = {drawerToggleHandler}
             addedClass = 'whiteFont transparent sideNav__cross'
@@ -19,12 +20,8 @@ const SideDrawer = ({drawerToggleHandler, drawerOpen, siteMap}) => (
         <Nav siteMap = {siteMap} addedClasses = 'sideNav__nav'>
             <h1>Pages</h1>
         </Nav>
-        <div className = 'sideNav__social'>
-
-        </div>
-        <div className = 'sideNav__bottomBorder'>
-
-        </div>
+        <Social addedClasses = 'sideNav__social'/>
+        <CopyrightBorder addedClasses = 'sideNav__bottomBorder'/>
     </div>
 );
 export default SideDrawer;
