@@ -7,15 +7,15 @@ import './Logo.scss';
 
 const Logo = ({addedClass = '', op = () => {}}) => (
     <div className = {`logo ${addedClass}`} onClick = {op}>
-        <Link to = 'home'>
+        <Link to = '/'>
             <img 
             src = {logo}
             alt = 'encounter logo'/>
-        </Link>
         <div>
             <span>The Encounter</span>
             <span>Worship Center</span>
         </div>
+        </Link>
     </div>
 );
 

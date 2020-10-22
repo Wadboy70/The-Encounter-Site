@@ -3,7 +3,8 @@
 $navPadding: 6rem;
 $mobilePadding: 10%;
 .navigation{
-    width: 100%;
+    width: 100vw;
+    z-index: 2;
     position: fixed;
     background-color: $navy;
     top: 0;

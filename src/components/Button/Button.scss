@@ -1,10 +1,18 @@
 @import '../../utils/colors.scss';
 
 .button{
+    font-family: FuturaBook;
     min-width: fit-content;
     min-height: fit-content;
     text-align: center;
+    margin: 10px;
     cursor: pointer;
+    &:focus{
+        outline: none;
+    }
+}
+.button_link{
+    text-decoration:none;
 }
 .transparent{
     background-color: rgba(0,0,0,0);
@@ -21,4 +29,9 @@
 }
 .whiteFont{
     color: $white;
+}
+.whiteBorder{
+    padding: 15px;
+    border: white 2px solid;
+    border-radius: 12px;
 }
