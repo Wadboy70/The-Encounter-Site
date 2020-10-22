@@ -11,11 +11,11 @@ const Logo = ({addedClass = '', op = () => {}}) => (
             <img 
             src = {logo}
             alt = 'encounter logo'/>
-        </Link>
         <div>
             <span>The Encounter</span>
             <span>Worship Center</span>
         </div>
+        </Link>
     </div>
 );
 

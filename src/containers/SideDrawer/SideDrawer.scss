@@ -4,11 +4,11 @@
     height: 100vh;
     min-height: 100%;
     background-color: $navy;
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
     transition: transform .5s, opacity .6s;
     padding: 2rem;
     display: grid;

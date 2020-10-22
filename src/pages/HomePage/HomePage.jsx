@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Slideshow from '../../components/Slideshow/Slideshow';
+import Slideshow from '../../containers/Slideshow/Slideshow';
 
 import './HomePage.scss';
 
 const HomePage = () => {
     return(
         <>
-            <Slideshow/>
+            <Slideshow interval = {9000}/>
         </>
     );
 };
