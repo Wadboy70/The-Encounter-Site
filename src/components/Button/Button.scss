@@ -25,7 +25,14 @@
     width: 50px;
 }
 .large{
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 20px;
     width: 100px;
+}
+.yellowBG{
+    border: none;
+    background: $yellowGradient;
 }
 .whiteFont{
     color: $white;
