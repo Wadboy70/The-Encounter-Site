@@ -23,12 +23,15 @@
 }
 .medium{
     width: 50px;
+    padding: 15px;
+    height: fit-content;
 }
 .large{
     padding: 20px;
     border-radius: 15px;
     font-size: 20px;
-    width: 100px;
+    min-width: 100px;
+    height: fit-content;
 }
 .yellowBG{
     border: none;
@@ -38,7 +41,6 @@
     color: $white;
 }
 .whiteBorder{
-    padding: 15px;
     border: white 2px solid;
     border-radius: 12px;
 }

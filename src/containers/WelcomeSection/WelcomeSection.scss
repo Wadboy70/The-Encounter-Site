@@ -4,41 +4,29 @@
     background-color: $white;
     height: 100vh;
     padding: 5vh 30px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 20% 50% 30% 10%;
-    grid-template-areas: 
-    'banner banner banner .'
-    '. worshipImage worshipImage . '
-    '. greeting greeting .'
-    '. findOut findOut .'
-    ;
-    justify-items: center;
-    *{
-        // max-width: 100%;
-        max-height: 100%;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     .welcome__banner{
-        grid-area: banner;
-        justify-self: flex-start;
+        align-self: flex-start;
     }
     .welcome__greeting{
-        align-self: center;
-        justify-self: center;
+        text-align: center;
         grid-area: greeting;
         color: $navy;
+        margin: 0 15%;
         .greeting__highlight{
             color: $gold;
         }
     }
     .welcome__greeting,.welcome__greeting>*{
         font-family: FuturaMedium;
-        font-size: 30px;
+        font-size: calc(1.6vw + 1.6vh + .75vmin);
     }
     .worshipImage{
-        grid-area: worshipImage;
+        height: 40%;
     }
     .welcome__findOutMore{
-        grid-area: findOut;
     }
 }

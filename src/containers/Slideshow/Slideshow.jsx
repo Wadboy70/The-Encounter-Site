@@ -35,6 +35,7 @@ const Slideshow = ({interval = 3000}) => {
                     </div>
                 ))
             }
+            {/* The code for the overlays on slides 1 and two */}
             <div className = 'slideshow__overlay'>
                 <img 
                     className = {`logoOverlay ${(x===0) ? 'showOverlay' : 'hideOverlay'}`}
@@ -58,7 +59,7 @@ const Slideshow = ({interval = 3000}) => {
                 </div>
 
             </div>
-
+            {/* The Buttons that allow for slide movement */}
             <Button 
             addedClass = 'slideshow__button slideshow__button_left transparent large'
             op = {goLeft}
