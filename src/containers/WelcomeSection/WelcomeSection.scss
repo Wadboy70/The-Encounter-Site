@@ -2,18 +2,19 @@
 .welcome{
     width: 100%;
     background-color: $white;
-    height: 100vh;
-    padding: 5vh 30px;
+    height: 90vh;
+    padding: 10% 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    align-content: center;
     .welcome__banner{
+        grid-area: ban;
         align-self: flex-start;
     }
     .welcome__greeting{
         text-align: center;
-        grid-area: greeting;
         color: $navy;
         margin: 0 15%;
         .greeting__highlight{
@@ -25,8 +26,34 @@
         font-size: calc(1.6vw + 1.6vh + .75vmin);
     }
     .worshipImage{
+        grid-area: img;
         height: 40%;
+        justify-self: center;
+        box-shadow: 5px 5px 2px #000000;
     }
-    .welcome__findOutMore{
+    .welcome__content{
+        grid-area: content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .welcome{
+        margin: auto 0;
+        padding: 2% 30px;
+        display: grid;
+        grid-template-rows: 20% 80%;
+        grid-template-columns:  7.5% 35% 50% 7.5%;
+        grid-template-areas: 
+        'ban ban ban ban'
+        '. content img .';
+        .worshipImage{
+            height: unset;
+            max-height: 80%;
+            max-width: 100%;
+        }
     }
 }
