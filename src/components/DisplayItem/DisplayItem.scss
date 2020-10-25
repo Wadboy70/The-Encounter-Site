@@ -1,0 +1,10 @@
+.displayItem{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    .displayItem__title, .displayItem__content{
+        text-align: center;
+    }
+}
