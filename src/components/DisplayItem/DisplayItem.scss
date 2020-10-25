@@ -11,17 +11,19 @@
     }
     .displayItem__title{
         font-size: calc(2vw + 2vh + 1vmin);
+        width: 100%;
         &:after{
             content: '';
             display: block;
-            margin-top: 3px;
-            width: 100%;
+            margin-top: 2%;
+            width: inherit;
             height: .1px;
             border: none;
             background-color: $white;
         }
     }
     .displayItem__content, .displayItem__button{
+        font-family: FuturaBook;
         font-size: calc(1vw + 1vh + .5vmin);
     }
     .displayItem__icon{
