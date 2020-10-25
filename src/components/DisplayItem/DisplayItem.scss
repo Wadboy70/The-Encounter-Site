@@ -1,10 +1,49 @@
+@import '../../utils/colors.scss';
 .displayItem{
     width: 40%;
+    margin: 5%;
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
     .displayItem__title, .displayItem__content{
         text-align: center;
+    }
+    .displayItem__title{
+        font-size: calc(2vw + 2vh + 1vmin);
+        &:after{
+            content: '';
+            display: block;
+            margin-top: 3px;
+            width: 100%;
+            height: .1px;
+            border: none;
+            background-color: $white;
+        }
+    }
+    .displayItem__content, .displayItem__button{
+        font-size: calc(1vw + 1vh + .5vmin);
+    }
+    .displayItem__icon{
+        height: 50px;
+    }
+    >*{
+        margin: 4px 0;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .displayItem{
+        width: 25%;
+        margin: 2%;
+        .displayItem__title{
+            font-size: calc(1.5vw + 1.5vh + .75vmin);
+        }
+        .displayItem__content, .displayItem__button{
+            font-size: calc(.75vw + 1.75vh + .375vmin);
+        }
+        .displayItem__icon{
+            height: 90px;       
+        }
     }
 }

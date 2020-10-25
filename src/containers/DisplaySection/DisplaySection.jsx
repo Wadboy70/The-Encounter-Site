@@ -8,7 +8,7 @@ import Computer from '../../utils/images/computer.svg';
 import './DisplaySection.scss';
 
 const DisplaySection = () => {
-    const [displayContent, setDisplayContent] = useState([
+    const displayContent = [
         {
             icon: Kid,
             title: 'Kid\'s Ministry',
@@ -27,7 +27,7 @@ const DisplaySection = () => {
             content: ' Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ',
             button: 'Watch Now'
         }
-    ])
+    ];
     return(
         <section className = 'display'>
             {
