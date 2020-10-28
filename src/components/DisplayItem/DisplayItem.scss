@@ -1,11 +1,12 @@
 @import '../../utils/colors.scss';
 .displayItem{
     width: 40%;
+    min-height: 40vh;
     margin: 5%;
     display: flex;
     flex-direction: column;
-    align-content: center;
     align-items: center;
+    justify-content: space-between;
     .displayItem__title, .displayItem__content{
         text-align: center;
     }
@@ -24,7 +25,7 @@
     }
     .displayItem__content, .displayItem__button{
         font-family: FuturaBook;
-        font-size: calc(1vw + 1vh + .5vmin);
+        font-size: calc(1.2vw + 1.2vh + .6vmin);
     }
     .displayItem__icon{
         height: 50px;

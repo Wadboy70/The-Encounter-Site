@@ -18,7 +18,7 @@ const HomePage = () => (
         <HighlightSection info = {{
             icon: Calendar,
             title: 'Upcoming Event',
-            content: 'October 19th at 5pm\nZoom Call\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+            content: `October 19th at 5pm\nZoom Call\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
             button: 'See Calendar'
             }}
             backgroundPhoto = {Planner}

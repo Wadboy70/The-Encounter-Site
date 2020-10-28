@@ -6,7 +6,7 @@
     align-items: center;
     .highlight__photo{
         border-bottom: $navy 5px solid;
-        
+
         height: 50%;
         width: 100%;
         background-size: cover;
@@ -24,5 +24,31 @@
     .highlight__display{
         position: relative;
         transform: translateY(-90px);
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .highlight{
+        flex-direction: row-reverse;
+        align-items: center;
+        .highlight__photo{
+            width: 50%;
+            height: 100%;
+
+            .highlight__background{
+                height: 110%;
+                width: 100%;
+                border-bottom: none;
+                border-left: 300px solid $navy;
+                border-top: transparent solid 800px;
+            }
+        }
+        .highlight__display{
+            transform: none;
+            position: unset;
+            width: 40%;
+            height: 60%;
+            min-height: 50vh;
+        }
     }
 }
