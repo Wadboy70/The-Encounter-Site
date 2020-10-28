@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import DisplayItem from '../../components/DisplayItem/DisplayItem';
 import Kid from '../../utils/images/Kid.svg';
@@ -32,7 +32,7 @@ const DisplaySection = () => {
         <section className = 'display'>
             {
                 displayContent.map((display, index) => (
-                    <DisplayItem info = {display}/>
+                    <DisplayItem key = {index} info = {display}/>
                 ))
             }
         </section>

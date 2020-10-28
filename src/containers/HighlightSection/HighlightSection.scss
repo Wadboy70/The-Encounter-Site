@@ -1,0 +1,28 @@
+@import '../../utils/colors.scss';
+.highlight{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    .highlight__photo{
+        border-bottom: $navy 5px solid;
+        
+        height: 50%;
+        width: 100%;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        .highlight__background{
+            width: 110%;
+            border-bottom: 200px solid $navy;
+            border-left: 900px solid transparent ;
+        }
+    }
+    .highlight__display{
+        position: relative;
+        transform: translateY(-90px);
+    }
+}

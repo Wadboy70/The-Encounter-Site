@@ -6,8 +6,8 @@
     width: 80px;
     text-align: center;
     margin: 10px;
-    width: fit-content;
-    height: fit-content;
+    min-width: fit-content;
+    min-height: fit-content;
     cursor: pointer;
     &:focus{
         outline: none;

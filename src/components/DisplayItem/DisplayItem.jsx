@@ -4,10 +4,10 @@ import Button from '../Button/Button';
 
 import './DisplayItem.scss';
 
-const DisplayItem = ({info}) => {
+const DisplayItem = ({info, className = ''}) => {
     const {icon, title, button, content} = info;
     return(
-        <div className = 'displayItem'>
+        <div className = {`displayItem ${className}`}>
             <img src={icon} alt={title} className = 'displayItem__icon'/>
             <h1 className = 'displayItem__title'>{ title }</h1>
             <p className = 'displayItem__content'>{ content }</p>

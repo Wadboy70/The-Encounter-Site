@@ -28,6 +28,7 @@ $bigTitleWidth: calc(2.5vw + 2.5vh + 1.2vmin);
     justify-content: flex-start;
     position: absolute;
     font-size: $titleWidth;
+    margin-right: 70px;
     &:before{
         background-color: white;
         width:40px;
@@ -35,11 +36,6 @@ $bigTitleWidth: calc(2.5vw + 2.5vh + 1.2vmin);
         content: '';
         display: inline-block;
         justify-self: flex-start;
-    }
-    &:after{
-        width: 70px;
-        content: '';
-        display: inline-block;
     }
 }
 
