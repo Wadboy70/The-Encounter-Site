@@ -5,8 +5,8 @@ import {ReactComponent as Youtube} from '../../utils/images/Youtube.svg';
 
 import './Social.scss';
 
-const Social = ({addedClasses = ''}) => (
-    <div className = {`socialList ${addedClasses}`}>
+const Social = ({className = ''}) => (
+    <div className = {`socialList ${className}`}>
         <h1 className = 'socialList__title'>Follow Us!</h1>
         <div className = 'socialList__logos'>
             <Facebook/>

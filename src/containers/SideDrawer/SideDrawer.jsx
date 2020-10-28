@@ -20,7 +20,7 @@ const SideDrawer = ({drawerToggleHandler, drawerOpen, siteMap}) => (
         <Nav siteMap = {siteMap} addedClasses = 'sideNav__nav'>
             <h1>Pages</h1>
         </Nav>
-        <Social addedClasses = 'sideNav__social'/>
+        <Social className = 'sideNav__social'/>
         <CopyrightBorder addedClasses = 'sideNav__bottomBorder'/>
     </div>
 );

@@ -1,3 +1,16 @@
+@import '../../utils/colors.scss';
+$height: 90vh;
 .particles{
-    height: 100vh;
+    height: $height;
+    overflow: hidden;
+    .particles__BG{
+        width: 100%;
+        height: $height;
+    }
+    .particles__content{
+        position: absolute;
+        overflow: hidden;
+        max-height: $height;
+        transform: translateY(-$height);
+    }
 }

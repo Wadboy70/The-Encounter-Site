@@ -1,0 +1,34 @@
+@import '../../utils/colors.scss';
+$squareSide: 35vmax;
+$mobileSquareSide: 40vmax;
+.closingBox{
+    width: $mobileSquareSide;
+    max-width: 45vh;
+    height: $squareSide;
+    max-height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px $white solid;
+    .closingBox__title{
+        display: inline-flex;
+        font-size: calc( 2vw + 2vh + 1vmin);
+        flex-direction: column;
+        &:after{
+            content: '';
+            width: 100%;
+            height: .5px;
+            background-color: $white;
+            display: inline-block;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .closingBox{    
+        width: $squareSide;
+        max-width: 40%;
+        height: $squareSide;
+        max-height: 40vw;
+    }
+}
