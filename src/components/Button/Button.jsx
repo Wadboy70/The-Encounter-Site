@@ -7,7 +7,7 @@ import './Button.scss';
 const Button = ({
     op = () => {},
     children,
-    addedClass,
+    className = '',
     link
 }) => (
     <>
@@ -15,12 +15,12 @@ const Button = ({
             link?
                 <Link 
                     to = {link}
-                    className = {`button button_link ${addedClass? addedClass : ''}`}>
+                    className = {`button button_link ${className}`}>
                     {children}
                 </Link>
             :
             <button 
-                className = {`button ${addedClass? addedClass : ''}`}
+                className = {`button ${className}`}
                 onClick = {op}
             >
                 {children}

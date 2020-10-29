@@ -11,7 +11,7 @@ const DisplayItem = ({info, className = ''}) => {
             <img src={icon} alt={title} className = 'displayItem__icon'/>
             <h1 className = 'displayItem__title'>{ title }</h1>
             <p className = 'displayItem__content'>{ content }</p>
-            <Button addedClass = 'displayItem__button small yellowBG'>{button}</Button>
+            <Button className = 'displayItem__button small yellowBG'>{button}</Button>
         </div>
     );
 };

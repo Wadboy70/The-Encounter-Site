@@ -6,14 +6,45 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    .closingSection__connect, .closingSection__about{
-    
+    .closingSection__connect, .closingSection__about {
+        >div{
+            height: 100%;
+            width: 100%;
+        }
     }
-    .closingSection__connect{
+    .closingSection__connect {
         background-color: $navy;
+        >div{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+            justify-items:center ;
+            border-bottom: $white solid 1px;
+            span{
+                font-size: calc(1.2vw + 1.2vh + .6vmin);
+                font-family: FuturaBook;
+            }
+
+        }
+        .closingSection__icon{
+            fill: $yellow;
+            height: 65%;
+            width: auto;
+            >div{
+                height: 100%;
+            }
+        }
     }
     .closingSection__about{
         background-size: cover;
+        >div{
+            padding-top: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
     }
 }
 
@@ -22,12 +53,5 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        .closingSection__connect, .closingSection__about{
-        
-        }
-        .closingSection__connect{
-        }
-        .closingSection__about{
-        }
     }
 }

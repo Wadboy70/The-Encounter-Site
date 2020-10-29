@@ -1,3 +1,4 @@
+@import '../../utils/colors.scss';
 .socialList{
     display: flex;
     flex-direction: column;
@@ -9,6 +10,7 @@
         display: flex;
         justify-content: flex-end;
         >*{
+            fill: $white;
             width: 35px;
             margin-left: 1em;
             height: 100%;

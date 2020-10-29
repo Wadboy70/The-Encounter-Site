@@ -53,7 +53,7 @@ const Slideshow = ({interval = 3000}) => {
                     <h2>
                         A Virtual Church Experience
                     </h2>
-                    <Button link = '/livesermons' addedClass = 'medium whiteBorder'>
+                    <Button link = '/livesermons' className = 'medium whiteBorder'>
                         Watch Now
                     </Button>
                 </div>
@@ -61,11 +61,11 @@ const Slideshow = ({interval = 3000}) => {
             </div>
             {/* The Buttons that allow for slide movement */}
             <Button 
-            addedClass = 'slideshow__button slideshow__button_left transparent large'
+            className = 'slideshow__button slideshow__button_left transparent large'
             op = {goLeft}
             >{'<'}</Button>
             <Button 
-            addedClass = 'slideshow__button slideshow__button_right transparent large'
+            className = 'slideshow__button slideshow__button_right transparent large'
             op = {goRight}
             >{'>'}</Button>
         </section>

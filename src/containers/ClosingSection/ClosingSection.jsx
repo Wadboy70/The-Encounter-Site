@@ -2,6 +2,7 @@ import React from 'react';
 
 import ParticleBG from '../../components/ParticleBG/ParticleBG';
 import ClosingBox from '../../components/ClosingBox/ClosingBox';
+import Button from '../../components/Button/Button';
 
 import arthur from '../../utils/images/arthurHeadshot.jpg';
 import {ReactComponent as Facebook} from '../../utils/images/Facebook.svg';
@@ -13,17 +14,27 @@ import './ClosingSection.scss';
 
 const ClosingSection = () => (
     <ParticleBG className = 'closingSection'>
-        <ClosingBox className = 'closingSection__connect' title = 'Connect'>
-            <Phone/>
+        <ClosingBox 
+            className = 'closingSection__connect' 
+            title = 'Connect'
+        >
+            <Phone className = 'closingSection__icon'/>
             <span>Contact Us</span>
-            <Facebook/>
-            <span>Facbebook</span>
-            <Instagram/>
+            <Facebook className = 'closingSection__icon'/>
+            <span>Facebook</span>
+            <Instagram className = 'closingSection__icon'/>
             <span>Instagram</span>
-            <Youtube/>
+            <Youtube className = 'closingSection__icon'/>
             <span>Youtube</span>
         </ClosingBox>
-        <ClosingBox className = 'closingSection__about' title = 'About' backingImage = {arthur}/>
+        <ClosingBox 
+            className = 'closingSection__about' 
+            title = 'About' 
+            backingImage = {arthur}
+        >
+            <p>Read about the leaders of our ministry!</p>
+            <Button className = 'medium yellowBG' link = '/about'>Read More</Button>
+        </ClosingBox>
     </ParticleBG>
 )
 export default ClosingSection;

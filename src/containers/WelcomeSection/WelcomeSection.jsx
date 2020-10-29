@@ -20,7 +20,7 @@ const WelcomeSection = () => (
             <p className = 'welcome__greeting'>
                 Lorem ipsum dolor sit amet, consectetur <span className = 'greeting__highlight'>adipiscing</span>  elit, sed do eiusmod tempor incididunt
             </p>
-            <Button addedClass = 'welcome__findOutMore yellowBG large'>
+            <Button className = 'welcome__findOutMore yellowBG large'>
                 Find Out More
             </Button>
         </div>
