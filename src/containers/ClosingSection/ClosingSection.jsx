@@ -18,13 +18,21 @@ const ClosingSection = () => (
             className = 'closingSection__connect' 
             title = 'Connect'
         >
-            <Phone className = 'closingSection__icon'/>
+            <div className = 'closingSection__icon'>
+                <Phone />
+            </div>
             <span>Contact Us</span>
-            <Facebook className = 'closingSection__icon'/>
+            <div className = 'closingSection__icon'>
+                <Facebook />
+            </div>
             <span>Facebook</span>
-            <Instagram className = 'closingSection__icon'/>
+            <div className = 'closingSection__icon'>
+                <Instagram />
+            </div>
             <span>Instagram</span>
-            <Youtube className = 'closingSection__icon'/>
+            <div className = 'closingSection__icon'>
+                <Youtube />
+            </div>
             <span>Youtube</span>
         </ClosingBox>
         <ClosingBox 

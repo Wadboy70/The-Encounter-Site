@@ -18,7 +18,7 @@
     grid-template-areas: 
     'logo logo . cross'
     '. nav nav nav'
-    '. social social social'
+    'social social social social'
     'bottomBorder bottomBorder bottomBorder bottomBorder'
     ;
 }
@@ -33,9 +33,13 @@
     font-size: 30px;
     margin-right: 1rem;
     margin-top: 0px;
+    color: white;
 }
 .sideNav__nav{
     grid-area: nav;
+    li{
+        text-align: right;
+    }
 }
 .sideNav__social{
     grid-area: social;

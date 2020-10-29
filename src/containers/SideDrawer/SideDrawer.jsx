@@ -15,7 +15,7 @@ const SideDrawer = ({drawerToggleHandler, drawerOpen, siteMap}) => (
             op = {drawerToggleHandler}
             className = 'whiteFont transparent sideNav__cross'
         >
-            ✖
+            ✕
         </Button> 
         <Nav siteMap = {siteMap} className = 'sideNav__nav'>
             <h1>Pages</h1>

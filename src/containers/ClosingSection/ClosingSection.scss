@@ -8,7 +8,7 @@
     justify-content: space-around;
     .closingSection__connect, .closingSection__about {
         >div{
-            height: 100%;
+            height: 90%;
             width: 100%;
         }
     }
@@ -28,17 +28,21 @@
 
         }
         .closingSection__icon{
+            display: flex;
+            justify-content: center;
             fill: $yellow;
-            height: 65%;
-            width: auto;
-            >div{
+            height: 60%;
+            width: 100%;
+            svg{
                 height: 100%;
+                width: auto;
             }
         }
     }
     .closingSection__about{
         background-size: cover;
         >div{
+            width: 50%;
             padding-top: 30%;
             display: flex;
             flex-direction: column;

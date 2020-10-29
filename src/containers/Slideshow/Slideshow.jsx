@@ -29,7 +29,7 @@ const Slideshow = ({interval = 3000}) => {
                 slides.map((slide, index) => (
                     <div 
                         className = 'slide' 
-                        key = {slide}
+                        key = {index}
                         style = {{transform: `translateX(${x}%`,backgroundImage: `url(${slide})`}}
                     >
                     </div>
@@ -37,11 +37,8 @@ const Slideshow = ({interval = 3000}) => {
             }
             {/* The code for the overlays on slides 1 and two */}
             <div className = 'slideshow__overlay'>
-                <img 
-                    className = {`logoOverlay ${(x===0) ? 'showOverlay' : 'hideOverlay'}`}
-                    src = {overlay} 
-                    alt = 'fullLogo'
-                />
+                <div className = {`logoOverlay ${(x===0) ? 'showOverlay' : 'hideOverlay'}`}
+                 />
 
                 <div 
                     className = {` greetingOverlay  ${(x===-100) ? 'showOverlay' : 'hideOverlay'}`}

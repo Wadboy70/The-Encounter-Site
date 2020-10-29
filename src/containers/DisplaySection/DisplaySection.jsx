@@ -12,13 +12,13 @@ const DisplaySection = () => {
         {
             icon: Kid,
             title: 'Kid\'s Ministry',
-            content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+            content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum dolor sit amet',
             button: 'Find Out More'
         },
         {
             icon: Coin,
             title: 'Giving',
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
             button: 'Give'
         },
         {
@@ -32,7 +32,7 @@ const DisplaySection = () => {
         <section className = 'display'>
             {
                 displayContent.map((display, index) => (
-                    <DisplayItem key = {index} info = {display}/>
+                    <DisplayItem key = {index} info = {display} className = 'display__item'/>
                 ))
             }
         </section>

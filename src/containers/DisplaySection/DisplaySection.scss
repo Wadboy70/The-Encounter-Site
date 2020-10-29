@@ -9,9 +9,17 @@
     align-items: center;
     justify-content: space-around;
     padding: 2% 5%;
+    .display__item{
+        height: 50vh;
+        
+    }
 }
 @media only screen and (min-width: 768px){
     .display{
         height: 90vh;
+    }
+    
+    .display__item{
+        height: 60vh;
     }
 }

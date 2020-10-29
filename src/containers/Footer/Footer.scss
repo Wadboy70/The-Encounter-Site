@@ -39,7 +39,7 @@
         font-size: calc(1.2vh + 1.2vw + .7vmin);
         grid-area: logo;
         width: inherit;
-        min-width: auto;
+        min-width: fit-content;
         justify-self: flex-start;
     }
     .footer__social{
@@ -74,7 +74,8 @@
 @media only screen and (min-width: 768px){
     .footer{
         padding: 5% 7%;
-        height: 25vh;
+        min-height: fit-content;
+        height: fit-content;
         grid-template-areas: 
         "logo social nav"
         "border border border";
