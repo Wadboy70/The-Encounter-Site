@@ -9,7 +9,7 @@ const DisplayItem = ({info, className = ''}) => {
     return(
         <div className = {`displayItem ${className}`}>
             <img src={icon} alt={title} className = 'displayItem__icon'/>
-            <h1 className = 'displayItem__title'>{ title }</h1>
+            <h1 className = 'displayItem__title underlineTitle'>{ title }</h1>
             <p className = 'displayItem__content'>{ content }</p>
             <Button className = 'displayItem__button small yellowBG'>{button}</Button>
         </div>

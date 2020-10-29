@@ -11,6 +11,7 @@
     z-index: 3;
     transition: transform .5s, opacity .6s;
     padding: 2rem;
+    padding-bottom: 15vh;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 15% 60% 20% 5% ;
@@ -25,11 +26,13 @@
     grid-area: logo;
 }
 .sideNav__cross{
+    width: fit-content;
     grid-area: cross;
     align-self: flex-start;
     justify-self: flex-end;
     font-size: 30px;
     margin-right: 1rem;
+    margin-top: 0px;
 }
 .sideNav__nav{
     grid-area: nav;

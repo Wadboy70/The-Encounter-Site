@@ -14,13 +14,6 @@ $mobileSquareSide: 40vmax;
         display: inline-flex;
         font-size: calc( 2vw + 2vh + 1vmin);
         flex-direction: column;
-        &:after{
-            content: '';
-            width: 100%;
-            height: .5px;
-            background-color: $white;
-            display: inline-block;
-        }
     }
 }
 

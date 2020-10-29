@@ -13,15 +13,15 @@ const SideDrawer = ({drawerToggleHandler, drawerOpen, siteMap}) => (
         <Logo addedClass = 'sideNav__logo' op = {drawerToggleHandler}/>
         <Button 
             op = {drawerToggleHandler}
-            addedClass = 'whiteFont transparent sideNav__cross'
+            className = 'whiteFont transparent sideNav__cross'
         >
             ✖
         </Button> 
-        <Nav siteMap = {siteMap} addedClasses = 'sideNav__nav'>
+        <Nav siteMap = {siteMap} className = 'sideNav__nav'>
             <h1>Pages</h1>
         </Nav>
         <Social className = 'sideNav__social'/>
-        <CopyrightBorder addedClasses = 'sideNav__bottomBorder'/>
+        <CopyrightBorder className = 'sideNav__bottomBorder'/>
     </div>
 );
 export default SideDrawer;

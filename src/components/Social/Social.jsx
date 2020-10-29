@@ -7,7 +7,7 @@ import './Social.scss';
 
 const Social = ({className = ''}) => (
     <div className = {`socialList ${className}`}>
-        <h1 className = 'socialList__title'>Follow Us!</h1>
+        <h1 className = 'socialList__title underlineTitle'>Follow Us!</h1>
         <div className = 'socialList__logos'>
             <Facebook/>
             <Youtube/>

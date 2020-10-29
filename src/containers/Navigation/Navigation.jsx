@@ -8,7 +8,7 @@ import './Navigation.scss';
 const Navigation = ({drawerToggleHandler, siteMap = []}) => {
     return (
         <header className = 'navigation'>
-            <Nav siteMap = {siteMap} addedClasses = 'navigation__homeNav'>
+            <Nav siteMap = {siteMap} className = 'navigation__homeNav'>
                 <Logo/>
                 <Hamburger op = {drawerToggleHandler}/>
             </Nav>

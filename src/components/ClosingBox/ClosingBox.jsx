@@ -4,7 +4,7 @@ import './ClosingBox.scss';
 
 const ClosingBox = ({children, title = '', backingImage, className = ''}) => (
     <div className = {`closingBox ${className}`} style = {{backgroundImage:`url(${backingImage})`}}>
-        <h1 className = 'closingBox__title'>{title}</h1>
+        <h1 className = 'closingBox__title underlineTitle'>{title}</h1>
         <div className = 'closingBox__content'>
             {children}
         </div>

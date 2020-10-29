@@ -2,8 +2,8 @@ import React from 'react';
 
 import './CopyrightBorder.scss';
 
-const CopyrightBorder = ({addedClasses = ''}) => (
-    <div className = {` copyrightBorder ${addedClasses}`}>
+const CopyrightBorder = ({className = ''}) => (
+    <div className = {` copyrightBorder ${className}`}>
         <hr className = 'copyrightBorder__rule'/>
         <span className = 'copyrightBorder__text'>© 2020 The Encounter Worship Center. All rights reserved</span>
     </div>

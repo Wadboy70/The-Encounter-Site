@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom';
 
 import './Nav.scss';
 
-const Nav = ({addedClasses = '', siteMap = [], children}) => (
-    <nav className = {`nav ${addedClasses}`}>
+const Nav = ({className = '', siteMap = ['About', 'Live Sermon', 'Calendar', 'Prayer Request', 'Contact Us'], children}) => (
+    <nav className = {`nav ${className}`}>
         {children}
         <div className = 'nav__items'>
             <ul>

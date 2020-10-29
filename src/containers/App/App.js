@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Navigation from '../Navigation/Navigation';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import HomePage from '../../pages/HomePage/HomePage';
+import Footer from '../../containers/Footer/Footer';
 import './App.scss';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Route exact path = '/'>
         <HomePage/>
       </Route>
+      <Footer/>
     </div>
   );
 }

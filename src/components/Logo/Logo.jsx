@@ -5,8 +5,8 @@ import logo from '../../utils/images/rainbowLionCut.png';
 
 import './Logo.scss';
 
-const Logo = ({addedClass = '', op = () => {}}) => (
-    <div className = {`logo ${addedClass}`} onClick = {op}>
+const Logo = ({className = '', op = () => {}}) => (
+    <div className = {`logo ${className}`} onClick = {op}>
         <Link to = '/'>
             <img 
             src = {logo}
