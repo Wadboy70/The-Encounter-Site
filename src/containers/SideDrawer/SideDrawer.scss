@@ -3,6 +3,7 @@
 .sideNav{
     height: 100vh;
     min-height: 100%;
+    text-align: right;
     background-color: $navy;
     position: fixed;
     width: 100%;
@@ -11,7 +12,7 @@
     z-index: 3;
     transition: transform .5s, opacity .6s;
     padding: 2rem;
-    padding-bottom: 15vh;
+    padding-bottom: 14vh;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 15% 60% 20% 5% ;
@@ -37,13 +38,14 @@
 }
 .sideNav__nav{
     grid-area: nav;
-    li{
+    li>a{
         text-align: right;
     }
 }
 .sideNav__social{
     grid-area: social;
     margin-right: 1rem;
+    margin-bottom: 1em;
 }
 .sideNav__bottomBorder{
     grid-area: bottomBorder;
