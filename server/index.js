@@ -1,7 +1,9 @@
 const path = require('path');
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv').config();
 const port = process.env.PORT || 3001;
+console.log(process.env)
 
 const publicPath = path.join(__dirname, '..','build');
 
