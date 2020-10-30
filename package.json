@@ -14,10 +14,12 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client": "react-scripts start",
+    "server": "nodemon server/index.js",
+    "dev": "concurrently \"npm run-script server\" \"npm run-script client\"",
+    "build": "react-scripts build",
+    "start": "npm run-script build && npm run-script server"
   },
   "eslintConfig": {
     "extends": "react-app"
