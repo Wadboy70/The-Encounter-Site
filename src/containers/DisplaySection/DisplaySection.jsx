@@ -1,9 +1,9 @@
 import React from 'react';
 
 import DisplayItem from '../../components/DisplayItem/DisplayItem';
-import Kid from '../../utils/images/Kid.svg';
-import Coin from '../../utils/images/coins.svg';
-import Computer from '../../utils/images/computer.svg';
+import Kid from '../../assets/images/Kid.svg';
+import Coin from '../../assets/images/coins.svg';
+import Computer from '../../assets/images/computer.svg';
 
 import './DisplaySection.scss';
 

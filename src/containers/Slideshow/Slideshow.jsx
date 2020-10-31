@@ -2,9 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 import Button from '../../components/Button/Button';
-import slide2 from '../../utils/images/friends4.jpg';
-import slide1 from '../../utils/images/lensFlare.jpg';
-import overlay from '../../utils/images/fullLogo.png';
+import slide2 from '../../assets/images/friends4.jpg';
+import slide1 from '../../assets/images/lensFlare.jpg';
 
 import './Slideshow.scss';
 

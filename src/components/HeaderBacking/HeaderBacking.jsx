@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as Backing } from '../../utils/images/yellowBacking.svg';
+import { ReactComponent as Backing } from '../../assets/images/yellowBacking.svg';
 
 import './HeaderBacking.scss';
 
