@@ -15,7 +15,7 @@ const SignUp = () => {
             <TextInput required text = 'email'/>
             <TextInput required text = 'password'/>
             <TextInput required text = 'confirm password'/>
-            <Button>Sign Up</Button>
+            <Button className = 'transparent whiteBorder medium' >Sign Up</Button>
         </form>
     );
 }
