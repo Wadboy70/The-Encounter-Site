@@ -5,10 +5,10 @@ import Hamburger from '../../components/Hamburger/Hamburger';
 import Logo from '../../components/Logo/Logo';
 
 import './Navigation.scss';
-const Navigation = ({drawerToggleHandler, siteMap = []}) => {
+const Navigation = ({drawerToggleHandler}) => {
     return (
         <header className = 'navigation'>
-            <Nav siteMap = {siteMap} className = 'navigation__homeNav'>
+            <Nav className = 'navigation__homeNav'>
                 <Logo/>
                 <Hamburger op = {drawerToggleHandler}/>
             </Nav>
