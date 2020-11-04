@@ -1,12 +1,13 @@
-@import '../../utils/colors.scss';
+@import '../../assets/colors.scss';
 
 .button{
     font-family: FuturaBook;
     min-width: fit-content;
+    max-width: inherit;
     width: 80px;
     text-align: center;
     margin: 10px;
-    min-height: fit-content;
+    height: fit-content;
     cursor: pointer;
     &:focus{
         outline: none;

@@ -1,4 +1,4 @@
-@import '../../utils/colors.scss';
+@import '../../assets/colors.scss';
 *{
     margin: 0;
     padding: 0;
@@ -11,23 +11,23 @@
 }
 @font-face {
     font-family: 'Cormorant';
-    src: url("../../utils/fonts/CormorantGaramond-Regular.ttf") format("opentype");
+    src: url("../../assets/fonts/CormorantGaramond-Regular.ttf") format("opentype");
 }
 @font-face {
     font-family: 'CormorantSemiBold';
-    src: url("../../utils/fonts/CormorantGaramond-SemiBold.ttf") format("opentype");
+    src: url("../../assets/fonts/CormorantGaramond-SemiBold.ttf") format("opentype");
 }
 @font-face {
     font-family: 'FuturaBook';
-    src: url("../../utils/fonts/FuturaPTBook.otf") format("opentype");
+    src: url("../../assets/fonts/FuturaPTBook.otf") format("opentype");
 }
 @font-face {
     font-family: 'FuturaMedium';
-    src: url("../../utils/fonts/FuturaPTMedium.otf") format("opentype");
+    src: url("../../assets/fonts/FuturaPTMedium.otf") format("opentype");
 }
 @font-face {
     font-family: 'FuturaDemi';
-    src: url("../../utils/fonts/FuturaPTDemi.otf") format("opentype");
+    src: url("../../assets/fonts/FuturaPTDemi.otf") format("opentype");
 }
 .App{
     padding-top: 10vh;

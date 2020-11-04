@@ -8,7 +8,7 @@ import CopyrightBorder from '../../components/CopyrightBorder/CopyrightBorder';
 
 import './SideDrawer.scss';
 
-const SideDrawer = ({drawerToggleHandler, drawerOpen, siteMap}) => (
+const SideDrawer = ({drawerToggleHandler, drawerOpen}) => (
     <div className = {`sideNav ${drawerOpen ? '' : 'hiddenNav'}`}>
         <Logo addedClass = 'sideNav__logo' op = {drawerToggleHandler}/>
         <Button 
@@ -17,7 +17,7 @@ const SideDrawer = ({drawerToggleHandler, drawerOpen, siteMap}) => (
         >
             ✕
         </Button> 
-        <Nav siteMap = {siteMap} className = 'sideNav__nav'>
+        <Nav className = 'sideNav__nav'>
             <h1>Pages</h1>
         </Nav>
         <Social className = 'sideNav__social'/>

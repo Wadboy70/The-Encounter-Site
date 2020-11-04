@@ -2,7 +2,7 @@ import React from 'react';
 
 import HeaderBacking from '../../components/HeaderBacking/HeaderBacking';
 import Button from '../../components/Button/Button';
-import welcomeImage from '../../utils/images/worshipHands.jpg';
+import welcomeImage from '../../assets/images/worshipHands.jpg';
 
 import './WelcomeSection.scss';
 

@@ -5,8 +5,8 @@ import WelcomeSection from '../../containers/WelcomeSection/WelcomeSection';
 import DisplaySection from '../../containers/DisplaySection/DisplaySection';
 import HighlightSection from '../../containers/HighlightSection/HighlightSection';
 import ClosingSection from '../../containers/ClosingSection/ClosingSection';
-import Calendar from '../../utils/images/calendar.svg';
-import Planner from '../../utils/images/planner.png';
+import Calendar from '../../assets/images/calendar.svg';
+import Planner from '../../assets/images/planner.png';
 
 import './HomePage.scss';
 

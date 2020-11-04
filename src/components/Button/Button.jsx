@@ -21,7 +21,10 @@ const Button = ({
             :
             <button 
                 className = {`button ${className}`}
-                onClick = {op}
+                onClick = {(e) => {
+                    e.preventDefault();
+                    op();
+                }}
             >
                 {children}
             </button>

@@ -1,7 +1,7 @@
 import React from 'react';
-import {ReactComponent as Facebook} from '../../utils/images/Facebook.svg';
-import {ReactComponent as Instagram} from '../../utils/images/Instagram.svg';
-import {ReactComponent as Youtube} from '../../utils/images/Youtube.svg';
+import {ReactComponent as Facebook} from '../../assets/images/Facebook.svg';
+import {ReactComponent as Instagram} from '../../assets/images/Instagram.svg';
+import {ReactComponent as Youtube} from '../../assets/images/Youtube.svg';
 
 import './Social.scss';
 
