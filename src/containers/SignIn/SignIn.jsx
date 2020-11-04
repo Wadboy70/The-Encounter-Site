@@ -12,7 +12,7 @@ const SignIn = ({handleChange, formState, setError}) => {
     const loginSubmit = async () => {
         const { signInEmail = '', signInPassword = '' } = formState;
         const response = await passwordSignIn(signInEmail, signInPassword);
-        setError(response.message);
+        if (response.message) setError(response.message);
     };
 
     return(

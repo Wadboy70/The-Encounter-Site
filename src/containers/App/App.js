@@ -22,13 +22,12 @@ function App() {
 
   //initializing user from firebase
   const [user, setUser] = useContext(FirebaseUserContext);
-  console.log(user);
 
   useEffect(() => {
     auth.onAuthStateChanged((userVal) => {
       if(userVal && !user) setUser(userVal)
     })
-    return (console.log('returned'));
+    return;
   }, [setUser, user])
 
   return (
