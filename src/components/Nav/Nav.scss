@@ -21,7 +21,7 @@
 }
 .nav__items li{
     margin: auto 0;
-    padding: 0 1rem;
+    // padding: 0 .5rem;
     text-align: center;
 }
 //SidebarNav
@@ -65,6 +65,11 @@
 @media only screen and (min-width: 768px){
     .nav__items{
         display: block;
+        width: 100%;
+        max-width: 900px;
+        ul{
+            justify-content: space-around;
+        }
     }
         
     .navigation__homeNav{

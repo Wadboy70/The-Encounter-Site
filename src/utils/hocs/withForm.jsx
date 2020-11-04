@@ -6,6 +6,7 @@ const withForm = (Component) => class FormComponent extends React.Component {
         this.state = {}
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.setError = this.setError.bind(this);
     }
     handleChange(e){
         e.preventDefault();
@@ -14,12 +15,16 @@ const withForm = (Component) => class FormComponent extends React.Component {
     handleSubmit(action){
         action(this.state);
     }
+    setError(err){
+        this.setState({error: err})
+    }
     render(){
         return(
             <Component 
                 handleChange = {this.handleChange} 
                 formState = {this.state}
-                handleSubmit = { this.handleSubmit }    
+                handleSubmit = { this.handleSubmit }  
+                setError = {this.setError}
             />
         );
     }

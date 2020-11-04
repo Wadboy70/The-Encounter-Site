@@ -24,4 +24,4 @@ export const createPasswordAcc = async (email, password) => await auth.createUse
 export const passwordSignIn = async (email, password) =>  await auth.signInWithEmailAndPassword(email, password).catch((error) =>  (error));
 export const passwordReset = async (email) =>  await auth.sendPasswordResetEmail(email).catch((error) =>  (error));
 export const passwordUpdate = async (password) =>  await auth.currentUser.updatePassword(password).catch((error) =>  (error));
-export const signOut = async () => await auth.signOut().catch((error) => (error));
+export const signOut = () =>  auth.signOut();
