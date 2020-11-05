@@ -13,7 +13,7 @@ import {ReactComponent as Phone} from '../../assets/images/phone.svg';
 import './ClosingSection.scss';
 
 const ClosingSection = () => (
-    <ParticleBG className = 'closingSection'>
+    <ParticleBG className = 'closingSection' particleClassName = 'closingSectionParticles'>
         <ClosingBox 
             className = 'closingSection__connect' 
             title = 'Connect'

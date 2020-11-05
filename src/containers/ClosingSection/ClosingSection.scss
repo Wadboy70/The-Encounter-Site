@@ -1,7 +1,10 @@
 @import '../../assets/colors.scss';
+.closingSectionParticles{
+    height: 80vh;
+}
 .closingSection{
     width: 100%;
-    height: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,9 +45,10 @@
     .closingSection__about{
         background-size: cover;
         >div{
-            width: 50%;
+            width: 90%;
             padding-top: 30%;
-            display: flex;
+                font-size: calc(1.1vw + 1.1vh + .55vmin);
+                display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
