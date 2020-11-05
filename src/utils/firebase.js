@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 
 import "firebase/auth";
-// import "firebase/firestore";
+import "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBm8Z06x5yNc8Qv-Yurrrz4hY8qlG_gq-Y",
@@ -25,3 +25,25 @@ export const passwordSignIn = async (email, password) =>  await auth.signInWithE
 export const passwordReset = async (email) =>  await auth.sendPasswordResetEmail(email).catch((error) =>  (error));
 export const passwordUpdate = async (password) =>  await auth.currentUser.updatePassword(password).catch((error) =>  (error));
 export const signOut = () =>  auth.signOut();
+
+//firestore tings
+const db = firebase.firestore();
+
+export const addNewUser = async (userInfo) => {
+    const { displayName, email, uid } = userInfo;
+    const user = {
+        displayName,
+        email,
+        id: uid,
+        date: new Date()
+    };
+    if( (!await isUserInDatabase(uid))) db.collection("users").add(user);
+};
+export const isUserInDatabase = async (userID) =>{ 
+    return (
+        await db.collection('users')
+        .where('id','==',userID)
+        .get()
+        .then(querySnapshot => querySnapshot.size !== 0)
+    );
+}

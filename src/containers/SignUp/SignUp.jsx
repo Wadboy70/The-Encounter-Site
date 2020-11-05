@@ -15,7 +15,7 @@ const SignUp = ({handleChange, formState, setError}) => {
         if(signUpPassword !== signUpConfirmPassword) setError('Passwords don\'t match!');
         else {
             const response = await createPasswordAcc(signUpEmail, signUpPassword);
-            setError(response.message);
+            if(response.message) setError(response.message);
         }
 
     }
