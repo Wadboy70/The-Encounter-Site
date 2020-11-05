@@ -31,11 +31,15 @@
         ul{
             flex-direction: column;
             li{
+                margin-bottom: .5em;
                 max-height: 1.5em;
                 a{
                     font-size: calc(.8vh + .8vw + .4vmin);
                     font-family: FuturaBook;
                 }
+            }
+            .button{
+                display: none;
             }
         }
     }
