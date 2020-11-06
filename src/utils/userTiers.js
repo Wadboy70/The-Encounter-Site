@@ -1,0 +1,7 @@
+const USER_TIERS = {
+    MEMBER: 'MEMBER',
+    APPROVED_MEMBER: 'APPROVED_MEMBER',
+    ADMIN: 'ADMIN'
+};
+
+export default USER_TIERS;

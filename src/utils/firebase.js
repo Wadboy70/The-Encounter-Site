@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 
 import "firebase/auth";
 import "firebase/firestore";
+import USER_TIERS from './userTiers';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBm8Z06x5yNc8Qv-Yurrrz4hY8qlG_gq-Y",
@@ -34,16 +35,20 @@ export const addNewUser = async (userInfo) => {
     const user = {
         displayName,
         email,
-        id: uid,
-        date: new Date()
+        date: new Date(),
+        tier: USER_TIERS.MEMBER
     };
-    if( (!await isUserInDatabase(uid))) db.collection("users").add(user);
+    const query = await db.collection('users').where('id','==',uid).get()
+    if(!query.empty){
+        const data = query.docs[0].data();
+        if ((displayName !== data.displayName) || (user.tier !== data.tier)){
+            db.collection("users").doc(uid).set({
+                displayName,
+                tier: user.tier
+            }, {merge: true});
+        }
+    }
+    else
+        db.collection("users").doc(uid).set(user);
 };
-export const isUserInDatabase = async (userID) =>{ 
-    return (
-        await db.collection('users')
-        .where('id','==',userID)
-        .get()
-        .then(querySnapshot => querySnapshot.size !== 0)
-    );
-}
+        

@@ -30,8 +30,7 @@ function App() {
         addNewUser(userVal);
       }
     })
-    return;
-  }, [setUser, user])
+  })
 
   return (
     <div className="App">
