@@ -1,7 +1,8 @@
 import firebase from "firebase/app";
 
 import "firebase/auth";
-// import "firebase/firestore";
+import "firebase/firestore";
+import USER_TIERS from './userTiers';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBm8Z06x5yNc8Qv-Yurrrz4hY8qlG_gq-Y",
@@ -25,3 +26,29 @@ export const passwordSignIn = async (email, password) =>  await auth.signInWithE
 export const passwordReset = async (email) =>  await auth.sendPasswordResetEmail(email).catch((error) =>  (error));
 export const passwordUpdate = async (password) =>  await auth.currentUser.updatePassword(password).catch((error) =>  (error));
 export const signOut = () =>  auth.signOut();
+
+//firestore tings
+const db = firebase.firestore();
+
+export const addNewUser = async (userInfo) => {
+    const { displayName, email, uid } = userInfo;
+    const user = {
+        displayName,
+        email,
+        date: new Date(),
+        tier: USER_TIERS.MEMBER
+    };
+    const query = await db.collection('users').where('id','==',uid).get()
+    if(!query.empty){
+        const data = query.docs[0].data();
+        if ((displayName !== data.displayName) || (user.tier !== data.tier)){
+            db.collection("users").doc(uid).set({
+                displayName,
+                tier: user.tier
+            }, {merge: true});
+        }
+    }
+    else
+        db.collection("users").doc(uid).set(user);
+};
+        

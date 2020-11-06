@@ -6,7 +6,7 @@ import SideDrawer from '../SideDrawer/SideDrawer';
 import HomePage from '../../pages/HomePage/HomePage';
 import SignInSignUpPage from '../../pages/SignInSignUpPage/SignInSignUpPage';
 import Footer from '../../containers/Footer/Footer';
-import { auth } from '../../utils/firebase';
+import { auth, addNewUser } from '../../utils/firebase';
 import { FirebaseUserContext } from '../../utils/context/user.context'
 import * as ROUTES from '../../utils/routes';
 
@@ -24,11 +24,13 @@ function App() {
   const [user, setUser] = useContext(FirebaseUserContext);
 
   useEffect(() => {
-    auth.onAuthStateChanged((userVal) => {
-      if(userVal && !user) setUser(userVal)
+    auth.onAuthStateChanged(async (userVal) => {
+      if(userVal && !user) {
+        setUser(userVal)
+        addNewUser(userVal);
+      }
     })
-    return;
-  }, [setUser, user])
+  })
 
   return (
     <div className="App">
