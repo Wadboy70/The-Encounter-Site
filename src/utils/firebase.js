@@ -38,17 +38,21 @@ export const addNewUser = async (userInfo) => {
         date: new Date(),
         tier: USER_TIERS.MEMBER
     };
-    const query = await db.collection('users').where('id','==',uid).get()
-    if(!query.empty){
-        const data = query.docs[0].data();
-        if ((displayName !== data.displayName) || (user.tier !== data.tier)){
+    const query = await db.collection('users').doc(uid).get().then(doc => doc.data());
+    if(query){
+        if (displayName !== query.displayName){
             db.collection("users").doc(uid).set({
-                displayName,
+                displayName
+            }, {merge: true});
+        } else if (!query.tier){
+            db.collection("users").doc(uid).set({
                 tier: user.tier
             }, {merge: true});
         }
     }
-    else
+    else {
         db.collection("users").doc(uid).set(user);
+    }
 };
-        
+
+export const getUserInfo = async (uid) =>  await db.collection('users').doc(uid).get().then(doc => doc.data());
