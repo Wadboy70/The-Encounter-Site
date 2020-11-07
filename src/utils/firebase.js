@@ -65,4 +65,4 @@ export const getAllUsers = async () => {
     return snapshot.docs.map(doc => ({id:doc.id, ...doc.data()}));
 };
 
-export const updateUserDoc = async (uid, updatedValues) => await db.collection(COLLECTIONS.USERS).doc(uid).set({updatedValues}, {merge: true});
+export const updateUserDoc = async (uid, tier) => await db.collection(COLLECTIONS.USERS).doc(uid).set({tier}, {merge: true});

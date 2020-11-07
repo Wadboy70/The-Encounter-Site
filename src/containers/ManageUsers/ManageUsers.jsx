@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ManageUserTable from '../../components/ManageUserTable/ManageUserTable';
 import ManageUserWindow from '../../components/ManageUserWindow/ManageUserWindow';
 
-import { getAllUsers } from "../../utils/firebase";
+import { getAllUsers, updateUserDoc } from "../../utils/firebase";
 import { titleCaseSentence, parseFirestoreDate } from '../../utils/helperFunctions'
 
 import './ManageUsers.scss'
@@ -22,6 +22,11 @@ const ManageUsers = () => {
             <td>{titleCaseSentence(userData.tier)}</td>
         </tr>
     )});
+
+    const changeUserTier = (e) => {
+        let affirm = window.confirm('Are you sure you want to change this user\'s tier?');
+        if (affirm) updateUserDoc(selectedUser.id, e.target.value);
+    }
     
     useEffect(() => {
         if(!userList){
@@ -33,10 +38,12 @@ const ManageUsers = () => {
 
     return(
         <div className = 'manageUsers'>
-            <ManageUserWindow selectedUser = {selectedUser}/>
+            <ManageUserWindow 
+                selectedUser = {selectedUser} 
+                changeUserTier = {changeUserTier}
+            />
             <ManageUserTable 
                 userCells = {userCells} 
-                setSelectedUser = {setSelectedUser}
             />
         </div>
     );

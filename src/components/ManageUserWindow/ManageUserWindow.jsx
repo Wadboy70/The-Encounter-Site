@@ -4,7 +4,7 @@ import { parseFirestoreDate, titleCaseSentence } from '../../utils/helperFunctio
 
 import './ManageUserWindow.scss';
 
-const ManageUserWindow = ({selectedUser = {}}) => {
+const ManageUserWindow = ({selectedUser = {}, changeUserTier}) => {
     const {email, displayName, date, tier} = selectedUser;
     return (
         <table className = 'manageUserWindow'>
@@ -17,7 +17,7 @@ const ManageUserWindow = ({selectedUser = {}}) => {
                         <th>{displayName}</th>
                         <th>{parseFirestoreDate(date)}</th>
                         <th>
-                            <select aria-label = 'tiers' name="tiers" id="tierList" value = {tier} onChange = {() => {}}>
+                            <select aria-label = 'tiers' name="tiers" id="tierList" value = {tier} onChange = {changeUserTier}>
                                 {
                                     Object.keys(USER_TIERS).map(tierChoice => (
                                         <option 
