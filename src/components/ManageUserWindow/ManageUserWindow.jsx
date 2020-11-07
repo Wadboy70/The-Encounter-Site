@@ -1,12 +1,13 @@
 import React from 'react';
 import USER_TIERS from '../../utils/constants/userTiers';
+import { parseFirestoreDate, titleCaseSentence } from '../../utils/helperFunctions';
 
 import './ManageUserWindow.scss';
 
 const ManageUserWindow = ({selectedUser = {}}) => {
     const {email, displayName, date, tier} = selectedUser;
     return (
-        <table>
+        <table className = 'manageUserWindow'>
             {
                 email &&
                 <thead>
@@ -14,16 +15,16 @@ const ManageUserWindow = ({selectedUser = {}}) => {
                     <tr>
                         <th>{email}</th>
                         <th>{displayName}</th>
-                        <th>{date}</th>
+                        <th>{parseFirestoreDate(date)}</th>
                         <th>
-                            <select aria-label = 'tiers' name="tiers" id="tierList" defaultValue = {tier}>
+                            <select aria-label = 'tiers' name="tiers" id="tierList" value = {tier} onChange = {() => {}}>
                                 {
                                     Object.keys(USER_TIERS).map(tierChoice => (
                                         <option 
                                             key = {tierChoice} 
                                             value = {tierChoice}
                                         >
-                                            {tierChoice}
+                                            {titleCaseSentence(tierChoice)}
                                         </option>
                                     ))
                                 }

@@ -1,0 +1,6 @@
+@import '../../assets/colors.scss';
+.manageUserWindow{
+    select, select > *{
+        color: $navy;
+    }
+}
