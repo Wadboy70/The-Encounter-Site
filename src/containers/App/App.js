@@ -10,9 +10,10 @@ import Footer from '../../containers/Footer/Footer';
 import { auth, addNewUser, getUserInfo } from '../../utils/firebase';
 import { FirebaseUserContext } from '../../utils/context/user.context'
 import * as ROUTES from '../../utils/routes';
-import USER_TIERS from '../../utils/userTiers';
 
 import './App.scss';
+import USER_TIERS from '../../utils/constants/userTiers';
+import USER_OBJECT_STRUCTURE from '../../utils/constants/userObjectStructure';
 
 function App() {
 
@@ -24,10 +25,11 @@ function App() {
 
   //initializing user from firebase
   const [user, setUser] = useContext(FirebaseUserContext);
-console.log(user);
+  console.log(user);
   useEffect(() => {
     auth.onAuthStateChanged(async (userVal) => {
-      if(userVal && !user) {
+      if(userVal && user === undefined) {
+        console.log('logging In')
         addNewUser(userVal);
         setUser(await getUserInfo(userVal.uid));
       }
@@ -53,8 +55,13 @@ console.log(user);
       <Route 
         exact 
         path = {ROUTES.ADMIN_PANEL.url} 
-        render = {() => (user?.tier !== USER_TIERS.ADMIN) ? (<Redirect to = {ROUTES.HOME.url}/>) : (<AdminPanel/>)
-        }
+        render = {() =>   (<AdminPanel 
+          redirectInfo = {{
+            url: ROUTES.ADMIN_PANEL, 
+            expected: USER_TIERS.ADMIN, 
+            property: USER_OBJECT_STRUCTURE.TIER
+          }}
+        />) }
       />
       <Footer/>
     </div>

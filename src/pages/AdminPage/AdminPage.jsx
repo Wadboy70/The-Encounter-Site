@@ -2,6 +2,8 @@ import React from 'react';
 
 import ParticleBG from '../../components/ParticleBG/ParticleBG';
 import ManageUsers from '../../containers/ManageUsers/ManageUsers';
+import withSpinner from '../../utils/hocs/withSpinner';
+import withUserRedirect from '../../utils/hocs/withUserRedirect';
 
 import './AdminPage.scss';
 
@@ -15,4 +17,4 @@ const AdminPage = () => {
     )
 };
 
-export default AdminPage;
+export default withUserRedirect(withSpinner(AdminPage));

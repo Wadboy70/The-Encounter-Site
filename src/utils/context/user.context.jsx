@@ -4,7 +4,7 @@ export const FirebaseUserContext = createContext(null);
 
 
 export const FirebaseUserProvider = ({children}) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(undefined);
     return (
         <FirebaseUserContext.Provider value = {[user, setUser]}>
             {children}
