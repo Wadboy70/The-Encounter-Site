@@ -4,6 +4,9 @@ import "firebase/auth";
 import "firebase/firestore";
 import USER_TIERS from './constants/userTiers';
 
+const COLLECTIONS = {
+    USERS: 'users'
+}
 const firebaseConfig = {
     apiKey: "AIzaSyBm8Z06x5yNc8Qv-Yurrrz4hY8qlG_gq-Y",
     authDomain: "the-encounter-454ba.firebaseapp.com",
@@ -38,21 +41,28 @@ export const addNewUser = async (userInfo) => {
         date: new Date(),
         tier: USER_TIERS.MEMBER
     };
-    const query = await db.collection('users').doc(uid).get().then(doc => doc.data());
+    const query = await db.collection(COLLECTIONS.USERS).doc(uid).get().then(doc => doc.data());
     if(query){
         if (displayName !== query.displayName){
-            db.collection("users").doc(uid).set({
+            db.collection(COLLECTIONS.USERS).doc(uid).set({
                 displayName
             }, {merge: true});
         } else if (!query.tier){
-            db.collection("users").doc(uid).set({
+            db.collection(COLLECTIONS.USERS).doc(uid).set({
                 tier: user.tier
             }, {merge: true});
         }
     }
     else {
-        db.collection("users").doc(uid).set(user);
+        db.collection(COLLECTIONS.USERS).doc(uid).set(user);
     }
 };
 
-export const getUserInfo = async (uid) =>  await db.collection('users').doc(uid).get().then(doc => doc.data());
+export const getUserInfo = async (uid) =>  await db.collection(COLLECTIONS.USERS).doc(uid).get().then(doc => doc.data());
+
+export const getAllUsers = async () => {
+    const snapshot = await (db.collection(COLLECTIONS.USERS).get());
+    return snapshot.docs.map(doc => ({id:doc.id, ...doc.data()}));
+};
+
+export const updateUserDoc = async (uid, updatedValues) => await db.collection(COLLECTIONS.USERS).doc(uid).set({updatedValues}, {merge: true});

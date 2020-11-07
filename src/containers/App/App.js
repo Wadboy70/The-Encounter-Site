@@ -25,7 +25,7 @@ function App() {
 
   //initializing user from firebase
   const [user, setUser] = useContext(FirebaseUserContext);
-  console.log(user);
+  
   useEffect(() => {
     auth.onAuthStateChanged(async (userVal) => {
       if(userVal && user === undefined) {
