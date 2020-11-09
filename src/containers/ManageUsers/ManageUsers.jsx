@@ -25,7 +25,13 @@ const ManageUsers = () => {
 
     const changeUserTier = (e) => {
         let affirm = window.confirm('Are you sure you want to change this user\'s tier?');
-        if (affirm) updateUserDoc(selectedUser.id, e.target.value);
+        if (affirm) {
+            updateUserDoc(selectedUser.id, e.target.value)
+            .then(async ()=>{
+                setUserList(await getAllUsers());
+                setSelectedUser({});
+            });
+        }
     }
     
     useEffect(() => {
@@ -38,6 +44,7 @@ const ManageUsers = () => {
 
     return(
         <div className = 'manageUsers'>
+            <h1 className = 'manageUsers__title'>Manage Users</h1>
             <ManageUserWindow 
                 selectedUser = {selectedUser} 
                 changeUserTier = {changeUserTier}
