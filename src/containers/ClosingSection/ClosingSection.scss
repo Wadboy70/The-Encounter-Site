@@ -16,7 +16,13 @@
         }
     }
     .closingSection__connect {
-        background-color: $navy;
+        background-color: $gold;
+        *{
+            color: $navy;
+        }
+        h1{
+            border-color: $navy;
+        }
         >div{
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -33,7 +39,7 @@
         .closingSection__icon{
             display: flex;
             justify-content: center;
-            fill: $yellow;
+            fill: $navy;
             height: 60%;
             width: 100%;
             svg{
@@ -47,11 +53,12 @@
         >div{
             width: 90%;
             padding-top: 30%;
-                font-size: calc(1.1vw + 1.1vh + .55vmin);
-                display: flex;
+            font-size: calc(1.1vw + 1.1vh + .55vmin);
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
+            overflow: hidden;
         }
     }
 }

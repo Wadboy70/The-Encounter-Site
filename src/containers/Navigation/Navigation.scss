@@ -1,13 +1,21 @@
 @import '../../assets/colors.scss';
 
-$navPadding: 6rem;
-$mobilePadding: 10%;
 .navigation{
+    background-color: $navy;
     width: 100vw;
     z-index: 2;
     position: fixed;
-    background-color: $navy;
     top: 0;
     left: 0;
     height: 10vh;
+    .navigation__homeNav{
+        .homeNav__logo{
+            max-height: 90%;
+            border-radius: 15px;
+            padding-left: 8px;
+        }
+    }
+    ul *{
+        transition: color .25s,;
+    }
 }

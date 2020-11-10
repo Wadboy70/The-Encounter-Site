@@ -12,7 +12,7 @@ const Footer = () => (
         <Logo className = 'footer__logo'/>
         <Social className = 'footer__social'/>
         <div className = 'footer__nav'>
-            <h2 className = 'footer__nav__title underlineTitle'>Pages</h2>
+            <h2 className = 'footer__nav__title'>Pages</h2>
             <Nav/>
         </div>
         <CopyrightBorder className = 'footer__border'/>

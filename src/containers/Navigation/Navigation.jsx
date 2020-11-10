@@ -9,7 +9,7 @@ const Navigation = ({drawerToggleHandler}) => {
     return (
         <header className = 'navigation'>
             <Nav className = 'navigation__homeNav'>
-                <Logo/>
+                <Logo className =  'homeNav__logo'/>
                 <Hamburger op = {drawerToggleHandler}/>
             </Nav>
         </header>

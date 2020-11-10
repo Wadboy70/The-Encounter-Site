@@ -21,8 +21,8 @@
 }
 .nav__items li{
     margin: auto 0;
-    // padding: 0 .5rem;
     text-align: center;
+    font-size: 1.2rem;
 }
 //SidebarNav
 .sideNav__nav{
@@ -62,7 +62,7 @@
 .nav__items{
     display: none;
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 992px){
     .nav__items{
         display: block;
         width: 100%;

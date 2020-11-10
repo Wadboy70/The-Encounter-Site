@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, withRouter } from "react-router-dom";
 import Navigation from '../Navigation/Navigation';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import HomePage from '../../pages/HomePage/HomePage';
@@ -15,7 +15,7 @@ import './App.scss';
 import USER_TIERS from '../../utils/constants/userTiers';
 import USER_OBJECT_STRUCTURE from '../../utils/constants/userObjectStructure';
 
-function App() {
+function App({history}) {
 
   //mobile sideDrawer functionality
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -26,6 +26,7 @@ function App() {
   //initializing user from firebase
   const [user, setUser] = useContext(FirebaseUserContext);
   
+  //check if logged in
   useEffect(() => {
     auth.onAuthStateChanged(async (userVal) => {
       if(userVal && user === undefined) {
@@ -33,6 +34,13 @@ function App() {
         addNewUser(userVal);
         setUser(await getUserInfo(userVal.uid));
       }
+    })
+  })
+
+  //onRouteChange
+  useEffect(() => {
+    history.listen(() => {
+      setDrawerOpen(false);
     })
   })
 
@@ -68,4 +76,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

@@ -8,8 +8,8 @@
     "social nav"
     "border border";
     grid-template-columns: 50% 50%;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    align-content: space-between;
     .footer__nav{
         grid-area: nav;
         display: flex;
@@ -48,11 +48,13 @@
         grid-area: logo;
         width: inherit;
         min-width: fit-content;
+        height: fit-content;
         justify-self: flex-start;
     }
     .footer__social{
         width: fit-content;
-        align-items:center ;
+        justify-content: space-between;
+        height: 80%;
         
         h1{
             font-size: calc(1.5vh + 1.5vw + .75vmin);
@@ -97,7 +99,7 @@
             ul{
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: space-around;
+                justify-content: space-between;
                 li{
                     min-width: 30%;
                     padding: 0;

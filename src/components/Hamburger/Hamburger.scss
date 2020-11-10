@@ -18,18 +18,18 @@
     }
     &:hover{
         span{
-            background-color: $yellow;
+            background-color: $white;
         }
     }
     span{
         width: 30px;
         height: 2px;
-        background-color: $white;
+        background-color: $gold;
         transition: background-color .25s;
     }
 }
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 992px){
     .hamburger{
         display: none;
     }
