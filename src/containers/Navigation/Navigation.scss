@@ -1,8 +1,7 @@
 @import '../../assets/colors.scss';
 
 .navigation{
-    // background-color: $gold;
-    background-color: $white;
+    background-color: $navy;
     width: 100vw;
     z-index: 2;
     position: fixed;
@@ -17,7 +16,6 @@
         }
     }
     ul *{
-        color: $navy;
-        border-color: $navy;
+        transition: color .25s,;
     }
 }

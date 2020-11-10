@@ -18,13 +18,13 @@
     }
     &:hover{
         span{
-            background-color: $gold;
+            background-color: $white;
         }
     }
     span{
         width: 30px;
         height: 2px;
-        background-color: $navy;
+        background-color: $gold;
         transition: background-color .25s;
     }
 }

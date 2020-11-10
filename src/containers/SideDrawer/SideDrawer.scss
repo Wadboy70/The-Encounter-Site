@@ -32,8 +32,7 @@
     align-self: flex-start;
     justify-self: flex-end;
     font-size: 30px;
-    margin-right: 1rem;
-    margin-top: 0px;
+    margin: 0px;
     color: white;
 }
 .sideNav__nav{
@@ -41,11 +40,23 @@
     li>a{
         text-align: right;
     }
+    h1{
+        padding-right: 0px;
+    }
+    ul{    
+        display: flex;
+        align-items: flex-end;
+        button, a{
+            margin-right: 0;
+        }
+    }
 }
 .sideNav__social{
     grid-area: social;
-    margin-right: 1rem;
     margin-bottom: 1em;
+    h1{
+        text-align: right;
+    }
 }
 .sideNav__bottomBorder{
     grid-area: bottomBorder;
