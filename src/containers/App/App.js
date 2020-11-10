@@ -5,6 +5,7 @@ import Navigation from '../Navigation/Navigation';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import HomePage from '../../pages/HomePage/HomePage';
 import SignInSignUpPage from '../../pages/SignInSignUpPage/SignInSignUpPage';
+import AboutPage from '../../pages/AboutPage/AboutPage';
 import AdminPanel from '../../pages/AdminPage/AdminPage';
 import Footer from '../../containers/Footer/Footer';
 import { auth, addNewUser, getUserInfo } from '../../utils/firebase';
@@ -71,6 +72,7 @@ function App({history}) {
           }}
         />) }
       />
+      <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
       <Footer/>
     </div>
   );

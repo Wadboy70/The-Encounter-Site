@@ -4,9 +4,9 @@ import HeaderBacking from '../../components/HeaderBacking/HeaderBacking';
 import Button from '../../components/Button/Button';
 import welcomeImage from '../../assets/images/worshipHands.jpg';
 
-import './WelcomeSection.scss';
+import './HomeWelcomeSection.scss';
 
-const WelcomeSection = () => (
+const HomeWelcomeSection = () => (
     <section className = 'welcome'>
         <HeaderBacking addedClass = 'welcome__banner'>
             Welcome!
@@ -27,4 +27,4 @@ const WelcomeSection = () => (
     </section>
 );
 
-export default WelcomeSection;
+export default HomeWelcomeSection;

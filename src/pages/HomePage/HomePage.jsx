@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Slideshow from '../../containers/Slideshow/Slideshow';
-import WelcomeSection from '../../containers/WelcomeSection/WelcomeSection';
+import HomeWelcomeSection from '../../containers/HomeWelcomeSection/HomeWelcomeSection';
 import DisplaySection from '../../containers/DisplaySection/DisplaySection';
 import HighlightSection from '../../containers/HighlightSection/HighlightSection';
 import ClosingSection from '../../containers/ClosingSection/ClosingSection';
@@ -13,7 +13,7 @@ import './HomePage.scss';
 const HomePage = () => (
     <div className = 'homepage'>
         <Slideshow interval = {9000}/>
-        <WelcomeSection/>
+        <HomeWelcomeSection/>
         <DisplaySection/>
         <HighlightSection info = {{
             icon: Calendar,
