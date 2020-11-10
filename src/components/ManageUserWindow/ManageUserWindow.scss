@@ -3,4 +3,21 @@
     select, select > *{
         color: $navy;
     }
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 3rem;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding-left: 8px;
+    white-space: nowrap;
+    width: 100%;
+    background-color: $darkGrey;
+    border-radius: .5rem .5rem 0 0;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    table{
+        width: 100%;
+    }
 }

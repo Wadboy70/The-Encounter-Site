@@ -1,0 +1,12 @@
+.manageUsers{
+    width: 100%;
+}
+
+@media only screen and (min-width: 992px){
+    .manageUsers{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
