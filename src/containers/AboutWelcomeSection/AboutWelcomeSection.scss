@@ -1,0 +1,22 @@
+@import '../../assets/colors.scss';
+
+.aboutWelcomeSection, .aboutWelcomeSection__particles{
+    height: 90vh;
+}
+.aboutWelcomeSection{
+
+    .aboutWelcomeSection__worshipHands{
+        max-width: 60%;
+        max-height: 50%;
+        border-radius: 2.5em;
+    }
+}
+
+
+@media only screen and (min-width: 768px){
+    .aboutWelcomeSection{
+
+        .aboutWelcomeSection__worshipHands{
+        }
+    }
+}

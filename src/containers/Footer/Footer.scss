@@ -1,6 +1,8 @@
+@import '../../assets/colors.scss';
 .footer{
-    height: 40vh;
-    padding: 5% 10%;
+    background-color: $purple;
+    height: 35vh;
+    padding: 1rem 7%;
     display: grid;
     max-width: 100%;
     grid-template-areas: 
@@ -46,7 +48,7 @@
     .footer__logo{
         font-size: calc(1.2vh + 1.2vw + .7vmin);
         grid-area: logo;
-        width: inherit;
+        // width: 100%;
         min-width: fit-content;
         height: fit-content;
         justify-self: flex-start;
@@ -83,14 +85,13 @@
 }
 @media only screen and (min-width: 768px){
     .footer{
-        padding: 5% 7%;
         min-height: fit-content;
         height: fit-content;
         grid-template-areas: 
         "logo social nav"
         "border border border";
         grid-template-columns: 33% 30% 37%;
-        grid-template-rows: 90% 10%;
+        grid-template-rows: 85% 15%;
         row-gap: 1em ;
         .footer__social{
             justify-self: center;
