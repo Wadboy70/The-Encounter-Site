@@ -4,6 +4,7 @@
     flex-direction: column;
     height: 90vh;
     align-items: center;
+    overflow: hidden;
     .highlight__photo{
         border-bottom: $navy 5px solid;
 
@@ -21,7 +22,7 @@
             border-left: 900px solid transparent ;
         }
     }
-    .highlight__display{
+    :not(:first-child){
         position: relative;
         transform: translateY(-90px);
     }
@@ -43,7 +44,7 @@
                 border-top: transparent solid 800px;
             }
         }
-        .highlight__display{
+        :not(:first-child){
             transform: none;
             position: unset;
             width: 40%;
