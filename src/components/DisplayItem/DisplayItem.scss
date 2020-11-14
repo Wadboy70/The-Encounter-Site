@@ -12,12 +12,15 @@
     }
     .displayItem__title{
         font-size: calc(2vw + 2vh + 1vmin);
-        width: 100%;
+        // width: 100%;
         padding-bottom: 10px;
     }
     .displayItem__content, .displayItem__button{
         font-family: FuturaBook;
         font-size: calc(1.2vw + 1.2vh + .6vmin);
+    }
+    .displayItem__content{
+        margin-bottom: 10%;
     }
     .displayItem__icon{
         height: 50px;

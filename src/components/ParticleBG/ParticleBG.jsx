@@ -11,7 +11,7 @@ const ParticleBG = ({children, className = '', particleClassName = ''}) => (
             params = {{
                 particles: {
                     number:{
-                        value: 90
+                        value: (40+ Math.floor(document.getElementsByTagName('html')[0].clientWidth / 32))
                     },
                     lineLinked: {
                         color:  "#535353",

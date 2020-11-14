@@ -13,3 +13,7 @@ export const parseFirestoreDate = (dateVal) => {
     }
     return date;
 };
+
+export const removeWhitespace = (str) => {
+    return str.replace(/\s/g,'');
+}

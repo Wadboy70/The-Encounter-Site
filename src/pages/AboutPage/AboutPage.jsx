@@ -4,6 +4,7 @@ import AboutWelcomeSection from '../../containers/AboutWelcomeSection/AboutWelco
 import AboutPastorSection from '../../containers/AboutPastorSection/AboutPastorSection';
 
 import './AboutPage.scss';
+import AboutLeadershipSection from '../../containers/AboutLeadershipSection/AboutLeadershipSection';
 
 const AboutPage = () => {
     
@@ -11,7 +12,7 @@ const AboutPage = () => {
         <div className = 'aboutPage'>
             <AboutWelcomeSection/>
             <AboutPastorSection/>
-            {/* <AboutLeadershipSection/> */}
+            <AboutLeadershipSection/>
         </div>
     );
 };

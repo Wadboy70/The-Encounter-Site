@@ -8,7 +8,7 @@ import './HomeWelcomeSection.scss';
 
 const HomeWelcomeSection = () => (
     <section className = 'welcome'>
-        <HeaderBacking addedClass = 'welcome__banner'>
+        <HeaderBacking className = 'welcome__banner'>
             Welcome!
         </HeaderBacking>
         <img

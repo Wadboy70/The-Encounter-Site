@@ -22,7 +22,7 @@
             border-left: 900px solid transparent ;
         }
     }
-    :not(:first-child){
+    >:not(:first-child){
         position: relative;
         transform: translateY(-90px);
     }
@@ -44,7 +44,7 @@
                 border-top: transparent solid 800px;
             }
         }
-        :not(:first-child){
+        >:not(:first-child){
             transform: none;
             position: unset;
             width: 40%;
