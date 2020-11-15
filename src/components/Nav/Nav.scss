@@ -62,7 +62,7 @@
 .nav__items{
     display: none;
 }
-@media only screen and (min-width: 992px){
+@media only screen and (min-width: 992px)  and (orientation: landscape) {
     .nav__items{
         display: block;
         width: 100%;

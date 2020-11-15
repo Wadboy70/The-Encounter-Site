@@ -4,9 +4,10 @@ import './HighlightSection.scss';
 
 const HighlightSection = ({
     children,
-    backgroundPhoto
+    backgroundPhoto,
+    className = ''
 }) => (
-    <div className = 'highlight'>
+    <div className = {`highlight ${className}`}>
             <div className = 'highlight__photo' style = {{backgroundImage: `url(${backgroundPhoto})`}}>
                 <div className = 'highlight__background'></div>
             </div>

@@ -10,14 +10,20 @@ const AboutLeadershipSection = () => {
     
     return(
         <div className = 'aboutLeadershipSection'>
-            <HeaderBacking className = 'aboutLeadershipSection__header'/>
-            {
-                LEADERSHIP_TEAM.map(leader => {
-                    return(
-                        <TeamMemberInfo key = {leader.name} {...leader}/>
-                    );
-                })
-            }
+            <HeaderBacking className = 'aboutLeadershipSection__header'>
+                <span>
+                    Our Leadership
+                </span>
+            </HeaderBacking>
+            <div className = 'aboutLeadershipSection__leaders'>
+                {
+                    LEADERSHIP_TEAM.map(leader => {
+                        return(
+                            <TeamMemberInfo key = {leader.name} {...leader}/>
+                        );
+                    })
+                }
+            </div>
         </div>
     );
 };

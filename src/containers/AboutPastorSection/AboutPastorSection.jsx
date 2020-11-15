@@ -11,12 +11,14 @@ const AboutPastorSection = () => {
     return(
         <HighlightSection
             backgroundPhoto = {arthur}
+            className = 'aboutPastorSection'
         >
             <DisplayItem 
                 info = {{        
                     title: 'Pastor Arthur Hinton',
                     content: 'Arcu non sodales neque sodales ut etiam sit amet. Libero justo laoreet sit amet. Aliquet enim tortor at auctor urna nunc id. Sollicitudin aliquam ultrices sagittis orci. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit.\nNeque vitae tempus quam pellentesque nec nam aliquam sem. Est ultricies integer quis auctor. Proin sagittis nisl rhoncus mattis rhoncus urna neque.'
                 }}
+                className = 'aboutPastorSection__displayItem'
             />
         </HighlightSection>        
     );
