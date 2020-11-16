@@ -43,6 +43,7 @@ function App({history}) {
   useEffect(() => {
     history.listen(() => {
       setDrawerOpen(false);
+      window.scrollTo({top: 0});
     })
   })
 
