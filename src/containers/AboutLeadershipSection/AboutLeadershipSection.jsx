@@ -12,14 +12,15 @@ const AboutLeadershipSection = () => {
         <div className = 'aboutLeadershipSection'>
             <HeaderBacking className = 'aboutLeadershipSection__header'>
                 <span>
-                    Our Leadership
+                    Our Team
                 </span>
             </HeaderBacking>
             <div className = 'aboutLeadershipSection__leaders'>
                 {
-                    LEADERSHIP_TEAM.map(leader => {
+                    Object.keys(LEADERSHIP_TEAM).map((leader, index) => {
+                        let leaderVal = LEADERSHIP_TEAM[leader];
                         return(
-                            <TeamMemberInfo key = {leader.name} {...leader}/>
+                            <TeamMemberInfo key = {index} param = {leader} {...leaderVal}/>
                         );
                     })
                 }

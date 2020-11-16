@@ -2,14 +2,13 @@
 .aboutLeadershipSection{
     background-color: $white;
     padding: 5% 30px;
+    display: flex;
+    flex-direction: column;
     .aboutLeadershipSection__header{
         height: 13vh;
 
         h2{
-
             font-size: calc(2.4vw + 2.4vh + 1.2vmin);
-            span{
-            }
             &:before{
                 max-width: 35px;
                 margin-right: 10px;
@@ -17,8 +16,11 @@
         }
     }
     .aboutLeadershipSection__leaders{
+        width: 100%;
+        align-self: center;
+        margin: 2rem 0px;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 

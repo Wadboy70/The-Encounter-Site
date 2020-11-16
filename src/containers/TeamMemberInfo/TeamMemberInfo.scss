@@ -1,0 +1,22 @@
+@import '../../assets/colors.scss';
+.teamMemberInfo{
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;    
+    .teamMemberInfo__image{
+        height: 60%;
+        box-shadow: 5px 5px 2px #000000;
+    }
+}
+.teamMemberInfo__name, .teamMemberInfo__description{
+   color: $navy;
+}
+.teamMemberInfo__description{
+    display: none;
+}
+.teamMemberInfo__name{
+    font-family: FuturaBook;
+}

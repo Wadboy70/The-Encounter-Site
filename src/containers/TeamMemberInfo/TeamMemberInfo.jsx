@@ -1,18 +1,17 @@
 import React from 'react';
 
 import Button from '../../components/Button/Button';
-import { removeWhitespace } from '../../utils/helperFunctions';
 
 import './TeamMemberInfo.scss';
 
-const TeamMemberInfo = ({url, description, name}) => {
+const TeamMemberInfo = ({url, description, name, param = '', className = ''}) => {
     return(
-        <div className = 'teamMemberInfo'>
-            <h1 className = 'teamMemberInfo__name'>{name}</h1>
+        <div className = {`teamMemberInfo ${className}`}>
             <img className = 'teamMemberInfo__image' src={url} alt={name}/>
+            <h1 className = 'teamMemberInfo__name'>{name}</h1>
             <p className = 'teamMemberInfo__description'>{description}</p>
             <Button 
-                link = {`/about/${removeWhitespace(name)}`}
+                link = {`/about/${param}`}
                 className = 'yellowBG medium'    
             >
                 Read More

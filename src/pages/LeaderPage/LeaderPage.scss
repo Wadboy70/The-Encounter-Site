@@ -1,0 +1,31 @@
+@import '../../assets/colors.scss';
+.leaderPage, .leaderPage__particles{
+    height: 90vh;
+}
+
+.leaderPage{
+    padding: 5%;
+    >div{
+        height: 100%;
+        h1,p{
+
+            color: $white;
+        }
+        h1{
+            order: -1;
+            font-family: CormorantSemiBold;
+        }
+        img{
+            border-radius: 1em;
+        }
+        p{
+            display: block;
+        }
+        button, a{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+}

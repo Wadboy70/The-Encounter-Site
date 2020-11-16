@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 
-import { Route, Redirect, withRouter } from "react-router-dom";
+import { Route, Redirect, withRouter, Switch } from "react-router-dom";
 import Navigation from '../Navigation/Navigation';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import HomePage from '../../pages/HomePage/HomePage';
@@ -15,6 +15,7 @@ import * as ROUTES from '../../utils/routes';
 import './App.scss';
 import USER_TIERS from '../../utils/constants/userTiers';
 import USER_OBJECT_STRUCTURE from '../../utils/constants/userObjectStructure';
+import LeaderPage from '../../pages/LeaderPage/LeaderPage';
 
 function App({history}) {
 
@@ -55,24 +56,28 @@ function App({history}) {
         drawerToggleHandler = {drawerToggleHandler}
         drawerOpen = {drawerOpen}
       />
-      <Route exact path = {ROUTES.HOME.url} component = {HomePage}/>
-      <Route 
-        exact 
-        path = {ROUTES.SIGN_IN_SIGN_UP.url} 
-        render = {() => user ? (<Redirect to = {ROUTES.HOME.url}/>) : (<SignInSignUpPage/>)}
-      />
-      <Route 
-        exact 
-        path = {ROUTES.ADMIN_PANEL.url} 
-        render = {() =>   (<AdminPanel 
-          redirectInfo = {{
-            url: ROUTES.ADMIN_PANEL, 
-            expected: USER_TIERS.ADMIN, 
-            property: USER_OBJECT_STRUCTURE.TIER
-          }}
-        />) }
-      />
-      <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
+      <Switch>
+        <Route exact path = {ROUTES.HOME.url} component = {HomePage}/>
+        <Route 
+          exact 
+          path = {ROUTES.SIGN_IN_SIGN_UP.url} 
+          render = {() => user ? (<Redirect to = {ROUTES.HOME.url}/>) : (<SignInSignUpPage/>)}
+        />
+        <Route 
+          exact 
+          path = {ROUTES.ADMIN_PANEL.url} 
+          render = {() =>   (<AdminPanel 
+            redirectInfo = {{
+              url: ROUTES.ADMIN_PANEL, 
+              expected: USER_TIERS.ADMIN, 
+              property: USER_OBJECT_STRUCTURE.TIER
+            }}
+          />) }
+        />
+        <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
+        <Route exact path = {ROUTES.ABOUT.url + '/:leaderName'} component = {LeaderPage}/>
+        <Route path = '*'>404 Page Not Found</Route>
+      </Switch>
       <Footer/>
     </div>
   );
