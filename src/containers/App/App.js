@@ -17,6 +17,7 @@ import USER_TIERS from '../../utils/constants/userTiers';
 import USER_OBJECT_STRUCTURE from '../../utils/constants/userObjectStructure';
 import LeaderPage from '../../pages/LeaderPage/LeaderPage';
 import Button from '../../components/Button/Button';
+import PrayerRequestPage from '../../pages/PrayerRequestPage/PrayerRequestPage';
 
 function App({history}) {
 
@@ -78,19 +79,19 @@ function App({history}) {
         />
         <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
         <Route exact path = {ROUTES.ABOUT.url + '/:leaderName'} component = {LeaderPage}/>
-        <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
+        <Route exact path = {ROUTES.PRAYER_REQUESTS.url} component = {PrayerRequestPage}/>
         <Route path = '*'>404 Page Not Found</Route>
       </Switch>
         <Button className = 'large yellowBG' op = {
           async ()=>{
             fetch('/sendMail', {
               method: 'POST',
-              body:{
+              body:JSON.stringify({
                 "name": 'Seyi Oluwaleimu',
                 "to": 's.oluwaleimu@gmail.com',
                 "subject": 'yuh yuh',
                 "text": 'hey mang'
-              },
+              }),
               headers: {
                 'Content-Type': 'application/json'
               }
