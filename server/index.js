@@ -14,10 +14,9 @@ app.use(express.static(publicPath));
 app.post('/sendMail', (req, res) => { 
 
     const body = req.body || {};
-    console.log(body);
     const data = {
     from: `${body.name || 'no name'} <me@samples.mailgun.org>`,
-    to: body.to || process.env.DEFAULT_EMAIL, //change this email
+    to: process.env[body.to] || process.env.DEFAULT_EMAIL, //change this email
     subject: body.subject || 'contact email',
     text: body.text || 'no message'
     };

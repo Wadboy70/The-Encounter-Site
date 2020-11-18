@@ -16,8 +16,8 @@ import './App.scss';
 import USER_TIERS from '../../utils/constants/userTiers';
 import USER_OBJECT_STRUCTURE from '../../utils/constants/userObjectStructure';
 import LeaderPage from '../../pages/LeaderPage/LeaderPage';
-import Button from '../../components/Button/Button';
-import PrayerRequestPage from '../../pages/PrayerRequestPage/PrayerRequestPage';
+import EmailFormPage from '../../pages/EmailFormPage/EmailFormPage';
+import validEmails from '../../utils/constants/validEmails';
 
 function App({history}) {
 
@@ -66,38 +66,25 @@ function App({history}) {
           path = {ROUTES.SIGN_IN_SIGN_UP.url} 
           render = {() => user ? (<Redirect to = {ROUTES.HOME.url}/>) : (<SignInSignUpPage/>)}
         />
-        <Route 
-          exact 
-          path = {ROUTES.ADMIN_PANEL.url} 
-          render = {() =>   (<AdminPanel 
+        <Route exact path = {ROUTES.ADMIN_PANEL.url}>
+          <AdminPanel 
             redirectInfo = {{
               url: ROUTES.ADMIN_PANEL, 
               expected: USER_TIERS.ADMIN, 
               property: USER_OBJECT_STRUCTURE.TIER
             }}
-          />) }
-        />
+          />
+        </Route>
         <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
         <Route exact path = {ROUTES.ABOUT.url + '/:leaderName'} component = {LeaderPage}/>
-        <Route exact path = {ROUTES.PRAYER_REQUESTS.url} component = {PrayerRequestPage}/>
+        <Route exact path = {ROUTES.PRAYER_REQUESTS.url}>
+          <EmailFormPage 
+            formName = {ROUTES.PRAYER_REQUESTS.name}
+            to = {validEmails.PRAYER_REQUEST_EMAIL}
+          />
+        </Route>
         <Route path = '*'>404 Page Not Found</Route>
       </Switch>
-        <Button className = 'large yellowBG' op = {
-          async ()=>{
-            fetch('/sendMail', {
-              method: 'POST',
-              body:JSON.stringify({
-                "name": 'Seyi Oluwaleimu',
-                "to": 's.oluwaleimu@gmail.com',
-                "subject": 'yuh yuh',
-                "text": 'hey mang'
-              }),
-              headers: {
-                'Content-Type': 'application/json'
-              }
-            })
-          }
-        }></Button>
       <Footer/>
     </div>
   );

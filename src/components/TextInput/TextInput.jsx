@@ -4,16 +4,39 @@ import { titleCaseSentence } from "../../utils/helperFunctions";
 
 import './TextInput.scss';
 
-const TextInput = ({password, name = '', label = '', required = false, handleChange = () => {}, formState = {}}) => {
+const TextInput = ({
+        labelClassName = '',
+        inputClassName = '',
+        password,
+        name = '',
+        label = '',
+        required = false,
+        textArea,
+        handleChange = () => {}
+    }) => {
     return(
     <div className = 'textInput'>
-        <label htmlFor = {name} className = 'textInput__label'>{ titleCaseSentence(label) }</label>
-        <input 
-            required = {required} 
-            type = {password ? 'password' : 'text'} 
-            name = {name} onChange = { handleChange }
-            className = 'textInput__input'
-        />
+        <label 
+            htmlFor = {name} 
+            className = {`textInput__label ${labelClassName}`}
+        >
+            { titleCaseSentence(label) }
+        </label>
+        {
+            textArea ?
+            <textarea
+                required = {required} 
+                name = {name} 
+                onChange = { handleChange }
+                className = {`textInput__input ${inputClassName}`}
+            /> : 
+            <input 
+                required = {required} 
+                type = {password ? 'password' : 'text'} 
+                name = {name} onChange = { handleChange }
+                className = {`textInput__input ${inputClassName}`}
+            />
+        }
     </div>
 )};
 

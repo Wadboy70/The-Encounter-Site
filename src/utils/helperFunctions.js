@@ -17,3 +17,20 @@ export const parseFirestoreDate = (dateVal) => {
 export const removeWhitespace = (str) => {
     return str.replace(/\s/g,'');
 }
+
+export const sendEmail = async ({to = '', message = '', subject = '', name = ''}) => {
+    console.log(to);
+    return fetch('/sendMail', {
+        method: 'POST',
+        body:JSON.stringify({
+          "name": name,
+          "to": to,
+          "subject": subject,
+          "text": message
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json());
+};

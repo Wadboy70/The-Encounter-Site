@@ -21,6 +21,7 @@ const withForm = (Component) => class FormComponent extends React.Component {
     render(){
         return(
             <Component 
+                {...this.props}
                 handleChange = {this.handleChange} 
                 formState = {this.state}
                 handleSubmit = { this.handleSubmit }  

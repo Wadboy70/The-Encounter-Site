@@ -1,0 +1,17 @@
+.emailFormsPage__particles, .emailFormsPage{
+    height: 90vh;
+}
+
+.emailFormsPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    .emailFormsPage__message{
+        height: 20vh;
+    }
+    .emailFormsPage__form{
+        width: 100%;
+    }
+}

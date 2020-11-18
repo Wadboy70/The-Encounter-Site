@@ -7,10 +7,14 @@
         margin: .5em 0;
     }
     .textInput__input{
+        text-align: left;
         color: $navy;
         padding: 1em;
         border-radius: 10px;
         border: none;
         width: 100%;
+    }
+    textarea{
+        resize: none;
     }
 }
