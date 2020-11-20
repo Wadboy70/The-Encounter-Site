@@ -9,8 +9,17 @@ import withForm from '../../utils/hocs/withForm';
 
 import './EmailFormPage.scss';
 
-const EmailFormPage = ({handleChange, formState, formName = 'Form', to = validEmails.DEFAULT_EMAIL}) => {
+const EmailFormPage = ({
+        handleChange, 
+        formState, 
+        formName = 'Form', 
+        to = validEmails.DEFAULT_EMAIL,
+        children,
+        className =''
+    }) => {
+
     const [formSubmitted, setFormSubmitted] = useState(false);
+
     const emailFormSubmit = async () => {
         setFormSubmitted(true);
         const submitInfo = {
@@ -24,11 +33,12 @@ const EmailFormPage = ({handleChange, formState, formName = 'Form', to = validEm
     }
 
     return(
-        <ParticleBG className = 'emailFormsPage' particleClassName = 'emailFormsPage__particles'>
+        <ParticleBG className = {`emailFormsPage ${className}`} particleClassName = 'emailFormsPage__particles'>
             <h1 className = 'emailFormsPage__title'>{ formName }</h1>
+            {children}
             {
                 formSubmitted ? 
-                <h2>Prayer Request has been submitted! :)</h2> :
+                <h2 className = 'emailFormPage__sentMessage'>Prayer Request has been submitted! :)</h2> :
                 <form className = 'emailFormsPage__form'>
                     <TextInput
                         name = 'name'
@@ -53,7 +63,7 @@ const EmailFormPage = ({handleChange, formState, formName = 'Form', to = validEm
                         inputClassName = 'emailFormsPage__message'
                     />
                     <Button
-                        className = 'yellowBG medium'
+                        className = 'yellowBG medium emailFormsPage__button'
                         op = {emailFormSubmit}
                     >
                         Submit

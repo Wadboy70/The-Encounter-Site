@@ -16,8 +16,8 @@ import './App.scss';
 import USER_TIERS from '../../utils/constants/userTiers';
 import USER_OBJECT_STRUCTURE from '../../utils/constants/userObjectStructure';
 import LeaderPage from '../../pages/LeaderPage/LeaderPage';
-import EmailFormPage from '../../pages/EmailFormPage/EmailFormPage';
-import validEmails from '../../utils/constants/validEmails';
+import ContactPage from '../../pages/ContactPage/ContactPage';
+import PrayerRequestPage from '../../pages/PrayerRequestPage/PrayerRequestPage';
 
 function App({history}) {
 
@@ -77,12 +77,8 @@ function App({history}) {
         </Route>
         <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
         <Route exact path = {ROUTES.ABOUT.url + '/:leaderName'} component = {LeaderPage}/>
-        <Route exact path = {ROUTES.PRAYER_REQUESTS.url}>
-          <EmailFormPage 
-            formName = {ROUTES.PRAYER_REQUESTS.name}
-            to = {validEmails.PRAYER_REQUEST_EMAIL}
-          />
-        </Route>
+        <Route exact path = {ROUTES.PRAYER_REQUESTS.url} component = {PrayerRequestPage}/>
+        <Route exact path = {ROUTES.CONTACT_US.url} component = {ContactPage}/>
         <Route path = '*'>404 Page Not Found</Route>
       </Switch>
       <Footer/>
