@@ -1,43 +1,37 @@
 @import '../../assets/colors.scss';
 .welcome{
-    width: 100%;
     background-color: $white;
     height: 90vh;
-    min-height:fit-content ;
     padding: 10% 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    align-content: center;
     .welcome__banner{
         grid-area: ban;
         align-self: flex-start;
     }
-    .welcome__greeting{
-        text-align: center;
-        color: $navy;
-        margin: 0 15%;
-        .greeting__highlight{
-            color: $gold;
-        }
-    }
     .welcome__greeting,.welcome__greeting>*{
         font-family: FuturaMedium;
-        font-size: calc(1.6vw + 1.6vh + .75vmin);
+        font-size: calc(1.3vw + 1.3vh + .65vmin);
     }
     .worshipImage{
         grid-area: img;
         height: 40%;
         justify-self: center;
-        box-shadow: 5px 5px 2px #000000;
+        display: none;
     }
-    .welcome__content{
-        grid-area: content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+    .welcome__greeting{
+        grid-area: greet;
+        text-align: center;
+        color: $navy;
+        .greeting__highlight{
+            color: $gold;
+        }
+    }
+    .welcome__findOutMore{
+        grid-area: button;
+        justify-self: center;
     }
 }
 
@@ -46,15 +40,20 @@
         margin: auto 0;
         padding: 2% 30px;
         display: grid;
-        grid-template-rows: 20% 80%;
+        grid-template-rows: 20% 60% 20%;
         grid-template-columns:  7.5% 35% 50% 7.5%;
         grid-template-areas: 
-        'ban ban ban ban'
-        '. content img .';
+        'ban ban img img'
+        '. greet img img'
+        '. button img img';
         .worshipImage{
             height: unset;
-            max-height: 80%;
             max-width: 100%;
+            display: block;
+        }
+        
+        .welcome__banner{
+            width: 130%;
         }
     }
 }
