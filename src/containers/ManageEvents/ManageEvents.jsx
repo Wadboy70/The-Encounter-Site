@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 
 import { addNewEvent, getAllEvents } from '../../utils/firebase';
+import ManageEventTable from '../ManageEventTable/ManageEventTable';
+import ManageEventWindow from '../ManageEventWindow/ManageEventWindow';
 
 import './ManageEvents.scss';
 
@@ -25,6 +27,8 @@ const ManageEvents = () => {
     console.log()
     return(
         <div className = 'manageEvents'>
+            <ManageEventWindow/>
+            <ManageEventTable/>
         </div>
     )
 };

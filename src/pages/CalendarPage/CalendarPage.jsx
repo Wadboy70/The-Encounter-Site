@@ -15,10 +15,6 @@ const CalendarPage = () => {
         return 'calendar__circle'
     };
 
-    // useEffect(() => {
-
-    // });
-
     return(
         <ParticleBG 
             className = 'calendarPage' 
