@@ -38,7 +38,7 @@ function App({history}) {
         console.log('logging In')
         addNewUser(userVal);
         setUser(await getUserInfo(userVal.uid));
-      }
+      } else if (!userVal) setUser(null);
     })
   })
 

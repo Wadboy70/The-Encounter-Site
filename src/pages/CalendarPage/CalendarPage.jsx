@@ -2,17 +2,26 @@ import React, { useEffect, useState } from 'react';
 
 import ParticleBG from '../../components/ParticleBG/ParticleBG';
 import Calendar from 'react-calendar';
+import { getAllEvents } from '../../utils/firebase';
 
 import './CalendarPage.scss';
-import { useRef } from 'react';
 
 const CalendarPage = () => {
 
-    // const [day, setDay] = useState(null);
+    const [day, setDay] = useState(null);
+    const [events, setEvents] = useState({});
+
+    useEffect(() => {
+        
+        const getStuff = async () => {
+            console.log(await getAllEvents());
+        };
+        getStuff();
+    })
 
     const dynamicTileVal = (e) => {
         // console.log(e.date);
-        return 'calendar__circle'
+        return 'calendar__tile'
     };
 
     return(
@@ -23,10 +32,12 @@ const CalendarPage = () => {
             <Calendar
                 className = 'calendarPage__calendar'
                 tileClassName = {dynamicTileVal}
-                tileContent = {
-                    <div className = 'circle'></div>
+                tileContent = { (e) =>{
+                        // console.log(e)
+                    return <div className = 'calendar__circle'></div>
                 }
-                selectRange = {true}
+                }
+                onClickMonth = {(e)=>{console.log(e)}}
             />
         </ParticleBG>
     );
