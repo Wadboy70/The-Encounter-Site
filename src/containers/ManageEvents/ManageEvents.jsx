@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
 
-import { addNewEvent, getAllEvents } from '../../utils/firebase';
 
 import './ManageEvents.scss';
 

@@ -3,21 +3,37 @@
     max-width: 100vw;
     .calendarPage__calendar{
         padding: 5%;
+        *>{
+        }
         .calendar__tile{
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            min-height: 5vw;
+            min-height: 3rem;
+            height: 12vh;
+            border: none;
             .calendar__circle{
                 height: .5rem;
                 width: .5rem;
                 border-radius: 2rem;
                 justify-self: center;
-                // &.active_event{
+                &.active_event{
                     background-color: red;
-                // }
+                }
             }
+            &.weekend{
+                background-color: $gold;
+            }
+            &.notMonth > abbr{
+                color: gray;
+            }
+        }
+        .react-calendar__month-view__weekdays *, .calendar__tile, .react-calendar__navigation *{
+            background-color: $white;
+            border: none;
+            text-decoration: none;
+
         }
         *{
             color: $navy;
