@@ -13,12 +13,14 @@ const CalendarPage = () => {
     const [user] = useContext(FirebaseUserContext);
     const [showForm, setShowForm] = useState(false);
     const drawerToggleHandler = () => setShowForm(!showForm);
+    const [day, setDay] = useState(null);
+    const handleClickDay = (e) => setDay(e);
     return(
         <ParticleBG 
             className = 'calendarPage' 
             particleClassName = 'calendarPage__particles' 
         >
-            <CalendarComponent/>
+            <CalendarComponent handleClickDay = {handleClickDay}/>
             {
                 (user?.tier === USER_TIERS.ADMIN) &&
                 <Button
