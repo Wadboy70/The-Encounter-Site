@@ -5,14 +5,17 @@ import TextInput from '../../components/TextInput/TextInput';
 import Button from '../../components/Button/Button';
 
 import './CalendarForm.scss';
+import TimePicker from '../TimePicker/TimePicker';
 
 const CalendarForm = ({
     handleChange,
     formState,
-    handleSubmit,
-    drawerToggleHandler
+    drawerToggleHandler,
+    handleChangeManual
 }) => {
+    const handleSubmit = () => {
 
+    }
 
     return(
         <div className = 'calendarForm'>
@@ -40,6 +43,16 @@ const CalendarForm = ({
                     formState = { formState }
                     inputClassName = 'calendarForm__descriptionInput'
                 />
+                <TimePicker
+                    handleChangeManual = {handleChangeManual}
+                    className = 'calendarForm__timePicker'
+                />
+                <Button 
+                    op = {handleSubmit}
+                    className = 'transparent whiteBorder medium'
+                >
+                    Submit
+                </Button>
             </form>
         </div>
     );

@@ -51,4 +51,9 @@
         padding-bottom: 3px;
         border-bottom: white solid 1px;
     }
+    select,input,textarea,option{
+        font-family: FuturaBook;
+        font-weight: 600;
+        color: $navy;
+    }
 }
