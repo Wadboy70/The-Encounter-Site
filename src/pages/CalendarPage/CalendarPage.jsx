@@ -1,40 +1,47 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 
 import ParticleBG from '../../components/ParticleBG/ParticleBG';
-import Button from '../../components/Button/Button';
 import CalendarComponent from '../../containers/Calendar/Calendar';
 import CalendarForm from '../../containers/CalendarForm/CalendarForm';
-import USER_TIERS from '../../utils/constants/userTiers';
-import { FirebaseUserContext } from '../../utils/context/user.context';
+import { calendarDateFormatting } from '../../utils/helperFunctions';
 
 import './CalendarPage.scss';
 
 const CalendarPage = () => {
-    const [user] = useContext(FirebaseUserContext);
     const [showForm, setShowForm] = useState(false);
-    const drawerToggleHandler = () => setShowForm(!showForm);
     const [day, setDay] = useState(null);
-    const handleClickDay = (e) => setDay(e);
+    const [submitForm, setSubmitForm] = useState(0);
+    const [events, setEvents] = useState(null);
+    const formToggleHandler = () => setShowForm(!showForm);
+    const submitFormUpdate = () => {
+        setSubmitForm(submitForm + 1);
+        console.log('new event')
+    }
     return(
         <ParticleBG 
             className = 'calendarPage' 
             particleClassName = 'calendarPage__particles' 
         >
-            <CalendarComponent handleClickDay = {handleClickDay}/>
-            {
-                (user?.tier === USER_TIERS.ADMIN) &&
-                <Button
-                    op = {drawerToggleHandler}
-                    className = 'transparent medium whiteBorder'
-                >
-                    Add Date
-                </Button>
-            }
+            <CalendarComponent 
+                addEvent = {formToggleHandler}
+                handleClickDay = {setDay}
+                submitForm = {submitForm}   
+                events = {events}
+                setEvents = {setEvents}
+            />
             {
                 showForm &&
                 <CalendarForm
-                    drawerToggleHandler = {drawerToggleHandler}
+                    dateToBeEdited = {day}
+                    formToggleHandler = {formToggleHandler}
+                    submitFormUpdate = {submitFormUpdate}
                 />
+            }
+            {
+                (day && events?.[calendarDateFormatting(day)]) &&
+                <div>
+                    
+                </div>
             }
         </ParticleBG>
     );

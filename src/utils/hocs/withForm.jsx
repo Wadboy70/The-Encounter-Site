@@ -14,7 +14,7 @@ const withForm = (Component) => class FormComponent extends React.Component {
         this.setState({[e.target.name]: e.target.value});
     }
     handleChangeManual(e){
-        this.setState({e});
+        this.setState(e);
     }
     handleSubmit(action){
         action(this.state);

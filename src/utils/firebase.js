@@ -75,7 +75,6 @@ export const addNewEvent = async ({name, date, description}) => {
     return db.collection(COLLECTIONS.CALENDAR)
     .add(eventInfo)
     .then(docRef => {
-        console.log('event added: ', docRef);
         return docRef.id;
     })
     .catch(err => console.log("error adding document: ", err));

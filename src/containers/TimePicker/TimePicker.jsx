@@ -1,28 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import Dropdown from '../../components/Dropdown/Dropdown';
 
 import './TimePicker.scss';
 
-const TimePicker = ({handleChangeManual}) => {
-
-    const [time, setTime] = useState({
-        hour: '12',
-        minute: '00',
-        noon: 'pm'
-    });
-
-    const handleChange = (e) => {
-        setTime({...time, [e.target.name]: e.target.value});
-    }
-
-    useEffect(()=>{
-        let hour = time.hour === '12' ? '00' : time.hour, 
-            thisTime = `${(time.noon === 'am') ? hour : Number(hour)+ 12}:${time.minute}`;
-        
-        handleChangeManual(thisTime);
-
-    }, [time, handleChangeManual]);
+const TimePicker = ({handleChange, handleChangeManual}) => {
 
     return(
         <div className = 'timePicker'>

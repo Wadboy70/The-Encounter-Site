@@ -36,7 +36,7 @@ export const sendEmail = async ({to = '', message = '', subject = '', name = ''}
 };
 
 export const calendarDateFormatting = (date) => {
-  return date ? (`${date.getYear()}/${date.getMonth()}/${date.getDate()}`) : '';
+  return date ? (`${date.getMonth()+1}/${date.getDate()}/${date.getYear()+1900}`) : '';
 };
 
 export const calendarDateGetTime = (date) => {
@@ -52,4 +52,9 @@ export const calendarDateGetTime = (date) => {
 
 export const twoDigitPrecededByZero = (num) => {
   return (num/10 < 1) ? ('0' + num) : num;
-}
+};
+
+export const toMilitaryTime = (hour, noonTime) => {
+  let realHour = (Number(hour) === 12) ? 0 : hour;
+  return noonTime === 'am' ? realHour : Number(realHour) + 12;
+};

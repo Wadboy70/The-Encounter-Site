@@ -1,15 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import Calendar from 'react-calendar';
 import { getAllEvents } from '../../utils/firebase';
+import { calendarDateFormatting, calendarDateGetTime } from '../../utils/helperFunctions';
+import { FirebaseUserContext } from '../../utils/context/user.context';
 
 import './Calendar.scss';
-import { calendarDateFormatting, calendarDateGetTime } from '../../utils/helperFunctions';
+import USER_TIERS from '../../utils/constants/userTiers';
 
-const CalendarComponent = ({handleClickDay = () => {}}) => {
+const CalendarComponent = ({
+    handleClickDay = () => {},
+    addEvent = () => {},
+    events,
+    setEvents,
+    submitForm
+}) => {
 
     const [month, setMonth] = useState(new Date().getMonth());
-    const [events, setEvents] = useState(null);
+    const [user] = useContext(FirebaseUserContext);
 
     useEffect(() => {
         //pulls information from firestore database and saves values in a map
@@ -22,7 +30,12 @@ const CalendarComponent = ({handleClickDay = () => {}}) => {
             setEvents(eventsList);
         };
         if(!events) getStuff();
-    });
+    }, [events, setEvents]);
+
+    useEffect(()=>{
+        setEvents(null);
+        console.log(submitForm)
+    }, [submitForm, setEvents])
 
     const dynamicTileVal = (e) => {
         //sets dynamic css values for tiles based off of whether its a weekend, in this month, and gives a special class for mobile styling 
@@ -41,15 +54,31 @@ const CalendarComponent = ({handleClickDay = () => {}}) => {
                 return (
                     <div className = 'calendar__circle'>
                         {
+                            //This is the add event button for admins
+                            (user?.tier === USER_TIERS.ADMIN) &&
+                            <span 
+                                onClick = {() => addEvent(e.date)}
+                                className = 'circle__add'
+                            >
+                                +
+                            </span>
+                        }
+                        {
                             //This inserts the correct titles into the calendar boxes
                             events?.[day] &&
                             events[day].map((specificEvent, index) => {
-                                return(
-                                    <p key = {index}>
-                                        {`${calendarDateGetTime(specificEvent.date.toDate())} ${specificEvent.name}`}
-                                    </p>
-                                )
+                                if(index < 2){
+                                    return(
+                                        <p key = {index}>
+                                            {`${calendarDateGetTime(specificEvent.date.toDate())} ${specificEvent.name}`}
+                                        </p>
+                                    )
+                                } else return '';
                             })
+                        }
+                        {
+                            events?.[day]?.length > 2 &&
+                        <p>{events[day].length - 2} more</p>
                         }
                     </div>
                 )
