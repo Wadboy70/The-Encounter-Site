@@ -1,6 +1,7 @@
 @import '../../assets/colors.scss';
 .calendarPage__calendar{
     padding: 5%;
+    width: 100%;
     .calendar__tile{
         display: flex;
         flex-direction: column;

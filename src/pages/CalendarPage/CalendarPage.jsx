@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import ParticleBG from '../../components/ParticleBG/ParticleBG';
 import CalendarComponent from '../../containers/Calendar/Calendar';
+import CalendarDateDisplay from '../../containers/CalendarDateDisplay/CalendarDateDisplay';
 import CalendarForm from '../../containers/CalendarForm/CalendarForm';
 import { calendarDateFormatting } from '../../utils/helperFunctions';
 
@@ -15,13 +16,21 @@ const CalendarPage = () => {
     const formToggleHandler = () => setShowForm(!showForm);
     const submitFormUpdate = () => {
         setSubmitForm(submitForm + 1);
-        console.log('new event')
     }
     return(
         <ParticleBG 
             className = 'calendarPage' 
             particleClassName = 'calendarPage__particles' 
         >
+            <h1>Calendar</h1>
+            
+            {
+                (day && events?.[calendarDateFormatting(day)]) &&
+                <CalendarDateDisplay
+                    dateInfo = {events[calendarDateFormatting(day)]}
+                    submitFormUpdate = {submitFormUpdate}
+                />
+            }
             <CalendarComponent 
                 addEvent = {formToggleHandler}
                 handleClickDay = {setDay}
@@ -36,12 +45,6 @@ const CalendarPage = () => {
                     formToggleHandler = {formToggleHandler}
                     submitFormUpdate = {submitFormUpdate}
                 />
-            }
-            {
-                (day && events?.[calendarDateFormatting(day)]) &&
-                <div>
-                    
-                </div>
             }
         </ParticleBG>
     );

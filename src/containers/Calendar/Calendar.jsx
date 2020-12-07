@@ -34,7 +34,6 @@ const CalendarComponent = ({
 
     useEffect(()=>{
         setEvents(null);
-        console.log(submitForm)
     }, [submitForm, setEvents])
 
     const dynamicTileVal = (e) => {
