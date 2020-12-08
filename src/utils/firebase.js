@@ -5,7 +5,8 @@ import "firebase/firestore";
 import USER_TIERS from './constants/userTiers';
 
 const COLLECTIONS = {
-    USERS: 'users'
+    USERS: 'users',
+    CALENDAR: 'calendar'
 }
 const firebaseConfig = {
     apiKey: "AIzaSyBm8Z06x5yNc8Qv-Yurrrz4hY8qlG_gq-Y",
@@ -66,3 +67,29 @@ export const getAllUsers = async () => {
 };
 
 export const updateUserDoc = async (uid, tier) => await db.collection(COLLECTIONS.USERS).doc(uid).set({tier}, {merge: true});
+
+//calendar tings
+
+export const addNewEvent = async ({name, date, description}) => {
+    const eventInfo = { name, date, description };
+    return db.collection(COLLECTIONS.CALENDAR)
+    .add(eventInfo)
+    .then(docRef => {
+        return docRef.id;
+    })
+    .catch(err => console.log("error adding document: ", err));
+};
+
+export const updateEvent = async (id, event) => await db.collection(COLLECTIONS.CALENDAR).doc(id).set(event, {merge: true});
+
+export const getAllEvents = async () => {
+    const snapshot = await (db.collection(COLLECTIONS.CALENDAR).get());
+    return snapshot.docs.map(doc => ({id:doc.id, ...doc.data()}));
+};
+
+export const getUpcomingEvent = async () => {
+    const snapshot = await (db.collection(COLLECTIONS.CALENDAR).get());
+    return snapshot.docs[0]?.data() || null;
+};
+
+export const deleteEvent = async (id) => await db.collection(COLLECTIONS.CALENDAR).doc(id).delete(docRef => docRef);

@@ -9,7 +9,7 @@ const withUserRedirect = (Component) => ({redirectInfo:{url = ROUTES.HOME, prope
     if((user !== undefined) && property && (user?.[property] !== expected)){
         return(<Redirect to = {url}/>);
     }
-    return <Component/>
+    return <Component {...props}/>
 };
 
 export default withUserRedirect;

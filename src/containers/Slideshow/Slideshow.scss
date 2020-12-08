@@ -47,22 +47,24 @@ $animLength: .5s;
             display: none;
         }
     }
-
-}
-.greetingOverlay{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    h1{
-        font-size: calc(1.2vh+1.2vw+.6vmin);
+    .greetingOverlay{
         display: flex;
         flex-direction: column;
-        text-transform: uppercase;
+        align-items: center;
+        text-align: center;
+        h1{
+            font-family: 'MontserratBlack';
+            font-size: calc(1.9vh + 1.9vw + 0.95vmin);
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+        }
+        h2{
+            font-family: 'CormorantSemiBold';
+            font-size: calc(1.2vh + 1.2vw + .6vmin);
+        }
     }
-    h2{
-        font-size: calc(1.2vh + 1.2vw + .6vmin);
-    }
+
 }
 @keyframes show {
     from{

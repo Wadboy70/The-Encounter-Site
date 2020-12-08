@@ -2,7 +2,7 @@ import React from 'react';
 
 import HeaderBacking from '../../components/HeaderBacking/HeaderBacking';
 import Button from '../../components/Button/Button';
-import welcomeImage from '../../assets/images/worshipHands.jpg';
+import arthurSitting from '../../assets/images/arthurSitting.png';
 
 import './HomeWelcomeSection.scss';
 
@@ -12,18 +12,16 @@ const HomeWelcomeSection = () => (
             Welcome!
         </HeaderBacking>
         <img
-            src={welcomeImage} 
+            src={arthurSitting} 
             alt="worship"
             className = 'worshipImage'
         />
-        <div className = 'welcome__content'>
-            <p className = 'welcome__greeting'>
-                Lorem ipsum dolor sit amet, consectetur <span className = 'greeting__highlight'>adipiscing</span>  elit, sed do eiusmod tempor incididunt
-            </p>
-            <Button className = 'welcome__findOutMore yellowBG large'>
-                Find Out More
-            </Button>
-        </div>
+        <p className = 'welcome__greeting'>
+        At the <span className = 'greeting__highlight'> Encounter Worship Center</span> our prayer for you is that you encounter God's presence, through the spoken Word, through the Worship, through our people and through the atmosphere, so that your lives will never again be the same.
+        </p>
+        <Button className = 'welcome__findOutMore yellowBG large'>
+            Find Out More
+        </Button>
     </section>
 );
 

@@ -34,3 +34,27 @@ export const sendEmail = async ({to = '', message = '', subject = '', name = ''}
       })
       .then(res => res.json());
 };
+
+export const calendarDateFormatting = (date) => {
+  return date ? (`${date.getMonth()+1}/${date.getDate()}/${date.getYear()+1900}`) : '';
+};
+
+export const calendarDateGetTime = (date) => {
+  let hour = date.getHours(), noonStat = 'am', minute = date.getMinutes();
+  if(hour >= 12){
+    noonStat = 'pm';
+    hour -= 12;
+  };
+  if (hour === 0) hour = 12;
+  minute = twoDigitPrecededByZero(minute);
+  return date ? (`${hour}${Number(minute) > 0 ? `:${minute}` : ''} ${noonStat}`) : '';
+};
+
+export const twoDigitPrecededByZero = (num) => {
+  return (num/10 < 1) ? ('0' + num) : num;
+};
+
+export const toMilitaryTime = (hour, noonTime) => {
+  let realHour = (Number(hour) === 12) ? 0 : hour;
+  return noonTime === 'am' ? realHour : Number(realHour) + 12;
+};
