@@ -35,20 +35,17 @@ function App({history}) {
   useEffect(() => {
     auth.onAuthStateChanged(async (userVal) => {
       if(userVal && user === undefined) {
-        console.log('logging In')
         addNewUser(userVal);
         setUser(await getUserInfo(userVal.uid));
       } else if (!userVal) setUser(null);
     })
-  })
-
-  //onRouteChange
-  useEffect(() => {
+    //onRoute change
     history.listen(() => {
       setDrawerOpen(false);
       window.scrollTo({top: 0});
     })
   })
+
 
   return (
     <div className="App">

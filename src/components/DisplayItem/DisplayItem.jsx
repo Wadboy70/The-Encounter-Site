@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 
 import './DisplayItem.scss';
 
-const DisplayItem = ({info = {}, className = ''}) => {
+const DisplayItem = ({info = {}, className = '', children}) => {
     const {icon, title, button, content} = info;
     return(
         <div className = {`displayItem ${className}`}>
@@ -13,7 +13,7 @@ const DisplayItem = ({info = {}, className = ''}) => {
                 <img src={icon} alt={title} className = 'displayItem__icon'/>
             }
             <h1 className = 'displayItem__title underlineTitle'>{ title }</h1>
-            <p className = 'displayItem__content'>{ content }</p>
+            <div className = 'displayItem__content'>{ children }</div>
             {
                 button &&
                 <Button className = 'displayItem__button small yellowBG'>{button}</Button>

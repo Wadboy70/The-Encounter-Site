@@ -9,14 +9,12 @@ import App from './containers/App/App';
 import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
       <FirebaseUserProvider>
         <SiteMapProvider>
           <App />
         </SiteMapProvider>
       </FirebaseUserProvider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById('root')
 );

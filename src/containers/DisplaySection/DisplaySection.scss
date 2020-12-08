@@ -10,16 +10,16 @@
     justify-content: space-around;
     padding: 2% 5%;
     .display__item{
-        height: 50vh;
-        
+        height: fit-content;
+        width: 90%;
     }
 }
 @media only screen and (min-width: 768px){
     .display{
-        height: 90vh;
-    }
-    
-    .display__item{
-        height: 60vh;
+        height: fit-content;
+        
+        .display__item{
+            width: 40%;
+        }
     }
 }
