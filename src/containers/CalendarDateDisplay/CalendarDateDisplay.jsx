@@ -34,7 +34,7 @@ const CalendarDateDisplay = ({
                                 <p>{info.description}</p>
                             </div>
                             {
-                                user.tier === USER_TIERS.ADMIN &&
+                                user?.tier === USER_TIERS.ADMIN &&
 
                                 <Button 
                                     className = 'small transparent navyBorder events__removeButton'

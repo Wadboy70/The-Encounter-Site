@@ -40,6 +40,7 @@ const CalendarComponent = ({
         //sets dynamic css values for tiles based off of whether its a weekend, in this month, and gives a special class for mobile styling 
         return `${(e.date.getDay() === 0 || e.date.getDay() === 6) ? 'weekend' : ''} 
             ${events?.[calendarDateFormatting(e.date)] ? 'mobileMark' : ''} 
+            ${calendarDateFormatting(e.date) === calendarDateFormatting(new Date()) ? 'today' : ''} 
             ${(e.date.getMonth() !== month) ? 'notMonth' : ''} 
             calendar__tile`
     };
@@ -51,7 +52,7 @@ const CalendarComponent = ({
             tileContent = { (e) =>{
                 let day = calendarDateFormatting(e.date);
                 return (
-                    <div className = 'calendar__circle'>
+                    <>
                         {
                             //This is the add event button for admins
                             (user?.tier === USER_TIERS.ADMIN) &&
@@ -62,24 +63,28 @@ const CalendarComponent = ({
                                 +
                             </span>
                         }
-                        {
-                            //This inserts the correct titles into the calendar boxes
-                            events?.[day] &&
-                            events[day].map((specificEvent, index) => {
-                                if(index < 2){
-                                    return(
-                                        <p key = {index}>
-                                            {`${calendarDateGetTime(specificEvent.date.toDate())} ${specificEvent.name}`}
-                                        </p>
-                                    )
-                                } else return '';
-                            })
-                        }
-                        {
-                            events?.[day]?.length > 2 &&
-                        <p>{events[day].length - 2} more</p>
-                        }
-                    </div>
+                        <div className = 'calendar__circle'>
+                            <div className = 'circle__content'>
+                                {
+                                    //This inserts the correct titles into the calendar boxes
+                                    events?.[day] &&
+                                    events[day].map((specificEvent, index) => {
+                                        if(index < 2){
+                                            return(
+                                                <p key = {index}>
+                                                    {`${calendarDateGetTime(specificEvent.date.toDate())} ${specificEvent.name}`}
+                                                </p>
+                                            )
+                                        } else return '';
+                                    })
+                                }
+                                {
+                                    events?.[day]?.length > 2 &&
+                                <p>{events[day].length - 2} more</p>
+                                }
+                            </div>
+                        </div>
+                    </>
                 )
             }
             }

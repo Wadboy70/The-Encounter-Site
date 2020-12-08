@@ -1,21 +1,39 @@
 @import '../../assets/colors.scss';
 .calendarPage__calendar{
     padding: 5%;
+    padding-bottom: 0;
     width: 100%;
     .calendar__tile{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        gap: 0 15%;
+        grid-template-areas: 
+        'date add'
+        'circle circle';
+        grid-template-columns: 55% 30%;
         min-height: 3rem;
         height: 15vh;
         border: none;
+        width: 100%;
         .calendar__circle{
-            height: 1vh;
-            width: 1vh;
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            grid-area: circle;
             P{
                 display: none;
             }
+            .circle__content{
+                width: 100%;
+            }
+        }
+        abbr{
+            grid-area: date;
+            justify-self: flex-end;
+        }
+        .circle__add{
+            grid-area: add;
         }
         &::after{
             content: '';
@@ -31,6 +49,13 @@
         }
         &.notMonth > abbr{
             color: gray;
+        }
+        &.today > abbr{
+            background-color: red;
+            color: $white;
+            border-radius: 20px;
+            width:calc(1.3vh + 1.3vw + .65vmin);
+            max-height: 2rem;
         }
     }
     .react-calendar__month-view__weekdays *, .calendar__tile, .react-calendar__navigation *{
