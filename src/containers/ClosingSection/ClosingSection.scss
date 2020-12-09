@@ -28,6 +28,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            max-height: 90%;
         }
         .closingSection__icon{
             display: flex;
@@ -36,17 +37,18 @@
             width: 90%;
             border-bottom: $navy .5px solid;
             margin: 0;
-            height: 25%;
+            flex-grow: 1;
             &:nth-last-child(1){
                 border-bottom: none;
             }
             span{
-                width: 40%;
+                width: 60%;
                 font-size: calc(1vw + 1vh + .5vmin);
                 font-family: FuturaBook;
             }
             svg{
                 width: 15%;
+                height: 80%;
                 fill: $navy;
             }
         }
@@ -55,13 +57,16 @@
         background-size: cover;
         >div{
             width: 90%;
-            padding-top: 30%;
             font-size: calc(1.1vw + 1.1vh + .55vmin);
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: space-around;
             overflow: hidden;
+            a{
+                font-size: calc(.7vw + .7vh + .35vmin);
+                height: fit-content;
+            }
         }
     }
 }

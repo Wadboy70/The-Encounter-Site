@@ -9,11 +9,16 @@
         width: 100%;
         display: flex;
         justify-content: flex-end;
-        >*{
+        padding-right: 10px;
+        a{
             fill: $white;
-            width: 35px;
+            width: 25%;
             margin-left: 1em;
             height: 100%;
+            svg{
+                max-height: 100%;
+                width: fit-content;
+            }
         }
     }
 } 

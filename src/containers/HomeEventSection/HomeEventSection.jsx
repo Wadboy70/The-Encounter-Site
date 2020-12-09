@@ -24,7 +24,6 @@ const HomeEventSection = () => {
         getEvents();
     }, [upcomingEvent])
     
-    console.log('rerender', upcomingEvent)
     return(
         
         <HighlightSection 

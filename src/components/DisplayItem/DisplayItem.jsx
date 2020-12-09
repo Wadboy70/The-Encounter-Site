@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import './DisplayItem.scss';
 
 const DisplayItem = ({info = {}, className = '', children}) => {
-    const {icon, title, button, content} = info;
+    const {icon, title, button} = info;
     return(
         <div className = {`displayItem ${className}`}>
             {

@@ -27,10 +27,6 @@ const ClosingSection = () => (
                 <Facebook />
                 <span>Facebook</span>
             </Button>
-            <Button className = 'closingSection__icon transparent' anchor = {socialMediaLinks.instagram}>
-                <Instagram />
-                <span>Instagram</span>
-            </Button>
             <Button className = 'closingSection__icon transparent' anchor = {socialMediaLinks.youtube}>
                 <Youtube />
                 <span>Youtube</span>
