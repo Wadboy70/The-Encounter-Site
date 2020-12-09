@@ -24,27 +24,30 @@
             border-color: $navy;
         }
         >div{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            justify-items:center ;
-            border-bottom: $white solid 1px;
-            span{
-                font-size: calc(1vw + 1vh + .5vmin);
-                font-family: FuturaBook;
-            }
-
+            align-items: center;
         }
         .closingSection__icon{
             display: flex;
-            justify-content: center;
-            fill: $navy;
-            height: 60%;
-            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            width: 90%;
+            border-bottom: $navy .5px solid;
+            margin: 0;
+            height: 25%;
+            &:nth-last-child(1){
+                border-bottom: none;
+            }
+            span{
+                width: 40%;
+                font-size: calc(1vw + 1vh + .5vmin);
+                font-family: FuturaBook;
+            }
             svg{
-                height: 100%;
-                width: auto;
+                width: 15%;
+                fill: $navy;
             }
         }
     }
