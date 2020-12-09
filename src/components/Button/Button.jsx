@@ -8,17 +8,20 @@ const Button = ({
     op = () => {},
     children,
     className = '',
-    link
+    link,
+    anchor
 }) => (
     <>
         {
-            link?
+            link &&
                 <Link 
                     to = {link}
                     className = {`button button_link ${className}`}>
                     {children}
                 </Link>
-            :
+        }
+        {
+          !link && !anchor &&  
             <button 
                 className = {`button ${className}`}
                 onClick = {(e) => {
@@ -28,6 +31,16 @@ const Button = ({
             >
                 {children}
             </button>
+        }
+        
+        {
+          anchor &&  
+            <a 
+                className = {`button ${className}`}
+                href = {anchor}
+            >
+                {children}
+            </a>
         }
     </>
 );

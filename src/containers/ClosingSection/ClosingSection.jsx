@@ -9,6 +9,7 @@ import {ReactComponent as Facebook} from '../../assets/images/Facebook.svg';
 import {ReactComponent as Instagram} from '../../assets/images/Instagram.svg';
 import {ReactComponent as Youtube} from '../../assets/images/Youtube.svg';
 import {ReactComponent as Phone} from '../../assets/images/phone.svg';
+import socialMediaLinks from '../../utils/constants/socialMediaLinks';
 
 import './ClosingSection.scss';
 
@@ -18,22 +19,18 @@ const ClosingSection = () => (
             className = 'closingSection__connect' 
             title = 'Connect'
         >
-            <div className = 'closingSection__icon'>
+            <Button className = 'closingSection__icon transparent' link = '/contact'>
                 <Phone />
-            </div>
-            <span>Contact Us</span>
-            <div className = 'closingSection__icon'>
+                <span>Contact Us</span>
+            </Button>
+            <Button className = 'closingSection__icon transparent' anchor = {socialMediaLinks.facebook}>
                 <Facebook />
-            </div>
-            <span>Facebook</span>
-            <div className = 'closingSection__icon'>
-                <Instagram />
-            </div>
-            <span>Instagram</span>
-            <div className = 'closingSection__icon'>
+                <span>Facebook</span>
+            </Button>
+            <Button className = 'closingSection__icon transparent' anchor = {socialMediaLinks.youtube}>
                 <Youtube />
-            </div>
-            <span>Youtube</span>
+                <span>Youtube</span>
+            </Button>
         </ClosingBox>
         <ClosingBox 
             className = 'closingSection__about' 

@@ -84,7 +84,7 @@ export const updateEvent = async (id, event) => await db.collection(COLLECTIONS.
 
 export const getAllEvents = async () => {
     const snapshot = await (db.collection(COLLECTIONS.CALENDAR).get());
-    return snapshot.docs.map(doc => ({id:doc.id, ...doc.data()}));
+    return snapshot.docs.map(doc => ({id:doc.id, ...doc.data()})).sort((a, b) => a.date - b.date);
 };
 
 export const getUpcomingEvent = async () => {

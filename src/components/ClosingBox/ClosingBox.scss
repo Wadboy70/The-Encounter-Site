@@ -1,9 +1,9 @@
 @import '../../assets/colors.scss';
-$squareSide: 35vmax;
-$mobileSquareSide: 40vmax;
+$squareSide: 30vmax;
+$mobileSquareSide: 35vmax;
 .closingBox{
     width: $mobileSquareSide;
-    max-width: 45vh;
+    max-width: 40vh;
     height: $squareSide;
     max-height: 45%;
     display: flex;
@@ -20,8 +20,8 @@ $mobileSquareSide: 40vmax;
 @media only screen and (min-width: 768px){
     .closingBox{    
         width: $squareSide;
-        max-width: 40%;
+        max-width: 25%;
         height: $squareSide;
-        max-height: 40vw;
+        max-height: 25vw;
     }
 }

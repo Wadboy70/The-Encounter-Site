@@ -2,7 +2,7 @@ import React from 'react';
 
 import HeaderBacking from '../../components/HeaderBacking/HeaderBacking';
 import Button from '../../components/Button/Button';
-import arthurSitting from '../../assets/images/arthurSitting.png';
+import arthurSitting from '../../assets/images/arthurStanding.png';
 
 import './HomeWelcomeSection.scss';
 

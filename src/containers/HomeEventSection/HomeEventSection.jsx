@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Planner from '../../assets/images/planner.png';
 import DisplayItem from '../../components/DisplayItem/DisplayItem';
 import HighlightSection from '../HighlightSection/HighlightSection';
 import Calendar from '../../assets/images/calendar.svg';
+import { getAllEvents } from '../../utils/firebase';
 
 import './HomeEventSection.scss';
+import { calendarDateFormatting } from '../../utils/helperFunctions';
 
 const HomeEventSection = () => {
-
+    
+    const [upcomingEvent, setUpcomingEvent] = useState(null)
+    
+    useEffect(()=>{
+        const getEvents = async () => {
+            if(!upcomingEvent) await getAllEvents().then(docs => (
+                setUpcomingEvent( docs.find(doc => {
+                    return new Date() - doc.date.toDate() < 0
+                }))
+            ));
+        }
+        getEvents();
+    }, [upcomingEvent])
+    
     return(
         
         <HighlightSection 
@@ -18,10 +33,19 @@ const HomeEventSection = () => {
                 info = {{
                     icon: Calendar,
                     title: 'Upcoming Event',
-                    content: `October 19th at 5pm\nZoom Call\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
                     button: 'See Calendar'
                 }}
-            />
+            >
+                {
+                    upcomingEvent ? 
+                    <>
+                        <p>{upcomingEvent?.name}</p>
+                        <p>{calendarDateFormatting(upcomingEvent?.date.toDate())}</p>
+                        <p>{upcomingEvent?.description}</p>
+                    </> :
+                    <p>There are no upcoming events!</p>
+                }
+            </DisplayItem>
         </HighlightSection>
     );
 };
