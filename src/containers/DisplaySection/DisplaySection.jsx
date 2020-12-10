@@ -22,7 +22,7 @@ const DisplaySection = () => {
             title: 'Giving/ Tithing',
             content: 'Your generosity is positively changing lives in this ministry, community, and globally.  The Apostle Paul reminds us in 2 Corinthians 9:6-8 that whoever sows sparingly will reap sparingly and whosoever sows generously will reap generously.  As you generously sow into this work, it is Gods covenant promise to multiply back to you what has been given.  We want you to know that your seed creates resources for us to carry Gods love to the nations',
             button: 'Give',
-            buttonProps: {}
+            buttonProps: {anchor: 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection'}
         },
         {
             icon: Computer,
