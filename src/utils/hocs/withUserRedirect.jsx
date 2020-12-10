@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import { FirebaseUserContext } from '../context/user.context';
-import * as ROUTES from '../../utils/routes';
+import ROUTES from '../../utils/routes';
 
 
 const withUserRedirect = (Component) => ({redirectInfo:{url = ROUTES.HOME, property, expected = true}, ...props}) => {

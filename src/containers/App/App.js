@@ -10,7 +10,7 @@ import AdminPanel from '../../pages/AdminPage/AdminPage';
 import Footer from '../../containers/Footer/Footer';
 import { auth, addNewUser, getUserInfo } from '../../utils/firebase';
 import { FirebaseUserContext } from '../../utils/context/user.context'
-import * as ROUTES from '../../utils/routes';
+import ROUTES from '../../utils/routes';
 
 import './App.scss';
 import USER_TIERS from '../../utils/constants/userTiers';
@@ -45,7 +45,6 @@ function App({history}) {
       window.scrollTo({top: 0});
     })
   })
-
 
   return (
     <div className="App">

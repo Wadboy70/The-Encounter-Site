@@ -8,6 +8,7 @@ import { getAllEvents } from '../../utils/firebase';
 
 import './HomeEventSection.scss';
 import { calendarDateFormatting } from '../../utils/helperFunctions';
+import ROUTES from '../../utils/routes';
 
 const HomeEventSection = () => {
     
@@ -33,7 +34,8 @@ const HomeEventSection = () => {
                 info = {{
                     icon: Calendar,
                     title: 'Upcoming Event',
-                    button: 'See Calendar'
+                    button: 'See Calendar',
+                    buttonProps: {link: ROUTES.CALENDAR.url}
                 }}
             >
                 {

@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import './DisplayItem.scss';
 
 const DisplayItem = ({info = {}, className = '', children}) => {
-    const {icon, title, button} = info;
+    const {icon, title, button, buttonProps} = info;
     return(
         <div className = {`displayItem ${className}`}>
             {
@@ -16,7 +16,12 @@ const DisplayItem = ({info = {}, className = '', children}) => {
             <div className = 'displayItem__content'>{ children }</div>
             {
                 button &&
-                <Button className = 'displayItem__button small yellowBG'>{button}</Button>
+                <Button 
+                    className = 'displayItem__button small yellowBG' 
+                    {...buttonProps}
+                >
+                    {button}
+                </Button>
             }
         </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import EmailFormPage from '../EmailFormPage/EmailFormPage';
 
-import * as ROUTES from '../../utils/routes';
+import ROUTES from '../../utils/routes';
 import validEmails from '../../utils/constants/validEmails';
 
 import './ContactPage.scss';
