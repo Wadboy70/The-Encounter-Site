@@ -15,11 +15,14 @@ const AboutPastorSection = () => {
         >
             <DisplayItem 
                 info = {{        
-                    title: 'Pastor Arthur Hinton',
-                    content: 'Arcu non sodales neque sodales ut etiam sit amet. Libero justo laoreet sit amet. Aliquet enim tortor at auctor urna nunc id. Sollicitudin aliquam ultrices sagittis orci. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit.\nNeque vitae tempus quam pellentesque nec nam aliquam sem. Est ultricies integer quis auctor. Proin sagittis nisl rhoncus mattis rhoncus urna neque.'
+                    title: 'Pastor Arthur Hinton'
                 }}
                 className = 'aboutPastorSection__displayItem'
-            />
+            >
+                <p>
+                    Arthur T. Hinton III is a Pastor, Songwriter, Musician, and Behavioral Psychologist.  As the founder and lead Pastor at The Encounter Worship Center it is his life's purpose to create limitless opportunities for all people from all walks of life to encounter God, so that their lives will be forever changed.  He holds a Bachelors degree from Millikin University in Organizational Leadership and a Master's Degree from Kaplan University in Psychology with a concentration in Applied Behavior Analysis.  Pastor Arthur resides in Tampa, Florida and has Four beautiful children, Justus, Adrienne, Liberty, and Arthur IV.
+                </p>
+            </DisplayItem>
         </HighlightSection>        
     );
 };
