@@ -33,6 +33,17 @@
     font-family: 'MontserratBlack';
     src: url("../../assets/fonts/Montserrat-Black.ttf") format("opentype");
 }
+.scrollbar{
+    &::-webkit-scrollbar
+    {
+        width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: $white;
+    }
+}
 .App{
     padding-top: 10vh;
     min-height: 100vh;
@@ -42,6 +53,7 @@
     h1{
         font-family: CormorantSemiBold;
         letter-spacing: 7px;
+        margin: 2%;
     }
     h2{
         font-family: FuturaBook;
