@@ -35,10 +35,11 @@ $animLength: .5s;
         .logoOverlay{
             width: 100%;
             height: 70vh;
-            background-image: url('../../assets/images/fullLogo.png');
-            background-size:contain ;
-            background-repeat: no-repeat;
-            background-position: center;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
         }
         .showOverlay{
             animation: show $animLength*2;
