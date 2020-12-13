@@ -47,8 +47,9 @@
         '. greet img img'
         '. button img img';
         .worshipImage{
-            height: unset;
-            max-width: 100%;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
             display: block;
         }
         
