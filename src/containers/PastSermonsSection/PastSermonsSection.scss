@@ -1,0 +1,54 @@
+    .sermonsPage__videos{
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        overflow-x: scroll;
+        width: 80%;
+        height: 35vh;
+        ::-webkit-scrollbar-thumb{
+            border-radius: 0;
+        }
+        .videos__vid{
+            padding: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: fit-content;
+            .content__vidAnchor{
+                width: fit-content;
+                display: inline-flex;
+                justify-content: center;
+                padding: 2%;
+                flex-grow: 1;
+                img{
+                    display: block;
+                    width: auto;
+                    height: 100%;
+                    max-height: 100%;
+                    border-radius: 20px;
+                }
+            }
+            p{
+                flex-grow: 1;
+                font-size: calc(.8vw + .8vh + .4vmin);
+                width: fit-content;
+                font-family: FuturaBook;
+            }
+            p.vid__videoTitle{
+                padding: 2% 0;
+                max-width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    
+
+@media only screen and (min-width: 768px){
+    .sermonsPage__videos{
+        height: 50vh;
+    }
+}

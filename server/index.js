@@ -33,21 +33,21 @@ app.post('/sendMail', (req, res) => {
 app.get('/checkLive', (req, res) => { 
     const checkLive = async(url) => {
         try{
-            let live = await fetch(url)
+            await fetch(url)
             .then(val => {
                 return val.text();
             })
             .then(html => {
-                html.search('{"text":" watching"}')
+                let val = html.search('{"text":" watching"}');
+                console.log('live', val);
+                res.send({live: val !== -1});
             });
-            res.send({live: live !== -1});
-            console.log(await live);
         } catch(err){
             console.log(err);
             res.send({err, message:'error', live: true})
         }
     };
-    checkLive("https://www.youtube.com/c/nasa/live");
+    checkLive("https://www.youtube.com/user/arthurhintonmusic/live");
 });
 app.get('/recentVideos', (req, res) => { 
     const recentContent = async() => {

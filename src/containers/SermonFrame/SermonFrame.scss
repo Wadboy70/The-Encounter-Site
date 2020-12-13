@@ -1,0 +1,12 @@
+.sermonFrame{
+    width: 80vw;
+    height: 45vw;
+    margin: 2%;
+    border: white 5px solid;
+    display: flex;
+    justify-content: center;
+        align-items: center;
+    h2{
+        height: fit-content;
+    }
+}
