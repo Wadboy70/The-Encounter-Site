@@ -1,78 +1,33 @@
 @import '../../assets/colors.scss';
 
 .nav{
-    display: flex;
-    align-items: center;
-    justify-content:space-between ;
     height: 100%;
+    padding: 2%;
     *{
         text-decoration: none;
         color: $white;
     }
-}
-
-.nav__items a:hover,
-.nav__items a:active{
-    color:$yellow;
-}
-.nav__items ul{
-    list-style: none;
-    display: flex;
-}
-.nav__items li{
-    margin: auto 0;
-    text-align: center;
-    font-size: 1.2rem;
-}
-//SidebarNav
-.sideNav__nav{
-    font-size: 1.5rem;
-    text-align: right;
-    justify-self: flex-end;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     ul{
-        flex-direction: column;
-        justify-content: flex-end;
-        li{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            a{
-                padding: 0;
-            }
-        }
-    }
-    h1{
-        align-self: flex-end;
-        padding: 0 1rem;
-    }
-    
-    .nav__items{
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
         height: 100%;
-    }
-}
-
-//HomeNav
-.navigation__homeNav{
-    padding: 0 7%;
-}
-.nav__items{
-    display: none;
-}
-@media only screen and (min-width: 992px)  and (orientation: landscape) {
-    .nav__items{
-        display: block;
-        width: 100%;
-        max-width: 900px;
-        ul{
-            justify-content: space-around;
+        li{
+            height: fit-content;
+            font-size: 1.2rem;
         }
     }
-        
-    .navigation__homeNav{
-        padding: 0 5%;
+    .nav__button{
+        font-size: 1.2rem;
+        border-radius: 0;
+        border-width: 1px;
+        margin: 0;
+        font-family: Cormorant;
+        padding: 1% 2%;
+    }
+    a:hover,
+    a:active{
+        color:$yellow;
     }
 }

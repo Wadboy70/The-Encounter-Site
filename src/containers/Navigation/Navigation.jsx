@@ -8,10 +8,14 @@ import './Navigation.scss';
 const Navigation = ({drawerToggleHandler}) => {
     return (
         <header className = 'navigation'>
-            <Nav className = 'navigation__homeNav'>
-                <Logo className =  'homeNav__logo'/>
-                <Hamburger op = {drawerToggleHandler}/>
-            </Nav>
+            <Logo className =  'navigation__logo'/>
+            <div className = 'navigation__right'>
+                <Nav className = 'navigation__homeNav'>
+                </Nav>
+                <Hamburger 
+                    className = 'navigation__hamburger'
+                    op = {drawerToggleHandler}/>
+            </div>
         </header>
     );
 };

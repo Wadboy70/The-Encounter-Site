@@ -28,9 +28,3 @@
         transition: background-color .25s;
     }
 }
-
-@media only screen and (min-width: 992px)  and (orientation: landscape) {
-    .hamburger{
-        display: none;
-    }
-}
