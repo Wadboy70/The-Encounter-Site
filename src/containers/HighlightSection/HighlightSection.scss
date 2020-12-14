@@ -32,12 +32,11 @@
         align-items: center;
         .highlight__photo{
             width: 90%;
-            height: 100%;
+            height: 70vh;
             .highlight__background{
-                height: 110%;
                 width: 100%;
                 border-bottom: none;
-                border-left: 300px solid $navy;
+                border-left: 250px solid $navy;
                 border-top: transparent solid 800px;
             }
         }

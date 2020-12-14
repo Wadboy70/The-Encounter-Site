@@ -17,10 +17,9 @@ const AboutLeadershipSection = () => {
             </HeaderBacking>
             <div className = 'aboutLeadershipSection__leaders'>
                 {
-                    Object.keys(LEADERSHIP_TEAM).map((leader, index) => {
-                        let leaderVal = LEADERSHIP_TEAM[leader];
+                    LEADERSHIP_TEAM.map((leader, index) => {
                         return(
-                            <TeamMemberInfo key = {index} param = {leader} {...leaderVal}/>
+                            <TeamMemberInfo key = {index} {...leader}/>
                         );
                     })
                 }

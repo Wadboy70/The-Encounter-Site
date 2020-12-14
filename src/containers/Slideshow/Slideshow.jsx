@@ -23,9 +23,6 @@ const Slideshow = ({interval = 3000}) => {
         const autoSlide = setInterval(goRight,interval);
         return () => clearInterval(autoSlide);
     });
-    useEffect(()=>{
-        console.log(x);
-    },[x])
 
     return(
         <section className = 'slideshow'>
