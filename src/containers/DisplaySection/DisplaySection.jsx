@@ -24,9 +24,9 @@ const DisplaySection = () => {
             image: tithing
         },
         {
-            title: 'Live Streams',
+            title: 'This is church. Anywhere.',
             button: 'Watch Now',
-            description: 'Join our weekly livestreams where we have receive worship and wise sermons from our Pastor, Arthur T. Hinton',
+            description: 'Watch Online',
             buttonProps: {link: ROUTES.LIVE_SERMONS.url},
             image: churchService
         }
