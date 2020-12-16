@@ -1,6 +1,11 @@
 import validEmails from "./constants/validEmails";
 import { COLLECTIONS } from "./firebase";
 import youthImage from '../assets/images/youthImage.jpg';
+import churchService from '../assets/images/churchService.jpg';
+import tithing from '../assets/images/tithing.jpg';
+import worship from '../assets/images/worshipBackground.jpg';
+import friends from '../assets/images/friends4.jpg';
+import womensMinistry from '../assets/images/womensMinistry.jpg';
 
 const ROUTES = { 
     HOME: {name: 'Home', url: '/'},
@@ -33,7 +38,7 @@ export const LINK_BUTTON_TYPES = {
 };
 export const DUPLICATE_PAGES = [
     {
-        jumboImage: undefined,
+        jumboImage: churchService,
         title: ROUTES.MEN_MINISTRY.name,
         url: ROUTES.MEN_MINISTRY.url,
         description: 'Minister Anthony Alexander is the leader of our Guided Men’s Ministry! Sign up for this program using the form below',
@@ -58,7 +63,7 @@ export const DUPLICATE_PAGES = [
 
     },
     {
-        jumboImage: undefined,
+        jumboImage: tithing,
         title: ROUTES.GIVING.name,
         url: ROUTES.GIVING.url,
         description: 'Your generosity is positively changing lives in this ministry, community, and globally. The Apostle Paul reminds us in 2 Corinthians 9:6-8 that whoever sows sparingly will reap sparingly and whosoever sows generously will reap generously. As you generously sow into this work, it is Gods covenant promise to multiply back to you what has been given. We want you to know that your seed creates resources for us to carry Gods love to the nations',
@@ -69,7 +74,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: undefined,
+        jumboImage: womensMinistry,
         title: ROUTES.WOMEN_MINISTRY.name,
         url: ROUTES.WOMEN_MINISTRY.url,
         description: 'Minister Lavon Thompson is the leader of our Esthers Circle Woman’s Group! Sign up for this program using the form below',
@@ -118,7 +123,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: undefined,
+        jumboImage: worship,
         title: ROUTES.MUSIC_MINISTRY.name,
         url: ROUTES.MUSIC_MINISTRY.url,
         description: 'Minister Brittany C. Weaver is the leader of our New Wine Music Ministry! Sign up for this program using the form below',
@@ -171,7 +176,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: undefined,
+        jumboImage: friends,
         title: ROUTES.PRAYER_REQUESTS.name,
         url: ROUTES.PRAYER_REQUESTS.url,
         description: 'Submit prayer requests for the leaders of our ministry using the form below',
