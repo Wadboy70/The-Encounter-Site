@@ -1,3 +1,5 @@
+import validEmails from "./constants/validEmails";
+
 const ROUTES = { 
     HOME: {name: 'Home', url: '/'},
     ABOUT: {name: 'About', url: '/about'},
@@ -34,7 +36,9 @@ export const DUPLICATE_PAGES = [
         url: ROUTES.MEN_MINISTRY.url,
         description: 'Minister Anthony Alexander is the leader of our Guided Men’s Ministry! Sign up for this program using the form below',
         form:{
-            submit: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
+            submit: {
+                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE
+            },
             fields: [
                 {
                     name: 'name',
@@ -66,7 +70,9 @@ export const DUPLICATE_PAGES = [
         url: ROUTES.WOMEN_MINISTRY.url,
         description: 'Minister Lavon Thompson is the leader of our Esthers Circle Woman’s Group! Sign up for this program using the form below',
         form:{
-            submit: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
+            submit: {
+                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE
+            },
             fields: [
                 {
                     name: 'name',
@@ -87,7 +93,9 @@ export const DUPLICATE_PAGES = [
         url: ROUTES.YOUTH_MINISTRY.url,
         description: 'Minister Julianna James-Gilbert is the leader of our Engage Youth Ministry! Sign up for this program using the form below',
         form:{
-            submit: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
+            submit: {
+                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE
+            },
             fields: [
                 {
                     name: 'name',
@@ -108,7 +116,9 @@ export const DUPLICATE_PAGES = [
         url: ROUTES.MUSIC_MINISTRY.url,
         description: 'Minister Brittany C. Weaver is the leader of our New Wine Music Ministry! Sign up for this program using the form below',
         form:{
-            submit: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
+            submit: {
+                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE
+            },
             fields: [
                 {
                     name: 'name',
@@ -123,6 +133,64 @@ export const DUPLICATE_PAGES = [
             ],
         }
     },
+    {
+        jumboImage: undefined,
+        title: ROUTES.CONTACT_US.name,
+        url: ROUTES.CONTACT_US.url,
+        description: 'Contact the leaders of our ministry using the form below',
+        form:{
+            submit: {
+                type: FORM_SUBMIT_TYPE.EMAIL,
+                to: validEmails.DEFAULT_EMAIL
+            },
+            fields: [
+                {
+                    name: 'name',
+                    label: 'Name',
+                    type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
+                },
+                {
+                    name: 'email',
+                    label: 'Email',
+                    type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
+                },
+                {
+                    name: 'message',
+                    label: 'Message',
+                    type: FORM_FIELD_INPUT_TYPE.TEXT_AREA
+                }
+            ],
+        }
+    },
+    {
+        jumboImage: undefined,
+        title: ROUTES.PRAYER_REQUESTS.name,
+        url: ROUTES.PRAYER_REQUESTS.url,
+        description: 'Submit prayer requests for the leaders of our ministry using the form below',
+        form:{
+            submit: {
+                type: FORM_SUBMIT_TYPE.EMAIL,
+                to: validEmails.PRAYER_REQUEST_EMAIL
+            },
+            fields: [
+                {
+                    name: 'name',
+                    label: 'Name',
+                    type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
+                },
+                {
+                    name: 'email',
+                    label: 'Email',
+                    type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
+                },
+                {
+                    name: 'message',
+                    label: 'Message',
+                    type: FORM_FIELD_INPUT_TYPE.TEXT_AREA
+                }
+            ],
+        }
+    }
 ];
 export default ROUTES;
 export const siteMap = [ROUTES.ABOUT, ROUTES.LIVE_SERMONS, ROUTES.CALENDAR, ROUTES.PRAYER_REQUESTS, ROUTES.CONTACT_US];

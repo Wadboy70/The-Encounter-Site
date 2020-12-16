@@ -6,14 +6,15 @@ import TextInput from '../../components/TextInput/TextInput';
 import { sendEmail } from '../../utils/helperFunctions';
 import validEmails from '../../utils/constants/validEmails';
 import withForm from '../../utils/hocs/withForm';
+import { FORM_SUBMIT_TYPE } from '../../utils/routes';
 
 import './EmailFormPage.scss';
 
 const EmailFormPage = ({
         handleChange, 
         formState, 
-        formName = 'Form', 
-        to = validEmails.DEFAULT_EMAIL,
+        formName, 
+        submit,
         children,
         className =''
     }) => {
@@ -24,7 +25,7 @@ const EmailFormPage = ({
         setFormSubmitted(true);
         const submitInfo = {
             name: formState?.name,
-            to,
+            // to,
             subject: `${formState?.name} prayer request`,
             message: `${formState?.email}\n${formState.message}`
         }
@@ -34,11 +35,14 @@ const EmailFormPage = ({
 
     return(
         <ParticleBG className = {`emailFormsPage ${className}`} particleClassName = 'emailFormsPage__particles'>
-            <h1 className = 'emailFormsPage__title'>{ formName }</h1>
+            {
+                formName &&
+                <h1 className = 'emailFormsPage__title'>{ formName }</h1>
+            }
             {children}
             {
                 formSubmitted ? 
-                <h2 className = 'emailFormPage__sentMessage'>Prayer Request has been submitted! :)</h2> :
+                <p className = 'emailFormPage__sentMessage'>Submitted! :)</p> :
                 <form className = 'emailFormsPage__form'>
                     <TextInput
                         name = 'name'
