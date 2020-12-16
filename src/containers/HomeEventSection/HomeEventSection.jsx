@@ -4,7 +4,7 @@ import Planner from '../../assets/images/planner.png';
 import DisplayItem from '../../components/DisplayItem/DisplayItem';
 import HighlightSection from '../HighlightSection/HighlightSection';
 import Calendar from '../../assets/images/calendar.svg';
-import { getAllEvents, getUpcomingEvent } from '../../utils/firebase';
+import { getUpcomingEvent } from '../../utils/firebase';
 
 import './HomeEventSection.scss';
 import { calendarDateFormatting } from '../../utils/helperFunctions';

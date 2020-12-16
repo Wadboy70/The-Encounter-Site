@@ -6,7 +6,11 @@ import USER_TIERS from './constants/userTiers';
 
 export const COLLECTIONS = {
     USERS: 'users',
-    CALENDAR: 'calendar'
+    CALENDAR: 'calendar',
+    MENS_MINISTRY: 'MENS_MINISTRY',
+    WOMENS_MINISTRY: 'WOMENS_MINISTRY',
+    YOUTH_MINISTRY: 'YOUTH_MINISTRY',
+    MUSIC_MINISTRY: 'MUSIC_MINISTRY',
 }
 const firebaseConfig = {
     apiKey: "AIzaSyBm8Z06x5yNc8Qv-Yurrrz4hY8qlG_gq-Y",

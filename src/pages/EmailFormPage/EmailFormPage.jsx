@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Button from '../../components/Button/Button';
 import ParticleBG from '../../components/ParticleBG/ParticleBG';
 import TextInput from '../../components/TextInput/TextInput';
+import { addNewDoc } from '../../utils/firebase';
 import { sendEmail } from '../../utils/helperFunctions';
 import withForm from '../../utils/hocs/withForm';
 import { FORM_FIELD_INPUT_TYPE, FORM_SUBMIT_TYPE } from '../../utils/routes';
@@ -33,7 +34,8 @@ const EmailFormPage = ({
     };
 
     const submitSignUpInfo = () => {
-        console.log(formState);
+        addNewDoc(formState, formInfo?.submit?.collection);
+        setFormSubmitted(true);
     }
 
     return(

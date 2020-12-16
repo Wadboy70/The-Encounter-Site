@@ -21,15 +21,18 @@ const CalendarComponent = ({
 
     useEffect(() => {
         //pulls information from firestore database and saves values in a map
+        let mounted = true;
         const getStuff = async () => {
             let eventsList = {};
             (await getAllDocs(COLLECTIONS.CALENDAR, (a, b) => a.date - b.date)).forEach(event =>  {
                 let day = calendarDateFormatting(event?.date?.toDate());
                 eventsList[day] ? eventsList[day].push(event) : eventsList[day] = [event];
             });
-            setEvents(eventsList);
+            if(mounted) setEvents(eventsList);
         };
         if(!events) getStuff();
+
+        return () => mounted = false;
     }, [events, setEvents]);
 
     useEffect(()=>{

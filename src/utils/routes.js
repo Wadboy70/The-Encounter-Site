@@ -1,4 +1,5 @@
 import validEmails from "./constants/validEmails";
+import { COLLECTIONS } from "./firebase";
 
 const ROUTES = { 
     HOME: {name: 'Home', url: '/'},
@@ -37,7 +38,8 @@ export const DUPLICATE_PAGES = [
         description: 'Minister Anthony Alexander is the leader of our Guided Men’s Ministry! Sign up for this program using the form below',
         form:{
             submit: {
-                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE
+                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
+                collection: COLLECTIONS.MENS_MINISTRY
             },
             fields: [
                 {
@@ -71,7 +73,8 @@ export const DUPLICATE_PAGES = [
         description: 'Minister Lavon Thompson is the leader of our Esthers Circle Woman’s Group! Sign up for this program using the form below',
         form:{
             submit: {
-                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE
+                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
+                collection: COLLECTIONS.WOMENS_MINISTRY
             },
             fields: [
                 {
@@ -94,7 +97,8 @@ export const DUPLICATE_PAGES = [
         description: 'Minister Julianna James-Gilbert is the leader of our Engage Youth Ministry! Sign up for this program using the form below',
         form:{
             submit: {
-                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE
+                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
+                collection: COLLECTIONS.YOUTH_MINISTRY
             },
             fields: [
                 {
@@ -117,7 +121,8 @@ export const DUPLICATE_PAGES = [
         description: 'Minister Brittany C. Weaver is the leader of our New Wine Music Ministry! Sign up for this program using the form below',
         form:{
             submit: {
-                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE
+                type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
+                collection: COLLECTIONS.MUSIC_MINISTRY
             },
             fields: [
                 {
