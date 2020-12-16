@@ -6,7 +6,7 @@ import TextInput from '../../components/TextInput/TextInput';
 import { sendEmail } from '../../utils/helperFunctions';
 import validEmails from '../../utils/constants/validEmails';
 import withForm from '../../utils/hocs/withForm';
-import { FORM_SUBMIT_TYPE } from '../../utils/routes';
+import { FORM_FIELD_INPUT_TYPE, FORM_SUBMIT_TYPE } from '../../utils/routes';
 
 import './EmailFormPage.scss';
 
@@ -14,23 +14,27 @@ const EmailFormPage = ({
         handleChange, 
         formState, 
         formName, 
-        submit,
+        formInfo,
         children,
         className =''
     }) => {
 
     const [formSubmitted, setFormSubmitted] = useState(false);
 
-    const emailFormSubmit = async () => {
+    const submitEmail = () => {
         setFormSubmitted(true);
         const submitInfo = {
             name: formState?.name,
-            // to,
+            to: formInfo?.submit?.to,
             subject: `${formState?.name} prayer request`,
             message: `${formState?.email}\n${formState.message}`
         }
         console.log(submitInfo);
         sendEmail(submitInfo);
+    };
+
+    const submitSignUpInfo = () => {
+        console.log(formState);
     }
 
     return(
@@ -44,31 +48,24 @@ const EmailFormPage = ({
                 formSubmitted ? 
                 <p className = 'emailFormPage__sentMessage'>Submitted! :)</p> :
                 <form className = 'emailFormsPage__form'>
-                    <TextInput
-                        name = 'name'
-                        label = 'Name'
-                        handleChange = { handleChange } 
-                        formState = { formState }
-                    />
-                    <TextInput
-                        required
-                        name = 'email'
-                        label = 'Email'
-                        handleChange = { handleChange } 
-                        formState = { formState }
-                    />
-                    <TextInput
-                        required
-                        name = 'message'
-                        label = 'message'
-                        textArea
-                        handleChange = { handleChange } 
-                        formState = { formState }
-                        inputClassName = 'emailFormsPage__message'
-                    />
+                    {
+                        formInfo?.fields.map((field, index) => (
+                                <TextInput
+                                    key = {index}
+                                    name = {field.name}
+                                    label = {field.label}
+                                    textArea = {field.type === FORM_FIELD_INPUT_TYPE.TEXT_AREA}
+                                    handleChange = { handleChange } 
+                                    formState = { formState }
+                                    inputClassName = {
+                                        field.type === FORM_FIELD_INPUT_TYPE.TEXT_AREA && 'emailFormsPage__message'
+                                    }
+                                />
+                        ))
+                    }
                     <Button
                         className = 'yellowBG medium emailFormsPage__button'
-                        op = {emailFormSubmit}
+                        op = {formInfo?.submit?.type === FORM_SUBMIT_TYPE.EMAIL ? submitEmail : submitSignUpInfo}
                     >
                         Submit
                     </Button>

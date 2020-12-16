@@ -78,7 +78,7 @@ function App({history}) {
         <Route exact path = {ROUTES.LIVE_SERMONS.url} component = {SermonsPage}/>
         {
           DUPLICATE_PAGES.map((page, index) => (
-            <Route exact path = {page.url}> 
+            <Route exact path = {page.url} key = {index}> 
               <DuplicateInfoPage info = {page}/>
             </Route>
           ))

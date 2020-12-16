@@ -18,7 +18,7 @@ const DuplicateInfoPage = ({info:{
             </section>
             {
                 form &&
-                <EmailFormPage/>
+                <EmailFormPage formInfo = {form}/>
             }
         </>
 
