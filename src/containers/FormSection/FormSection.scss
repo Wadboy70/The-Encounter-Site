@@ -1,12 +1,7 @@
-.emailFormsPage__particles, .emailFormsPage{
-    height: 90vh;
-}
-
 .emailFormsPage{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5%;
 
     .emailFormsPage__title{
         margin-bottom: 2rem;

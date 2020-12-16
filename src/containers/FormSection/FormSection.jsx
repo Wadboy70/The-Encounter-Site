@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 
 import Button from '../../components/Button/Button';
-import ParticleBG from '../../components/ParticleBG/ParticleBG';
 import TextInput from '../../components/TextInput/TextInput';
 import { addNewDoc } from '../../utils/firebase';
 import { sendEmail } from '../../utils/helperFunctions';
 import withForm from '../../utils/hocs/withForm';
 import { FORM_FIELD_INPUT_TYPE, FORM_SUBMIT_TYPE } from '../../utils/routes';
 
-import './EmailFormPage.scss';
+import './FormSection.scss';
 
-const EmailFormPage = ({
+const FormSection = ({
         handleChange, 
         formState, 
         formName, 
@@ -29,7 +28,6 @@ const EmailFormPage = ({
             subject: `${formState?.name}`,
             message: `${formState?.email}\n${formState.message}`
         }
-        console.log(submitInfo);
         sendEmail(submitInfo);
     };
 
@@ -39,7 +37,7 @@ const EmailFormPage = ({
     }
 
     return(
-        <ParticleBG className = {`emailFormsPage ${className}`} particleClassName = 'emailFormsPage__particles'>
+        <div className = {`emailFormsPage ${className}`}>
             {
                 formName &&
                 <h1 className = 'emailFormsPage__title'>{ formName }</h1>
@@ -47,7 +45,7 @@ const EmailFormPage = ({
             {children}
             {
                 formSubmitted ? 
-                <p className = 'emailFormPage__sentMessage'>Submitted! :)</p> :
+                <p className = 'FormSection__sentMessage'>Submitted! :)</p> :
                 <form className = 'emailFormsPage__form'>
                     {
                         formInfo?.fields.map((field, index) => (
@@ -72,8 +70,8 @@ const EmailFormPage = ({
                     </Button>
                 </form>
             }
-        </ParticleBG>
+        </div>
     );
 };
 
-export default withForm(EmailFormPage);
+export default withForm(FormSection);

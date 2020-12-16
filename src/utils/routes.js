@@ -1,5 +1,6 @@
 import validEmails from "./constants/validEmails";
 import { COLLECTIONS } from "./firebase";
+import youthImage from '../assets/images/youthImage.jpg';
 
 const ROUTES = { 
     HOME: {name: 'Home', url: '/'},
@@ -63,7 +64,8 @@ export const DUPLICATE_PAGES = [
         description: 'Your generosity is positively changing lives in this ministry, community, and globally. The Apostle Paul reminds us in 2 Corinthians 9:6-8 that whoever sows sparingly will reap sparingly and whosoever sows generously will reap generously. As you generously sow into this work, it is Gods covenant promise to multiply back to you what has been given. We want you to know that your seed creates resources for us to carry Gods love to the nations',
         link: {
             type: LINK_BUTTON_TYPES.EXTERNAL,
-            to: 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection'
+            to: 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection',
+            buttonContent: 'Give'
         }
     },
     {
@@ -91,9 +93,10 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: undefined,
+        jumboImage: youthImage,
         title: ROUTES.YOUTH_MINISTRY.name,
         url: ROUTES.YOUTH_MINISTRY.url,
+        caption: 'Helping our youth grow their faith, their character, and their relationships',
         description: 'Minister Julianna James-Gilbert is the leader of our Engage Youth Ministry! Sign up for this program using the form below',
         form:{
             submit: {

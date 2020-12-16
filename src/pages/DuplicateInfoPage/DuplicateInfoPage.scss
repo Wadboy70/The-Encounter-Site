@@ -1,0 +1,16 @@
+.duplicateInfoPage{
+    .duplicateInfoPage__duplicateContent{
+        margin-top: 4%;
+        padding: 0 5% 5% 5%;
+        display: flex;
+        flex-direction: column;
+        .duplicateContent__description{
+            width: fit-content;
+            margin-bottom: 2%;
+            text-align: left;
+        }
+        .duplicateContent__button{
+            align-self: center;
+        }
+    }
+}

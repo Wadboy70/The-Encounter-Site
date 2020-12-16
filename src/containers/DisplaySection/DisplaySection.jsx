@@ -19,7 +19,7 @@ const DisplaySection = () => {
         {
             title: 'Giving/ Tithing',
             button: 'Give',
-            buttonProps: {anchor: 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection'},
+            buttonProps: {link: ROUTES.GIVING.url},
             description: 'Your generosity is positively changing lives in this ministry, community, and globally',
             image: tithing
         },
