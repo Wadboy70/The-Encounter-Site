@@ -4,7 +4,6 @@ import Button from '../../components/Button/Button';
 import ParticleBG from '../../components/ParticleBG/ParticleBG';
 import TextInput from '../../components/TextInput/TextInput';
 import { sendEmail } from '../../utils/helperFunctions';
-import validEmails from '../../utils/constants/validEmails';
 import withForm from '../../utils/hocs/withForm';
 import { FORM_FIELD_INPUT_TYPE, FORM_SUBMIT_TYPE } from '../../utils/routes';
 
@@ -26,7 +25,7 @@ const EmailFormPage = ({
         const submitInfo = {
             name: formState?.name,
             to: formInfo?.submit?.to,
-            subject: `${formState?.name} prayer request`,
+            subject: `${formState?.name}`,
             message: `${formState?.email}\n${formState.message}`
         }
         console.log(submitInfo);

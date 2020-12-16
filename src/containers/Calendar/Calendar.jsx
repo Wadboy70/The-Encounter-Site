@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import Calendar from 'react-calendar';
-import { getAllEvents } from '../../utils/firebase';
+import { COLLECTIONS, getAllDocs } from '../../utils/firebase';
 import { calendarDateFormatting, calendarDateGetTime } from '../../utils/helperFunctions';
 import { FirebaseUserContext } from '../../utils/context/user.context';
 
@@ -23,7 +23,7 @@ const CalendarComponent = ({
         //pulls information from firestore database and saves values in a map
         const getStuff = async () => {
             let eventsList = {};
-            (await getAllEvents()).forEach(event =>  {
+            (await getAllDocs(COLLECTIONS.CALENDAR, (a, b) => a.date - b.date)).forEach(event =>  {
                 let day = calendarDateFormatting(event?.date?.toDate());
                 eventsList[day] ? eventsList[day].push(event) : eventsList[day] = [event];
             });

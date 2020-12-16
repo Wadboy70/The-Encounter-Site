@@ -4,7 +4,7 @@ import Planner from '../../assets/images/planner.png';
 import DisplayItem from '../../components/DisplayItem/DisplayItem';
 import HighlightSection from '../HighlightSection/HighlightSection';
 import Calendar from '../../assets/images/calendar.svg';
-import { getAllEvents } from '../../utils/firebase';
+import { getAllEvents, getUpcomingEvent } from '../../utils/firebase';
 
 import './HomeEventSection.scss';
 import { calendarDateFormatting } from '../../utils/helperFunctions';
@@ -16,10 +16,8 @@ const HomeEventSection = () => {
     
     useEffect(()=>{
         const getEvents = async () => {
-            if(!upcomingEvent) await getAllEvents().then(docs => (
-                setUpcomingEvent( docs.find(doc => {
-                    return new Date() - doc.date.toDate() < 0
-                }))
+            if(!upcomingEvent) await getUpcomingEvent().then(doc => (
+                setUpcomingEvent(doc)
             ));
         }
         getEvents();

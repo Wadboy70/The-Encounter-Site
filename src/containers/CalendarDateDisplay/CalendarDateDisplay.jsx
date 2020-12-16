@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button';
 import USER_TIERS from '../../utils/constants/userTiers';
 import { FirebaseUserContext } from '../../utils/context/user.context';
 import { calendarDateFormatting, calendarDateGetTime } from '../../utils/helperFunctions';
-import { deleteEvent } from '../../utils/firebase';
+import { COLLECTIONS, deleteDoc } from '../../utils/firebase';
 
 import './CalendarDateDisplay.scss';
 
@@ -15,7 +15,7 @@ const CalendarDateDisplay = ({
     const [user] = useContext(FirebaseUserContext);
     const deleteThisEvent = (id) => {
         let affirm = window.confirm('Are you sure you want to delete this event?');
-        if(affirm) deleteEvent(id).then(() => submitFormUpdate());
+        if(affirm) deleteDoc(id, COLLECTIONS.CALENDAR).then(() => submitFormUpdate());
     }
     return(
         <div className = 'calendarDateDisplay'>

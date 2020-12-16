@@ -11,7 +11,6 @@ const DisplayBox = ({
     description, 
     buttonProps = {}
 }) => {
-    console.log(image);
     return(
         <div className = {`displayBox ${className}`} style = {image ? {backgroundImage: `url(${image})`} : undefined}>
             <div className = 'displayBox__bg'>

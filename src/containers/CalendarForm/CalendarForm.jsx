@@ -5,7 +5,7 @@ import TextInput from '../../components/TextInput/TextInput';
 import Button from '../../components/Button/Button';
 import TimePicker from '../TimePicker/TimePicker';
 import { calendarDateFormatting, toMilitaryTime } from '../../utils/helperFunctions';
-import { addNewEvent } from '../../utils/firebase';
+import { addNewDoc, COLLECTIONS } from '../../utils/firebase';
 
 import './CalendarForm.scss';
 
@@ -22,11 +22,11 @@ const CalendarForm = ({
             month = dateToBeEdited.getMonth(),
             day = dateToBeEdited.getDate();
         formToggleHandler();
-        addNewEvent({
+        addNewDoc({
             date:  new Date(year, month, day, toMilitaryTime(formState.hour, formState.noon), formState.minute),
             name: formState.name || '',
             description: formState.description || ''
-        }).then(() => submitFormUpdate());
+        }, COLLECTIONS.CALENDAR).then(() => submitFormUpdate());
     };
 
     
