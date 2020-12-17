@@ -6,63 +6,60 @@
     text-align: right;
     background-color: $navy;
     position: fixed;
-    width: 100%;
+    width: 600px;
     top: 0;
     right: 0;
     z-index: 3;
     transition: transform .5s, opacity .6s;
     padding: 2rem;
     padding-bottom: 14vh;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 15% 60% 20% 5% ;
-    grid-template-areas: 
-    'logo logo . cross'
-    '. nav nav nav'
-    'social social social social'
-    'bottomBorder bottomBorder bottomBorder bottomBorder'
-    ;
-}
-.sideNav__logo{
-    grid-area: logo;
-}
-.sideNav__cross{
-    width: fit-content;
-    grid-area: cross;
-    align-self: flex-start;
-    justify-self: flex-end;
-    font-size: 30px;
-    margin: 0px;
-    color: white;
-}
-.sideNav__nav{
-    grid-area: nav;
-    li>a{
-        text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    >*{
+        width: 100%;
     }
-    h1{
-        padding-right: 0px;
-    }
-    ul{    
+    .sideNav__topBar{
         display: flex;
-        align-items: flex-end;
-        button, a{
-            margin-right: 0;
+        justify-content: space-between;
+        height: 4rem;
+        .sideNav__cross{
+            margin-left: auto;
         }
     }
-}
-.sideNav__social{
-    grid-area: social;
-    margin-bottom: 1em;
-    h1{
-        text-align: right;
+    .sideNav__nav{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        justify-items: center;
+        .nav__button{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .nav__icon{
+                background-color: $purple;
+                width: fit-content;
+                display: flex;
+                padding: 1.3rem;
+                border-radius: 4rem;
+                svg{
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    fill: $white;
+                    path{
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
     }
-}
-.sideNav__bottomBorder{
-    grid-area: bottomBorder;
-    align-self: flex-end;
-}
-.hiddenNav{
-    transform: translate3d(0,-100vh,0);
-    opacity: 0;
+    .sideNav__cross{
+        width: fit-content;
+        font-size: 30px;
+        margin: 0px;
+        color: white;
+    }
+    &.hiddenNav{
+        transform: translate3d(100vw,0,0);
+    }
 }

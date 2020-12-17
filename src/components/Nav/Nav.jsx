@@ -1,19 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import {Link} from 'react-router-dom';
-import { FirebaseUserContext } from '../../utils/context/user.context';
-import { signOut } from '../../utils/firebase';
-import Button from '../../components/Button/Button';
-import ROUTES, { siteMap } from '../../utils/routes';
+import { siteMap } from '../../utils/routes';
+import SignInSignOutButton from '../SignInSignOutButton/SignInSignOutButton';
 
 import './Nav.scss';
 
 const Nav = ({className = ''}) => {
-    const [user, setUser] = useContext(FirebaseUserContext);
-    const endSession = () => {
-        signOut();
-        setUser(null);
-    };
     return(
         <nav className = {`nav ${className}`}>
             <ul>
@@ -28,22 +21,7 @@ const Nav = ({className = ''}) => {
                         )
                     })
                 }
-                {
-                    user ? 
-                    <Button 
-                        className = 'transparent whiteBorder small nav__button'
-                        op = {endSession}
-                    >
-                        Sign Out
-                    </Button>
-                    :
-                    <Button 
-                        className = 'transparent whiteBorder small nav__button'
-                        link = {ROUTES.SIGN_IN_SIGN_UP.url}
-                    >
-                        Sign In
-                    </Button>
-                }                
+                <SignInSignOutButton/>                
             </ul>
         </nav>
     );

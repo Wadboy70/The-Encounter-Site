@@ -1,0 +1,15 @@
+@import '../../assets/colors.scss';
+
+.signInSignOut{
+    font-size: 1.2rem;
+    border-radius: 0;
+    border-width: 1px;
+    margin: 0;
+    font-family: Cormorant;
+    padding: 1% 2%;
+    &:active, &:hover{
+        color:$yellow;
+        border-color: $yellow;
+        transition: color .5s border-color .5s;
+    }
+}
