@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Button from '../../components/Button/Button';
-import Logo from '../../components/Logo/Logo';
 import { ReactComponent as AboutIcon } from '../../assets/images/Info.svg'
 import { ReactComponent as StreamIcon } from '../../assets/images/computer.svg'
 import { ReactComponent as CalendarIcon } from '../../assets/images/calendar.svg'
@@ -13,8 +12,11 @@ import CopyrightBorder from '../../components/CopyrightBorder/CopyrightBorder';
 import './SideDrawer.scss';
 import ROUTES from '../../utils/routes';
 import SignInSignOutButton from '../../components/SignInSignOutButton/SignInSignOutButton';
+import { FirebaseUserContext } from '../../utils/context/user.context';
+import USER_TIERS from '../../utils/constants/userTiers';
 
 const SideDrawer = ({drawerToggleHandler, drawerOpen}) => {
+    const [user] = useContext(FirebaseUserContext);
     const iconValues = [
         {
             info: ROUTES.HOME,
@@ -68,6 +70,18 @@ const SideDrawer = ({drawerToggleHandler, drawerOpen}) => {
                     ))
                 }
             </div>
+            <ul className = 'sideNav__pageList'>
+                {
+                    Object.keys(ROUTES).map((routeName, index) => {
+                        let route = ROUTES[routeName];
+                        return(
+                            index > 6 + ((user?.tier === USER_TIERS.ADMIN) ? 0 : 1) &&
+                            <li key = {index} className = 'pageList__pageItem changeColorOnHover'> 
+                                <Button link = {route.url} className = 'transparent pageList__pageLink'>{route.name}</Button>
+                            </li>
+                    )})
+                }
+            </ul>
             <CopyrightBorder className = 'sideNav__bottomBorder'/>
         </div>
     );

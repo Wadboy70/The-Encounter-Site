@@ -47,7 +47,7 @@ function App({history}) {
   })
 
   return (
-    <div className={`App ${drawerOpen && 'openDrawer'}`}>
+    <div className = 'App'>
       <SideDrawer
         drawerToggleHandler = {drawerToggleHandler}
         drawerOpen = {drawerOpen}

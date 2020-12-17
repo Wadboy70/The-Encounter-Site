@@ -51,6 +51,21 @@
         border: 2px solid $white;
     }
 }
+.changeColorOnHover{ 
+    transition: color .3s;
+    &:hover,
+    &:active{
+        color: $yellow;
+    }
+    *{
+        
+        transition: color .3s;
+        &:hover,
+        &:active{
+            color: $yellow;
+        }
+    }
+}
 .App{
     padding-top: 10vh;
     min-height: 100vh;
