@@ -18,7 +18,7 @@ const CalendarPage = () => {
     const formToggleHandler = () => setShowForm(!showForm);
     const submitFormUpdate = () => {
         setSubmitForm(submitForm + 1);
-    }
+    };
     return(
         <div 
             className = 'calendarPage' 
@@ -32,6 +32,7 @@ const CalendarPage = () => {
                 <CalendarDateDisplay
                     dateInfo = {events[calendarDateFormatting(day)]}
                     submitFormUpdate = {submitFormUpdate}
+                    events = {events}
                 />
             }
             <CalendarComponent 

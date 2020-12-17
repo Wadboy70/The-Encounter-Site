@@ -36,6 +36,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            .thisEvent__delete{
+                display: inline-flex;
+                .events__removeButton{
+                    white-space: nowrap;
+                }
+            }
         }
         
     }

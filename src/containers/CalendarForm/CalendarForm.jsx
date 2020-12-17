@@ -35,7 +35,6 @@ const CalendarForm = ({
         formToggleHandler();
 
         if(formState.recurring && formState.recurringInterval > 0){
-            console.log('the two dates: ',dateToBeEdited, formState.recurringDate);
             let dummyDate = dateToBeEdited, datesToAdd = [];
             while(dummyDate <= formState.recurringDate){
                 datesToAdd.push(new Date(dummyDate.getTime()));
