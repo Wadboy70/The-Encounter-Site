@@ -1,4 +1,4 @@
-.calendarPage, .calendarPage__particles{
+.calendarPage{
     height: 135vh;
 }
 
@@ -8,7 +8,4 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    h1{
-        padding-top: 5vh;
-    }
 }

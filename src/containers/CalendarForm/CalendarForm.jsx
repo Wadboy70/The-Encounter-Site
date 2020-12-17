@@ -8,6 +8,7 @@ import { calendarDateFormatting, toMilitaryTime } from '../../utils/helperFuncti
 import { addNewDoc, COLLECTIONS } from '../../utils/firebase';
 
 import './CalendarForm.scss';
+import CheckboxInput from '../../components/CheckboxInput/CheckboxInput';
 
 const CalendarForm = ({
     handleChange,
@@ -73,6 +74,14 @@ const CalendarForm = ({
                     handleChange = {handleChange}
                     className = 'calendarForm__timePicker'
                 />
+                <CheckboxInput 
+                    name = 'recurring'
+                    label = 'Is this a recurring event?'
+                    handleChange = { handleChange } 
+                    formState = { formState }
+                    inputClassName = 'calendarForm__recurringInput'
+                />
+                <Button op = {() => console.log(formState)}></Button>
                 <Button 
                     op = {handleSubmit}
                     className = 'transparent whiteBorder medium'

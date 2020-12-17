@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
-import ParticleBG from '../../components/ParticleBG/ParticleBG';
 import CalendarComponent from '../../containers/Calendar/Calendar';
 import CalendarDateDisplay from '../../containers/CalendarDateDisplay/CalendarDateDisplay';
 import CalendarForm from '../../containers/CalendarForm/CalendarForm';
 import { calendarDateFormatting } from '../../utils/helperFunctions';
+import Jumbotron from '../../components/Jumbotron/Jumbotron';
+import ROUTES from '../../utils/routes';
+import planner from '../../assets/images/planner.png';
 
 import './CalendarPage.scss';
 
@@ -18,12 +20,13 @@ const CalendarPage = () => {
         setSubmitForm(submitForm + 1);
     }
     return(
-        <ParticleBG 
+        <div 
             className = 'calendarPage' 
-            particleClassName = 'calendarPage__particles' 
         >
-            <h1>Calendar</h1>
-            
+            <Jumbotron
+                image = {planner}
+                title = {ROUTES.CALENDAR.name.toUpperCase()}
+            />
             {
                 (day && events?.[calendarDateFormatting(day)]) &&
                 <CalendarDateDisplay
@@ -46,7 +49,7 @@ const CalendarPage = () => {
                     submitFormUpdate = {submitFormUpdate}
                 />
             }
-        </ParticleBG>
+        </div>
     );
 };
 export default CalendarPage;
