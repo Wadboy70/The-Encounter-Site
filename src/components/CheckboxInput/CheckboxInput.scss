@@ -7,10 +7,24 @@
         margin: .5em 0;
     }
     .checkboxInput__input{
-        color: $navy;
+        appearance: none;
         padding: 1em;
         border-radius: 10px;
         border: none;
-        width: 100%;
+        width: 2rem;
+        height: 2rem;
+        background-color: $white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        &:checked{
+            background-color: $yellow;
+        }
+        &:checked:after{
+            content: '\2713';
+            font-size: 22px;
+            position: relative;
+            color: $purple;
+        }
     }
 }

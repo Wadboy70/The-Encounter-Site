@@ -5,6 +5,7 @@ const withForm = (Component) => class FormComponent extends React.Component {
         super(props)
         this.state = {}
         this.handleChange = this.handleChange.bind(this);
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.handleChangeManual = this.handleChangeManual.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.setError = this.setError.bind(this);
@@ -12,6 +13,9 @@ const withForm = (Component) => class FormComponent extends React.Component {
     handleChange(e){
         e.preventDefault();
         this.setState({[e.target.name]: e.target.value});
+    }
+    handleCheckboxChange(e){
+        this.setState({[e.target.name]: e.target.checked});
     }
     handleChangeManual(e){
         this.setState(e);
@@ -27,6 +31,7 @@ const withForm = (Component) => class FormComponent extends React.Component {
             <Component 
                 {...this.props}
                 handleChange = {this.handleChange} 
+                handleCheckboxChange = {this.handleCheckboxChange} 
                 handleChangeManual = {this.handleChangeManual} 
                 formState = {this.state}
                 handleSubmit = { this.handleSubmit }  

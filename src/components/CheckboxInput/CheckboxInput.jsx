@@ -9,10 +9,9 @@ const CheckboxInput = ({
         inputClassName = '',
         name = '',
         label = '',
-        handleChange = () => {},
-        formState
+        handleCheckboxChange = () => {},
+        formstate
     }) => {
-        console.log(formState);
     return(
     <div className = 'checkboxInput'>
         <label 
@@ -24,11 +23,11 @@ const CheckboxInput = ({
         <input
             type = 'checkbox'
             name = {name} 
-            value = {formState?.[name]}
-            onChange = { handleChange }
+            onChange = { handleCheckboxChange }
             className = {`checkboxInput__input ${inputClassName}`}
         />
     </div>
 )};
 
 export default CheckboxInput;
+;

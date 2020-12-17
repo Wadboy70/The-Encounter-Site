@@ -9,12 +9,14 @@ import { addNewDoc, COLLECTIONS } from '../../utils/firebase';
 
 import './CalendarForm.scss';
 import CheckboxInput from '../../components/CheckboxInput/CheckboxInput';
+import DatePicker from '../../components/DatePicker/DatePicker';
 
 const CalendarForm = ({
     handleChange,
     formState,
     formToggleHandler,
     handleChangeManual,
+    handleCheckboxChange,
     dateToBeEdited,
     submitFormUpdate
 }) => {
@@ -35,12 +37,20 @@ const CalendarForm = ({
         const time = {
             name: '',
             description: '',
-            hour: '12',
-            minute: '00',
-            noon: 'pm'
+            eventTime: {
+                hour: '12',
+                minute: '00',
+                noon: 'pm',
+            },
+            recurringDate: new Date(),
+            recurring: false
         };
         handleChangeManual(time)
-    }, [handleChangeManual])
+    }, [handleChangeManual]);
+
+    // useEffect(()=>{
+    //     console.log(formState.eventTime)
+    // }, [formState.eventTime])
 
     return(
         <div className = 'calendarForm'>
@@ -70,18 +80,26 @@ const CalendarForm = ({
                     inputClassName = 'calendarForm__descriptionInput'
                 />
                 <TimePicker
+                    name = 'eventTime'
                     handleChangeManual = {handleChangeManual}
-                    handleChange = {handleChange}
                     className = 'calendarForm__timePicker'
                 />
                 <CheckboxInput 
                     name = 'recurring'
                     label = 'Is this a recurring event?'
-                    handleChange = { handleChange } 
+                    handleCheckboxChange = {handleCheckboxChange}
                     formState = { formState }
                     inputClassName = 'calendarForm__recurringInput'
                 />
-                <Button op = {() => console.log(formState)}></Button>
+                {
+                    formState.recurring &&
+                    <DatePicker
+                        name = 'recurringDate'
+                        title = 'End Date'
+                        handleChangeManual = {handleChangeManual}
+                        className = 'calendarForm__datePicker'
+                    />
+                }
                 <Button 
                     op = {handleSubmit}
                     className = 'transparent whiteBorder medium'
