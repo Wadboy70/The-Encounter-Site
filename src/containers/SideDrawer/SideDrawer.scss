@@ -6,7 +6,7 @@
     text-align: right;
     background-color: $navy;
     position: fixed;
-    width: 600px;
+    width: 100vw;
     top: 0;
     right: 0;
     z-index: 3;
@@ -35,7 +35,7 @@
     }
     .sideNav__nav{
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         margin: 2rem 0;
         justify-items: center;
         .nav__button{
@@ -89,5 +89,15 @@
     }
     &.hiddenNav{
         transform: translate3d(100vw,0,0);
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .sideNav{
+        width: 600px;
+        
+        .sideNav__nav{
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
     }
 }
