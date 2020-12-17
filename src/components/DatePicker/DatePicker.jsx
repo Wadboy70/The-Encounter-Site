@@ -6,16 +6,17 @@ import Dropdown from '../../components/Dropdown/Dropdown';
 import './DatePicker.scss';
 
 const DatePicker = ({name = 'date', handleChangeManual, title = 'Date Picker'}) => {
+    const today = new Date ();
     const [timeState, setTimeState] = useState({
-        hour: '12',
-        minute: '00',
-        noon: 'pm',
+        year: today.getFullYear(),
+        month: today.getMonth() +1,
+        day: today.getDate(),
     });
     const handleChange = e => {
         setTimeState({...timeState, [e.target.name]: e.target.value})
     };
     useEffect(() => {
-        handleChangeManual({[name]: timeState})
+        handleChangeManual({[name]: new Date (timeState.year, timeState.month - 1, timeState.day)})
     }, [timeState, handleChangeManual, name])
     return(
         <div className = 'datePicker'>
@@ -24,16 +25,16 @@ const DatePicker = ({name = 'date', handleChangeManual, title = 'Date Picker'}) 
                 <Dropdown
                     name = 'day'
                     title = 'Day'
-                    values = {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]}
+                    values = {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]}
                     handleChange = {handleChange}
-                    defaultVal = {1}
+                    defaultVal = {today.getDate()}
                 />
                 <Dropdown
                     name = 'month'
                     title = 'Month'
                     values = {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
                     handleChange = {handleChange}
-                    defaultVal = {1}
+                    defaultVal = {today.getMonth()+1}
                 />
                 <Dropdown
                     name = 'year'
@@ -43,11 +44,10 @@ const DatePicker = ({name = 'date', handleChangeManual, title = 'Date Picker'}) 
                         for(let i = 0; i < 10; i++){
                             arr.push(thisYear + i)
                         }
-                        console.log(arr);
                         return arr;
                     })()}
                     handleChange = {handleChange}
-                    defaultVal = {2020}
+                    defaultVal = {today.getFullYear()}
                 />
             </div>
         </div>

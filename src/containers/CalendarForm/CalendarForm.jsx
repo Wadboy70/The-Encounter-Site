@@ -10,6 +10,8 @@ import { addNewDoc, COLLECTIONS } from '../../utils/firebase';
 import './CalendarForm.scss';
 import CheckboxInput from '../../components/CheckboxInput/CheckboxInput';
 import DatePicker from '../../components/DatePicker/DatePicker';
+import Dropdown from '../../components/Dropdown/Dropdown';
+import NumberInput from '../../components/NumberInput/NumberInput';
 
 const CalendarForm = ({
     handleChange,
@@ -20,18 +22,58 @@ const CalendarForm = ({
     dateToBeEdited,
     submitFormUpdate
 }) => {
+    const RECURRING_FREQ = {
+        Days: 'Days',
+        Weeks: 'Weeks',
+        Months: 'Months'
+    }
     const handleSubmit = () => {
-        const year = dateToBeEdited.getYear() + 1900, 
+        const year = dateToBeEdited.getFullYear(), 
             month = dateToBeEdited.getMonth(),
             day = dateToBeEdited.getDate();
-        formToggleHandler();
-        addNewDoc({
-            date:  new Date(year, month, day, toMilitaryTime(formState.hour, formState.noon), formState.minute),
-            name: formState.name || '',
-            description: formState.description || ''
-        }, COLLECTIONS.CALENDAR).then(() => submitFormUpdate());
-    };
 
+        formToggleHandler();
+
+        if(formState.recurring && formState.recurringInterval > 0){
+            console.log('the two dates: ',dateToBeEdited, formState.recurringDate);
+            let dummyDate = dateToBeEdited, datesToAdd = [];
+            while(dummyDate <= formState.recurringDate){
+                datesToAdd.push(new Date(dummyDate.getTime()));
+                switch(formState.recurringFreq){
+                    case RECURRING_FREQ.Days:
+                        dummyDate.setDate(dummyDate.getDate() + Number(formState.recurringInterval));
+                        break;
+                    case RECURRING_FREQ.Weeks:
+                        dummyDate.setDate(dummyDate.getDate() + (7 * Number(formState.recurringInterval)));
+                    break;
+                    case RECURRING_FREQ.Months:
+                        dummyDate.setMonth(dummyDate.getMonth() +  Number(formState.recurringInterval));
+                    break;
+                    default:
+
+                    break;
+                }
+            };
+            let seqId = new Date ().getTime();
+            datesToAdd.forEach(date => {
+                addNewDoc({
+                    date:  new Date(date.getFullYear(), date.getMonth(), date.getDate(), toMilitaryTime(formState.eventTime.hour, formState.eventTime.noon), formState.eventTime.minute),
+                    name: formState.name || '',
+                    description: formState.description || '',
+                    sequence: seqId
+                }, COLLECTIONS.CALENDAR).then(() => submitFormUpdate());
+            })
+        }
+        else{
+
+            addNewDoc({
+                date:  new Date(year, month, day, toMilitaryTime(formState.eventTime.hour, formState.eventTime.noon), formState.eventTime.minute),
+                name: formState.name || '',
+                description: formState.description || ''
+            }, COLLECTIONS.CALENDAR).then(() => submitFormUpdate());
+        }
+
+    };
     
     useEffect(()=>{
         const time = {
@@ -43,14 +85,16 @@ const CalendarForm = ({
                 noon: 'pm',
             },
             recurringDate: new Date(),
-            recurring: false
+            recurring: false,
+            recurringFreq: RECURRING_FREQ.Days,
+            recurringInterval: 1
         };
         handleChangeManual(time)
-    }, [handleChangeManual]);
+    }, [handleChangeManual, RECURRING_FREQ.Days]);
 
     // useEffect(()=>{
-    //     console.log(formState.eventTime)
-    // }, [formState.eventTime])
+    //     console.log(formState)
+    // }, [formState])
 
     return(
         <div className = 'calendarForm'>
@@ -84,25 +128,41 @@ const CalendarForm = ({
                     handleChangeManual = {handleChangeManual}
                     className = 'calendarForm__timePicker'
                 />
-                <CheckboxInput 
-                    name = 'recurring'
-                    label = 'Is this a recurring event?'
-                    handleCheckboxChange = {handleCheckboxChange}
-                    formState = { formState }
-                    inputClassName = 'calendarForm__recurringInput'
-                />
-                {
-                    formState.recurring &&
-                    <DatePicker
-                        name = 'recurringDate'
-                        title = 'End Date'
-                        handleChangeManual = {handleChangeManual}
-                        className = 'calendarForm__datePicker'
+                    <CheckboxInput 
+                        name = 'recurring'
+                        label = 'Is this a recurring event?'
+                        handleCheckboxChange = {handleCheckboxChange}
+                        formState = { formState }
+                        inputClassName = 'calendarForm__recurringInput'
                     />
-                }
+                    {
+                        formState.recurring &&
+                        <div className = 'calendarForm__recurringInfo'>
+                            <DatePicker
+                                name = 'recurringDate'
+                                title = 'End Date'
+                                handleChangeManual = {handleChangeManual}
+                                className = 'calendarForm__datePicker'
+                            />
+                            <NumberInput
+                                name = 'recurringInterval'
+                                title = 'Repeat Interval'
+                                handleChange = {handleChange}
+                                defaultValue = {1}
+                                min = {1}
+                            />
+                            <Dropdown
+                                name = 'recurringFreq'
+                                title = 'Frequency'
+                                values = {Object.keys(RECURRING_FREQ)}
+                                handleChange = {handleChange}
+                                defaultVal = {RECURRING_FREQ.Days}
+                            />
+                        </div>
+                    }
                 <Button 
                     op = {handleSubmit}
-                    className = 'transparent whiteBorder medium'
+                    className = 'transparent whiteBorder medium calendarForm__submit'
                 >
                     Submit
                 </Button>
