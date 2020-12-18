@@ -75,7 +75,7 @@ const SideDrawer = ({drawerToggleHandler, drawerOpen}) => {
                     Object.keys(ROUTES).map((routeName, index) => {
                         let route = ROUTES[routeName];
                         return(
-                            index > 6 + ((user?.tier === USER_TIERS.ADMIN) ? 0 : 1) &&
+                            index > 7 + ((user?.tier === USER_TIERS.ADMIN) ? 0 : 1) &&
                             <li key = {index} className = 'pageList__pageItem changeColorOnHover'> 
                                 <Button link = {route.url} className = 'transparent pageList__pageLink'>{route.name}</Button>
                             </li>

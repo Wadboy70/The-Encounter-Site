@@ -1,24 +1,6 @@
 @import '../../assets/colors.scss';
 .aboutLeadershipSection{
-    background-color: $white;
     padding: 5% 30px;
     display: flex;
     flex-direction: column;
-    .aboutLeadershipSection__header{
-        height: 13vh;
-        h2{
-            font-size: calc(2.4vw + 2.4vh + 1.2vmin);
-            &:before{
-                max-width: 35px;
-                margin-right: 10px;
-            }
-        }
-    }
-    .aboutLeadershipSection__leaders{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
-        margin: 2rem 0px;
-    }
 }

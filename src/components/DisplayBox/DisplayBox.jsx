@@ -9,10 +9,11 @@ const DisplayBox = ({
     button, 
     image,
     description, 
-    buttonProps = {}
+    buttonProps = {},
+    pos = 'center'
 }) => {
     return(
-        <div className = {`displayBox ${className}`} style = {image ? {backgroundImage: `url(${image})`} : undefined}>
+        <div className = {`displayBox ${className}`} style = {image ? {backgroundImage: `url(${image})`, backgroundPosition: pos} : undefined}>
             <div className = 'displayBox__bg'>
                 {
                     title &&

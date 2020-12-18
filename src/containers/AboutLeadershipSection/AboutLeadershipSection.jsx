@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderBacking from '../../components/HeaderBacking/HeaderBacking';
-import TeamMemberInfo from '../TeamMemberInfo/TeamMemberInfo';
-import LEADERSHIP_TEAM from '../../utils/constants/leadershipTeam.js'
+import leadersPage from '../../assets/images/leadersPage.jpg';
+import DisplayBox from '../../components/DisplayBox/DisplayBox';
+import ROUTES from '../../utils/routes';
 
 import './AboutLeadershipSection.scss';
 
@@ -10,22 +10,13 @@ const AboutLeadershipSection = () => {
     
     return(
         <div className = 'aboutLeadershipSection'>
-            <HeaderBacking className = 'aboutLeadershipSection__header'>
-                <span>
-                    Our Team
-                </span>
-            </HeaderBacking>
-            <div className = 'aboutLeadershipSection__leaders'>
-                {
-                    LEADERSHIP_TEAM.map((leader, index) => {
-                        return(
-                            <TeamMemberInfo 
-                                key = {index} {...leader} 
-                                className = 'hoverGrow'/>
-                        );
-                    })
-                }
-            </div>
+            <DisplayBox
+                image = {leadersPage} 
+                button = 'Find out more'
+                description = 'Read about the leaders of our ministry'
+                title = 'Our Ministry Leaders'
+                buttonProps = {{link: ROUTES.LEADERSHIP.url}}
+            />
         </div>
     );
 };

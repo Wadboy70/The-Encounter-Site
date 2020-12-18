@@ -32,7 +32,8 @@ export const sendEmail = async ({to = '', message = '', subject = '', name = ''}
           'Content-Type': 'application/json'
         }
       })
-      .then(res => res.json());
+      .then(res => res.json())
+      .catch(err => err);
 };
 
 export const calendarDateFormatting = (date) => {

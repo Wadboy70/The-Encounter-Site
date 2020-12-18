@@ -42,7 +42,7 @@ const FormSection = ({
             submitEmail();
         else if (formInfo?.submit?.type === FORM_SUBMIT_TYPE.ADMIN_STORAGE) 
             submitSignUpInfo();
-         handleData(formState);
+        else handleData(formState);
     }
 
     return(
