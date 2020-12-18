@@ -15,7 +15,8 @@ const FormSection = ({
         formName, 
         formInfo,
         children,
-        className =''
+        className = '',
+        handleData
     }) => {
 
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -34,6 +35,14 @@ const FormSection = ({
     const submitSignUpInfo = () => {
         addNewDoc(formState, formInfo?.submit?.collection);
         setFormSubmitted(true);
+    }
+
+    const whichSubmit = () => {
+        if(formInfo?.submit?.type === FORM_SUBMIT_TYPE.EMAIL) 
+            submitEmail();
+        else if (formInfo?.submit?.type === FORM_SUBMIT_TYPE.ADMIN_STORAGE) 
+            submitSignUpInfo();
+         handleData(formState);
     }
 
     return(
@@ -64,7 +73,7 @@ const FormSection = ({
                     }
                     <Button
                         className = 'yellowBG medium emailFormsPage__button'
-                        op = {formInfo?.submit?.type === FORM_SUBMIT_TYPE.EMAIL ? submitEmail : submitSignUpInfo}
+                        op = {whichSubmit}
                     >
                         Submit
                     </Button>

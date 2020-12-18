@@ -18,6 +18,7 @@ import SermonsPage from '../../pages/SermonsPage/SermonsPage';
 import DuplicateInfoPage from '../../pages/DuplicateInfoPage/DuplicateInfoPage';
 
 import './App.scss';
+import ForgotPassword from '../../pages/ForgotPassword/ForgotPassword';
 
 function App({history}) {
 
@@ -61,6 +62,11 @@ function App({history}) {
           exact 
           path = {ROUTES.SIGN_IN_SIGN_UP.url} 
           render = {() => user ? (<Redirect to = {ROUTES.HOME.url}/>) : (<SignInSignUpPage/>)}
+        />
+        <Route 
+          exact 
+          path = {ROUTES.FORGOT_PASSWORD.url} 
+          render = {() => user ? (<Redirect to = {ROUTES.HOME.url}/>) : (<ForgotPassword/>)}
         />
         <Route exact path = {ROUTES.ADMIN_PANEL.url}>
           <AdminPanel 
