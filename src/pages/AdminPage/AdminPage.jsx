@@ -9,54 +9,49 @@ import { DUPLICATE_PAGES, FORM_SUBMIT_TYPE } from '../../utils/routes';
 import './AdminPage.scss';
 
 const AdminPage = () => {
-    const [signUpInfo, setSignUpInfo] = useState(undefined);
-    useEffect(()=> {
-        //just fuckin rewrite this shit
+    const [programs, setPrograms] = useState(undefined);
+    useEffect(()=>{
         let mounted = true;
-        const getInfo = async () => {
-            let docInfo = [], relevantDocs = [];
+
+        const getUserInfo = async () => {
+            let programInfo = {};
+
+            let dataPoints = DUPLICATE_PAGES.filter(page => {
+                return (page.form?.submit?.type === FORM_SUBMIT_TYPE.ADMIN_STORAGE);
+            });
+
+            let data =  mounted ? await Promise.all(dataPoints.map(async page => await getAllDocs(page.form.submit.collection))) : [];
             
-            DUPLICATE_PAGES.forEach((page, index) => {
-                page.form?.submit?.type === FORM_SUBMIT_TYPE.ADMIN_STORAGE && relevantDocs.push(page);
-            });
-            console.log(relevantDocs)
-            await relevantDocs.forEach((page) => {
-                // mounted &&
-                return getAllDocs(page.form.submit.collection).then(docs => {
-                    docInfo.push({name: page.title, info: docs});
-                });
-            });
-            console.log(docInfo);
-            setSignUpInfo(docInfo);
+            dataPoints.forEach((programMember, index) =>{
+                programInfo[programMember.title] = data[index];
+            })
+            setPrograms(programInfo);
         }
-        if(!signUpInfo) getInfo();
+        
+        if(!programs) getUserInfo();
+
         return () => mounted = false;
-    });
-    useEffect(()=> {
-        console.log([...(signUpInfo||[])])
-    },[signUpInfo])
+    })
     return(
         <div className = 'adminPage'>
             <ManageUsers/>
             {
-                signUpInfo?.map(program => {
-                    console.log(program)
-                    return(
-                        <div>
-                            <h2>{program.name}</h2>
-                            <ul>
-                                {
-                                    program.info?.map(userSignUps => (
-                                        <li>
-                                            <span>{userSignUps.name}</span>
-                                            <span>{userSignUps.email}</span>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    )
-                })
+                programs &&
+                Object.keys(programs).map(program => (
+                    <div key = {program}>
+                        <h2>{program}</h2>
+                        <ul>
+                            {
+                                programs[program].map(member => (
+                                    <li key = {member.name}>
+                                        <span>{member.name}</span>
+                                        <span>{member.email}</span>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                ))
             }
         </div>
     )
