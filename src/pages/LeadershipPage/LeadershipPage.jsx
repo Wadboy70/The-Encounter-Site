@@ -36,7 +36,7 @@ const LeadershipPage = () => {
                 {
                     leaderInfo.map(leader => (
                         <li 
-                            className = 'leaders__item hoverGrow'
+                            className = 'leaders__item'
                             key = {leader.link.name}
                         >
                             <Button 

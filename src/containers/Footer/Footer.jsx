@@ -13,9 +13,9 @@ const Footer = () => (
         <Logo className = 'footer__logo'/>
         <Social className = 'footer__social'/>
         <Button 
-            className = 'footer__nav transparent whiteBorder medium'
+            className = 'footer__nav transparent whiteBorder large'
             link = {ROUTES.CONTACT_US.url}
-        >Contact</Button>
+        >Contact Us</Button>
         <CopyrightBorder className = 'footer__border'/>
     </footer>
 );

@@ -22,7 +22,7 @@ const AboutInfoSection = () => {
         },
         {
             "title": "Do No Harm",
-            "description": "We believe that although God has given us the ability to judge our brother, that because there is not one human on the Earth without sin than we we should not Judge one another.  It is our aim to embrace \"all people\" wherever they are on their spiritual journey, to help foster a healthy relationship with God the Father by teaching the word of the Lord in the spirit of Love. It is our faith in God that whatever change, development, or metamorphosis that needs to occur with any individual, will happen as they personally encounter God.  Our responsibility as a ministry is to create an atmosphere and opportunity for that to occur."
+            "description": "We believe that although God has given us the ability to judge our brother, that because there is not one human on the Earth without sin than we should not Judge one another. It is our aim to embrace \"all people\" wherever they are on their spiritual journey, to help foster a healthy relationship with God the Father, by teaching the word of the Lord in the spirit of Love. It is our faith in God that whatever change, development, or metamorphosis that needs to occur with any individual, will happen as they personally encounter God.  Our responsibility as a ministry is to create an atmosphere and opportunity for that to occur."
         },
       ]
     return(

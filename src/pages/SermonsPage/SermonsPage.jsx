@@ -5,6 +5,7 @@ import PastSermonsSection from '../../containers/PastSermonsSection/PastSermonsS
 import SermonFrame from '../../containers/SermonFrame/SermonFrame';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import imageUrls from '../../assets/imageUrls';
+import Button from '../../components/Button/Button';
 
 import './SermonsPage.scss';
 
@@ -12,9 +13,17 @@ const SermonsPage = () => {
     return(
         <div className = 'sermonsPage'>
             <Jumbotron image = {imageUrls.livestream} title ={ROUTES.LIVE_SERMONS.name}/>
-            <SermonFrame/>
-            <h2 className = 'sermonsPage__recentTitle'>Past Sermons</h2>
-            <PastSermonsSection/>
+            <div className = 'sermonsPage__content'>
+                <SermonFrame/>
+                <Button 
+                    className = 'transparent whiteBorder medium sermonsPage__watch'
+                    anchor = 'https://www.youtube.com/user/arthurhintonmusic/live'
+                >
+                    Watch on YouTube
+                </Button>
+                <h2 className = 'sermonsPage__recentTitle'>Past Sermons</h2>
+                <PastSermonsSection/>
+            </div>
         </div>
     );
 };

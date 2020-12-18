@@ -15,7 +15,7 @@ const DisplaySection = () => {
             buttonProps: {link: ROUTES.YOUTH_MINISTRY.url}
         },
         {
-            title: 'Giving/ Tithing',
+            title: 'Giving',
             button: 'Give',
             buttonProps: {link: ROUTES.GIVING.url},
             description: 'Your generosity is positively changing lives in this ministry, community, and globally',

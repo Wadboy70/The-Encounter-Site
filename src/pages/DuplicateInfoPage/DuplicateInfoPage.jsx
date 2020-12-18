@@ -34,7 +34,7 @@ const DuplicateInfoPage = ({info:{
                 {
                     link &&
                     <Button 
-                        className = 'yellowBG medium duplicateContent__button'
+                        className = 'yellowBG large duplicateContent__button'
                         {...buttonProps}
                     >
                         {link.buttonContent}

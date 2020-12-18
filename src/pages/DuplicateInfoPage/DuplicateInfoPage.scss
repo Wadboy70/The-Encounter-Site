@@ -8,6 +8,12 @@
             width: fit-content;
             margin-bottom: 2%;
             text-align: left;
+            width: 80%;
+            align-self: center;
+            font-size: 1.7rem;
+            span{
+                align-self: center;
+            }
         }
         .duplicateContent__button{
             align-self: center;

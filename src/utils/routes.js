@@ -1,3 +1,5 @@
+import React from 'react'
+
 import validEmails from "./constants/validEmails";
 import { COLLECTIONS } from "./firebase";
 import imageUrls from "../assets/imageUrls";
@@ -12,12 +14,12 @@ const ROUTES = {
     SIGN_IN_SIGN_UP: {name: 'Sign In', url: '/signin'},
     FORGOT_PASSWORD: {name: 'Forgot Password', url: '/forgot'},
     ADMIN_PANEL: {name: 'Admin Panel', url: '/adminpanel'},
+    GIVING: {name: 'Giving', url: '/giving'},
+    LEADERSHIP: {name: 'Leadership', url: '/leadership'},
+    YOUTH_MINISTRY: {name: 'Engage Youth Ministry', url: '/youthministry'},
     MEN_MINISTRY: {name: 'Guided Men\'s Ministry', url: '/mensministry'},
     MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
     WOMEN_MINISTRY: {name: 'Leader of Esthers Circle Woman’s Group', url: '/womensministry'},
-    YOUTH_MINISTRY: {name: 'Engage Youth Ministry', url: '/youthministry'},
-    GIVING: {name: 'Giving', url: '/giving'},
-    LEADERSHIP: {name: 'Leadership', url: '/leadership'}
 };
 export const FORM_SUBMIT_TYPE = {
     EMAIL: 'EMAIL',
@@ -38,7 +40,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.churchService,
         title: ROUTES.MEN_MINISTRY.name,
         url: ROUTES.MEN_MINISTRY.url,
-        description: 'Minister Anthony Alexander is the leader of our Guided Men’s Ministry! Sign up for this program using the form below',
+        description: 'Sign up for this program using the form below',
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -67,14 +69,14 @@ export const DUPLICATE_PAGES = [
         link: {
             type: LINK_BUTTON_TYPES.EXTERNAL,
             to: 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection',
-            buttonContent: 'Give'
+            buttonContent: 'Make a Gift Today'
         }
     },
     {
         jumboImage: imageUrls.womensMinistry,
         title: ROUTES.WOMEN_MINISTRY.name,
         url: ROUTES.WOMEN_MINISTRY.url,
-        description: 'Minister Lavon Thompson is the leader of our Esthers Circle Woman’s Group! Sign up for this program using the form below',
+        description: 'Sign up for this program using the form below',
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -98,7 +100,8 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.youth,
         title: ROUTES.YOUTH_MINISTRY.name,
         url: ROUTES.YOUTH_MINISTRY.url,
-        description: 'The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.\nMinister Julianna James-Gilbert is the leader of our Engage Youth Ministry! Sign up for this program using the form below',
+        description: <>{'The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.'} <br/><br/>{
+            <span>Sign up for this program using the form below</span>}</>,
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -122,7 +125,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.concert,
         title: ROUTES.MUSIC_MINISTRY.name,
         url: ROUTES.MUSIC_MINISTRY.url,
-        description: 'Minister Brittany C. Weaver is the leader of our New Wine Music Ministry! Sign up for this program using the form below',
+        description: 'Sign up for this program using the form below',
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
