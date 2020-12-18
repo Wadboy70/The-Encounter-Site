@@ -68,12 +68,8 @@ const ManageEventSignUpRow = ({programs, programName, setRefreshUpdate}) => {
         console.log(id);
         deleteDoc(id, programId).then(val =>{
             setRefreshUpdate();
-            console.log(val)
         });
     };
-    useEffect(()=>{
-        console.log('remount')
-    })
 
     return(
         <div className = 'manageEventSignUp__program'>
