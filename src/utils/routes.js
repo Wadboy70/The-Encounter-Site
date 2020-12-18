@@ -30,8 +30,8 @@ export const FORM_FIELD_INPUT_TYPE = {
 };
 
 export const LINK_BUTTON_TYPES = {
-    INTERNAL: 'INTERNAL',
-    EXTERNAL: 'EXTERNAL' 
+    INTERNAL: 'link',
+    EXTERNAL: 'anchor' 
 };
 export const DUPLICATE_PAGES = [
     {

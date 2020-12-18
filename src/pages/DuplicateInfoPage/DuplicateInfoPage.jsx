@@ -14,6 +14,8 @@ const DuplicateInfoPage = ({info:{
     form,
     link
 }}) => {
+    let buttonProps = {[link?.type]: link?.to};
+    console.log(buttonProps);
     return(
         <div className = 'duplicateInfoPage'>
             {
@@ -31,7 +33,12 @@ const DuplicateInfoPage = ({info:{
                 }
                 {
                     link &&
-                    <Button className = 'yellowBG medium duplicateContent__button'>{link.buttonContent}</Button>
+                    <Button 
+                        className = 'yellowBG medium duplicateContent__button'
+                        {...buttonProps}
+                    >
+                        {link.buttonContent}
+                    </Button>
                 }
                 {
                     form &&
