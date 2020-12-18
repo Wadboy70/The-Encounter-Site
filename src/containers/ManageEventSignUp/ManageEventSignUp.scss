@@ -31,6 +31,7 @@
         .program__headerInfo{
             display: flex;
             align-items: center;
+            justify-content: space-between;
             .program__title{
                 font-size: calc(1vh + 1vw + .5vmin);
                 margin-bottom: .4rem;
