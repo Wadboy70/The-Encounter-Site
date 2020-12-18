@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import Button from '../../components/Button/Button';
 import USER_TIERS from '../../utils/constants/userTiers';
