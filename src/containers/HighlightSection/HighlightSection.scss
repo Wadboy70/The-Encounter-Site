@@ -15,9 +15,11 @@
         align-items: flex-end;
         justify-content: center;
         .highlight__background{
+            border-bottom-color: $navy;
             width: 110%;
-            border-bottom: 200px solid $navy;
-            border-left: 900px solid transparent ;
+            border-bottom-width: 200px;
+            border-bottom-style: solid;
+            border-left: 900px solid transparent;
         }
     }
     >:not(:first-child){
@@ -26,6 +28,9 @@
     }
 }
 
+.highlight__background{
+    border-bottom-color: $navy;
+}
 @media only screen and (min-width: 768px){
     .highlight{
         flex-direction: row-reverse;

@@ -27,6 +27,7 @@ const HomeEventSection = () => {
         
         <HighlightSection 
             backgroundPhoto = {Planner}
+            className = 'upcomingEventSection'
         >
             <DisplayItem
                 info = {{
@@ -35,6 +36,7 @@ const HomeEventSection = () => {
                     button: 'See Calendar',
                     buttonProps: {link: ROUTES.CALENDAR.url}
                 }}
+                className = 'upcomingEventSection__event'
             >
                 {
                     upcomingEvent ? 

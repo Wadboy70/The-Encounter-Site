@@ -1,0 +1,16 @@
+@import '../../assets/colors.scss';
+.upcomingEventSection{
+    background-color: $purple;
+    .highlight__background{
+        border-bottom-color: $purple !important;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .upcomingEventSection{
+        background-color: $purple;
+        .highlight__background{
+            border-left-color: $purple !important;
+        }
+    }
+}
