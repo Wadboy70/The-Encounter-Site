@@ -92,4 +92,10 @@
         font-weight: 600;
         color: $navy;
     }
+    .hoverGrow{
+        &:hover{
+            transform: scale(1.05,1.05);
+        }
+        transition: transform .5s;
+    }
 }

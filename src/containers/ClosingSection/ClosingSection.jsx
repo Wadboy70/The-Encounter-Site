@@ -21,7 +21,7 @@ const ClosingSection = () => (
             title = 'Our Ministry Leaders'
             button = 'Find Out More'
             description = 'Read about the leaders of our ministry'
-            buttonProps = {{link: ROUTES.ABOUT.url}}
+            buttonProps = {{link: ROUTES.LEADERSHIP.url}}
             image = {friends}
             className = 'closingSection__display'
         />
