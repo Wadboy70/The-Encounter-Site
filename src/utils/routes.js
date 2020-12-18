@@ -1,12 +1,6 @@
 import validEmails from "./constants/validEmails";
 import { COLLECTIONS } from "./firebase";
-import youthImage from '../assets/images/youthImage.jpg';
-import contact from '../assets/images/contact.jpg';
-import churchService from '../assets/images/churchService.jpg';
-import tithing from '../assets/images/tithing.jpg';
-import worship from '../assets/images/worshipBackground.jpg';
-import friends from '../assets/images/friends4.jpg';
-import womensMinistry from '../assets/images/womensMinistry.jpg';
+import imageUrls from "../assets/imageUrls";
 
 const ROUTES = { 
     HOME: {name: 'Home', url: '/'},
@@ -41,7 +35,7 @@ export const LINK_BUTTON_TYPES = {
 };
 export const DUPLICATE_PAGES = [
     {
-        jumboImage: churchService,
+        jumboImage: imageUrls.churchService,
         title: ROUTES.MEN_MINISTRY.name,
         url: ROUTES.MEN_MINISTRY.url,
         description: 'Minister Anthony Alexander is the leader of our Guided Men’s Ministry! Sign up for this program using the form below',
@@ -66,7 +60,7 @@ export const DUPLICATE_PAGES = [
 
     },
     {
-        jumboImage: tithing,
+        jumboImage: imageUrls.tithing,
         title: ROUTES.GIVING.name,
         url: ROUTES.GIVING.url,
         description: 'Your generosity is positively changing lives in this ministry, community, and globally. The Apostle Paul reminds us in 2 Corinthians 9:6-8 that whoever sows sparingly will reap sparingly and whosoever sows generously will reap generously. As you generously sow into this work, it is Gods covenant promise to multiply back to you what has been given. We want you to know that your seed creates resources for us to carry Gods love to the nations',
@@ -77,7 +71,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: womensMinistry,
+        jumboImage: imageUrls.womensMinistry,
         title: ROUTES.WOMEN_MINISTRY.name,
         url: ROUTES.WOMEN_MINISTRY.url,
         description: 'Minister Lavon Thompson is the leader of our Esthers Circle Woman’s Group! Sign up for this program using the form below',
@@ -101,7 +95,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: youthImage,
+        jumboImage: imageUrls.youth,
         title: ROUTES.YOUTH_MINISTRY.name,
         url: ROUTES.YOUTH_MINISTRY.url,
         description: 'The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.\nMinister Julianna James-Gilbert is the leader of our Engage Youth Ministry! Sign up for this program using the form below',
@@ -125,7 +119,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: worship,
+        jumboImage: imageUrls.concert,
         title: ROUTES.MUSIC_MINISTRY.name,
         url: ROUTES.MUSIC_MINISTRY.url,
         description: 'Minister Brittany C. Weaver is the leader of our New Wine Music Ministry! Sign up for this program using the form below',
@@ -149,7 +143,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: contact,
+        jumboImage: imageUrls.contact,
         title: ROUTES.CONTACT_US.name,
         url: ROUTES.CONTACT_US.url,
         description: 'Contact the leaders of our ministry using the form below',
@@ -178,7 +172,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: friends,
+        jumboImage: imageUrls.friends,
         title: ROUTES.PRAYER_REQUESTS.name,
         url: ROUTES.PRAYER_REQUESTS.url,
         description: 'Submit prayer requests for the leaders of our ministry using the form below',

@@ -2,8 +2,8 @@ import React from 'react';
 
 import HeaderBacking from '../../components/HeaderBacking/HeaderBacking';
 import Button from '../../components/Button/Button';
-import arthurSitting from '../../assets/images/arthurStanding.png';
 import routes from '../../utils/routes';
+import imageUrls from '../../assets/imageUrls';
 
 import './HomeWelcomeSection.scss';
 
@@ -13,7 +13,7 @@ const HomeWelcomeSection = () => (
             Welcome!
         </HeaderBacking>
         <img
-            src={arthurSitting} 
+            src={imageUrls.arthurStanding} 
             alt="worship"
             className = 'worshipImage'
         />

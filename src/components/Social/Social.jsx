@@ -12,13 +12,13 @@ const Social = ({className = ''}) => (
     <div className = {`socialList ${className}`}>
         <h1 className = 'socialList__title'>Follow Us</h1>
         <div className = 'socialList__logos'>
-            <Button anchor = {socialMediaLinks.facebook} className = 'transparent'>
+            <Button anchor = {socialMediaLinks.facebook} className = 'transparent' aria-label='facebook'>
                 <Facebook/>
             </Button>
-            <Button anchor = {socialMediaLinks.youtube} className = 'transparent'>
+            <Button anchor = {socialMediaLinks.youtube} className = 'transparent' aria-label='youtube'>
                 <Youtube/>
             </Button>
-            <Button anchor = {socialMediaLinks.instagram} className = 'transparent'>
+            <Button anchor = {socialMediaLinks.instagram} className = 'transparent' aria-label='instagram'>
                 <Instagram/>
             </Button>
         </div>

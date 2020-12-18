@@ -6,7 +6,7 @@ import CalendarForm from '../../containers/CalendarForm/CalendarForm';
 import { calendarDateFormatting } from '../../utils/helperFunctions';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import ROUTES from '../../utils/routes';
-import planner from '../../assets/images/planner.png';
+import imageUrls from '../../assets/imageUrls';
 
 import './CalendarPage.scss';
 
@@ -24,7 +24,7 @@ const CalendarPage = () => {
             className = 'calendarPage' 
         >
             <Jumbotron
-                image = {planner}
+                image = {imageUrls.planner}
                 title = {ROUTES.CALENDAR.name.toUpperCase()}
             />
             {

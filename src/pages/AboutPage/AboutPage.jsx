@@ -4,7 +4,7 @@ import AboutPastorSection from '../../containers/AboutPastorSection/AboutPastorS
 import AboutLeadershipSection from '../../containers/AboutLeadershipSection/AboutLeadershipSection';
 import AboutInfoSection from '../../containers/AboutInfoSection/AboutInfoSection';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
-import worshipPerson from '../../assets/images/worshipPerson.jpg'
+import imageUrls from '../../assets/imageUrls'
 
 import './AboutPage.scss';
 
@@ -13,7 +13,7 @@ const AboutPage = () => {
     return(
         <div className = 'aboutPage'>
             <Jumbotron
-                image = { worshipPerson }
+                image = { imageUrls.worshipPerson }
                 title = 'About Us'
             />
             <AboutInfoSection/>

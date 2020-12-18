@@ -1,9 +1,7 @@
 import React from 'react';
 import DisplayBox from '../../components/DisplayBox/DisplayBox';
-import youthImage from '../../assets/images/youthImage.jpg';
-import churchService from '../../assets/images/churchService.jpg';
-import tithing from '../../assets/images/tithing.jpg';
 import ROUTES from '../../utils/routes';
+import imageUrls from '../../assets/imageUrls';
 
 import './DisplaySection.scss';
 
@@ -13,7 +11,7 @@ const DisplaySection = () => {
             title: 'Engage Youth Ministry',
             button: 'Find Out More',
             description: 'Engaging programming to help our youth grow in their faith',
-            image: youthImage,
+            image: imageUrls.youth,
             buttonProps: {link: ROUTES.YOUTH_MINISTRY.url}
         },
         {
@@ -21,14 +19,14 @@ const DisplaySection = () => {
             button: 'Give',
             buttonProps: {link: ROUTES.GIVING.url},
             description: 'Your generosity is positively changing lives in this ministry, community, and globally',
-            image: tithing
+            image: imageUrls.tithing
         },
         {
             title: 'This is church. Anywhere.',
             button: 'Watch Now',
             description: 'Watch Online',
             buttonProps: {link: ROUTES.LIVE_SERMONS.url},
-            image: churchService
+            image: imageUrls.churchService
         }
     ];
     return(

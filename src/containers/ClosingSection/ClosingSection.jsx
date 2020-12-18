@@ -1,9 +1,8 @@
 import React from 'react';
 
-import friends from '../../assets/images/friends4.jpg';
-import contact from '../../assets/images/contact.jpg';
 import DisplayBox from '../../components/DisplayBox/DisplayBox';
 import ROUTES from '../../utils/routes';
+import imageUrls from '../../assets/imageUrls';
 
 import './ClosingSection.scss';
 
@@ -14,7 +13,7 @@ const ClosingSection = () => (
             button = 'Contact'
             description = 'Reach out to our leadership!'
             buttonProps = {{link: ROUTES.CONTACT_US.url}}
-            image = {contact}
+            image = {imageUrls.contact}
             className = 'closingSection__display'
         />
         <DisplayBox
@@ -22,7 +21,7 @@ const ClosingSection = () => (
             button = 'Find Out More'
             description = 'Read about the leaders of our ministry'
             buttonProps = {{link: ROUTES.LEADERSHIP.url}}
-            image = {friends}
+            image = {imageUrls.friends}
             className = 'closingSection__display'
         />
     </div>

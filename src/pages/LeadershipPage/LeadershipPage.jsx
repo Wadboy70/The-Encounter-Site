@@ -1,39 +1,35 @@
 import React from 'react';
 
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
-import leadersPage from '../../assets/images/leadersPage.jpg';
-import anthonyBio from '../../assets/images/AnthonyAlexanderBio.jpg';
-import brittanyBio from '../../assets/images/BrittanyWeaverBio.jpg';
-import lavonBio from '../../assets/images/LavonBio.jpg';
-import juliannaBio from '../../assets/images/JuliannaBio.jpg';
 import ROUTES from '../../utils/routes';
 import Button from '../../components/Button/Button';
 
 import './LeadershipPage.scss';
+import imageUrls from '../../assets/imageUrls';
 
 const LeadershipPage = () => {
     const leaderInfo = [
         {
-            img: anthonyBio,
+            img: imageUrls.anthonyBio,
             link: ROUTES.MEN_MINISTRY
         },
         {
-            img: brittanyBio,
+            img: imageUrls.brittanyBio,
             link: ROUTES.MUSIC_MINISTRY
         },
         {
-            img: lavonBio,
+            img: imageUrls.lavonBio,
             link: ROUTES.WOMEN_MINISTRY
         },
         {
-            img: juliannaBio,
+            img: imageUrls.juliannaBio,
             link: ROUTES.YOUTH_MINISTRY
         },
     ]
     return(
         <div className = 'leadershipPage'>
             <Jumbotron 
-                image = {leadersPage} 
+                image = {imageUrls.leadersPage} 
                 title = 'our leaders'
             />
             <ul className = 'leadershipPage__leaders'>

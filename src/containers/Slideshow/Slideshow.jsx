@@ -2,16 +2,12 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 import Button from '../../components/Button/Button';
-import fullLogo from '../../assets/images/fullLogo.png';
-import slide4 from '../../assets/images/ministryOne.jpg';
-import slide3 from '../../assets/images/EWCBanner.jpg';
-import slide2 from '../../assets/images/strongerTogether.jpg';
-import slide1 from '../../assets/images/lensFlare.jpg';
 
 import './Slideshow.scss';
+import imageUrls from '../../assets/imageUrls';
 
 const Slideshow = ({interval = 3000}) => {
-    const slides = [slide1,slide2,slide3,slide4];
+    const slides = [imageUrls.lensFlare,imageUrls.strongerTogether,imageUrls.encounterBanner,imageUrls.ministryOne];
     const [x, setX] = useState(0)
     const goLeft = () => {
         (x <= 0) ? setX(slides.length-1) : setX(x-1);
@@ -38,7 +34,7 @@ const Slideshow = ({interval = 3000}) => {
             }
             <div className = 'slideshow__overlay'>
                 <div className = {`logoOverlay ${(x===0) ? 'showOverlay' : 'hideOverlay'}`}>
-                    <img src={fullLogo} alt="encounterLogo"/>
+                    <img src={imageUrls.fullLogo} alt="encounterLogo"/>
                 </div>
 
                 <div 

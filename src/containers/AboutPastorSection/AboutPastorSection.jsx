@@ -2,7 +2,7 @@ import React from 'react';
 
 import DisplayItem from '../../components/DisplayItem/DisplayItem';
 import HighlightSection from '../HighlightSection/HighlightSection';
-import arthur from '../../assets/images/arthurCollage.png';
+import imageUrls from '../../assets/imageUrls';
 
 import './AboutPastorSection.scss';
 
@@ -10,7 +10,7 @@ const AboutPastorSection = () => {
 
     return(
         <HighlightSection
-            backgroundPhoto = {arthur}
+            backgroundPhoto = {imageUrls.arthurCollage}
             className = 'aboutPastorSection purple'
         >
             <DisplayItem 

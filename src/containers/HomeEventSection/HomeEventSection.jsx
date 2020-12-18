@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import Planner from '../../assets/images/planner.png';
 import DisplayItem from '../../components/DisplayItem/DisplayItem';
 import HighlightSection from '../HighlightSection/HighlightSection';
-import Calendar from '../../assets/images/calendar.svg';
 import { getUpcomingEvent } from '../../utils/firebase';
-
-import './HomeEventSection.scss';
 import { calendarDateFormatting } from '../../utils/helperFunctions';
 import ROUTES from '../../utils/routes';
+import imageUrls from '../../assets/imageUrls';
+
+import './HomeEventSection.scss';
 
 const HomeEventSection = () => {
     
@@ -26,12 +25,11 @@ const HomeEventSection = () => {
     return(
         
         <HighlightSection 
-            backgroundPhoto = {Planner}
+            backgroundPhoto = {imageUrls.planner}
             className = 'upcomingEventSection purple'
         >
             <DisplayItem
                 info = {{
-                    icon: Calendar,
                     title: 'Upcoming Event',
                     button: 'See Calendar',
                     buttonProps: {link: ROUTES.CALENDAR.url}

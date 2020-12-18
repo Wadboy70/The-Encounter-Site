@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import withFetch from '../../utils/hocs/withFetch';
-import livestream from '../../assets/images/livestream.jpg';
+import imageUrls from '../../assets/imageUrls';
 
 import './SermonFrame.scss';
 
@@ -23,7 +23,7 @@ const SermonFrame = () => {
                 >
                 </iframe>
                 :
-                <div className = 'sermonFrame' style = {{backgroundImage: `url(${livestream})`}}>
+                <div className = 'sermonFrame' style = {{backgroundImage: `url(${imageUrls.livestream})`}}>
                     <div className = 'sermonFrame__overlay'>
                         <h2>The stream hasnt started yet!</h2>
                     </div>

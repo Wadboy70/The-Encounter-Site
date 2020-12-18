@@ -29,10 +29,6 @@
     font-family: 'FuturaDemi';
     src: url("../../assets/fonts/FuturaPTDemi.otf") format("opentype");
 }
-@font-face {
-    font-family: 'MontserratBlack';
-    src: url("../../assets/fonts/Montserrat-Black.ttf") format("opentype");
-}
 .scrollbar{
     &::-webkit-scrollbar-track
     {
@@ -58,7 +54,7 @@
         color: $yellow;
     }
     *{
-        
+        font-display: fallback;
         transition: color .3s;
         &:hover,
         &:active{

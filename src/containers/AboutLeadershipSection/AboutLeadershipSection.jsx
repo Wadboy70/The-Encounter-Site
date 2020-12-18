@@ -1,6 +1,6 @@
 import React from 'react';
 
-import leadersPage from '../../assets/images/leadersPage.jpg';
+import imageUrls from '../../assets/imageUrls';
 import DisplayBox from '../../components/DisplayBox/DisplayBox';
 import ROUTES from '../../utils/routes';
 
@@ -11,7 +11,7 @@ const AboutLeadershipSection = () => {
     return(
         <div className = 'aboutLeadershipSection'>
             <DisplayBox
-                image = {leadersPage} 
+                image = {imageUrls.leadersPage} 
                 button = 'Find out more'
                 description = 'Read about the leaders of our ministry'
                 title = 'Our Ministry Leaders'
