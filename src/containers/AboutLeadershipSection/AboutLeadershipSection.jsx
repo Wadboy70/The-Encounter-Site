@@ -19,7 +19,9 @@ const AboutLeadershipSection = () => {
                 {
                     LEADERSHIP_TEAM.map((leader, index) => {
                         return(
-                            <TeamMemberInfo key = {index} {...leader}/>
+                            <TeamMemberInfo 
+                                key = {index} {...leader} 
+                                className = 'hoverGrow'/>
                         );
                     })
                 }

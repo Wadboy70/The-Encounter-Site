@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import withFetch from '../../utils/hocs/withFetch';
 import livestream from '../../assets/images/livestream.jpg';
-import Jumbotron from '../../components/Jumbotron/Jumbotron';
 
 import './SermonFrame.scss';
 
