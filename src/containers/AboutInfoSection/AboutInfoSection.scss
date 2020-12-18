@@ -1,0 +1,21 @@
+@import '../../assets/colors.scss';
+.aboutInfoSection{
+    padding: 2% 5%;
+    display: flex;
+    flex-wrap: wrap;
+    .aboutDisplayBox{
+        flex-grow: 1;
+        justify-content: center;
+        margin: 1%;
+        border-radius: 3rem;
+        min-width: 300px;
+        width: 40%;
+        .aboutDisplayBox__title{
+            margin-bottom: 2%;
+        }
+        .aboutDisplayBox__description{
+            font-size: 1.5rem;
+            text-align: left;
+        }
+    }
+}

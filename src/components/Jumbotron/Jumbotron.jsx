@@ -8,7 +8,7 @@ const Jumbotron = ({image, title, caption}) => {
             <div className = 'jumbotron__overlay'>
                 {
                     title && 
-                    <h1 className = 'jumbotron__title'>{title}</h1>
+                    <h1 className = 'jumbotron__title'>{title.toUpperCase()}</h1>
                 }
                 {
                     caption && 

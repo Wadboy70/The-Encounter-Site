@@ -1,6 +1,7 @@
 import validEmails from "./constants/validEmails";
 import { COLLECTIONS } from "./firebase";
 import youthImage from '../assets/images/youthImage.jpg';
+import contact from '../assets/images/contact.jpg';
 import churchService from '../assets/images/churchService.jpg';
 import tithing from '../assets/images/tithing.jpg';
 import worship from '../assets/images/worshipBackground.jpg';
@@ -20,7 +21,8 @@ const ROUTES = {
     MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
     WOMEN_MINISTRY: {name: 'Leader of Esthers Circle Woman’s Group', url: '/womensministry'},
     YOUTH_MINISTRY: {name: 'Engage Youth Ministry', url: '/youthministry'},
-    GIVING: {name: 'Giving', url: '/giving'}
+    GIVING: {name: 'Giving', url: '/giving'},
+    LEADERSHIP: {name: 'Leadership', url: '/leadership'}
 };
 export const FORM_SUBMIT_TYPE = {
     EMAIL: 'EMAIL',
@@ -147,7 +149,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: undefined,
+        jumboImage: contact,
         title: ROUTES.CONTACT_US.name,
         url: ROUTES.CONTACT_US.url,
         description: 'Contact the leaders of our ministry using the form below',

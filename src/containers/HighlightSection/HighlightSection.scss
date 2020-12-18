@@ -26,6 +26,12 @@
         position: relative;
         transform: translateY(-40px);
     }
+    &.purple{
+        background-color: $purple;
+        .highlight__background{
+            border-bottom-color: $purple !important;
+        }
+    }
 }
 
 .highlight__background{
@@ -52,6 +58,11 @@
             height: 60%;
             min-height: 50vh;
             transform: translateX(20px);
+        }
+    }
+    &.purple{
+        .highlight__background{
+            border-left-color: $purple !important;
         }
     }
 }

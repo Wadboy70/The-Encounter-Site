@@ -27,7 +27,7 @@ const HomeEventSection = () => {
         
         <HighlightSection 
             backgroundPhoto = {Planner}
-            className = 'upcomingEventSection'
+            className = 'upcomingEventSection purple'
         >
             <DisplayItem
                 info = {{

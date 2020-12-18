@@ -11,7 +11,7 @@ const AboutPastorSection = () => {
     return(
         <HighlightSection
             backgroundPhoto = {arthur}
-            className = 'aboutPastorSection'
+            className = 'aboutPastorSection purple'
         >
             <DisplayItem 
                 info = {{        
