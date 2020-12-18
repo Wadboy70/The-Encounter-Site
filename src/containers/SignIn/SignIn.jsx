@@ -4,15 +4,19 @@ import TextInput from '../../components/TextInput/TextInput';
 import Button from '../../components/Button/Button';
 import withForm from '../../utils/hocs/withForm';
 import { googleSignIn, passwordSignIn } from '../../utils/firebase';
+import ROUTES from '../../utils/routes';
 
 import './SignIn.scss';
 
 const SignIn = ({handleChange, formState, setError}) => {
     const { error } = formState;
     const loginSubmit = async () => {
+        setError(null);
         const { signInEmail = '', signInPassword = '' } = formState;
         const response = await passwordSignIn(signInEmail, signInPassword);
-        if (response.message) setError(response.message);
+        if (response.message) {
+            setError(response.message);
+        }
     };
 
     return(
@@ -34,17 +38,24 @@ const SignIn = ({handleChange, formState, setError}) => {
                 handleChange = { handleChange } 
                 formState = { formState }
             />
-            <Button 
-                className = 'transparent medium whiteBorder'
-                op = {loginSubmit}
-            >Log In</Button>
-            <Button 
-                className = 'transparent medium whiteBorder'
-                op = {googleSignIn}    
-            >Google Log In</Button>
+            <div className = 'signIn__loginButtons'>
+                <Button 
+                    className = 'transparent medium whiteBorder'
+                    op = {loginSubmit}
+                >Log In</Button>
+                <Button 
+                    className = 'transparent medium whiteBorder'
+                    op = {googleSignIn}    
+                >Google Log In</Button>
+                <Button 
+                    className = 'transparent medium whiteBorder'
+                    link = {ROUTES.FORGOT_PASSWORD.url} 
+                >Forgot Password</Button>
+                
+            </div>
             {
                 error &&
-                <p>{error}</p>
+                <p className = 'errorMessage'>{error}</p>
             }
         </form>
     );

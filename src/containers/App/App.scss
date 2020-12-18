@@ -81,8 +81,10 @@
         font-family: FuturaBook;
         letter-spacing: 6px;
     }
+    p{
+        font-size: 1.3rem;
+    }
     .underlineTitle{
-        padding-bottom: 3px;
         border-bottom: white solid 1px;
     }
     select,input,textarea,option{

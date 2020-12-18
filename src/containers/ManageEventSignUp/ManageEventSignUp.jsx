@@ -65,7 +65,6 @@ const ManageEventSignUpRow = ({programs, programName, setRefreshUpdate}) => {
     };
     let programInfo = programs[programName].data, programId = programs[programName].colId;
     const deleteMember = (id) => {
-        console.log(id);
         deleteDoc(id, programId).then(val =>{
             setRefreshUpdate();
         });

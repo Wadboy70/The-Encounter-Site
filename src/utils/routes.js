@@ -16,6 +16,7 @@ const ROUTES = {
     PRAYER_REQUESTS: {name: 'Prayer Requests', url: '/prayer'},
     CONTACT_US: {name: 'Contact', url: '/contact'},
     SIGN_IN_SIGN_UP: {name: 'Sign In', url: '/signin'},
+    FORGOT_PASSWORD: {name: 'Forgot Password', url: '/forgot'},
     ADMIN_PANEL: {name: 'Admin Panel', url: '/adminpanel'},
     MEN_MINISTRY: {name: 'Guided Men\'s Ministry', url: '/mensministry'},
     MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
@@ -103,8 +104,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: youthImage,
         title: ROUTES.YOUTH_MINISTRY.name,
         url: ROUTES.YOUTH_MINISTRY.url,
-        caption: 'Helping our youth grow their faith, their character, and their relationships',
-        description: 'Minister Julianna James-Gilbert is the leader of our Engage Youth Ministry! Sign up for this program using the form below',
+        description: 'The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.\nMinister Julianna James-Gilbert is the leader of our Engage Youth Ministry! Sign up for this program using the form below',
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,

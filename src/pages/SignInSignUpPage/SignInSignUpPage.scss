@@ -5,30 +5,20 @@
             margin-left: 0;
         }
     }
-    .signInSignUp__content, .signInSignUp__particles{
-        height: 150vh;
-    }
-    .signInSignUp__content{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1rem;
-        width: 100%;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
 }
 @media only screen and (min-width: 768px){
     .signInSignUp{
-        .signInSignUp__content{
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: center;
-            >*{
-                margin: 1em;
-            }
-        }
-        .signInSignUp__content, .signInSignUp__particles{
-            height: 90vh;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        >*{
+            margin: 1em;
         }
     }
 }

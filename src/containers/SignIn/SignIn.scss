@@ -1,10 +1,27 @@
-
+@import '../../assets/colors.scss';
+@keyframes colorChange {
+    from {color: red;}
+    to {color: $white;}
+  }
 .signInSignUp__signIn{
     
     h1{
         font-size: 1.5em;
     }
-        h3{
-            font-size: 1em;
+    h3{
+        font-size: 1em;
+    }
+    .signIn__loginButtons{
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+        >*{
+        font-size: 1em;
+        width: fit-content;
         }
+    }
+    .errorMessage{
+        animation: colorChange 1s;
+    }
 }

@@ -13,7 +13,6 @@ import { FirebaseUserContext } from '../../utils/context/user.context'
 import ROUTES, { DUPLICATE_PAGES } from '../../utils/routes';
 import USER_TIERS from '../../utils/constants/userTiers';
 import USER_OBJECT_STRUCTURE from '../../utils/constants/userObjectStructure';
-import LeaderPage from '../../pages/LeaderPage/LeaderPage';
 import CalendarPage from '../../pages/CalendarPage/CalendarPage';
 import SermonsPage from '../../pages/SermonsPage/SermonsPage';
 import DuplicateInfoPage from '../../pages/DuplicateInfoPage/DuplicateInfoPage';
@@ -73,7 +72,6 @@ function App({history}) {
           />
         </Route>
         <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
-        <Route exact path = {ROUTES.ABOUT.url + '/:leaderName'} component = {LeaderPage}/>
         <Route exact path = {ROUTES.CALENDAR.url} component = {CalendarPage}/>
         <Route exact path = {ROUTES.LIVE_SERMONS.url} component = {SermonsPage}/>
         {
