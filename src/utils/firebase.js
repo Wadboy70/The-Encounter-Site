@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 
 import "firebase/auth";
 import "firebase/firestore";
+import "firebase/storage";
 import USER_TIERS from './constants/userTiers';
 
 export const COLLECTIONS = {
@@ -23,7 +24,7 @@ const firebaseConfig = {
     measurementId: "G-TRSM3PMJZL"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -98,3 +99,9 @@ export const addNewDoc = async (info = {}, collection = '') => {
     })
     .catch(err => console.log("error adding document: ", err));
 };
+
+export const fileUpload = (file, name) => {
+    const storageRef = app.storage().ref();
+    const fileRef = storageRef.child(`titheInfo/${name}`);
+    return fileRef.put(file).then(res => res).catch(err => err);
+}
