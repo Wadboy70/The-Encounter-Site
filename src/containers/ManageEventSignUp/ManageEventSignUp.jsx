@@ -5,7 +5,7 @@ import { DUPLICATE_PAGES, FORM_SUBMIT_TYPE } from '../../utils/routes';
 import Button from '../../components/Button/Button';
 
 import './ManageEventSignUp.scss';
-import { copyToClipboard } from '../../utils/helperFunctions';
+import { copyToClipboard, replaceWhitespace, replaceUnderscore, titleCaseSentence } from '../../utils/helperFunctions';
 
 const ManageEventSignUp = () => {
     const [programs, setPrograms] = useState(undefined);
@@ -16,19 +16,35 @@ const ManageEventSignUp = () => {
         let mounted = true;
 
         const getUserInfo = async () => {
-            let programInfo = {};
+            let programInfo = [];
 
-            let dataPoints = DUPLICATE_PAGES.filter(page => {
-                return (page.form?.submit?.type === FORM_SUBMIT_TYPE.ADMIN_STORAGE);
-            });
+            //dataPoints gathers all of the correct collection names from the routes
+            let dataPoints = DUPLICATE_PAGES.reduce((accum, page) => {
+                let submit = page.form?.submit, 
+                    partition = submit?.partition, 
+                    collection = submit?.collection, 
+                    type = submit?.type;
+                if (type === FORM_SUBMIT_TYPE.ADMIN_STORAGE){
+                    if(partition){
+                        //putting the collection names into the same format that they are listed under in the database
+                        let collectionNames = page.form.fields
+                            .find(field => field.name === partition)?.values
+                            .map(groupName => replaceWhitespace(collection + ' ' + groupName, '_'));
+                        accum.push(...collectionNames);
+                    } else accum.push(collection);
+                }
+                return accum;
+            },[]);
 
-            let data =  mounted ? await Promise.all(dataPoints.map(async page => await getAllDocs(page.form.submit.collection))) : [];
-            console.log(data);
+            let data =  mounted ? await Promise.all(dataPoints.map(async page => await getAllDocs(page))) : [];
+
             dataPoints.forEach((programMember, index) =>{
-                programInfo[programMember.title] = {
-                    colId: programMember.form.submit.collection,
+                let name = titleCaseSentence(replaceUnderscore(programMember));
+                programInfo.push ({
+                    name: name,
+                    colId: programMember,
                     data: data[index]
-                };
+                });
             })
             setPrograms(programInfo);
         }
@@ -42,11 +58,12 @@ const ManageEventSignUp = () => {
             <h1 className = 'manageEventSignUp__title'>Manage Program Sign Ups</h1>
             {
                 programs && 
-                Object.keys(programs).map(programName => (
+                programs.map(program => (
                     <ManageEventSignUpRow
-                        key = { programName }
-                        programName = { programName }
-                        programs = { programs }
+                        key = { program.name }
+                        programName = { program.name }
+                        programId = { program.colId }
+                        programInfo = { program.data }
                         setRefreshUpdate = { setRefreshUpdate }
                     />
                 ))
@@ -55,7 +72,7 @@ const ManageEventSignUp = () => {
     )
 };
 
-const ManageEventSignUpRow = ({programs, programName, setRefreshUpdate}) => {
+const ManageEventSignUpRow = ({programInfo, programId, programName, setRefreshUpdate}) => {
     const copyEmails = program => {
         let emails = program.map(val => val.email).join(',');
         if(emails !== '') {
@@ -63,7 +80,6 @@ const ManageEventSignUpRow = ({programs, programName, setRefreshUpdate}) => {
             alert('Emails were copied!');
         }
     };
-    let programInfo = programs[programName].data, programId = programs[programName].colId;
     const deleteMember = (id) => {
         deleteDoc(id, programId).then(val =>{
             setRefreshUpdate();
@@ -84,8 +100,12 @@ const ManageEventSignUpRow = ({programs, programName, setRefreshUpdate}) => {
                 {
                     programInfo.map(member => (
                         <li key = {member.name} className = 'entry__member'>
-                            <span className = 'member__name'>{member.name}</span>
-                            <span className = 'member__email'>{member.email}</span>
+                            {
+                                Object.keys(member).map(val => (
+                                    (val !== 'group' && val !== 'id') && 
+                                    <span key = {val}>{member[val]}</span>
+                                ))  
+                            }
                             <span>
                                 <Button 
                                     className = 'transparent small member__button'

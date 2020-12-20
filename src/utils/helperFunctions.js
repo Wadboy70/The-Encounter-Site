@@ -16,11 +16,15 @@ export const parseFirestoreDate = (dateVal) => {
 
 export const removeWhitespace = (str) => {
     return str.replace(/\s/g,'');
-}
+};
 
 export const replaceWhitespace = (str, rep = '-') => {
   return str.replace(/\s/g,rep);
-}
+};
+
+export const replaceUnderscore = (str) => {
+  return str.replace(/_/g,' ');
+};
 
 export const sendEmail = async ({to = '', message = '', subject = '', name = ''}) => {
     console.log(to);
