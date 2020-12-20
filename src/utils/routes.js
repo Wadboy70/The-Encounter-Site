@@ -147,6 +147,11 @@ export const DUPLICATE_PAGES = [
                     name: 'email',
                     label: 'Email',
                     type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
+                },
+                {
+                    name: 'gift',
+                    label: 'Ministry Gift (Vocal, Guitar, etc)',
+                    type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
                 }
             ],
         }
