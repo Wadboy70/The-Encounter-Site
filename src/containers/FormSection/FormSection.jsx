@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from '../../components/Button/Button';
+import Dropdown from '../../components/Dropdown/Dropdown';
 import TextInput from '../../components/TextInput/TextInput';
 import { addNewDoc } from '../../utils/firebase';
 import { sendEmail } from '../../utils/helperFunctions';
@@ -58,6 +59,17 @@ const FormSection = ({
                 <form className = 'emailFormsPage__form'>
                     {
                         formInfo?.fields.map((field, index) => (
+                                field.type === FORM_FIELD_INPUT_TYPE.DROPDOWN ? 
+                                <Dropdown
+                                    name = {field.name}
+                                    title = {field.label}
+                                    values = {field.values}
+                                    handleChange = {handleChange}
+                                    defaultVal = {field.defaultVal}
+                                    className = 'form__dropdown'
+                                    labelClassName = 'form__dropdownTitle'
+                                />
+                                :
                                 <TextInput
                                     key = {index}
                                     name = {field.name}

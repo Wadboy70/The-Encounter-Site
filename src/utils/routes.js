@@ -26,7 +26,8 @@ export const FORM_SUBMIT_TYPE = {
 
 export const FORM_FIELD_INPUT_TYPE = {
     TEXT_INPUT: 'TEXT_INPUT',
-    TEXT_AREA: 'TEXT_AREA' 
+    TEXT_AREA: 'TEXT_AREA',
+    DROPDOWN: 'DROPDOWN'
 };
 
 export const LINK_BUTTON_TYPES = {
@@ -114,6 +115,13 @@ export const DUPLICATE_PAGES = [
                     name: 'email',
                     label: 'Email',
                     type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
+                },
+                {
+                    name: 'group',
+                    label: 'Group',
+                    type: FORM_FIELD_INPUT_TYPE.DROPDOWN,
+                    values: ['Elementary School','Middle School', 'High School'],
+                    defaultVal: 'Elementary School'
                 }
             ],
         }

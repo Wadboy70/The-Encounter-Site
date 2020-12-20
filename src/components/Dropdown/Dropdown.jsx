@@ -5,6 +5,7 @@ import './Dropdown.scss';
 
 const Dropdown = ({
         className = '',
+        labelClassName = '',
         name = '',
         handleChange = () => {},
         values = [],
@@ -15,7 +16,7 @@ const Dropdown = ({
     <div className = 'dropdownContainer'>
         {
             title &&
-            <label className = 'dropdown__title'>{title}</label>
+            <label className = {`dropdown__title ${labelClassName}`}>{title}</label>
         }
         <select 
             aria-label = {name}
