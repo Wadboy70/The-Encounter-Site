@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Button from '../../components/Button/Button';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import TextInput from '../../components/TextInput/TextInput';
 import { addNewDoc } from '../../utils/firebase';
-import { sendEmail } from '../../utils/helperFunctions';
+import { replaceWhitespace, sendEmail } from '../../utils/helperFunctions';
 import withForm from '../../utils/hocs/withForm';
 import { FORM_FIELD_INPUT_TYPE, FORM_SUBMIT_TYPE } from '../../utils/routes';
 
@@ -12,6 +12,7 @@ import './FormSection.scss';
 
 const FormSection = ({
         handleChange, 
+        handleChangeManual, 
         formState, 
         formName, 
         formInfo,
@@ -34,7 +35,10 @@ const FormSection = ({
     };
 
     const submitSignUpInfo = () => {
-        addNewDoc(formState, formInfo?.submit?.collection);
+        if(formInfo?.submit?.partition){
+            addNewDoc(formState, replaceWhitespace(formInfo?.submit?.collection + ' ' + formState[formInfo.submit.partition], '_'))
+        }
+        else addNewDoc(formState, formInfo?.submit?.collection);
         setFormSubmitted(true);
     }
 
@@ -45,6 +49,17 @@ const FormSection = ({
             submitSignUpInfo();
         else handleData(formState);
     }
+
+    useEffect(()=>{
+        const setDefaultValues = () => {
+            for(let field of formInfo?.fields){
+                if(!formState[field?.name]) 
+                    handleChangeManual({[field.name]: field.defaultVal || ''})
+            }
+        }
+        if(formInfo?.fields?.length && !Object.keys(formState).length) setDefaultValues();
+        
+    });
 
     return(
         <div className = {`emailFormsPage ${className}`}>
@@ -61,6 +76,7 @@ const FormSection = ({
                         formInfo?.fields.map((field, index) => (
                                 field.type === FORM_FIELD_INPUT_TYPE.DROPDOWN ? 
                                 <Dropdown
+                                    key = {index}
                                     name = {field.name}
                                     title = {field.label}
                                     values = {field.values}

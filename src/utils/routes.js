@@ -103,7 +103,8 @@ export const DUPLICATE_PAGES = [
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
-                collection: COLLECTIONS.YOUTH_MINISTRY
+                collection: COLLECTIONS.YOUTH_MINISTRY,
+                partition: 'group'
             },
             fields: [
                 {

@@ -23,7 +23,7 @@ const ManageEventSignUp = () => {
             });
 
             let data =  mounted ? await Promise.all(dataPoints.map(async page => await getAllDocs(page.form.submit.collection))) : [];
-            
+            console.log(data);
             dataPoints.forEach((programMember, index) =>{
                 programInfo[programMember.title] = {
                     colId: programMember.form.submit.collection,

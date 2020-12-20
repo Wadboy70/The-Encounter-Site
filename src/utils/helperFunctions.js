@@ -18,6 +18,10 @@ export const removeWhitespace = (str) => {
     return str.replace(/\s/g,'');
 }
 
+export const replaceWhitespace = (str, rep = '-') => {
+  return str.replace(/\s/g,rep);
+}
+
 export const sendEmail = async ({to = '', message = '', subject = '', name = ''}) => {
     console.log(to);
     return fetch('/sendMail', {
