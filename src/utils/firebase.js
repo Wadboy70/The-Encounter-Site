@@ -26,6 +26,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
 
+const storageRef = app.storage().ref();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 export const auth = firebase.auth();
@@ -101,7 +102,16 @@ export const addNewDoc = async (info = {}, collection = '') => {
 };
 
 export const fileUpload = (file, name) => {
-    const storageRef = app.storage().ref();
     const fileRef = storageRef.child(`titheInfo/${name}`);
     return fileRef.put(file).then(res => res).catch(err => err);
+}
+
+export const fileList = () => {
+    const listRef = storageRef.child('titheInfo');
+    return listRef.listAll().then(res => res);
+}
+
+export const deleteFile = (path) => {
+    const listRef = storageRef.child(path);
+    return listRef.delete().then(res => res).catch(err => err);
 }

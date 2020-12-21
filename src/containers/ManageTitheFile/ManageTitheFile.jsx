@@ -1,57 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Button from '../../components/Button/Button';
-import { fileUpload } from '../../utils/firebase';
+import TitheFileList from '../TitheFileList/TitheFileList';
+import UploadFile from '../UploadFile/UploadFile';
 
 
 import './ManageTitheFile.scss';
 
 const ManageTitheFile = () => {
-
-    const [file, setFile] = useState(null);
-    const [error , setError] = useState(null);
-    const [formSubmitted, setFormSubmitted] = useState(false);
-
-    const handleFormChange = e => {
-        setFile(e.target.files[0]);
-        setError(null);
-    }
-    
-    const handleSubmitFile = () => {
-        console.log('submit');
-        setError(null);
-        if(file) {
-            fileUpload(file, file.name);
-            setFormSubmitted(true);
-        } else {
-            setError('You haven\'t added a file!');
-        }
-    }
     return(
         <div className = 'manageTitheFile'>
             <h1>Manage Tithe Files</h1>
-            {
-                formSubmitted ? 
-                <p>Tithe Document has been added!</p> :
-                <form className = 'manageTitheFile__form'>
-                    <input 
-                        type="file" 
-                        onChange = {handleFormChange}
-                    />
-                    <Button 
-                        className = 'whiteBorder transparent' 
-                        op = { handleSubmitFile }
-                    >
-                        Submit
-                    </Button>
-                </form>
-            }
-            {
-                error &&
-                <p> { error } </p>
-            }
+            <div className = 'manageTitheFile__sections'>
+                <UploadFile/>
+                <TitheFileList/>
+            </div>
         </div>
     );
 };
+
 
 export default ManageTitheFile;
