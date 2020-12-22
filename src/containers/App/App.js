@@ -20,6 +20,7 @@ import DuplicateInfoPage from '../../pages/DuplicateInfoPage/DuplicateInfoPage';
 import './App.scss';
 import ForgotPassword from '../../pages/ForgotPassword/ForgotPassword';
 import LeadershipPage from '../../pages/LeadershipPage/LeadershipPage';
+import GivingPage from '../../pages/GivingPage/GivingPage';
 
 function App({history}) {
 
@@ -79,6 +80,7 @@ function App({history}) {
           />
         </Route>
         <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
+        <Route exact path = {ROUTES.GIVING.url} component = {GivingPage}/>
         <Route exact path = {ROUTES.LEADERSHIP.url} component = {LeadershipPage}/>
         <Route exact path = {ROUTES.CALENDAR.url} component = {CalendarPage}/>
         <Route exact path = {ROUTES.LIVE_SERMONS.url} component = {SermonsPage}/>

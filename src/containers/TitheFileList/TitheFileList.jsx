@@ -7,7 +7,7 @@ import { deleteFile, downloadFile, fileList } from '../../utils/firebase';
 
 import './TitheFileList.scss';
 
-const TitheFileList = () => {
+const TitheFileList = ({className = ''}) => {
     const [files, setFiles] = useState(null);
     const [user] = useContext(FirebaseUserContext);
     const handleDownload = async (fileName) => {
@@ -32,7 +32,7 @@ const TitheFileList = () => {
         return () => mounted = false;
     }, [files])
     return(
-        <div className = 'fileList'>
+        <div className = {`fileList ${className}`}>
             <h2>Tithe Files</h2>
             <ul>
                 {

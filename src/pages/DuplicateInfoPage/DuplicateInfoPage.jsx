@@ -10,7 +10,7 @@ const DuplicateInfoPage = ({info:{
     jumboImage,
     title = '',
     caption,
-    description = '',
+    description,
     form,
     link
 }}) => {
@@ -26,8 +26,10 @@ const DuplicateInfoPage = ({info:{
             }
             <div className = 'duplicateInfoPage__duplicateContent'>
                 {
-                    description && 
-                    <p className = 'duplicateContent__description'>{description}</p>
+                    description &&
+                    description.map((text, index) =>
+                        <p className = 'duplicateContent__description' key = {index}>{text}</p>
+                    )
                 }
                 {
                     link &&
