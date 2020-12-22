@@ -31,7 +31,14 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 export const auth = firebase.auth();
 export const googleSignIn = async () =>  await auth.signInWithPopup(googleProvider).catch((error) => (error));
-export const createPasswordAcc = async (email, password) => await auth.createUserWithEmailAndPassword(email, password).catch((error) => (error));
+export const createPasswordAcc = async (email, password, name) => {
+    return await auth.createUserWithEmailAndPassword(email, password)
+    .then(async user => {
+        await addNewUser({...user?.user, displayName: name})
+        return user;
+    })
+    .catch((error) => (error));
+}
 export const passwordSignIn = async (email, password) =>  await auth.signInWithEmailAndPassword(email, password).catch((error) =>  (error));
 export const passwordReset = async (email) =>  await auth.sendPasswordResetEmail(email).catch((error) =>  (error));
 export const passwordUpdate = async (password) =>  await auth.currentUser.updatePassword(password).catch((error) =>  (error));
@@ -50,19 +57,21 @@ export const addNewUser = async (userInfo) => {
     };
     const query = await db.collection(COLLECTIONS.USERS).doc(uid).get().then(doc => doc.data());
     if(query){
-        if (displayName !== query.displayName){
-            db.collection(COLLECTIONS.USERS).doc(uid).set({
+        if (displayName && (displayName !== query.displayName)){
+            await db.collection(COLLECTIONS.USERS).doc(uid).set({
                 displayName
             }, {merge: true});
         } else if (!query.tier){
-            db.collection(COLLECTIONS.USERS).doc(uid).set({
+            await db.collection(COLLECTIONS.USERS).doc(uid).set({
                 tier: user.tier
             }, {merge: true});
         }
     }
     else {
-        db.collection(COLLECTIONS.USERS).doc(uid).set(user);
+        console.log('making new user')
+        await db.collection(COLLECTIONS.USERS).doc(uid).set(user);
     }
+    return true;
 };
 
 export const getUserInfo = async (uid) =>  await db.collection(COLLECTIONS.USERS).doc(uid).get().then(doc => doc.data());

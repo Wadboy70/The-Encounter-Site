@@ -8,7 +8,7 @@ import SignInSignUpPage from '../../pages/SignInSignUpPage/SignInSignUpPage';
 import AboutPage from '../../pages/AboutPage/AboutPage';
 import AdminPanel from '../../pages/AdminPage/AdminPage';
 import Footer from '../../containers/Footer/Footer';
-import { auth, addNewUser, getUserInfo } from '../../utils/firebase';
+import { auth, getUserInfo } from '../../utils/firebase';
 import { FirebaseUserContext } from '../../utils/context/user.context'
 import ROUTES, { DUPLICATE_PAGES } from '../../utils/routes';
 import USER_TIERS from '../../utils/constants/userTiers';
@@ -35,17 +35,19 @@ function App({history}) {
   
   //check if logged in
   useEffect(() => {
-    auth.onAuthStateChanged(async (userVal) => {
-      if(userVal && user === undefined) {
-        addNewUser(userVal);
-        setUser(await getUserInfo(userVal.uid));
-      } else if (!userVal) setUser(null);
-    })
+    const checkAuthstate = async () => {
+      auth.onAuthStateChanged(async (userVal) => {
+        if(userVal && user === undefined) {
+          setUser(await getUserInfo(userVal.uid));
+        } else if (!userVal) setUser(null);
+      })
+    }
     //onRoute change
     history.listen(() => {
       setDrawerOpen(false);
       window.scrollTo({top: 0});
     })
+    checkAuthstate()
   })
 
   return (
@@ -63,7 +65,7 @@ function App({history}) {
         <Route 
           exact 
           path = {ROUTES.SIGN_IN_SIGN_UP.url} 
-          render = {() => user ? (<Redirect to = {ROUTES.HOME.url}/>) : (<SignInSignUpPage/>)}
+          component = {SignInSignUpPage}
         />
         <Route 
           exact 
