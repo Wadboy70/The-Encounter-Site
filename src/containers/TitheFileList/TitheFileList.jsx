@@ -24,7 +24,6 @@ const TitheFileList = ({className = ''}) => {
     useEffect(()=>{
         let mounted = true;
         const list = async () => {
-            console.log('lists')
             let files = mounted ? ( await fileList() ) : null;
             setFiles(files?.items || []);
         }

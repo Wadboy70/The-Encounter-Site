@@ -50,15 +50,15 @@ $animLength: .5s;
         }
     }
     .greetingOverlay{
-        height: 70vh;
-        width: 100%;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 100%;
+        height: 80vh;
         .overlayButtonSlide{
-            margin: 0;
-            width: 100%;
-            height: 100%;
+            display: none;
+            border-radius: 0;
+            font-family: Cormorant;
         }
     }
 
@@ -76,6 +76,10 @@ $animLength: .5s;
     .slideshow__overlay{
         .greetingOverlay{
             font-size: 2em;
+            .overlayButtonSlide{
+                display: block;
+                margin: 2rem 24%;
+            }
         }
     }
 }

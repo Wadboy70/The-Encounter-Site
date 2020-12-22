@@ -1,5 +1,3 @@
-import React from 'react'
-
 import validEmails from "./constants/validEmails";
 import { COLLECTIONS } from "./firebase";
 import imageUrls from "../assets/imageUrls";
