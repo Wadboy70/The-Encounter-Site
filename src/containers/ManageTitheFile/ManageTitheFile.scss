@@ -15,6 +15,7 @@
     .manageTitheFile__sections{
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
         flex-wrap: wrap;
         >*{
             min-width: 300px;

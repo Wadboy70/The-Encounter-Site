@@ -8,7 +8,7 @@ import SignInSignUpPage from '../../pages/SignInSignUpPage/SignInSignUpPage';
 import AboutPage from '../../pages/AboutPage/AboutPage';
 import AdminPanel from '../../pages/AdminPage/AdminPage';
 import Footer from '../../containers/Footer/Footer';
-import { auth, getUserInfo } from '../../utils/firebase';
+import { auth, addNewUser, getUserInfo } from '../../utils/firebase';
 import { FirebaseUserContext } from '../../utils/context/user.context'
 import ROUTES, { DUPLICATE_PAGES } from '../../utils/routes';
 import USER_TIERS from '../../utils/constants/userTiers';
@@ -38,6 +38,7 @@ function App({history}) {
     const checkAuthstate = async () => {
       auth.onAuthStateChanged(async (userVal) => {
         if(userVal && user === undefined) {
+          addNewUser(userVal);
           setUser(await getUserInfo(userVal.uid));
         } else if (!userVal) setUser(null);
       })

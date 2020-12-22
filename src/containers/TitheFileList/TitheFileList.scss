@@ -4,7 +4,7 @@
     border-radius: .5rem;
     padding: 2%;
     overflow-y: scroll;
-
+    overflow-x: hidden;
     height: 40vh;
     &::-webkit-scrollbar-track
     {
@@ -24,12 +24,20 @@
     }
 
     ul{
+        width: 100%;
         .fileList__item{
             list-style-type: none;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-around;
+            span{
+                flex-shrink: 1;
+                .button{
+                    max-width: fit-content;
+                    margin: 0;
+                }
+            }
         }
     }
 }
