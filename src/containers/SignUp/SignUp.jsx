@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import TextInput from '../../components/TextInput/TextInput';
 import Button from '../../components/Button/Button';
@@ -6,20 +6,33 @@ import withForm from '../../utils/hocs/withForm';
 import { createPasswordAcc } from '../../utils/firebase';
 
 import './SignUp.scss';
+import { FirebaseUserContext } from '../../utils/context/user.context';
+import { Redirect } from 'react-router-dom';
+import ROUTES from '../../utils/routes';
 
 const SignUp = ({handleChange, formState, setError}) => {
     const { error } = formState;
-
+    const [canView, setCanView] = useState(true);
+    const [user] = useContext(FirebaseUserContext);
     const signUpSubmit = async () => {
-        const { signUpEmail = '', signUpPassword = '', signUpConfirmPassword = '' } = formState;
-        if(signUpPassword !== signUpConfirmPassword) setError('Passwords don\'t match!');
-        else {
-            const response = await createPasswordAcc(signUpEmail, signUpPassword);
-            if(response.message) setError(response.message);
+        setCanView('waiting');
+        const { signUpEmail = '', signUpPassword = '', signUpConfirmPassword = '', signUpName = ''} = formState;
+        if(signUpPassword !== signUpConfirmPassword) {
+            setError('Passwords don\'t match!');
+            setCanView(true);
         }
-
+        else {
+            const response = await createPasswordAcc(signUpEmail, signUpPassword, signUpName);
+            if(response?.message) setError(response.message);
+            setCanView(false);
+        }
+        
     }
+    useEffect(()=>{
+        if(user && canView !== 'waiting') setCanView(false);;
+    },[setCanView, canView, user])
     return (
+        canView ? 
         <form className = 'signInSignUp__signUp'>
             <h1>I don't have an account</h1>
             <h3>Sign up with your email and password</h3>
@@ -61,7 +74,8 @@ const SignUp = ({handleChange, formState, setError}) => {
                 error &&
                 <p>{error}</p>
             }
-        </form>
+        </form> : 
+        <Redirect to = { ROUTES.HOME.url }/>
     );
 }
 

@@ -20,6 +20,7 @@ import DuplicateInfoPage from '../../pages/DuplicateInfoPage/DuplicateInfoPage';
 import './App.scss';
 import ForgotPassword from '../../pages/ForgotPassword/ForgotPassword';
 import LeadershipPage from '../../pages/LeadershipPage/LeadershipPage';
+import GivingPage from '../../pages/GivingPage/GivingPage';
 
 function App({history}) {
 
@@ -34,17 +35,20 @@ function App({history}) {
   
   //check if logged in
   useEffect(() => {
-    auth.onAuthStateChanged(async (userVal) => {
-      if(userVal && user === undefined) {
-        addNewUser(userVal);
-        setUser(await getUserInfo(userVal.uid));
-      } else if (!userVal) setUser(null);
-    })
+    const checkAuthstate = async () => {
+      auth.onAuthStateChanged(async (userVal) => {
+        if(userVal && user === undefined) {
+          addNewUser(userVal);
+          setUser(await getUserInfo(userVal.uid));
+        } else if (!userVal) setUser(null);
+      })
+    }
     //onRoute change
     history.listen(() => {
       setDrawerOpen(false);
       window.scrollTo({top: 0});
     })
+    checkAuthstate()
   })
 
   return (
@@ -62,7 +66,7 @@ function App({history}) {
         <Route 
           exact 
           path = {ROUTES.SIGN_IN_SIGN_UP.url} 
-          render = {() => user ? (<Redirect to = {ROUTES.HOME.url}/>) : (<SignInSignUpPage/>)}
+          component = {SignInSignUpPage}
         />
         <Route 
           exact 
@@ -79,6 +83,7 @@ function App({history}) {
           />
         </Route>
         <Route exact path = {ROUTES.ABOUT.url} component = {AboutPage}/>
+        <Route exact path = {ROUTES.GIVING.url} component = {GivingPage}/>
         <Route exact path = {ROUTES.LEADERSHIP.url} component = {LeadershipPage}/>
         <Route exact path = {ROUTES.CALENDAR.url} component = {CalendarPage}/>
         <Route exact path = {ROUTES.LIVE_SERMONS.url} component = {SermonsPage}/>
