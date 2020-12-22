@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import Button from '../../components/Button/Button';
 import {fileUpload } from '../../utils/firebase';
 
+import './UploadFile.scss'
+
 const UploadFile = () => {
     
     const [file, setFile] = useState(null);
@@ -25,7 +27,7 @@ const UploadFile = () => {
         }
     }
     return(
-        <div className = 'manageTitheFile__uploadFile'>
+        <div className = 'uploadFile'>
             <h2>Upload Tithe Files</h2>
             {
                 formSubmitted ? 
@@ -36,7 +38,7 @@ const UploadFile = () => {
                         onChange = {handleFormChange}
                     />
                     <Button 
-                        className = 'navyBorder transparent' 
+                        className = 'whiteBorder small transparent' 
                         op = { handleSubmitFile }
                     >
                         Submit

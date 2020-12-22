@@ -104,14 +104,18 @@ export const addNewDoc = async (info = {}, collection = '') => {
 export const fileUpload = (file, name) => {
     const fileRef = storageRef.child(`titheInfo/${name}`);
     return fileRef.put(file).then(res => res).catch(err => err);
-}
+};
 
 export const fileList = () => {
     const listRef = storageRef.child('titheInfo');
     return listRef.listAll().then(res => res);
-}
+};
 
 export const deleteFile = (path) => {
     const listRef = storageRef.child(path);
     return listRef.delete().then(res => res).catch(err => err);
+};
+
+export const downloadFile = (path) => {
+    return storageRef.child(path).getDownloadURL().then(url => url).catch(err => err);
 }

@@ -1,17 +1,26 @@
 @import '../../assets/colors.scss';
 .manageTitheFile{
     width: 100%;
-    background: white;
     border-radius: .5rem;
     display: flex;
     flex-direction: column;
     margin-top: 2%;
     padding: 2%;
     *{
-        color: $navy;
+        color: $white;
+    }
+    h1{
+        text-align: center;
     }
     .manageTitheFile__sections{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        >*{
+            min-width: 300px;
+            flex-grow: 1;
+            max-width: 50%;
+            margin: 1%;
+        }
     }
 }
