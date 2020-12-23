@@ -4,40 +4,47 @@ import ROUTES from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
 import './DisplaySection.scss';
+import Button from '../../components/Button/Button';
 
 const DisplaySection = () => {
-    const displayContent = [
-        {
-            title: 'Engage Youth Ministry',
-            button: 'Find Out More',
-            description: 'Engaging programming to help our youth grow in their faith',
-            image: imageUrls.youth,
-            buttonProps: {link: ROUTES.YOUTH_MINISTRY.url}
-        },
-        {
-            title: 'Giving',
-            button: 'Give',
-            buttonProps: {link: ROUTES.GIVING.url},
-            description: 'Your generosity is positively changing lives in this ministry, community, and globally',
-            image: imageUrls.tithing
-        },
-        {
-            title: 'This is church. Anywhere.',
-            button: 'Watch Now',
-            description: 'Watch Online',
-            buttonProps: {link: ROUTES.LIVE_SERMONS.url},
-            image: imageUrls.churchService
-        }
-    ];
     return(
         <section className = 'display'>
-            {
-                displayContent.map((display, index) => (
-                    <DisplayBox key = {index} {...display} className = 'display__box'/>
-                ))
-            }
+            <DisplayBox
+                title = 'This is church. Anywhere.'
+                button = 'Watch Now'
+                description = 'Watch Online'
+                buttonProps = {{link: ROUTES.LIVE_SERMONS.url}}
+                image = {imageUrls.churchService}  
+                className = 'display__box'
+            />
+            <MinistryList/>
         </section>
     );
 };
+
+const MinistryList = () => {
+    const ministryList = [
+        ROUTES.YOUTH_MINISTRY,
+        ROUTES.WOMEN_MINISTRY,
+        ROUTES.MUSIC_MINISTRY,
+        ROUTES.MEN_MINISTRY,
+    ]
+    return(
+        <div className = 'ministryList'>
+            <h2 className = 'ministryList__title'>Get Involved</h2>
+            <ul className = 'ministryList__ministries'>
+                {
+                    ministryList.map(ministry => (
+                        <li key = {ministry.name} className = 'ministries__ministryItem'>
+                            <Button link = {ministry.url} className = 'transparent ministryItem__button'>
+                                {ministry.name}
+                            </Button>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    );
+}
 
 export default DisplaySection;

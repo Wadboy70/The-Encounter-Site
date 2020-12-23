@@ -20,9 +20,16 @@ const HomeWelcomeSection = () => (
         <p className = 'welcome__greeting'>
         At the <span className = 'greeting__highlight'> Encounter Worship Center,</span> our prayer for you is that you encounter God's presence, through the spoken word, through the worship, through our people, and through the atmosphere, so that your lives will never again be the same!
         </p>
-        <Button className = 'welcome__findOutMore transparent navyBorder navyFont large' link = {routes.ABOUT.url}>
-            Find Out More
-        </Button>
+        <div className = 'welcome__end'>
+            <img 
+                src={imageUrls.signature} 
+                alt="signature"
+                className = 'signature'
+            />
+            <Button className = 'welcome__findOutMore transparent navyBorder navyFont medium' link = {routes.ABOUT.url}>
+                Find Out More
+            </Button>
+        </div>
     </section>
 );
 

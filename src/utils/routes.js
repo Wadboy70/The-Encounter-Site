@@ -17,7 +17,7 @@ const ROUTES = {
     YOUTH_MINISTRY: {name: 'Engage Youth Ministry', url: '/youthministry'},
     MEN_MINISTRY: {name: 'Guided Men\'s Ministry', url: '/mensministry'},
     MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
-    WOMEN_MINISTRY: {name: 'Leader of Esther’s Circle Woman’s Group', url: '/womensministry'},
+    WOMEN_MINISTRY: {name: 'Esther’s Circle Woman’s Group', url: '/womensministry'},
 };
 export const FORM_SUBMIT_TYPE = {
     EMAIL: 'EMAIL',
@@ -36,7 +36,7 @@ export const LINK_BUTTON_TYPES = {
 };
 export const DUPLICATE_PAGES = [
     {
-        jumboImage: imageUrls.churchService,
+        jumboImage: imageUrls.mensMinistry,
         title: ROUTES.MEN_MINISTRY.name,
         url: ROUTES.MEN_MINISTRY.url,
         description: ['Minister Anthony Alexander is the leader of our Guided Men’s Ministry! Sign up for this program using the form below'],
@@ -175,7 +175,7 @@ export const DUPLICATE_PAGES = [
         }
     },
     {
-        jumboImage: imageUrls.friends,
+        jumboImage: imageUrls.prayerRequests,
         title: ROUTES.PRAYER_REQUESTS.name,
         url: ROUTES.PRAYER_REQUESTS.url,
         description: ['Submit prayer requests for the leaders of our ministry using the form below'],

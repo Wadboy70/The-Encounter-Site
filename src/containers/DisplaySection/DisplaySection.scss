@@ -5,12 +5,44 @@
     display: flex;
     flex-direction: column;
 }
+.ministryList{
+    background-color: $white;
+    border-radius: 2rem;
+    margin: 1rem;
+    .ministryList__title{
+        margin: 1rem;
+    }
+    .ministryList__ministries{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .ministries__ministryItem{
+            list-style-type: none;
+            border-top: $navy 1px solid;
+            width: 90%;
+            &:last-child{
+            border-bottom: $navy 1px solid;
+            }
+            .ministryItem__button{
+                min-height: 2rem;
+                max-height: 2rem;
+                width: 100%;
+                height: 8vh;
+                text-align: left;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    *{
+        color: $navy;
+    }
+}
 @media only screen and (min-width: 768px){
     .display{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        :nth-child(3n){
-            grid-column: 1 / end;
-        }
+        gap: 1rem;
     }
 }

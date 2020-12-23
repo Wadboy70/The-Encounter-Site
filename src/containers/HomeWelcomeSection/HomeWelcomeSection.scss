@@ -1,7 +1,7 @@
 @import '../../assets/colors.scss';
 .welcome{
     background-color: $white;
-    height: 90vh;
+    height: 100vh;
     padding: 10% 30px;
     display: flex;
     flex-direction: column;
@@ -29,10 +29,20 @@
             color: #ae9232;
         }
     }
-    .welcome__findOutMore{
+    .welcome__end{
         grid-area: button;
-        justify-self: center;
-        font-family: CormorantGaramont;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        .welcome__findOutMore{
+            justify-self: center;
+            font-family: CormorantGaramont;
+            border-radius: 0;
+            margin-bottom: 1rem;
+        }
+        .signature{
+            width: 80%;
+        }
     }
 }
 
@@ -56,6 +66,9 @@
         
         .welcome__banner{
             width: 130%;
+        }
+        .signature{
+            width: 100%;
         }
     }
 }
