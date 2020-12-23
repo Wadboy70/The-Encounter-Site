@@ -1,80 +1,41 @@
 @import '../../assets/colors.scss';
 .footer{
     background-color: $navy;
-    height: 35vh;
-    padding: 1rem 7%;
-    display: grid;
-    max-width: 100%;
-    grid-template-areas: 
-    "logo nav"
-    "social social"
-    "border border";
-    grid-template-columns: 50% 50%;
-    align-items: flex-start;
-    align-content: space-between;
-    justify-items: center;
-    .footer__nav{
-        grid-area: nav;
-        justify-self: flex-end;
-        border-radius: 0;
-        padding: 12px 15px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+    padding: 0 5vw;
     .footer__logo{
-        font-size: calc(1.2vh + 1.2vw + .7vmin);
         grid-area: logo;
-        min-width: fit-content;
-        height: fit-content;
-        justify-self: flex-start;
+        justify-items: flex-start;
     }
     .footer__social{
-        width: fit-content;
-        align-items: center;
-        justify-content: flex-start;
-        height: 80%;
-        
-        h1{
-            font-size: calc(1.5vh + 1.5vw + .75vmin);
-            font-family: Cormorant;
-            font-weight: 100;
-            margin-bottom: 1rem;
-        }
-        div{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-        *{
-            margin: 0;
-        }
-        .button{
-            height: fit-content;
-            width: 20%;
-        }
         grid-area: social;
+        height: 13vh;
+        width: fit-content;
+        font-family: Cormorant;
+        margin: 2rem;
+        justify-self: end;
     }
     .footer__border{
         grid-area: border;
         width: 100%;
+        min-height:5vh;
+        justify-self: center;
     }
-    .footer__social>h1, .footer__nav>h2{
-        font-size: calc(1.3vh + 1.3vw + .70vmin);
-    }
-    
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 600px){
     .footer{
-        min-height: fit-content;
-        height: fit-content;
+        display: grid;
+        height: 20vh;
         grid-template-areas: 
-        "logo social nav"
-        "border border border";
-        grid-template-columns: 30% 30% 30%;
-        grid-template-rows: 85% 15%;
-        row-gap: 1em ;
-        column-gap: 5%;
+        "logo social"
+        "border border"
+        ;
+        gap: 1rem;
         .footer__social{
-            justify-self: center;
+            margin: unset;
         }
     }
 }

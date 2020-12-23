@@ -15,7 +15,6 @@ const DuplicateInfoPage = ({info:{
     link
 }}) => {
     let buttonProps = {[link?.type]: link?.to};
-    console.log(buttonProps);
     return(
         <div className = 'duplicateInfoPage'>
             {

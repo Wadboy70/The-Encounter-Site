@@ -5,14 +5,15 @@
         display: flex;
         flex-direction: column;
         .duplicateContent__description{
-            width: fit-content;
+            width: 100%;
             margin-bottom: 2%;
             text-align: left;
-            width: 80%;
-            align-self: left;
             font-size: 1.7rem;
-            span{
+            &:nth-child(2){
+                margin-top: 7rem;
+                text-align: center;
                 align-self: center;
+                font-weight: 900;
             }
         }
         .duplicateContent__button{

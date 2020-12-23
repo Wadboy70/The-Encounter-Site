@@ -88,7 +88,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.youth,
         title: ROUTES.YOUTH_MINISTRY.name,
         url: ROUTES.YOUTH_MINISTRY.url,
-        description: ['The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.\nMinister Julianna James-Gilbert is the leader of our Engage Youth Ministry! Sign up for this program using the form below'],
+        description: ['The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.\nMinister Julianna James-Gilbert is the leader of our Engage Youth Ministry!','Sign up for this Ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,

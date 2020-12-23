@@ -21,8 +21,9 @@ const CalendarDateDisplay = ({
         let affirm = window.confirm('Are you sure you want to delete this sequence of events?');
         if (affirm){ 
             await getAllDocs(COLLECTIONS.CALENDAR).then(docs => {
-                docs.forEach((doc, index) => {
-                    doc.sequence === seqId && deleteDoc(doc.id, COLLECTIONS.CALENDAR);
+                docs.forEach(async(doc, index) => {
+                    doc.sequence === seqId && 
+                    console.log(await deleteDoc(doc.id, COLLECTIONS.CALENDAR));
                     if(index + 1 === docs.length) submitFormUpdate();
                 });
             });
