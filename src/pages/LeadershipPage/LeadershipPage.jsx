@@ -34,7 +34,7 @@ const LeadershipPage = () => {
         <div className = 'leadershipPage'>
             <Jumbotron 
                 image = {imageUrls.leadersPage} 
-                title = 'our leaders'
+                title = 'LEADERSHIP'
             />
             <ul className = 'leadershipPage__leaders'>
                 {

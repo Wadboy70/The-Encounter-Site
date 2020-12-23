@@ -6,6 +6,9 @@ import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import TitheFileList from '../../containers/TitheFileList/TitheFileList';
 import USER_TIERS from '../../utils/constants/userTiers';
 import { FirebaseUserContext } from '../../utils/context/user.context';
+import { ReactComponent as Mail } from '../../assets/images/mail.svg';
+import { ReactComponent as Phone } from '../../assets/images/cell.svg';
+import { ReactComponent as Computer } from '../../assets/images/computer.svg';
 
 import './GivingPage.scss';
 
@@ -17,19 +20,45 @@ const GivingPage = () => {
                     image = { imageUrls.tithing }
                     title = 'Make a Gift'
                 />
-            <div className = 'givingPage__duplicateContent'>
-                <p className = 'duplicateContent__description'>
+            <div className = 'givingPage__givingContent'>
+                <p className = 'givingContent__description'>
                     Your generosity is positively changing lives in this ministry, community, and globally. The Apostle Paul reminds us in 2 Corinthians 9:6-8 that whoever sows sparingly will reap sparingly and whosoever sows generously will reap generously. As you generously sow into this work, it is Gods covenant promise to multiply back to you what has been given. We want you to know that your seed creates resources for us to carry Gods love to the nations
                 </p>
-                <Button 
-                    className = 'yellowBG medium duplicateContent__button'
-                    anchor = 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection'
-                >
-                    Make a gift    
-                </Button>
+                <div className = 'givingContent__waysToGive'>
+                    <div className = 'waysToGive__giveColumn'>
+                        <Mail className = 'giveColumn__icon'/>
+                        <h2 className = 'giveColumn__title'>GIVE BY MAIL</h2>
+                        <p className = 'giveColumn__description'>Send your donation to:</p>
+                        <p className = 'giveColumn__description'>PO BOX 46247 Tampa, Florida 33647</p>
+                    </div>
+                    <div className = 'waysToGive__giveColumn'>
+                        <Computer className = 'giveColumn__icon'/>
+                        <h2 className = 'giveColumn__title'>GIVE ONLINE</h2>
+                        <p className = 'giveColumn__description'></p>
+                        <Button 
+                            className = 'yellowBG medium givingContent__button'
+                            anchor = 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection'
+                        >
+                            Make a Gift Today   
+                        </Button>
+                    </div>
+                    <div className = 'waysToGive__giveColumn'>
+                        <Phone className = 'giveColumn__icon'/>
+                        <h2 className = 'giveColumn__title'>GIVE BY APP</h2>
+                        <p className = 'giveColumn__description'></p>
+                        <ul className = 'giveColumn__appInstructions'>
+                            <li>1. Download Ministry One App</li>
+                            <li>2. Search for our church</li>
+                            <li>3. Click "Giving" Icon</li>
+                        </ul>
+                    </div>
+                </div>
+
                 {
                     user && user?.tier !== USER_TIERS.MEMBER &&
-                    <TitheFileList className = 'givingPage__titheFileList'/>
+                    <TitheFileList 
+                        className = 'givingPage__titheFileList'
+                    />
                 }
             </div>
         </div>

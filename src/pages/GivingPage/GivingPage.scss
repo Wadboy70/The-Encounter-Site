@@ -1,16 +1,77 @@
+@import '../../assets/colors.scss';
 .givingPage{
-    .givingPage__duplicateContent{
+    .givingPage__givingContent{
         margin-top: 4%;
         padding: 0 5% 5% 5%;
         display: flex;
         flex-direction: column;
-        .duplicateContent__description{
+        align-items: center;
+        .givingContent__description{
             width: fit-content;
             margin-bottom: 2%;
+            font-size: 1.7rem;
             text-align: left;
         }
-        .duplicateContent__button{
-            align-self: center;
+        .givingContent__waysToGive{
+            display: flex;
+            border: 10px solid $white;
+            flex-direction: column;
+            margin-bottom: 3rem;
+            border-radius: .5rem;
+            min-height: 50vh;
+            .waysToGive__giveColumn{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                padding: 1rem;
+                border: none;
+                .giveColumn__title{
+                    margin: 2rem 0;
+                }
+                .giveColumn__icon{
+                    fill: $white;
+                    height: 3rem;
+                    width: auto;
+                }
+                .givingContent__button{
+                    white-space: nowrap;
+                }
+                .giveColumn__appInstructions{
+                    li{
+                        list-style-type: none;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .givingPage__titheFileList{
+            width: 40%;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .givingPage{
+        .givingPage__givingContent{
+            margin-top: 4%;
+            padding: 0 5% 5% 5%;
+            display: flex;
+            flex-direction: column;
+            .givingContent__waysToGive{
+                flex-direction: row;
+                .waysToGive__giveColumn{
+                    width: 33%;
+                    border-left: 5px $white solid;
+                    border-right: 5px $white solid;
+                    &:first-child{
+                        border-left: none;
+                    }
+                    &:last-child{
+                        border-right: none;
+                    }
+                }
+            }
         }
     }
 }
