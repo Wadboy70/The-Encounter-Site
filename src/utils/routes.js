@@ -39,7 +39,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.mensMinistry,
         title: ROUTES.MEN_MINISTRY.name,
         url: ROUTES.MEN_MINISTRY.url,
-        description: ['Minister Anthony Alexander is the leader of our Guided Men’s Ministry! Sign up for this program using the form below'],
+        description: ['At The Encounter Worship Center, we biblically train and equip men to be spiritual leaders in their homes, in the church, and in their places of business. Guided Men’s Ministry guide men in the journey of Christian living to make an eternal impact for this generation and those to come. We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips and special events. In today’s culture, it’s increasingly important for men to honor God with their hearts and lives.', 'Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -64,7 +64,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.womensMinistry,
         title: ROUTES.WOMEN_MINISTRY.name,
         url: ROUTES.WOMEN_MINISTRY.url,
-        description: ['Minister Lavon Thompson is the leader of our Esthers Circle Woman’s Group! Sign up for this program using the form below'],
+        description: ['Queen Esther was a woman whose body, mind, soul and actions affected reality and changed the world.  This is what we believe that every woman has the potential to be as they encounter a life with the Lord.  At The Encounter Worship Center we have established the Esther\'s Circle Woman\'s Group to help all woman grow in their faith and grow in their overall perception of who God has created them to be in the Earth.  We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips and special events.  In today\'s culture, it\'s vital for woman to honor God with their hearts and lives.','Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -120,7 +120,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.concert,
         title: ROUTES.MUSIC_MINISTRY.name,
         url: ROUTES.MUSIC_MINISTRY.url,
-        description: ['Minister Brittany C. Weaver is the leader of our New Wine Music Ministry! Sign up for this program using the form below'],
+        description: ['Minister Brittany C. Weaver is the leader of our New Wine Music Ministry!','Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -140,6 +140,7 @@ export const DUPLICATE_PAGES = [
                 {
                     name: 'gift',
                     label: 'Ministry Gift (Vocal, Guitar, etc)',
+                    noFormat: true,
                     type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
                 }
             ],
@@ -178,7 +179,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.prayerRequests,
         title: ROUTES.PRAYER_REQUESTS.name,
         url: ROUTES.PRAYER_REQUESTS.url,
-        description: ['Submit prayer requests for the leaders of our ministry using the form below'],
+        description: ['All prayer request will be kept confidential to the prayer team and leadership','Submit prayer requests for the leaders of our ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.EMAIL,

@@ -26,6 +26,10 @@
             margin: .5rem 0;
             text-align: left;
         }
+        &.center{
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
 

@@ -12,7 +12,8 @@ const TextInput = ({
         label = '',
         required = false,
         textArea,
-        handleChange = () => {}
+        handleChange = () => {},
+        noFormat
     }) => {
     return(
     <div className = 'textInput'>
@@ -20,7 +21,7 @@ const TextInput = ({
             htmlFor = {name} 
             className = {`textInput__label ${labelClassName}`}
         >
-            { titleCaseSentence(label) }
+            { noFormat ? label : titleCaseSentence(label) }
         </label>
         {
             textArea ?

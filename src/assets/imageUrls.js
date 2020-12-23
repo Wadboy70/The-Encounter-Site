@@ -1,5 +1,6 @@
 const imageUrls = {
     aboutClosingSection: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/aboutClosingSection.jpg?alt=media&token=9bb4a5c1-74c0-4bf8-b921-eca44b1cef4e',
+    arthurCollage: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/Family%20Collage.jpg?alt=media&token=8f8326c1-19ca-4132-889b-f06f924bccfa',
     brittany: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/BrittanyWeaver.png?alt=media&token=869e844b-ef45-4949-8327-072c87a3886a',
     brittanyBio: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/BrittanyWeaverBio.jpg?alt=media&token=fee964f0-da01-4239-a621-7c4b1a65b389',
     encounterBanner: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/EWCBanner.jpg?alt=media&token=d558d133-8d0b-4dcc-adf6-36ef24329a05',
@@ -10,7 +11,6 @@ const imageUrls = {
     logo: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/Logo.png?alt=media&token=30c86145-ab12-4252-a0bc-f624cb5edb7b',
     anthony: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/anthonyAlexander.png?alt=media&token=cd171b1b-a446-4171-8aa2-2d9e9536615c',
     anthonyBio: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/anthonyAlexanderBio.jpg?alt=media&token=02daa52f-06f1-4a0f-aefe-8437bf4b0f22',
-    arthurCollage: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/arthurCollage.png?alt=media&token=3cec4df1-ed85-44da-a8b6-5d83d9815567',
     arthurStanding: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/arthurStanding.png?alt=media&token=5def74a1-dc3b-42af-b3c5-4a517fe89e4f',
     churchService: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/churchService.jpg?alt=media&token=38451a35-67b2-4d59-9ae8-a58ef8b4cf22',
     contact: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/contact.jpg?alt=media&token=0a28c573-3036-4676-a112-29e754f7dce6',
@@ -27,6 +27,7 @@ const imageUrls = {
     signature: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/Pastor%20Signature.png?alt=media&token=16ba0e0c-429d-431c-87aa-f00a22518194',
     strongerTogether: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/strongerTogether.jpg?alt=media&token=8714f6c7-df91-4a1f-882e-ef847055c6fb',
     tarneice: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/tarneiceMines.png?alt=media&token=2c0ca0ea-7efd-4f9a-980f-3df1630c9b99',
+    tarneiceBio: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/tarneiceBio.jpg?alt=media&token=03722aa8-7dcb-443c-9019-1c0d68bcff07',
     tithing: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/givingImage.jpg?alt=media&token=dcb8d5e1-1807-4081-8bc3-5de3268ce8bc',
     womensMinistry: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/womensMinistry.jpg?alt=media&token=dc8ceb08-07fc-4310-b2ed-759a00880b55',
     concert: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/worshipBackground.jpg?alt=media&token=282e4ea7-9804-4e15-8061-c7e8df527633',

@@ -99,6 +99,7 @@ const FormSection = ({
                                             textArea = {field.type === FORM_FIELD_INPUT_TYPE.TEXT_AREA}
                                             handleChange = { handleChange } 
                                             formState = { formState }
+                                            noFormat = {field.noFormat}
                                             inputClassName = {
                                                 field.type === FORM_FIELD_INPUT_TYPE.TEXT_AREA && 'emailFormsPage__message'
                                             }

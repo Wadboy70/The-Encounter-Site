@@ -25,6 +25,10 @@ const LeadershipPage = () => {
             img: imageUrls.juliannaBio,
             link: ROUTES.YOUTH_MINISTRY
         },
+        {
+            img: imageUrls.tarneiceBio,
+            link: ROUTES.ABOUT
+        },
     ]
     return(
         <div className = 'leadershipPage'>
