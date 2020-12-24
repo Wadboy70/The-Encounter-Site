@@ -14,16 +14,16 @@ const LeadershipPage = () => {
             link: ROUTES.MEN_MINISTRY
         },
         {
-            img: imageUrls.brittanyBio,
-            link: ROUTES.MUSIC_MINISTRY
-        },
-        {
             img: imageUrls.lavonBio,
             link: ROUTES.WOMEN_MINISTRY
         },
         {
             img: imageUrls.juliannaBio,
             link: ROUTES.YOUTH_MINISTRY
+        },
+        {
+            img: imageUrls.brittanyBio,
+            link: ROUTES.MUSIC_MINISTRY
         },
         {
             img: imageUrls.tarneiceBio,

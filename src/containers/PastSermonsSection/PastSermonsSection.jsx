@@ -6,18 +6,19 @@ import withFetch from '../../utils/hocs/withFetch';
 import './PastSermonsSection.scss';
 
 const PastSermonsSection = () => {
-
+    
     const [videoList, setVideoList] = useState(undefined);
-
+    
     useEffect(()=>{
-        if(!videoList) withFetch("/recentVideos", list => {
+        let mounted = true;
+        if(!videoList && mounted) withFetch("/recentVideos", list => {
             if(list?.error?.code >= 400) throw Error('Quota Error');
             setVideoList(list?.items)
           }, err => {
             setVideoList(videoInfo);
             console.log(err);
           });
-          
+          return () => mounted = false;
     });
     return (
         <section className = 'sermonsPage__videos scrollbar'>

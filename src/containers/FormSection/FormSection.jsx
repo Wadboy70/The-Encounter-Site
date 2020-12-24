@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import Button from '../../components/Button/Button';
+import Spinner from '../../components/Spinner/Spinner';
 import Dropdown from '../../components/Dropdown/Dropdown';
-import SignInSignOutButton from '../../components/SignInSignOutButton/SignInSignOutButton';
+import withFetch from '../../utils/hocs/withFetch';
 import TextInput from '../../components/TextInput/TextInput';
 import { FirebaseUserContext } from '../../utils/context/user.context';
 import { addNewDoc } from '../../utils/firebase';
 import { replaceWhitespace, sendEmail } from '../../utils/helperFunctions';
 import withForm from '../../utils/hocs/withForm';
 import { FORM_FIELD_INPUT_TYPE, FORM_SUBMIT_TYPE } from '../../utils/routes';
+import ReCAPTCHA from "react-google-recaptcha";
 
 import './FormSection.scss';
 
@@ -24,6 +26,7 @@ const FormSection = ({
     }) => {
 
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [captcha, setCaptcha] = useState(null);
     const [user] = useContext(FirebaseUserContext);
 
     const submitEmail = () => {
@@ -54,16 +57,26 @@ const FormSection = ({
     }
 
     useEffect(()=>{
+        let mounted = true;
         const setDefaultValues = () => {
             for(let field of formInfo?.fields){
                 if(!formState[field?.name]) 
                     handleChangeManual({[field.name]: field.defaultVal || ''})
             }
         }
+        const getCaptcha = async () => {
+            console.log( mounted && await withFetch('/recaptcha')) ;
+            setCaptcha(333);
+        }
         if(formInfo?.fields?.length && !Object.keys(formState).length) setDefaultValues();
-        
+        if(!captcha) getCaptcha();
+
+        return () => mounted = false;
     });
 
+    useEffect(()=>{
+        console.log(formState.captcha);
+    }, [formState.captcha])
     return(
         <div className = {`emailFormsPage ${className}`}>
             {
@@ -72,7 +85,7 @@ const FormSection = ({
             }
             {children}
             {
-                ((formInfo?.submit?.type !== FORM_SUBMIT_TYPE.ADMIN_STORAGE) || (formInfo?.submit?.type === FORM_SUBMIT_TYPE.ADMIN_STORAGE && user))  ?
+                captcha  ?
                 <>
                     {
                         formSubmitted ? 
@@ -112,13 +125,14 @@ const FormSection = ({
                             >
                                 Submit
                             </Button>
+                            <ReCAPTCHA
+                                sitekey = {captcha}
+                                onChange = { val => handleChangeManual({'captcha': val}) }
+                            />
                         </form>
                     }
                 </> :
-                <>
-                    <p className = 'emailFormsPage__signInMessage'>You must be signed in to fill out this form!</p>
-                    <SignInSignOutButton/>
-                </>
+                <Spinner/>
             }
         </div>
     );

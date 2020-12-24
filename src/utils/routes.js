@@ -15,7 +15,7 @@ const ROUTES = {
     GIVING: {name: 'Giving', url: '/giving'},
     LEADERSHIP: {name: 'Leadership', url: '/leadership'},
     MEN_MINISTRY: {name: 'Guided Men\'s Ministry', url: '/mensministry'},
-    WOMEN_MINISTRY: {name: 'Esther’s Circle Woman’s Group', url: '/womensministry'},
+    WOMEN_MINISTRY: {name: 'Esther’s Circle Women’s Group', url: '/womensministry'},
     YOUTH_MINISTRY: {name: 'Engage Youth Ministry', url: '/youthministry'},
     MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
 };
@@ -88,7 +88,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.youth,
         title: ROUTES.YOUTH_MINISTRY.name,
         url: ROUTES.YOUTH_MINISTRY.url,
-        description: ['The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.\nMinister Julianna James-Gilbert is the leader of our Engage Youth Ministry!','Sign up for this Ministry using the form below'],
+        description: ['The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.','Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -110,8 +110,8 @@ export const DUPLICATE_PAGES = [
                     name: 'group',
                     label: 'Group',
                     type: FORM_FIELD_INPUT_TYPE.DROPDOWN,
-                    values: ['Elementary School','Middle School', 'High School'],
-                    defaultVal: 'Elementary School'
+                    values: ['E-Group 1 Elementary School','E-Group 2 Middle School', 'E-Group 1 High School'],
+                    defaultVal: 'E-Group 1 Elementary School'
                 }
             ],
         }
@@ -179,7 +179,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.prayerRequests,
         title: ROUTES.PRAYER_REQUESTS.name,
         url: ROUTES.PRAYER_REQUESTS.url,
-        description: ['All prayer request will be kept confidential to the prayer team and leadership','Submit prayer requests for the leaders of our ministry using the form below'],
+        description: ['','Submit prayer requests to the leaders of our ministry using the form below','All prayer request will be kept confidential to the prayer team and leadership'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.EMAIL,

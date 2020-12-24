@@ -3,12 +3,14 @@
     background-color: $purple;
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
     height: 80vh;
     .aboutPastorSection__displayItem{
         flex-grow: 1;
         max-height: 100%;
         min-height: 30vh;
-        margin: 2%;
+        min-width: 370px;
+        margin: 1%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -19,8 +21,12 @@
             width: fit-content;
         }
         P{
-            font-size: calc(.8vh + .8vw + .5vmin);
+            flex-grow: 1;
+            font-size: calc(1.2vh + 1vw + .6vmin);
             padding: 1rem;
+            line-height: normal;
+            margin: 0;
+
         }
     }
     .aboutPastorSection__photo{
@@ -32,15 +38,17 @@
 @media only screen and (min-width: 992px){
     .aboutPastorSection{
         flex-direction: row;
+        height: fit-content;
         .aboutPastorSection__displayItem{
-            height: 100%;
+            height: fit-content;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .aboutPastorSection__photo{
-            height: 100%;
-            width: unset;
+            height: 80vh;
+            width: auto;
         }
     }
 }

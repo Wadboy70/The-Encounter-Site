@@ -1,7 +1,7 @@
 @import '../../assets/colors.scss';
 .welcome{
     background-color: $white;
-    height: 100vh;
+    height: 90vh;
     padding: 10% 30px;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     }
     .welcome__greeting,.welcome__greeting>*{
         font-family: FuturaMedium;
-        font-size: calc(1.3vw + 1.3vh + .65vmin);
+        font-size: calc(1.2vw + 1.2vh + .6vmin);
     }
     .worshipImage{
         grid-area: img;
@@ -40,7 +40,7 @@
             border-radius: 0;
         }
         .signature{
-            margin-bottom: 1rem;
+            margin-bottom: .5rem;
             width: 80%;
         }
     }

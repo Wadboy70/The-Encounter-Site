@@ -9,6 +9,7 @@ const publicPath = path.join(__dirname, '..','build');
 const api_key = process.env.MAILGUN_API_KEY;
 const domain = process.env.MAILGUN_DOMAIN;
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
+const RECAPTCHA_KEY = process.env.RECAPTCHA_KEY;
 const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 app.use(bodyParser.json());
@@ -64,6 +65,9 @@ app.get('/recentVideos', (req, res) => {
         }
     };
     recentContent();
+});
+app.get('/recaptcha', (req, res) => {
+    res.send(RECAPTCHA_KEY); 
 });
 app.get('*', (req,res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
