@@ -25,7 +25,7 @@
                 align-items: center;
                 justify-content: space-around;
                 padding: 1rem;
-                border: none;
+                border-bottom: 5px $white solid;
                 .giveColumn__title{
                     margin: 2rem 0;
                 }
@@ -34,13 +34,21 @@
                     height: 3rem;
                     width: auto;
                 }
-                .givingContent__button{
-                    white-space: nowrap;
-                }
-                .giveColumn__appInstructions{
-                    li{
-                        list-style-type: none;
-                        text-align: center;
+                .giveColumn__content{
+                    height: 35%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .givingContent__button{
+                        white-space: nowrap;
+                    }
+                    .giveColumn__appInstructions{
+                        li{
+                            list-style-type: none;
+                            text-align: center;
+                            font-size: 1.2rem;
+                        }
                     }
                 }
             }
@@ -64,6 +72,7 @@
                     width: 33%;
                     border-left: 5px $white solid;
                     border-right: 5px $white solid;
+                    border-bottom: none;
                     &:first-child{
                         border-left: none;
                     }

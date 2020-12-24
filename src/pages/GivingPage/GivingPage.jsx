@@ -28,29 +28,33 @@ const GivingPage = () => {
                     <div className = 'waysToGive__giveColumn'>
                         <Mail className = 'giveColumn__icon'/>
                         <h2 className = 'giveColumn__title'>GIVE BY MAIL</h2>
-                        <p className = 'giveColumn__description'>Send your donation to:</p>
-                        <p className = 'giveColumn__description'>PO BOX 46247 Tampa, Florida 33647</p>
+                        <div className = 'giveColumn__content'>
+                            <p className = 'giveColumn__description'>Send your donation to:</p>
+                            <p className = 'giveColumn__description'>PO BOX 46247 Tampa, Florida 33647</p>
+                        </div>
                     </div>
                     <div className = 'waysToGive__giveColumn'>
                         <Computer className = 'giveColumn__icon'/>
                         <h2 className = 'giveColumn__title'>GIVE ONLINE</h2>
-                        <p className = 'giveColumn__description'></p>
-                        <Button 
-                            className = 'yellowBG medium givingContent__button'
-                            anchor = 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection'
-                        >
-                            Make a Gift Today   
-                        </Button>
+                        <div className = 'giveColumn__content'>
+                            <Button 
+                                className = 'yellowBG medium givingContent__button'
+                                anchor = 'https://www.givelify.com/givenow/1.0/NzExOTk=/selection'
+                            >
+                                Make a Gift Today   
+                            </Button>
+                        </div>
                     </div>
                     <div className = 'waysToGive__giveColumn'>
                         <Phone className = 'giveColumn__icon'/>
                         <h2 className = 'giveColumn__title'>GIVE BY APP</h2>
-                        <p className = 'giveColumn__description'></p>
-                        <ul className = 'giveColumn__appInstructions'>
-                            <li>1. Download Ministry One App</li>
-                            <li>2. Search for our church</li>
-                            <li>3. Click "Giving" Icon</li>
-                        </ul>
+                        <div className = 'giveColumn__content'>
+                            <ul className = 'giveColumn__appInstructions'>
+                                <li>1. Download Ministry One App</li>
+                                <li>2. Search for our church</li>
+                                <li>3. Click "Giving" Icon</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
