@@ -70,7 +70,9 @@ const FormSection = ({
 
         return () => mounted = false;
     });
-
+    useEffect(()=>{
+        console.log(formState.captcha)
+    },[formState.captcha])
     return(
         <div className = {`emailFormsPage ${className}`}>
             {
