@@ -5,7 +5,6 @@ import Spinner from '../../components/Spinner/Spinner';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import withFetch from '../../utils/hocs/withFetch';
 import TextInput from '../../components/TextInput/TextInput';
-import { FirebaseUserContext } from '../../utils/context/user.context';
 import { addNewDoc } from '../../utils/firebase';
 import { replaceWhitespace, sendEmail } from '../../utils/helperFunctions';
 import withForm from '../../utils/hocs/withForm';
@@ -27,7 +26,6 @@ const FormSection = ({
 
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [captcha, setCaptcha] = useState(null);
-    const [user] = useContext(FirebaseUserContext);
 
     const submitEmail = () => {
         setFormSubmitted(true);
