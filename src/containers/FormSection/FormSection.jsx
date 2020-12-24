@@ -63,12 +63,7 @@ const FormSection = ({
             }
         }
         const getCaptcha = async () => {
-            let apiVal;
-            const setVal = (val) => apiVal = val.recaptcha;
-            (mounted && withFetch('/recaptcha', setVal));
-            console.log(apiVal);
-            if (!apiVal) setCaptcha('broken')
-            else setCaptcha(apiVal);
+            (mounted && withFetch('/recaptcha', setCaptcha,()=>setCaptcha('broken'), 'recaptcha', 'broken'));
         }
         if(formInfo?.fields?.length && !Object.keys(formState).length) setDefaultValues();
         if(!captcha) getCaptcha();
@@ -77,8 +72,8 @@ const FormSection = ({
     });
 
     useEffect(()=>{
-        console.log(formState.captcha);
-    }, [formState.captcha])
+        console.log(formState);
+    }, [formState])
     return(
         <div className = {`emailFormsPage ${className}`}>
             {

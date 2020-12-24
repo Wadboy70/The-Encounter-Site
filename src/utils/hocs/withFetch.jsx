@@ -1,12 +1,11 @@
-const withFetch = async (url = '', setFunc = () => {}, errFunc) => {
+const withFetch = async (url = '', setFunc = () => {}, errFunc, attributes, defaultVal = '') => {
     try{
         await fetch(url)
         .then(val => {
             return val.json();
         })
         .then(res => {
-            console.log(res);
-            setFunc(res);
+            attributes ? setFunc(res[attributes] || defaultVal) : setFunc(res);
         })
     } catch(err){
         errFunc ? errFunc(err) : console.log(err);
