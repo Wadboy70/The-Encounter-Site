@@ -26,7 +26,7 @@ const HomeWelcomeSection = () => (
                 alt="signature"
                 className = 'signature'
             />
-            <Button className = 'welcome__findOutMore transparent navyBorder navyFont medium' link = {routes.ABOUT.url}>
+            <Button className = 'welcome__findOutMore purple  large' link = {routes.ABOUT.url}>
                 Find Out More
             </Button>
         </div>

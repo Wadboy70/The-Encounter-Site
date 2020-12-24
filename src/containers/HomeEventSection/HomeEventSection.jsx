@@ -7,8 +7,6 @@ import { calendarDateFormatting } from '../../utils/helperFunctions';
 import ROUTES from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
-import './HomeEventSection.scss';
-
 const HomeEventSection = () => {
     
     const [upcomingEvent, setUpcomingEvent] = useState(null)

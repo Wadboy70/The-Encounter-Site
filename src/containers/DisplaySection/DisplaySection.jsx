@@ -16,6 +16,7 @@ const DisplaySection = () => {
                 buttonProps = {{link: ROUTES.LIVE_SERMONS.url}}
                 image = {imageUrls.churchService}  
                 className = 'display__box'
+                justifyCenter
             />
             <MinistryList/>
         </section>
@@ -24,10 +25,11 @@ const DisplaySection = () => {
 
 const MinistryList = () => {
     const ministryList = [
-        ROUTES.YOUTH_MINISTRY,
-        ROUTES.WOMEN_MINISTRY,
-        ROUTES.MUSIC_MINISTRY,
+        ROUTES.GIVING,
         ROUTES.MEN_MINISTRY,
+        ROUTES.WOMEN_MINISTRY,
+        ROUTES.YOUTH_MINISTRY,
+        ROUTES.MUSIC_MINISTRY,
     ]
     return(
         <div className = 'ministryList'>

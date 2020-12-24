@@ -17,7 +17,7 @@ const DisplayItem = ({info = {}, className = '', children}) => {
             {
                 button &&
                 <Button 
-                    className = 'displayItem__button small yellowBG' 
+                    className = 'displayItem__button medium yellowBG' 
                     {...buttonProps}
                 >
                     {button}

@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    height: 90vh;
     padding: 0 5% 2% 5%;
     .closingSection__display{
         flex-grow: 1;
@@ -11,5 +12,14 @@
     .closingSection{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        >*{
+            height: 80%;
+        }
+        .closingSection__display{
+            >*{
+                height: calc(90vh*.8);
+                justify-content: center;
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ const ClosingSection = () => (
             buttonProps = {{link: ROUTES.CONTACT_US.url}}
             image = {imageUrls.contact}
             className = 'closingSection__display'
+            justifyCenter
         />
         <DisplayBox
             title = 'Our Ministry Leaders'
@@ -23,6 +24,7 @@ const ClosingSection = () => (
             buttonProps = {{link: ROUTES.LEADERSHIP.url}}
             image = {imageUrls.leadersPage}
             className = 'closingSection__display'
+            justifyCenter
         />
     </div>
 )
