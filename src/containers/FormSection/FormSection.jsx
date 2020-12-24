@@ -71,9 +71,6 @@ const FormSection = ({
         return () => mounted = false;
     });
 
-    useEffect(()=>{
-        console.log(formState);
-    }, [formState])
     return(
         <div className = {`emailFormsPage ${className}`}>
             {
