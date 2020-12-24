@@ -21,7 +21,8 @@ const FormSection = ({
         formInfo,
         children,
         className = '',
-        handleData
+        handleData,
+        setError
     }) => {
 
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -47,7 +48,9 @@ const FormSection = ({
     }
 
     const whichSubmit = () => {
-        if(formInfo?.submit?.type === FORM_SUBMIT_TYPE.EMAIL) 
+        setError(null);
+        if(!formState.captcha) setError('Please fill out captcha!')
+        else if(formInfo?.submit?.type === FORM_SUBMIT_TYPE.EMAIL) 
             submitEmail();
         else if (formInfo?.submit?.type === FORM_SUBMIT_TYPE.ADMIN_STORAGE) 
             submitSignUpInfo();
@@ -70,9 +73,6 @@ const FormSection = ({
 
         return () => mounted = false;
     });
-    useEffect(()=>{
-        console.log(formState.captcha)
-    },[formState.captcha])
     return(
         <div className = {`emailFormsPage ${className}`}>
             {
@@ -127,6 +127,10 @@ const FormSection = ({
                                     sitekey = {captcha}
                                     onChange = { val => handleChangeManual({'captcha': val}) }
                                 />
+                            }
+                            {
+                                formState.error &&
+                                <p>{formState.error}</p>
                             }
                         </form>
                     }

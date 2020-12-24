@@ -21,10 +21,6 @@ const ForgotPassword = () => {
         setMessage(null);
         passwordReset(data.email).then(res => setMessage(res?.message)).catch(res => setMessage(res?.message))
     }
-
-    useEffect(() => {
-        console.log(message)
-    },[message])
     return(
         <div className = 'forgotPassword'>
             {

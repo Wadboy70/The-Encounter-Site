@@ -27,7 +27,6 @@ export const replaceUnderscore = (str) => {
 };
 
 export const sendEmail = async ({to = '', message = '', subject = '', name = ''}) => {
-    console.log(to);
     return fetch('/sendMail', {
         method: 'POST',
         body:JSON.stringify({

@@ -68,7 +68,6 @@ export const addNewUser = async (userInfo) => {
         }
     }
     else {
-        console.log('making new user')
         await db.collection(COLLECTIONS.USERS).doc(uid).set(user);
     }
     return true;

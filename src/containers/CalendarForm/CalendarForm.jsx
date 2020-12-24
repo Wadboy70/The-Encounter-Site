@@ -91,9 +91,6 @@ const CalendarForm = ({
         handleChangeManual(time)
     }, [handleChangeManual, RECURRING_FREQ.Days]);
 
-    // useEffect(()=>{
-    //     console.log(formState)
-    // }, [formState])
 
     return(
         <div className = 'calendarForm'>

@@ -40,11 +40,9 @@ app.get('/checkLive', (req, res) => {
             })
             .then(html => {
                 let val = html.search('{"text":" watching"}');
-                console.log('live', val);
                 res.send({live: val !== -1});
             });
         } catch(err){
-            console.log(err);
             res.send({err, message:'error', live: true})
         }
     };
@@ -60,7 +58,6 @@ app.get('/recentVideos', (req, res) => {
             .then(response => response);
             res.json(live);
         } catch(err){
-            console.log(err);
             res.send({err, message:'error', live: false});
         }
     };

@@ -23,7 +23,7 @@ const CalendarDateDisplay = ({
             await getAllDocs(COLLECTIONS.CALENDAR).then(docs => {
                 docs.forEach(async(doc, index) => {
                     doc.sequence === seqId && 
-                    console.log(await deleteDoc(doc.id, COLLECTIONS.CALENDAR));
+                    (await deleteDoc(doc.id, COLLECTIONS.CALENDAR));
                     if(index + 1 === docs.length) submitFormUpdate();
                 });
             });

@@ -17,7 +17,6 @@ const UploadFile = () => {
     }
     
     const handleSubmitFile = () => {
-        console.log('submit');
         setError(null);
         if(file) {
             fileUpload(file, file.name);
