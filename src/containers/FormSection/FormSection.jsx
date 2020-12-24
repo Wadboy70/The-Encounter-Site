@@ -66,6 +66,7 @@ const FormSection = ({
             let apiVal;
             const setVal = (val) => apiVal = val.recaptcha;
             (mounted && withFetch('/recaptcha', setVal));
+            console.log(apiVal);
             if (!apiVal) setCaptcha('broken')
             else setCaptcha(apiVal);
         }
