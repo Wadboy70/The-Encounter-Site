@@ -5,7 +5,6 @@ const withFetch = async (url = '', setFunc = () => {}, errFunc) => {
             return val.json();
         })
         .then(res => {
-            console.log(res);
             setFunc(res);
         })
     } catch(err){

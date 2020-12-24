@@ -63,9 +63,11 @@ const FormSection = ({
             }
         }
         const getCaptcha = async () => {
-            let apiVal = (await withFetch('/recaptcha'));
+            let apiVal;
+            const setVal = (val) => apiVal = val.recaptcha;
+            (mounted && withFetch('/recaptcha', setVal));
             if (!apiVal) setCaptcha('broken')
-            else setCaptcha(apiVal.recaptcha);
+            else setCaptcha(apiVal);
         }
         if(formInfo?.fields?.length && !Object.keys(formState).length) setDefaultValues();
         if(!captcha) getCaptcha();
