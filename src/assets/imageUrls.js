@@ -32,7 +32,7 @@ const imageUrls = {
     womensMinistry: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/womensMinistry.jpg?alt=media&token=dc8ceb08-07fc-4310-b2ed-759a00880b55',
     concert: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/worshipBackground.jpg?alt=media&token=282e4ea7-9804-4e15-8061-c7e8df527633',
     worshipPerson: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/worshipPerson.jpg?alt=media&token=536d06d6-11b6-40fe-8339-c07190c76740',
-    youth: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/youthImage.jpg?alt=media&token=e43651ad-818f-4867-a61d-7c6f5ea1664e'
+    youth: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/youthMinistry.jfif?alt=media&token=8ba92f53-ed85-451e-9c5d-ef474e5b3361'
 }
 
 export default imageUrls;

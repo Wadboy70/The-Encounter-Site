@@ -14,10 +14,10 @@ const ROUTES = {
     ADMIN_PANEL: {name: 'Admin Panel', url: '/adminpanel'},
     GIVING: {name: 'Giving', url: '/giving'},
     LEADERSHIP: {name: 'Leadership', url: '/leadership'},
-    YOUTH_MINISTRY: {name: 'Engage Youth Ministry', url: '/youthministry'},
     MEN_MINISTRY: {name: 'Guided Men\'s Ministry', url: '/mensministry'},
-    MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
     WOMEN_MINISTRY: {name: 'Esther’s Circle Woman’s Group', url: '/womensministry'},
+    YOUTH_MINISTRY: {name: 'Engage Youth Ministry', url: '/youthministry'},
+    MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
 };
 export const FORM_SUBMIT_TYPE = {
     EMAIL: 'EMAIL',

@@ -4,6 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    .socialList__title{
+        white-space: nowrap;
+    }
     .socialList__logos{
         height: 30%;
         max-width: 100%;
@@ -15,7 +18,9 @@
             margin: 0;
             height: 100%;
             svg{
-                max-height: 100%;
+                height: 100%;
+                width: auto;
+                margin: 0 10px;
             }
         }
     }

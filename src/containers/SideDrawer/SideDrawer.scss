@@ -19,6 +19,10 @@
     >*{
         width: 100%;
     }
+    //scrollbar switch
+    direction: rtl;
+    overflow:auto;
+    
     .sideNav__topBar{
         display: flex;
         justify-content: space-between;
@@ -84,6 +88,7 @@
                 max-height: unset;
                 display: flex;
                 align-items: center;
+                justify-content: flex-start;
             }
         }
     }
@@ -97,7 +102,7 @@
         width: 600px;
         
         .sideNav__nav{
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            display: none;
         }
     }
 }
