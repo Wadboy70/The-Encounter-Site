@@ -63,8 +63,9 @@ const FormSection = ({
             }
         }
         const getCaptcha = async () => {
-            console.log(await withFetch('/recaptcha'));
-            setCaptcha(333);
+            let apiVal = (await withFetch('/recaptcha'));
+            if (!apiVal) setCaptcha('broken')
+            else setCaptcha(apiVal.recaptcha);
         }
         if(formInfo?.fields?.length && !Object.keys(formState).length) setDefaultValues();
         if(!captcha) getCaptcha();
@@ -123,10 +124,13 @@ const FormSection = ({
                             >
                                 Submit
                             </Button>
-                            <ReCAPTCHA
-                                sitekey = {captcha}
-                                onChange = { val => handleChangeManual({'captcha': val}) }
-                            />
+                            {
+                                captcha !== 'broken' &&
+                                <ReCAPTCHA
+                                    sitekey = {captcha}
+                                    onChange = { val => handleChangeManual({'captcha': val}) }
+                                />
+                            }
                         </form>
                     }
                 </> :
