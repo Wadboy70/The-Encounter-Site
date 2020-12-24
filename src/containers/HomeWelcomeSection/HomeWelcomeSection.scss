@@ -32,15 +32,15 @@
     .welcome__end{
         grid-area: button;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
         .welcome__findOutMore{
             justify-self: center;
             font-family: CormorantGaramont;
             border-radius: 0;
-            margin-bottom: 1rem;
         }
         .signature{
+            margin-bottom: 1rem;
             width: 80%;
         }
     }
