@@ -15,9 +15,9 @@ const TitheFileList = ({className = ''}) => {
         if (url) window.open(url, '_blank');
     }
     const deleteItem = async (name) => {
-        let warning = alert('Are you sure you want to delete this file?');
+        let warning = window.confirm('Are you sure you want to delete this file?');
         if(warning){
-            await deleteFile(`titheInfo/${name}`);
+            (await deleteFile(`titheInfo/${name}`));
             setFiles(null);
         }
     }

@@ -102,7 +102,7 @@ const ManageEventSignUpRow = ({programInfo, programId, programName, setRefreshUp
                         <li key = {member.name} className = 'entry__member'>
                             {
                                 Object.keys(member).map(val => (
-                                    (val !== 'group' && val !== 'id') && 
+                                    (val !== 'group' && val !== 'id' && val !== 'captcha') && 
                                     <span key = {val}>{member[val]}</span>
                                 ))  
                             }
