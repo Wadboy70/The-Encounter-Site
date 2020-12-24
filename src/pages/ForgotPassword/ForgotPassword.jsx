@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import FormSection from '../../containers/FormSection/FormSection';
 import { passwordReset } from '../../utils/firebase';
 import { FORM_FIELD_INPUT_TYPE } from '../../utils/routes';

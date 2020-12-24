@@ -56,9 +56,11 @@ $animLength: .5s;
         width: 100%;
         height: 80vh;
         .overlayButtonSlide{
-            display: none;
+            align-self: center;
             border-radius: 0;
             font-family: Cormorant;
+            height: 85%;
+            min-width: 100%;
         }
     }
 
@@ -78,7 +80,6 @@ $animLength: .5s;
             font-size: 2em;
             .overlayButtonSlide{
                 display: block;
-                margin: 2rem 10%;
             }
         }
     }

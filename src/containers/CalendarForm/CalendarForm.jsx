@@ -140,16 +140,15 @@ const CalendarForm = ({
                                 handleChangeManual = {handleChangeManual}
                                 className = 'calendarForm__datePicker'
                             />
+                            <p>Repeat once every: </p>
                             <NumberInput
                                 name = 'recurringInterval'
-                                title = 'Repeat Interval'
                                 handleChange = {handleChange}
                                 defaultValue = {1}
                                 min = {1}
                             />
                             <Dropdown
                                 name = 'recurringFreq'
-                                title = 'Frequency'
                                 values = {Object.keys(RECURRING_FREQ)}
                                 handleChange = {handleChange}
                                 defaultVal = {RECURRING_FREQ.Days}

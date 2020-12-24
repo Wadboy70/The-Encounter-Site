@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Button from '../../components/Button/Button';
 import Spinner from '../../components/Spinner/Spinner';
@@ -49,7 +49,7 @@ const FormSection = ({
 
     const whichSubmit = () => {
         setError(null);
-        if(!formState.captcha) setError('Please fill out captcha!')
+        if(captcha && !formState.captcha) setError('Please fill out captcha!')
         else if(formInfo?.submit?.type === FORM_SUBMIT_TYPE.EMAIL) 
             submitEmail();
         else if (formInfo?.submit?.type === FORM_SUBMIT_TYPE.ADMIN_STORAGE) 
@@ -73,6 +73,9 @@ const FormSection = ({
 
         return () => mounted = false;
     });
+    useEffect(()=>{
+        if(formState.captcha && formState.error) setError(null);
+    },[formState.captcha,formState.error,setError])
     return(
         <div className = {`emailFormsPage ${className}`}>
             {
@@ -130,7 +133,7 @@ const FormSection = ({
                             }
                             {
                                 formState.error &&
-                                <p>{formState.error}</p>
+                                <p className = 'form__error'>{formState.error}</p>
                             }
                         </form>
                     }

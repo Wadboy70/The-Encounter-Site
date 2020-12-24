@@ -40,8 +40,7 @@ const Slideshow = ({interval = 3000}) => {
                 <div 
                     className = {` greetingOverlay  ${(x===1) ? 'showOverlay' : 'hideOverlay'}`}
                 >
-                    <Button link = '/livesermons' className = 'purple medium overlayButtonSlide'>
-                        Watch Now
+                    <Button link = '/livesermons' className = 'transparent overlayButtonSlide'>
                     </Button>
                 </div>
             </div>

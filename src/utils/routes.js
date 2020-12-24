@@ -120,7 +120,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.concert,
         title: ROUTES.MUSIC_MINISTRY.name,
         url: ROUTES.MUSIC_MINISTRY.url,
-        description: ['Minister Brittany C. Weaver is the leader of our New Wine Music Ministry!','Sign up for this ministry using the form below'],
+        description: ['Music has always played an important role in the worship of God’s people. The purpose of the New Wine Music Ministry is to share the gospel of Jesus Christ through song, encourage believers in their walk with Christ, lead the congregation in worship, provide an avenue through which individuals may share their gift and be an integral part of the worship service. The Music Ministry also enables it\'s members to grow spiritually by committing their time and talents to God. The Music Ministry provides a relevant sound for assigned church worship services and special services outside of the church, to create an atmosphere that the power and the presence of God may be experienced.'],   
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
