@@ -63,7 +63,7 @@ const FormSection = ({
             }
         }
         const getCaptcha = async () => {
-            console.log( mounted && await withFetch('/recaptcha')) ;
+            console.log(await withFetch('/recaptcha'));
             setCaptcha(333);
         }
         if(formInfo?.fields?.length && !Object.keys(formState).length) setDefaultValues();

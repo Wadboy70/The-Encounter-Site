@@ -67,7 +67,7 @@ app.get('/recentVideos', (req, res) => {
     recentContent();
 });
 app.get('/recaptcha', (req, res) => {
-    res.send(RECAPTCHA_KEY); 
+    res.send({recaptcha: RECAPTCHA_KEY}); 
 });
 app.get('*', (req,res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
