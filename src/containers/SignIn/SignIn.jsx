@@ -42,11 +42,11 @@ const SignIn = ({handleChange, formState, setError}) => {
                 <Button 
                     className = 'transparent medium whiteBorder'
                     op = {loginSubmit}
-                >Log In</Button>
+                >Login</Button>
                 <Button 
                     className = 'transparent medium whiteBorder'
                     op = {googleSignIn}    
-                >Google Log In</Button>
+                >Google Login</Button>
                 <Button 
                     className = 'transparent medium whiteBorder'
                     link = {ROUTES.FORGOT_PASSWORD.url} 
