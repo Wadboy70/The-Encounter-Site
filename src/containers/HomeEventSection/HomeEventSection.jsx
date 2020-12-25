@@ -28,7 +28,7 @@ const HomeEventSection = () => {
         >
             <DisplayItem
                 info = {{
-                    title: 'Upcoming Event',
+                    title: 'Upcoming Events',
                     button: 'See Calendar',
                     buttonProps: {link: ROUTES.CALENDAR.url}
                 }}
