@@ -16,7 +16,7 @@ const imageUrls = {
     contact: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/contact.jpg?alt=media&token=0a28c573-3036-4676-a112-29e754f7dce6',
     friends: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/friends4.jpg?alt=media&token=a248ee05-9ca0-475f-b3f4-2e33a4be1fce',
     fullLogo: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/encounterLogo.png?alt=media&token=94c0e205-b438-401b-9ecb-4fa2e04a0c18',
-    leadersPage: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/leadershipPhoto.png?alt=media&token=34c8284b-4687-49b7-8d41-5bde3013121c',
+    leadersPage: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/leadershipPhoto.png?alt=media&token=b0ec0506-85ce-4931-b600-f754ca251d0d',
     leadersPhoto: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/leadershipPhotonone.jpg?alt=media&token=6865db28-393b-489a-9959-dcae1087a3cb',
     lensFlare: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/lensFlare.jpg?alt=media&token=06924de5-4a1f-4bb1-aacd-3ba3fbd243cd',
     livestream: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/livestream.jpg?alt=media&token=c9475795-d49e-459c-a3fe-fc0ba1101199',
