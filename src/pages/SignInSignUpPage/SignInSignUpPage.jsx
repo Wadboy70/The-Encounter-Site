@@ -9,8 +9,8 @@ const SignInSignUpPage = () => {
 
     return(
         <div className = 'signInSignUp'>
-            <SignIn/>
             <SignUp/>
+            <SignIn/>
         </div>
     );
 };

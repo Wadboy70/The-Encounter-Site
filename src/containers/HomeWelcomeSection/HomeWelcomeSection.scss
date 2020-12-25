@@ -2,6 +2,7 @@
 .welcome{
     background-color: $white;
     height: 90vh;
+    min-height: fit-content;
     padding: 10% 30px;
     display: flex;
     flex-direction: column;
@@ -13,7 +14,7 @@
     }
     .welcome__greeting,.welcome__greeting>*{
         font-family: FuturaMedium;
-        font-size: calc(1.2vw + 1.2vh + .6vmin);
+        font-size: calc(1.1vw + 1.1vh + .55vmin);
     }
     .worshipImage{
         grid-area: img;
@@ -38,9 +39,11 @@
             justify-self: center;
             font-family: CormorantGaramont;
             border-radius: 0;
+            padding-top: .8rem;
+            padding-bottom: .8rem;
         }
         .signature{
-            margin-bottom: .5rem;
+            margin-bottom: 0rem;
             width: 80%;
         }
     }
@@ -51,7 +54,7 @@
         margin: auto 0;
         padding: 2% 30px;
         display: grid;
-        grid-template-rows: 20% 60% 20%;
+        grid-template-rows: 20% 55% 25%;
         grid-template-columns:  7.5% 35% 50% 7.5%;
         grid-template-areas: 
         'ban ban img img'

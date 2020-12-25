@@ -21,7 +21,7 @@ const SignIn = ({handleChange, formState, setError}) => {
 
     return(
         <form className = 'signInSignUp__signIn'>
-            <h1>I already have an account</h1>
+            <h1 className = 'signIn__title'>I already have an account</h1>
             <h3>Sign in with your email and password</h3>
             <TextInput  
                 required

@@ -6,7 +6,7 @@ const AboutInfoSection = () => {
     const aboutInfoValues = [
         {
           "title": "Our Beliefs",
-          "description": "We believe that the Holy Bible is the true word of the God, the same God of Abraham, Isaac, and Jacob. Although written by human authors, we believe they did so under the supernatural guidance of the Holy Spirit. With this belief, we accept this written word as truth, and embrace it completely that our daily lives may be impacted for God's Glory"
+          "description": "We believe that the Holy Bible is the true word of the God, the same God of Abraham, Isaac, and Jacob. Although written by human authors, we believe they did so under the supernatural guidance of the Holy Spirit. With this belief, we accept this written word as truth, and embrace it completely that our daily lives may be impacted for God's glory."
         },
         {
             "title": "Salvation",
@@ -18,7 +18,7 @@ const AboutInfoSection = () => {
         },
         {
             "title": "Discipleship",
-            "description": "We believe that it is our primary purpose in this life to go out and make disciples of all people who have a willing heart.  That they may be baptized in the name of the Father, the Son, and the Holy Spirit. Teaching all to be obedient to the words of the Lord, that we may be prosperous and have good success.  Joshua 1:8"
+            "description": "We believe that it is our primary purpose in this life to go out and make disciples of all people who have a willing heart.  That they may be baptized in the name of the Father, the Son, and the Holy Spirit. Teaching all to be obedient to the words of the Lord, that we may be prosperous and have good success. Joshua 1:8"
         },
         {
             "title": "Do No Harm",

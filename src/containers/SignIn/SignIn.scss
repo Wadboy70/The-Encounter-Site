@@ -5,7 +5,8 @@
   }
 .signInSignUp__signIn{
     
-    h1{
+    .signIn__title{
+        margin-left: 0px;
         font-size: 1.5em;
     }
     h3{
@@ -19,6 +20,7 @@
         >*{
         font-size: 1em;
         width: fit-content;
+        margin-left: 0;
         }
     }
     .errorMessage{

@@ -15,9 +15,9 @@ const ROUTES = {
     GIVING: {name: 'Giving', url: '/giving'},
     LEADERSHIP: {name: 'Leadership', url: '/leadership'},
     MEN_MINISTRY: {name: "\"Guided\" Men's Ministry", url: '/mensministry'},
-    WOMEN_MINISTRY: {name: 'Esther’s Circle Women’s Group', url: '/womensministry'},
+    WOMEN_MINISTRY: {name: '"Esther’s Circle" Women’s Group', url: '/womensministry', nickname: 'Esther’s Circle Women’s Group'},
     YOUTH_MINISTRY: {name: '"Engage" Youth Ministry', url: '/youthministry'},
-    MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
+    MUSIC_MINISTRY: {name: '"New Wine" Music Ministry', url: '/musicministry'},
 };
 export const FORM_SUBMIT_TYPE = {
     EMAIL: 'EMAIL',
@@ -39,7 +39,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.mensMinistry,
         title: ROUTES.MEN_MINISTRY.name,
         url: ROUTES.MEN_MINISTRY.url,
-        description: ['At The Encounter Worship Center, we biblically train and equip men to be spiritual leaders in their homes, in the church, and in their places of business. "Guided" Men’s Ministry guides men on their individual life journeys, that as a Christ follower that can effectively impact their generations. We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips, and special events. In today’s culture, it’s increasingly important for men to honor God with their hearts and lives.', 'Sign up for this ministry using the form below'],
+        description: ['At The Encounter Worship Center, we biblically train and equip men to be spiritual leaders in their homes, in the church, and in their places of business. "Guided" Men’s Ministry guides men on their individual life journeys, that as a Christ follower they can effectively impact their generations. We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips, and special events. In today’s culture, it’s increasingly important for men to honor God with their hearts and lives.', 'Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -62,9 +62,9 @@ export const DUPLICATE_PAGES = [
     },
     {
         jumboImage: imageUrls.womensMinistry,
-        title: ROUTES.WOMEN_MINISTRY.name,
+        title: ROUTES.WOMEN_MINISTRY.nickname,
         url: ROUTES.WOMEN_MINISTRY.url,
-        description: ['Queen Esther was a woman whose body, mind, soul and actions affected reality and changed the world. This is what we believe that every woman has the potential to be as they encounter a life with the Lord. At The Encounter Worship Center, we have established the Esther\'s Circle Women\'s Group to help all women grow in their faith and grow in their overall perception of who God has created them to be in the Earth. We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips, and special events. In today\'s culture, it\'s vital for women to honor God with their hearts and lives.','Sign up for this ministry using the form below'],
+        description: ['Queen Esther was a woman whose body, mind, soul, and actions affected reality and changed the world. This is what we believe that every woman has the potential to be as they encounter a life with the Lord. At The Encounter Worship Center, we have established the "Esther\'s Circle" Women\'s Group to help all women grow in their faith and grow in their overall perception of who God has created them to be in the Earth. We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips, and special events. In today\'s culture, it\'s vital for women to honor God with their hearts and lives.','Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -120,7 +120,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.concert,
         title: ROUTES.MUSIC_MINISTRY.name,
         url: ROUTES.MUSIC_MINISTRY.url,
-        description: ['Music has always played an important role in the worship of God\'s people.  The purpose of the "New Wine" Music Ministry, is to share the gospel of Jesus Christ through song, encourage believers in their walk with Christ, lead the congregation in worship, provide an avenue through which individuals may share their gift, and be integral part of the worship experience. This ministry also enables its members to grow spiritually by committing their time and talents to God, while providing a relevant sound for assigned worship services as well as special services outside of the church.  This ability creates an atmosphere that the power and the presence of God may be experienced.','Sign up for this ministry using the form below'],   
+        description: ['Music has always played an important role in the worship of God\'s people.  The purpose of the "New Wine" Music Ministry, is to share the gospel of Jesus Christ through song, encourage believers in their walk with Christ, lead the congregation in worship, provide an avenue through which individuals may share their gift, and be an integral part of the worship experience. This ministry also enables it\'s members to grow spiritually by committing their time and talents to God, while providing a relevant sound for assigned worship services, as well as special services outside of the church.  This ability creates an atmosphere that the power and the presence of God may be experienced.','Sign up for this ministry using the form below'],   
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -179,7 +179,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.prayerRequests,
         title: ROUTES.PRAYER_REQUESTS.name,
         url: ROUTES.PRAYER_REQUESTS.url,
-        description: ['','Submit prayer requests to the leaders of our ministry using the form below','All prayer request will be kept confidential to the prayer team and leadership'],
+        description: ['','Submit prayer requests to the leaders of our ministry using the form below','All prayer requests will be kept confidential to the prayer team and leadership'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.EMAIL,

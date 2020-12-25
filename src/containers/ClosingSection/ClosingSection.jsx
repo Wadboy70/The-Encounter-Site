@@ -22,7 +22,7 @@ const ClosingSection = () => (
             button = 'Find Out More'
             description = 'Read about the leaders of our ministry'
             buttonProps = {{link: ROUTES.LEADERSHIP.url}}
-            image = {imageUrls.leadersPage}
+            image = {imageUrls.leadersPhoto}
             className = 'closingSection__display'
             justifyCenter
         />

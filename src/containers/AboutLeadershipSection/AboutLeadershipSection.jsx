@@ -11,7 +11,7 @@ const AboutLeadershipSection = () => {
     return(
         <div className = 'aboutLeadershipSection'>
             <DisplayBox
-                image = {imageUrls.leadersPage} 
+                image = {imageUrls.leadersPhoto} 
                 button = 'Find out more'
                 description = 'Read about the leaders of our ministry'
                 title = 'Our Ministry Leaders'

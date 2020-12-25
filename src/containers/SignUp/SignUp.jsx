@@ -34,7 +34,7 @@ const SignUp = ({handleChange, formState, setError}) => {
     return (
         canView ? 
         <form className = 'signInSignUp__signUp'>
-            <h1>I don't have an account</h1>
+            <h1 className = 'signUp__title'>I don't have an account</h1>
             <h3>Sign up with your email and password</h3>
             <TextInput  
                 required

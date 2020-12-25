@@ -18,7 +18,7 @@ const Social = ({className = ''}) => (
                 <img src={ Youtube } alt="Youtube"/>
             </Button>
             <Button anchor = 'https://instagram.com' className = 'transparent' aria-label='instagram'>
-                <img src={ Instagram } alt="Instagram"/>
+                <img src={ Instagram } alt="Instagram" className = 'instagramSocial'/>
             </Button>
         </div>
     </div>
