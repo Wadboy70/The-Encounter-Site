@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {ReactComponent as Facebook} from '../../assets/images/Facebook.svg';
-import {ReactComponent as Instagram} from '../../assets/images/Instagram.svg';
-import {ReactComponent as Youtube} from '../../assets/images/Youtube.svg';
+import Facebook from '../../assets/images/facebook.png';
+import Instagram from '../../assets/images/instagram.png';
+import  Youtube from '../../assets/images/youtube.png';
 import Button from '../Button/Button';
 
 import './Social.scss';
@@ -12,13 +12,13 @@ const Social = ({className = ''}) => (
         <h1 className = 'socialList__title'>Follow Us</h1>
         <div className = 'socialList__logos'>
             <Button anchor = 'https://www.facebook.com/TheEncounterWorshipCenter' className = 'transparent' aria-label='facebook'>
-                <Facebook/>
+                <img src={ Facebook } alt="Facebook"/>
             </Button>
             <Button anchor = 'https://www.youtube.com/user/arthurhintonmusic' className = 'transparent' aria-label='youtube'>
-                <Youtube/>
+                <img src={ Youtube } alt="Youtube"/>
             </Button>
             <Button anchor = 'https://instagram.com' className = 'transparent' aria-label='instagram'>
-                <Instagram/>
+                <img src={ Instagram } alt="Instagram"/>
             </Button>
         </div>
     </div>

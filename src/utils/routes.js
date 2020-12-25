@@ -14,9 +14,9 @@ const ROUTES = {
     ADMIN_PANEL: {name: 'Admin Panel', url: '/adminpanel'},
     GIVING: {name: 'Giving', url: '/giving'},
     LEADERSHIP: {name: 'Leadership', url: '/leadership'},
-    MEN_MINISTRY: {name: 'Guided Men\'s Ministry', url: '/mensministry'},
+    MEN_MINISTRY: {name: "\"Guided\" Men's Ministry", url: '/mensministry'},
     WOMEN_MINISTRY: {name: 'Esther’s Circle Women’s Group', url: '/womensministry'},
-    YOUTH_MINISTRY: {name: 'Engage Youth Ministry', url: '/youthministry'},
+    YOUTH_MINISTRY: {name: '"Engage" Youth Ministry', url: '/youthministry'},
     MUSIC_MINISTRY: {name: 'New Wine Music Ministry', url: '/musicministry'},
 };
 export const FORM_SUBMIT_TYPE = {
@@ -39,7 +39,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.mensMinistry,
         title: ROUTES.MEN_MINISTRY.name,
         url: ROUTES.MEN_MINISTRY.url,
-        description: ['At The Encounter Worship Center, we biblically train and equip men to be spiritual leaders in their homes, in the church, and in their places of business. Guided Men’s Ministry guide men in the journey of Christian living to make an eternal impact for this generation and those to come. We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips and special events. In today’s culture, it’s increasingly important for men to honor God with their hearts and lives.', 'Sign up for this ministry using the form below'],
+        description: ['At The Encounter Worship Center, we biblically train and equip men to be spiritual leaders in their homes, in the church, and in their places of business. "Guided" Men’s Ministry guides men on their individual life journeys, that as a Christ follower that can effectively impact their generations. We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips, and special events. In today’s culture, it’s increasingly important for men to honor God with their hearts and lives.', 'Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -64,7 +64,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.womensMinistry,
         title: ROUTES.WOMEN_MINISTRY.name,
         url: ROUTES.WOMEN_MINISTRY.url,
-        description: ['Queen Esther was a woman whose body, mind, soul and actions affected reality and changed the world.  This is what we believe that every woman has the potential to be as they encounter a life with the Lord.  At The Encounter Worship Center we have established the Esther\'s Circle Woman\'s Group to help all woman grow in their faith and grow in their overall perception of who God has created them to be in the Earth.  We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips and special events.  In today\'s culture, it\'s vital for woman to honor God with their hearts and lives.','Sign up for this ministry using the form below'],
+        description: ['Queen Esther was a woman whose body, mind, soul and actions affected reality and changed the world. This is what we believe that every woman has the potential to be as they encounter a life with the Lord. At The Encounter Worship Center, we have established the Esther\'s Circle Women\'s Group to help all women grow in their faith and grow in their overall perception of who God has created them to be in the Earth. We accomplish this mission through Bible study, discipleship groups, evangelism training, leadership development, accountability groups, mentoring, retreats, mission trips, and special events. In today\'s culture, it\'s vital for women to honor God with their hearts and lives.','Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -88,7 +88,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.youth,
         title: ROUTES.YOUTH_MINISTRY.name,
         url: ROUTES.YOUTH_MINISTRY.url,
-        description: ['The Encounter Worship Center\'s Youth Ministry "Engage" has been designed to help all youth from elementary, middle, and high school age groups to engage God the father not just on Sundays but in their everyday lives and young believers.  Through our teaching outlets, and fellowship opportunities it is our expectation that our youth will grow in their faith, their character, and their relationships.','Sign up for this ministry using the form below'],
+        description: ['The Encounter Worship Center\'s Youth Ministry "Engage", has been designed to help all youth from elementary, middle, and high school age groups to engage God the Father, not just on Sundays, but in their everyday lives. Through our teaching outlets, and fellowship opportunities, it is our expectation that our youth will grow in their faith, their character, and their relationships.','Sign up for this ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -108,10 +108,10 @@ export const DUPLICATE_PAGES = [
                 },
                 {
                     name: 'group',
-                    label: 'Group',
+                    label: 'Select Age Group',
                     type: FORM_FIELD_INPUT_TYPE.DROPDOWN,
-                    values: ['E-Group 1 Elementary School','E-Group 2 Middle School', 'E-Group 1 High School'],
-                    defaultVal: 'E-Group 1 Elementary School'
+                    values: ['E-Group 1: Elementary School','E-Group 2: Middle School', 'E-Group 3: High School'],
+                    defaultVal: 'E-Group 1: Elementary School'
                 }
             ],
         }
@@ -120,7 +120,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.concert,
         title: ROUTES.MUSIC_MINISTRY.name,
         url: ROUTES.MUSIC_MINISTRY.url,
-        description: ['Music has always played an important role in the worship of God’s people. The purpose of the New Wine Music Ministry is to share the gospel of Jesus Christ through song, encourage believers in their walk with Christ, lead the congregation in worship, provide an avenue through which individuals may share their gift and be an integral part of the worship service. The Music Ministry also enables it\'s members to grow spiritually by committing their time and talents to God. The Music Ministry provides a relevant sound for assigned church worship services and special services outside of the church, to create an atmosphere that the power and the presence of God may be experienced.'],   
+        description: ['Music has always played an important role in the worship of God\'s people.  The purpose of the "New Wine" Music Ministry, is to share the gospel of Jesus Christ through song, encourage believers in their walk with Christ, lead the congregation in worship, provide an avenue through which individuals may share their gift, and be integral part of the worship experience. This ministry also enables its members to grow spiritually by committing their time and talents to God, while providing a relevant sound for assigned worship services as well as special services outside of the church.  This ability creates an atmosphere that the power and the presence of God may be experienced.','Sign up for this ministry using the form below'],   
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.ADMIN_STORAGE,
@@ -139,7 +139,7 @@ export const DUPLICATE_PAGES = [
                 },
                 {
                     name: 'gift',
-                    label: 'Ministry Gift (Vocal, Guitar, etc)',
+                    label: 'Ministry Gift (Vocal, Piano, Guitar, etc.)',
                     noFormat: true,
                     type: FORM_FIELD_INPUT_TYPE.TEXT_INPUT
                 }

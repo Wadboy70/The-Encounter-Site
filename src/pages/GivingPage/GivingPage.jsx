@@ -22,7 +22,7 @@ const GivingPage = () => {
                 />
             <div className = 'givingPage__givingContent'>
                 <p className = 'givingContent__description'>
-                    Your generosity is positively changing lives in this ministry, community, and globally. The Apostle Paul reminds us in 2 Corinthians 9:6-8 that whoever sows sparingly will reap sparingly and whosoever sows generously will reap generously. As you generously sow into this work, it is God's covenant promise to multiply back to you what has been given. We want you to know that your seed creates resources for us to carry God's love to the nations.
+                    Your generosity is positively changing lives in this ministry, community, and globally. The Apostle Paul reminds us in 2 Corinthians 9:6-8, that whoever sows sparingly will reap sparingly and whosoever sows generously will reap generously. As you generously sow into this work, it is God's covenant promise to multiply back to you what has been given. We want you to know that your seed creates resources for us to carry God's love to the nations.
                 </p>
                 <div className = 'givingContent__waysToGive'>
                     <div className = 'waysToGive__giveColumn'>
@@ -30,7 +30,8 @@ const GivingPage = () => {
                         <h2 className = 'giveColumn__title'>GIVE BY MAIL</h2>
                         <div className = 'giveColumn__content'>
                             <p className = 'giveColumn__description'>Send your donation to:</p>
-                            <p className = 'giveColumn__description'>P.O. BOX 46247 Tampa, Florida 33647</p>
+                            <br/>
+                            <p className = 'giveColumn__description'>P.O. Box 46247 Tampa, Florida 33647</p>
                         </div>
                     </div>
                     <div className = 'waysToGive__giveColumn'>

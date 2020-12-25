@@ -5,6 +5,7 @@ import Button from '../../components/Button/Button';
 
 import './Slideshow.scss';
 import imageUrls from '../../assets/imageUrls';
+import ROUTES from '../../utils/routes';
 
 const Slideshow = ({interval = 3000}) => {
     const slides = [imageUrls.lensFlare,imageUrls.strongerTogether,imageUrls.encounterBanner,imageUrls.ministryOne];
@@ -40,7 +41,7 @@ const Slideshow = ({interval = 3000}) => {
                 <div 
                     className = {` greetingOverlay  ${(x===1) ? 'showOverlay' : 'hideOverlay'}`}
                 >
-                    <Button link = '/livesermons' className = 'transparent overlayButtonSlide'>
+                    <Button link = {ROUTES.LIVE_SERMONS.url} className = 'transparent overlayButtonSlide'>
                     </Button>
                 </div>
             </div>

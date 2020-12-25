@@ -8,7 +8,7 @@
         align-items: center;
         .givingContent__description{
             width: fit-content;
-            margin-bottom: 2%;
+            margin-bottom: 4%;
             font-size: 1.7rem;
             text-align: left;
         }
@@ -27,7 +27,7 @@
                 padding: 1rem;
                 border-bottom: 5px $white solid;
                 .giveColumn__title{
-                    margin: 2rem 0;
+                    margin: .5rem 0;
                 }
                 .giveColumn__icon{
                     fill: $white;
