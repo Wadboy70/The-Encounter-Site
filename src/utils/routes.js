@@ -150,7 +150,7 @@ export const DUPLICATE_PAGES = [
         jumboImage: imageUrls.contact,
         title: ROUTES.CONTACT_US.name,
         url: ROUTES.CONTACT_US.url,
-        description: ['Contact the leaders of our ministry using the form below'],
+        description: ['','Contact the leaders of our ministry using the form below'],
         form:{
             submit: {
                 type: FORM_SUBMIT_TYPE.EMAIL,
