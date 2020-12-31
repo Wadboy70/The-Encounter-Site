@@ -14,9 +14,9 @@ const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 app.get('*',function(req,res,next){
     if(req.headers['x-forwarded-proto']!=='https')
-      res.redirect('https://mypreferreddomain.com'+req.url)
+      res.redirect('https://encounterworshipcenter.org'+req.url)
     else
-      next() /* Continue to other routes if we're not redirecting */
+      next()
 })
 
 app.use(bodyParser.json());
