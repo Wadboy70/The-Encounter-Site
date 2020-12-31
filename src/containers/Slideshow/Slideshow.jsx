@@ -8,7 +8,7 @@ import imageUrls from '../../assets/imageUrls';
 import ROUTES from '../../utils/routes';
 
 const Slideshow = ({interval = 3000}) => {
-    const slides = [imageUrls.lensFlare,imageUrls.strongerTogether,imageUrls.encounterBanner,imageUrls.ministryOne];
+    const slides = [imageUrls.watchNight, imageUrls.lensFlare,imageUrls.strongerTogether,imageUrls.encounterBanner,imageUrls.ministryOne,];
     const [x, setX] = useState(0)
     const goLeft = () => {
         (x <= 0) ? setX(slides.length-1) : setX(x-1);
@@ -28,18 +28,18 @@ const Slideshow = ({interval = 3000}) => {
                     <div 
                         className = 'slide' 
                         key = {index}
-                        style = {{transform: `translateX(${x*-100}%`,backgroundImage: `url(${slide})`,backgroundSize: x<1 && 'cover'}}
+                        style = {{transform: `translateX(${x*-100}%`,backgroundImage: `url(${slide})`,backgroundSize: (x===1) && 'cover'}}
                     >
                     </div>
                 ))
             }
             <div className = 'slideshow__overlay'>
-                <div className = {`logoOverlay ${(x===0) ? 'showOverlay' : 'hideOverlay'}`}>
+                <div className = {`logoOverlay ${(x===1) ? 'showOverlay' : 'hideOverlay'}`}>
                     <img src={imageUrls.fullLogo} alt="encounterLogo"/>
                 </div>
 
                 <div 
-                    className = {` greetingOverlay  ${(x===1) ? 'showOverlay' : 'hideOverlay'}`}
+                    className = {` greetingOverlay  ${(x===2) ? 'showOverlay' : 'hideOverlay'}`}
                 >
                     <Button link = {ROUTES.LIVE_SERMONS.url} className = 'transparent overlayButtonSlide'>
                     </Button>

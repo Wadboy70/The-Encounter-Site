@@ -7,6 +7,8 @@ import { calendarDateFormatting } from '../../utils/helperFunctions';
 import ROUTES from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
+import "./HomeEventSection.scss";
+
 const HomeEventSection = () => {
     
     const [upcomingEvent, setUpcomingEvent] = useState(null)
@@ -20,6 +22,9 @@ const HomeEventSection = () => {
         getEvents();
     }, [upcomingEvent])
     
+    useEffect(()=> {
+        console.log(upcomingEvent)
+    }, [upcomingEvent])
     return(
         
         <HighlightSection 
@@ -35,13 +40,11 @@ const HomeEventSection = () => {
                 className = 'upcomingEventSection__event'
             >
                 {
-                    upcomingEvent ? 
-                    <>
-                        <p>{upcomingEvent?.name}</p>
-                        <p>{calendarDateFormatting(upcomingEvent?.date.toDate())}</p>
-                        <p>{upcomingEvent?.description}</p>
-                    </> :
-                    <p>There are no upcoming events!</p>
+                    <div>
+                        <p>Watch Night Prayer - December 31st 2020</p>
+                        <p>11:30 pm</p>
+                        <p>We will be having a corporate prayer as we enter into the new year of 2021. This prayer will be lead by our Pastor, Arthur T. Hinton III via Zoom.</p>
+                    </div>
                 }
             </DisplayItem>
         </HighlightSection>

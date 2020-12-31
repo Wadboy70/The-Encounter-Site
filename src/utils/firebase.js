@@ -95,7 +95,17 @@ export const getAllDocs = async (collection, sortFunc) => {
 
 export const getUpcomingEvent = async () => {
     const snapshot = await (db.collection(COLLECTIONS.CALENDAR).get());
-    return snapshot.docs[0]?.data() || null;
+    let closestDate = new Date(), midnight = new Date();
+    closestDate.setFullYear(closestDate.getFullYear() + 1);
+    midnight.setHours(0,0,0,0);
+    return (snapshot.docs.map(shot => shot.data())
+    .sort((a,b) => a.date.toDate() < b.date.toDate())
+    .filter((a) => (a.date.toDate() > midnight && a.date.toDate() < closestDate))
+    .filter((a, i, arr) =>{
+        console.log(a.date.toDate())
+        return a.date.toDate().toDateString() === arr[0]?.date.toDate().toDateString()
+    })
+    || null);
 };
 
 export const deleteDoc = async (id, collection) => await db.collection(collection).doc(id).delete(docRef => docRef);
