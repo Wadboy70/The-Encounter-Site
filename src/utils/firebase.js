@@ -99,12 +99,9 @@ export const getUpcomingEvent = async () => {
     closestDate.setFullYear(closestDate.getFullYear() + 1);
     midnight.setHours(0,0,0,0);
     return (snapshot.docs.map(shot => shot.data())
-    .sort((a,b) => a.date.toDate() < b.date.toDate())
+    .sort((a,b) => a.date.toDate() - b.date.toDate())
     .filter((a) => (a.date.toDate() > midnight && a.date.toDate() < closestDate))
-    .filter((a, i, arr) =>{
-        console.log(a.date.toDate())
-        return a.date.toDate().toDateString() === arr[0]?.date.toDate().toDateString()
-    })
+    .filter((a, i, arr) => a.date.toDate().toDateString() === arr[0]?.date.toDate().toDateString())
     || null);
 };
 

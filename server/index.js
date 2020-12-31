@@ -11,9 +11,14 @@ const domain = process.env.MAILGUN_DOMAIN;
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const RECAPTCHA_KEY = process.env.RECAPTCHA_KEY;
 const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
-var sslRedirect = require('heroku-ssl-redirect');
 
-app.use(sslRedirect());
+app.get('*',function(req,res,next){
+    if(req.headers['x-forwarded-proto']!=='https')
+      res.redirect('https://mypreferreddomain.com'+req.url)
+    else
+      next() /* Continue to other routes if we're not redirecting */
+})
+
 app.use(bodyParser.json());
 app.use(express.static(publicPath));
 app.use(cors());
