@@ -12,12 +12,6 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const RECAPTCHA_KEY = process.env.RECAPTCHA_KEY;
 const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
-app.get('*',function(req,res,next){
-    if(req.headers['x-forwarded-proto']!=='https')
-      res.redirect('https://encounterworshipcenter.org'+req.url)
-    else
-      next()
-})
 
 app.use(bodyParser.json());
 app.use(express.static(publicPath));
