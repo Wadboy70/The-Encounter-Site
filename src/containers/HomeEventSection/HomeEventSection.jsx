@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import DisplayItem from '../../components/DisplayItem/DisplayItem';
 import HighlightSection from '../HighlightSection/HighlightSection';
 import { getUpcomingEvent } from '../../utils/firebase';
-import { calendarDateFormatting } from '../../utils/helperFunctions';
+import { calendarDateGetTime } from '../../utils/helperFunctions';
 import ROUTES from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
@@ -23,7 +23,7 @@ const HomeEventSection = () => {
     }, [upcomingEvent])
     
     useEffect(()=> {
-        console.log(upcomingEvent)
+        console.log(upcomingEvent?.map(val => val.date.toDate().toDateString()))
     }, [upcomingEvent])
     return(
         
@@ -40,11 +40,14 @@ const HomeEventSection = () => {
                 className = 'upcomingEventSection__event'
             >
                 {
-                    <div>
-                        <p>Watch Night Prayer - December 31st 2020</p>
-                        <p>11:30 pm</p>
-                        <p>We will be having a corporate prayer as we enter into the new year of 2021. This prayer will be lead by our Pastor, Arthur T. Hinton III via Zoom.</p>
-                    </div>
+                    upcomingEvent &&
+                    upcomingEvent.map( (event, i) =>
+                        <div key = {i} >
+                            <p>{event.name} - {event.date.toDate().toDateString()}</p>
+                            <p>{calendarDateGetTime(event.date.toDate())}</p>
+                            <p>{event.description}</p>
+                        </div>
+                    )
                 }
             </DisplayItem>
         </HighlightSection>

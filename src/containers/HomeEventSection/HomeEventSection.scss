@@ -1,5 +1,7 @@
 .upcomingEventSection__event{
     div{
-        margin-bottom: 1rem;
+        p:first-child{
+            text-decoration: underline;
+        }
     }
 }

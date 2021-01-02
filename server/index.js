@@ -1,8 +1,8 @@
+const sslRedirect = require('heroku-ssl-redirect');
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const app = express();
 const fetch = require('node-fetch');
 require('dotenv').config({path:__dirname+'/./../.env'});
 const publicPath = path.join(__dirname, '..','build');
@@ -12,7 +12,8 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const RECAPTCHA_KEY = process.env.RECAPTCHA_KEY;
 const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
-
+const app = express();
+app.use(sslRedirect.default());
 app.use(bodyParser.json());
 app.use(express.static(publicPath));
 app.use(cors());
@@ -22,7 +23,7 @@ app.post('/sendMail', (req, res) => {
     const body = req.body || {};
     const data = {
     from: `${body.name || 'no name'} <me@samples.mailgun.org>`,
-    to: process.env[body.to] || process.env.DEFAULT_EMAIL, //change this email
+    to: process.env[body.to] || process.env.DEFAULT_EMAIL, 
     subject: body.subject || 'contact email',
     text: body.text || 'no message'
     };
