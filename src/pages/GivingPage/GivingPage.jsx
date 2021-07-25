@@ -31,7 +31,7 @@ const GivingPage = () => {
                         <div className = 'giveColumn__content'>
                             <p className = 'giveColumn__description'>Send your donation to:</p>
                             <br/>
-                            <p className = 'giveColumn__description'>P.O. Box 46247 Tampa, Florida 33647</p>
+                            <p className = 'giveColumn__description'>10701 Cross Creel Blvd.  Unit 101 Tampa, Florida 33647</p>
                         </div>
                     </div>
                     <div className = 'waysToGive__giveColumn'>
