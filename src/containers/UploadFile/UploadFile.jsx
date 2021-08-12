@@ -25,7 +25,6 @@ const UploadFile = ({
         setError(null);
         if (file) {
             let value = await fileUpload(file, file.name, path);
-            console.log(value?.metadata?.fullPath, collection);
             if (value?.metadata?.fullPath) {
                 await addNewDoc(
                     {

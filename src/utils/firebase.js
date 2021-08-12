@@ -115,7 +115,7 @@ export const addNewDoc = async (info = {}, collection = '') => {
     .then(docRef => {
         return docRef.id;
     })
-    .catch(err => console.log("error adding document: ", err));
+    .catch(err => err);
 };
 
 export const fileUpload = (file, name, path) => {
