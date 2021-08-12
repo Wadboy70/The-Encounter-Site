@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react'
 
 import Button from '../../components/Button/Button';
-import {addNewDoc, downloadFile, fileUpload } from '../../utils/firebase';
+import { addNewDoc, downloadFile, fileUpload } from '../../utils/firebase';
 
 import './UploadFile.scss'
 
 const UploadFile = ({
     path = '',
     title = '',
-    collection = ''
+    collection = '',
+    acceptedType
 }) => {
-    
+
     const [file, setFile] = useState(null);
-    const [error , setError] = useState(null);
+    const [error, setError] = useState(null);
     const [formSubmitted, setFormSubmitted] = useState(false);
 
     const handleFormChange = e => {
         setFile(e.target.files[0]);
         setError(null);
     }
-    
+
     const handleSubmitFile = async () => {
         setError(null);
-        if(file) {
+        if (file) {
             let value = await fileUpload(file, file.name, path);
             console.log(value?.metadata?.fullPath, collection);
-            if (value?.metadata?.fullPath){
+            if (value?.metadata?.fullPath) {
                 await addNewDoc(
                     {
                         path: value.metadata.fullPath,
@@ -43,21 +44,22 @@ const UploadFile = ({
     }
 
     useEffect(() => {
-        if(formSubmitted){
+        if (formSubmitted) {
             setTimeout(() => setFormSubmitted(false), 3000);
         }
     }, [formSubmitted])
-    return(
-        <div className = 'uploadFile'>
+    return (
+        <div className='uploadFile'>
             <h2>{title}</h2>
-            <form className = 'uploadFile__form'>
-                <input 
-                    type="file" 
-                    onChange = {handleFormChange}
+            <form className='uploadFile__form'>
+                <input
+                    type="file"
+                    accept={acceptedType ? acceptedType : ''}
+                    onChange={handleFormChange}
                 />
-                <Button 
-                    className = 'whiteBorder small transparent' 
-                    op = { handleSubmitFile }
+                <Button
+                    className='whiteBorder small transparent'
+                    op={handleSubmitFile}
                 >
                     Submit
                 </Button>
@@ -68,7 +70,7 @@ const UploadFile = ({
             }
             {
                 error &&
-                <p> { error } </p>
+                <p> {error} </p>
             }
         </div>
     )

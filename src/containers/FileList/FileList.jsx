@@ -3,58 +3,64 @@ import React, { useContext, useEffect, useState } from 'react';
 import Button from '../../components/Button/Button';
 import USER_TIERS from '../../utils/constants/userTiers';
 import { FirebaseUserContext } from '../../utils/context/user.context';
-import { deleteFile, downloadFile, fileList } from '../../utils/firebase';
+import { deleteDoc, deleteFile, downloadFile, fileList, getAllDocs } from '../../utils/firebase';
 
-import './TitheFileList.scss';
+import './FileList.scss';
 
-const TitheFileList = ({className = ''}) => {
+const FileList = ({
+    className = '',
+    collection,
+    display = false
+}) => {
     const [files, setFiles] = useState(null);
     const [user] = useContext(FirebaseUserContext);
-    const handleDownload = async (fileName) => {
-        let url = await downloadFile(`titheInfo/${fileName}`);
-        if (url) window.open(url, '_blank');
-    }
-    const deleteItem = async (name) => {
+    const deleteItem = async (file) => {
         let warning = window.confirm('Are you sure you want to delete this file?');
-        if(warning){
-            (await deleteFile(`titheInfo/${name}`));
+        if (warning) {
+            await deleteDoc(file.id, collection)
+            await deleteFile(file.url);
             setFiles(null);
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         let mounted = true;
         const list = async () => {
-            let files = mounted ? ( await fileList() ) : null;
-            setFiles(files?.items || []);
+            let files = mounted ? (await getAllDocs(collection)) : null;
+            setFiles(files);
         }
         if (!files) list();
         return () => mounted = false;
-    }, [files])
-    return(
-        <div className = {`fileList ${className}`}>
-            <h2>Tithe Files</h2>
+    }, [files, collection])
+    return (
+        <div className={`fileList ${className}`}>
+            <h2>Files</h2>
             <ul>
                 {
                     files &&
                     files?.map((file, index) => (
-                        <li key = { index } className = 'fileList__item'>
+                        <li key={index} className='fileList__item'>
                             <span>
-                                <Button 
-                                    op = { () => handleDownload(file.name) }
-                                    className = 'transparent'
+                                <Button
+                                    op={() => window.open(file.url, '_blank')}
+                                    className='transparent'
                                 >
                                     ↓
                                 </Button>
                             </span>
                             <span>
-                                {file.name}
+                                {
+                                    display ?
+                                        <img src={file.url} alt='yuh' />
+                                        :
+                                        file.url.match(/(?<=\/)\w*/)
+                                }
                             </span>
                             {
                                 user?.tier === USER_TIERS.ADMIN &&
                                 <span>
-                                    <Button 
-                                        className = 'transparent'
-                                        op = { () => deleteItem(file.name) }
+                                    <Button
+                                        className='transparent'
+                                        op={() => deleteItem(file)}
                                     >
                                         X
                                     </Button>
@@ -68,4 +74,4 @@ const TitheFileList = ({className = ''}) => {
     );
 }
 
-export default TitheFileList;
+export default FileList;
