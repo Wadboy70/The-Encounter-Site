@@ -9,7 +9,8 @@ const UploadFile = ({
     path = '',
     title = '',
     collection = '',
-    acceptedType
+    acceptedType,
+    refreshTrigger = ()=>{}
 }) => {
 
     const [file, setFile] = useState(null);
@@ -33,7 +34,8 @@ const UploadFile = ({
                     },
                     collection
                 );
-                setFormSubmitted(true)
+                setFormSubmitted(true);
+                refreshTrigger();
             } else {
                 setError('File Upload failed')
             }

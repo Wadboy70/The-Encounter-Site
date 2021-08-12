@@ -11,7 +11,8 @@ import './FileList.scss';
 const FileList = ({
     className = '',
     collection = '',
-    display = false
+    display = false,
+    refresh
 }) => {
     const [files, setFiles] = useState(null);
     const [user] = useContext(FirebaseUserContext);
@@ -30,6 +31,9 @@ const FileList = ({
         await updateDoc(files[switchVal]?.id, {order: index}, collection);
         setFiles(null);
     }
+    useEffect(()=>{
+        setFiles(null);
+    },[refresh])
     useEffect(() => {
         let mounted = true;
         const list = async () => {
@@ -42,6 +46,7 @@ const FileList = ({
         if (!files) list();
         return () => mounted = false;
     }, [files, collection])
+
     return (
         <div className={`fileList ${className}`}>
             <h2>Files</h2>

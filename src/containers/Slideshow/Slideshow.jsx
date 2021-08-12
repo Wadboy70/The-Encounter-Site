@@ -2,33 +2,50 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 import Button from '../../components/Button/Button';
-
-import './Slideshow.scss';
 import imageUrls from '../../assets/imageUrls';
 import ROUTES from '../../utils/routes';
+import { COLLECTIONS, getAllDocs } from '../../utils/firebase';
+import { sortFiles } from '../../utils/helperFunctions';
+
+import './Slideshow.scss';
 
 const Slideshow = ({interval = 3000}) => {
-    const slides = [imageUrls.lensFlare,imageUrls.strongerTogether,imageUrls.encounterBanner,imageUrls.ministryOne,];
+    const [slides, setSlides] = useState([]);
     const [x, setX] = useState(0)
     const goLeft = () => {
-        (x <= 0) ? setX(slides.length-1) : setX(x-1);
+        (x <= 0) ? setX(slides.length) : setX(x-1);
     };
     const goRight = () => {
-        (x === (slides.length-1)) ? setX(0) : setX(x+1);
+        (x === (slides.length)) ? setX(0) : setX(x+1);
     };
     useEffect(() => {
         const autoSlide = setInterval(goRight,interval);
         return () => clearInterval(autoSlide);
     });
 
+    useEffect(()=>{
+        let mounted = true;
+        const getSlides = async () => {
+            let val = await getAllDocs(COLLECTIONS.HOMEPAGE_PHOTOS, sortFiles);
+            if (mounted) setSlides(val)
+        };
+        getSlides();
+        return () => mounted = false;
+    })
+
     return(
         <section className = 'slideshow'>
+                <div 
+                    className = 'slide' 
+                    style = {{transform: `translateX(${x*-100}%`,backgroundImage: `url(${imageUrls.lensFlare})`,backgroundSize: x<1 && 'cover'}}
+                >
+                </div>
             {
                 slides.map((slide, index) => (
                     <div 
                         className = 'slide' 
                         key = {index}
-                        style = {{transform: `translateX(${x*-100}%`,backgroundImage: `url(${slide})`,backgroundSize: x<1 && 'cover'}}
+                        style = {{transform: `translateX(${x*-100}%`,backgroundImage: `url(${slide.url})`,backgroundSize: x<1 && 'cover'}}
                     >
                     </div>
                 ))
