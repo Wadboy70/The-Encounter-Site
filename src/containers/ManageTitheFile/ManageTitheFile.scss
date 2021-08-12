@@ -1,27 +1,28 @@
-@import '../../assets/colors.scss';
-.manageTitheFile{
-    width: 100%;
-    border-radius: .5rem;
+@import "../../assets/colors.scss";
+.manageTitheFile {
+  border: $white 5px solid;
+  width: 100%;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  padding: 2%;
+  * {
+    color: $white;
+  }
+  h1 {
+    text-align: center;
+  }
+  .manageTitheFile__sections {
     display: flex;
-    flex-direction: column;
-    margin-top: 2%;
-    padding: 2%;
-    *{
-        color: $white;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    > * {
+      min-width: 300px;
+      flex-grow: 1;
+      max-width: 50%;
+      margin: 1%;
     }
-    h1{
-        text-align: center;
-    }
-    .manageTitheFile__sections{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        >*{
-            min-width: 300px;
-            flex-grow: 1;
-            max-width: 50%;
-            margin: 1%;
-        }
-    }
+  }
 }

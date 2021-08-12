@@ -11,9 +11,9 @@ const ManageHomepagePhotos = () => {
     const [refresh, setRefresh] = useState(0);
     const refreshTrigger = () => setRefresh(refresh+1);
     return (
-        <div className=''>
+        <div className='manageHomepagePhotos'>
             <h1>Manage Homepage Files</h1>
-            <div className=''>
+            <div className='manageHomepagePhotos__sections'>
                 <UploadFile
                     path='homepageImages'
                     title='Upload Homepage Photos'

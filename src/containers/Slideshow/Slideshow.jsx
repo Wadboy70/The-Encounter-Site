@@ -55,13 +55,16 @@ const Slideshow = ({interval = 3000}) => {
                     <img src={imageUrls.fullLogo} alt="encounterLogo"/>
                 </div>
 
+            {/* 
+            slideshow overlay - can come back if pastor asks for it
                 <div 
                     className = {` greetingOverlay  ${(x===1) ? 'showOverlay' : 'hideOverlay'}`}
                 >
                     <Button link = {ROUTES.LIVE_SERMONS.url} className = 'transparent overlayButtonSlide'>
                     </Button>
                 </div>
-            </div>
+            */}
+            </div> 
             {/* The Buttons that allow for slide movement */}
             <Button 
             className = 'slideshow__button slideshow__button_left transparent large'
