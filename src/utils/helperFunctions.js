@@ -90,3 +90,9 @@ export const copyToClipboard = str => {
     document.getSelection().addRange(selected);   
   }
 };   
+
+export const sortFiles = (a,b)=>{
+    if(a.order === undefined) return 1;
+    if(b.order === undefined) return -1;
+    return Number(a.order) - Number(b.order);
+};

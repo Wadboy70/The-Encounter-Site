@@ -22,9 +22,6 @@ const HomeEventSection = () => {
         getEvents();
     }, [upcomingEvent])
     
-    useEffect(()=> {
-        console.log(upcomingEvent?.map(val => val.date.toDate().toDateString()))
-    }, [upcomingEvent])
     return(
         
         <HighlightSection 

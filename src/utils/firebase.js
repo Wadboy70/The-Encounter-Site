@@ -12,6 +12,8 @@ export const COLLECTIONS = {
     WOMENS_MINISTRY: 'WOMENS_MINISTRY',
     YOUTH_MINISTRY: 'YOUTH_MINISTRY',
     MUSIC_MINISTRY: 'MUSIC_MINISTRY',
+    HOMEPAGE_PHOTOS: 'homepagePhotos',
+    TITHE: 'tithe'
 }
 const firebaseConfig = {
     apiKey: "AIzaSyBm8Z06x5yNc8Qv-Yurrrz4hY8qlG_gq-Y",
@@ -85,7 +87,7 @@ export const updateUserDoc = async (uid, tier) => await db.collection(COLLECTION
 //calendar tings
 
 
-export const updateEvent = async (id, event) => await db.collection(COLLECTIONS.CALENDAR).doc(id).set(event, {merge: true});
+export const updateDoc = async (id, event, collection) => await db.collection(collection).doc(id).set(event, {merge: true});
 
 export const getAllDocs = async (collection, sortFunc) => {
     const snapshot = await (db.collection(collection).get());
@@ -113,11 +115,11 @@ export const addNewDoc = async (info = {}, collection = '') => {
     .then(docRef => {
         return docRef.id;
     })
-    .catch(err => console.log("error adding document: ", err));
+    .catch(err => err);
 };
 
-export const fileUpload = (file, name) => {
-    const fileRef = storageRef.child(`titheInfo/${name}`);
+export const fileUpload = (file, name, path) => {
+    const fileRef = storageRef.child(`${path}/${name}`);
     return fileRef.put(file).then(res => res).catch(err => err);
 };
 
