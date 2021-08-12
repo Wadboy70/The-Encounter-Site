@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Button from '../../components/Button/Button';
-import {fileUpload } from '../../utils/firebase';
+import {addNewDoc, downloadFile, fileUpload } from '../../utils/firebase';
 
 import './UploadFile.scss'
 
-const UploadFile = () => {
+const UploadFile = ({
+    path = '',
+    title = '',
+    collection = ''
+}) => {
     
     const [file, setFile] = useState(null);
     const [error , setError] = useState(null);
@@ -16,33 +20,51 @@ const UploadFile = () => {
         setError(null);
     }
     
-    const handleSubmitFile = () => {
+    const handleSubmitFile = async () => {
         setError(null);
         if(file) {
-            fileUpload(file, file.name);
-            setFormSubmitted(true);
+            let value = await fileUpload(file, file.name, path);
+            console.log(value?.metadata?.fullPath, collection);
+            if (value?.metadata?.fullPath){
+                await addNewDoc(
+                    {
+                        path: value.metadata.fullPath,
+                        url: await downloadFile(value.metadata.fullPath)
+                    },
+                    collection
+                );
+                setFormSubmitted(true)
+            } else {
+                setError('File Upload failed')
+            }
         } else {
             setError('You haven\'t added a file!');
         }
     }
+
+    useEffect(() => {
+        if(formSubmitted){
+            setTimeout(() => setFormSubmitted(false), 3000);
+        }
+    }, [formSubmitted])
     return(
         <div className = 'uploadFile'>
-            <h2>Upload Tithe Files</h2>
+            <h2>{title}</h2>
+            <form className = 'uploadFile__form'>
+                <input 
+                    type="file" 
+                    onChange = {handleFormChange}
+                />
+                <Button 
+                    className = 'whiteBorder small transparent' 
+                    op = { handleSubmitFile }
+                >
+                    Submit
+                </Button>
+            </form>
             {
-                formSubmitted ? 
-                <p>Tithe Document has been added!</p> :
-                <form className = 'uploadFile__form'>
-                    <input 
-                        type="file" 
-                        onChange = {handleFormChange}
-                    />
-                    <Button 
-                        className = 'whiteBorder small transparent' 
-                        op = { handleSubmitFile }
-                    >
-                        Submit
-                    </Button>
-                </form>
+                formSubmitted &&
+                <p>File has been uploaded!</p>
             }
             {
                 error &&
