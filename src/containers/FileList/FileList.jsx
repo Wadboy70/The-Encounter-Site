@@ -3,13 +3,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import Button from '../../components/Button/Button';
 import USER_TIERS from '../../utils/constants/userTiers';
 import { FirebaseUserContext } from '../../utils/context/user.context';
-import { deleteDoc, deleteFile, downloadFile, fileList, getAllDocs } from '../../utils/firebase';
+import { deleteDoc, deleteFile, getAllDocs, updateDoc } from '../../utils/firebase';
+import { sortFiles } from '../../utils/helperFunctions';
 
 import './FileList.scss';
 
 const FileList = ({
     className = '',
-    collection,
+    collection = '',
     display = false
 }) => {
     const [files, setFiles] = useState(null);
@@ -21,11 +22,21 @@ const FileList = ({
             await deleteFile(file.url);
             setFiles(null);
         }
+    };
+    const reorder = async (dir, index) => {
+        let switchVal = index + dir;
+        if(switchVal < 0 || switchVal >= files.length) return;
+        await updateDoc(files[index]?.id, {order: switchVal}, collection);
+        await updateDoc(files[switchVal]?.id, {order: index}, collection);
+        setFiles(null);
     }
     useEffect(() => {
         let mounted = true;
         const list = async () => {
-            let files = mounted ? (await getAllDocs(collection)) : null;
+            let files = mounted ? (await getAllDocs(collection, sortFiles)) : null;
+            files.forEach(async (file, i)=>{
+                if(file.order !== i) await updateDoc(file.id, {order: i}, collection)
+            });
             setFiles(files);
         }
         if (!files) list();
@@ -37,37 +48,58 @@ const FileList = ({
             <ul>
                 {
                     files &&
-                    files?.map((file, index) => (
-                        <li key={index} className='fileList__item'>
-                            <span>
-                                <Button
-                                    op={() => window.open(file.url, '_blank')}
-                                    className='transparent'
-                                >
-                                    ↓
-                                </Button>
-                            </span>
-                            <span>
-                                {
-                                    display ?
-                                        <img src={file.url} alt='yuh' />
-                                        :
-                                        file.url.match(/(?<=\/)\w*/)
-                                }
-                            </span>
-                            {
-                                user?.tier === USER_TIERS.ADMIN &&
+                    files?.map((file, index) => {
+                        let name = file.url.match(/(?<=\/)\w*/);
+                        return(
+                            <li key={index} className='fileList__item'>
                                 <span>
                                     <Button
+                                        op={() => window.open(file.url, '_blank')}
                                         className='transparent'
-                                        op={() => deleteItem(file)}
                                     >
-                                        X
+                                        Download
                                     </Button>
                                 </span>
-                            }
-                        </li>
-                    ))
+                                <span>
+                                    {
+                                        display ?
+                                        <img src={file.url} alt={name} />
+                                        :
+                                        name
+                                    }
+                                </span>
+                                {
+                                    user?.tier === USER_TIERS.ADMIN &&
+                                    <>
+                                        <span>
+                                            <Button
+                                                className='transparent'
+                                                op={() => deleteItem(file)}
+                                            >
+                                                X
+                                            </Button>
+                                        </span>
+                                        <span>
+                                            <Button 
+                                                className='transparent arrow' 
+                                                op={()=>reorder(-1, index)}
+                                            >
+                                                ↑
+                                            </Button>
+                                        </span>
+                                        <span>
+                                            <Button 
+                                                className='transparent arrow'
+                                                op={()=>reorder(1, index)}
+                                            >
+                                                ↓
+                                            </Button>
+                                        </span>
+                                    </>
+                                }
+                            </li>
+                        )
+                    })
                 }
             </ul>
         </div>

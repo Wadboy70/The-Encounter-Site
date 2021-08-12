@@ -87,7 +87,7 @@ export const updateUserDoc = async (uid, tier) => await db.collection(COLLECTION
 //calendar tings
 
 
-export const updateEvent = async (id, event) => await db.collection(COLLECTIONS.CALENDAR).doc(id).set(event, {merge: true});
+export const updateDoc = async (id, event, collection) => await db.collection(collection).doc(id).set(event, {merge: true});
 
 export const getAllDocs = async (collection, sortFunc) => {
     const snapshot = await (db.collection(collection).get());
