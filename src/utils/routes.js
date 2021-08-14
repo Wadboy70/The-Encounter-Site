@@ -13,12 +13,13 @@ const ROUTES = {
     FORGOT_PASSWORD: {name: 'Forgot Password', url: '/forgot'},
     ADMIN_PANEL: {name: 'Admin Panel', url: '/adminpanel'},
     GIVING: {name: 'Giving', url: '/giving'},
-    LEADERSHIP: {name: 'Leadership', url: '/leadership'},
     MEN_MINISTRY: {name: "\"Guided\" Men's Ministry", url: '/mensministry'},
     WOMEN_MINISTRY: {name: '"Esther’s Circle" Women’s Group', url: '/womensministry', nickname: 'Esther’s Circle Women’s Group'},
     YOUTH_MINISTRY: {name: '"Engage" Youth Ministry', url: '/youthministry'},
     MUSIC_MINISTRY: {name: '"New Wine" Music Ministry', url: '/musicministry'},
 };
+// Addd back to object when leadership page returns
+// LEADERSHIP: {name: 'Leadership', url: '/leadership'},
 export const FORM_SUBMIT_TYPE = {
     EMAIL: 'EMAIL',
     ADMIN_STORAGE: 'ADMIN_STORAGE'

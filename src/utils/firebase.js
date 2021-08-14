@@ -75,7 +75,9 @@ export const addNewUser = async (userInfo) => {
     return true;
 };
 
-export const getUserInfo = async (uid) =>  await db.collection(COLLECTIONS.USERS).doc(uid).get().then(doc => doc.data());
+export const getUserInfo = async (uid) => {
+    return await db.collection(COLLECTIONS.USERS).doc(uid).get().then(doc => doc.data());
+}
 
 export const getAllUsers = async () => {
     const snapshot = await (db.collection(COLLECTIONS.USERS).get());

@@ -11,6 +11,7 @@ import { ReactComponent as Phone } from '../../assets/images/cell.svg';
 import { ReactComponent as Computer } from '../../assets/images/computer.svg';
 
 import './GivingPage.scss';
+import { COLLECTIONS } from '../../utils/firebase';
 
 const GivingPage = () => {
     const [user] = useContext(FirebaseUserContext);
@@ -63,6 +64,7 @@ const GivingPage = () => {
                     user && user?.tier !== USER_TIERS.MEMBER &&
                     <FileList
                         className='givingPage__titheFileList'
+                        collection={COLLECTIONS.TITHE}
                     />
                 }
             </div>
