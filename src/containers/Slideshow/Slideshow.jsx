@@ -3,14 +3,13 @@ import { useState, useEffect } from 'react';
 
 import Button from '../../components/Button/Button';
 import imageUrls from '../../assets/imageUrls';
-import ROUTES from '../../utils/routes';
 import { COLLECTIONS, getAllDocs } from '../../utils/firebase';
 import { sortFiles } from '../../utils/helperFunctions';
 
 import './Slideshow.scss';
 
 const Slideshow = ({interval = 3000}) => {
-    const [slides, setSlides] = useState([]);
+    const [slides, setSlides] = useState(null);
     const [x, setX] = useState(0)
     const goLeft = () => {
         (x <= 0) ? setX(slides.length) : setX(x-1);
@@ -29,7 +28,7 @@ const Slideshow = ({interval = 3000}) => {
             let val = await getAllDocs(COLLECTIONS.HOMEPAGE_PHOTOS, sortFiles);
             if (mounted) setSlides(val)
         };
-        getSlides();
+        if(!slides) getSlides();
         return () => mounted = false;
     })
 
@@ -41,7 +40,7 @@ const Slideshow = ({interval = 3000}) => {
                 >
                 </div>
             {
-                slides.map((slide, index) => (
+                slides?.map((slide, index) => (
                     <div 
                         className = 'slide' 
                         key = {index}

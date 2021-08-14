@@ -13,7 +13,7 @@ const HomeWelcomeSection = () => (
             Welcome!
         </HeaderBacking>
         <img
-            src={imageUrls.arthurStanding} 
+            src={imageUrls.arthurBrittany} 
             alt="worship"
             className = 'worshipImage'
         />

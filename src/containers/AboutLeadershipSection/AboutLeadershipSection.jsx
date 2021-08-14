@@ -15,7 +15,7 @@ const AboutLeadershipSection = () => {
                 button = 'Find out more'
                 description = 'Read about the leaders of our ministry'
                 title = 'Our Ministry Leaders'
-                buttonProps = {{link: ROUTES.LEADERSHIP.url}}
+                buttonProps = {{link: ROUTES.ABOUT.url}}
                 cover
                 center
             />

@@ -1,6 +1,7 @@
 const imageUrls = {
     aboutClosingSection: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/aboutClosingSection.jpg?alt=media&token=9bb4a5c1-74c0-4bf8-b921-eca44b1cef4e',
     arthurCollage: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/Family%20Collage.jpg?alt=media&token=8f8326c1-19ca-4132-889b-f06f924bccfa',
+    arthurBrittany: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/arthurbrittany.png?alt=media&token=00291f83-83eb-456f-8eaa-35ee5017b68d',
     brittany: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/BrittanyWeaver.png?alt=media&token=869e844b-ef45-4949-8327-072c87a3886a',
     brittanyBio: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/BrittanyWeaverBio.jpg?alt=media&token=fee964f0-da01-4239-a621-7c4b1a65b389',
     encounterBanner: 'https://firebasestorage.googleapis.com/v0/b/the-encounter-454ba.appspot.com/o/EWCBanner.jpg?alt=media&token=f413d642-8fe3-45ff-a786-e88ec0053261',
