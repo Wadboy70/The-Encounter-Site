@@ -54,7 +54,7 @@ const FileList = ({
                 {
                     files &&
                     files?.map((file, index) => {
-                        let name = file.url.match(/(?<=\/)\w*/);
+                        let name = file.url.match(/(\/)+\w*/)?.[0];
                         return(
                             <li key={index} className='fileList__item'>
                                 <span>
