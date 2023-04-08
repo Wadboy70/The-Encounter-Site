@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "cors": "^2.8.5",
     "firebase": "^8.0.0",
+    "is-fullwidth-code-point": "^4.0.0",
     "less": "^4.1.3",
     "mailgun-js": "^0.22.0",
     "nodemon": "^2.0.7",
@@ -20,10 +21,10 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "build": "react-scripts build && (cd server && yarn install)",
+    "build": "react-scripts build && (cd server && npm install)",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "cd server && yarn start"
+    "start": "cd server && npm run start"
   },
   "eslintConfig": {
     "extends": "react-app"
