@@ -2,7 +2,7 @@ import React from 'react';
 import USER_TIERS from '../../utils/constants/userTiers';
 import { parseFirestoreDate, titleCaseSentence } from '../../utils/helperFunctions';
 
-import './ManageUserWindow.scss';
+import './ManageUserWindow.css';
 
 const ManageUserWindow = ({selectedUser = {}, changeUserTier}) => {
     const {email, displayName, date, tier} = selectedUser;

@@ -1,0 +1,32 @@
+@import "../../assets/colors.css";
+@keyframes colorChange {
+  from {
+    color: red;
+  }
+  to {
+    color: var(--white);
+  }
+}
+.signInSignUp__signIn {
+}
+.signIn__title {
+  margin-left: 0px;
+  font-size: 1.5em;
+}
+.signInSignUp__signIn h3 {
+  font-size: 1em;
+}
+.signIn__loginButtons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+}
+.signIn__loginButtons > * {
+  font-size: 1em;
+  width: fit-content;
+  margin-left: 0;
+}
+.signInSignUp__signIn .errorMessage {
+  animation: colorChange 1s;
+}

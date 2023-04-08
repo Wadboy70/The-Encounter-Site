@@ -6,7 +6,7 @@ import { FirebaseUserContext } from '../../utils/context/user.context';
 import { calendarDateFormatting, calendarDateGetTime } from '../../utils/helperFunctions';
 import { COLLECTIONS, deleteDoc, getAllDocs } from '../../utils/firebase';
 
-import './CalendarDateDisplay.scss';
+import './CalendarDateDisplay.css';
 
 const CalendarDateDisplay = ({
     dateInfo,

@@ -1,0 +1,33 @@
+.emailFormsPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.emailFormsPage__title{
+    margin-bottom: 2rem;
+}
+.emailFormsPage__message{
+    height: 20vh;
+}
+.emailFormsPage__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.emailFormsPage__button{
+    margin-left: 0px;
+}
+.form__dropdownTitle{
+    text-align: left;
+}
+.form__dropdown{
+    width: fit-content;
+    margin-bottom: .5rem;
+}
+.form__error{
+    width: fit-content;
+}
+.emailFormsPage__signInMessage{
+    margin-bottom: 1rem;
+}

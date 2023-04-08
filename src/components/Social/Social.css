@@ -1,0 +1,23 @@
+@import "../../assets/colors.css";
+.socialList__title {
+  white-space: nowrap;
+}
+.socialList__logos {
+  height: 30%;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.socialList__logos a {
+  min-width: unset;
+  margin: 0;
+  height: 100%;
+}
+.socialList__logos a img {
+  height: 100%;
+  width: auto;
+  margin: 0 24px;
+}
+.socialList__logos .instagramSocial {
+  height: 110%;
+}

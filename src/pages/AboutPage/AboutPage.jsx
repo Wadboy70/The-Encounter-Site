@@ -6,7 +6,7 @@ import AboutInfoSection from '../../containers/AboutInfoSection/AboutInfoSection
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import imageUrls from '../../assets/imageUrls'
 
-import './AboutPage.scss';
+import './AboutPage.css';
 
 const AboutPage = () => {
     

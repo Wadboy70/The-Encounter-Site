@@ -4,7 +4,7 @@ import CopyrightBorder from '../../components/CopyrightBorder/CopyrightBorder';
 import Logo from '../../components/Logo/Logo';
 import Social from '../../components/Social/Social';
 
-import './Footer.scss';
+import './Footer.css';
 
 const Footer = () => (
     <footer className = 'footer'>

@@ -1,0 +1,45 @@
+@import "../../assets/colors.css";
+.manageEventSignUp {
+  width: 100%;
+  margin-top: 2%;
+  background-color: var(--white);
+  padding: 1%;
+  border-radius: 0.5rem;
+}
+.manageEventSignUp__title {
+  text-align: center;
+}
+.manageEventSignUp__program {
+  margin-top: 1rem;
+}
+.program__entries {
+}
+.entry__member {
+  display: flex;
+  align-items: center;
+}
+.entry__member > * {
+  flex-grow: 1;
+}
+.entry__member span {
+  display: inline-flex;
+  flex-direction: column;
+}
+.member__button {
+  width: fit-content;
+  margin: 2px;
+  align-self: flex-end;
+}
+.program__headerInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.program__title {
+  font-size: calc(1vh + 1vw + 0.5vmin);
+  margin-bottom: 0.4rem;
+}
+.manageEventSignUp * {
+  color: var(--navy);
+  text-align: left;
+}

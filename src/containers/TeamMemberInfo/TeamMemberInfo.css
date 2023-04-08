@@ -1,0 +1,45 @@
+@import "../../assets/colors.css";
+.teamMemberInfo {
+  width: 100%;
+  display: grid;
+  height: 60vh;
+  grid-template-rows: 65% 25% 10%;
+}
+.teamMemberInfo__button {
+  height: 100%;
+  width: 100%;
+}
+.teamMemberInfo__image {
+  max-height: 100%;
+  width: 100%;
+  object-fit: contain;
+  align-self: end;
+}
+.teamMemberInfo__name {
+  padding: 0.75rem 0;
+}
+.teamMemberInfo__name,
+.teamMemberInfo__description {
+  color: var(--navy);
+}
+.teamMemberInfo__description {
+  font-size: calc(1.6vw + 1.6vh + 0.8vmin);
+}
+.teamMemberInfo__name {
+  align-self: center;
+  font-size: calc(1.9vw + 1.9vh + 0.85vmin);
+  font-family: FuturaBook;
+}
+
+@media only screen and (min-width: 768px) {
+  .teamMemberInfo {
+    width: 30%;
+    margin: 1%;
+  }
+  .teamMemberInfo__description {
+    font-size: calc(0.8vw + 0.8vh + 0.4vmin);
+  }
+  .teamMemberInfo__name {
+    font-size: calc(1.2vw + 1.2vh + 0.6vmin);
+  }
+}

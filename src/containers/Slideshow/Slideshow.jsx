@@ -6,7 +6,7 @@ import imageUrls from '../../assets/imageUrls';
 import { COLLECTIONS, getAllDocs } from '../../utils/firebase';
 import { sortFiles } from '../../utils/helperFunctions';
 
-import './Slideshow.scss';
+import './Slideshow.css';
 
 const Slideshow = ({interval = 3000}) => {
     const [slides, setSlides] = useState(null);

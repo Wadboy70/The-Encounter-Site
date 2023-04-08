@@ -1,0 +1,12 @@
+
+.signInSignUp__signUp{
+    
+}
+.signInSignUp__signUp .signUp__title{
+    margin-left: 0;
+    font-size: 1.5em;
+    white-space: nowrap;
+}
+.signInSignUp__signUp h3{
+        font-size: 1em;
+    }

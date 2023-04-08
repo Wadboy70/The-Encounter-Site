@@ -8,7 +8,7 @@ import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import ROUTES from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
-import './CalendarPage.scss';
+import './CalendarPage.css';
 
 const CalendarPage = () => {
     const [showForm, setShowForm] = useState(false);

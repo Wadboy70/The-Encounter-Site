@@ -1,0 +1,56 @@
+@import "../../assets/colors.css";
+
+
+.backing {
+  --titleWidth: calc(3vw + 3vh + 1.5vmin);
+  --bigTitleWidth: calc(2.5vw + 2.5vh + 1.2vmin);
+  display: flex;
+  flex-direction: column;
+  height: 15%;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+.backing__bg {
+  transform: translateX(-30px);
+  position: relative;
+  align-self: flex-start;
+  width: calc(100% - 20px);
+  height: 90%;
+  min-height: 10vh;
+}
+.backing__bg path {
+  width: 100%;
+}
+.backing__title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  font-size: var(--titleWidth);
+  transform: translateX(-50px);
+}
+.backing__title :before {
+  background-color: white;
+  width: 40px;
+  height: 3px;
+  content: "";
+  display: inline-block;
+  justify-self: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+  .backing {
+    height: 100%;
+  }
+  .backing svg {
+    width: 95%;
+  }
+  .backing .backing__title {
+    font-size: var(--bigTitleWidth);
+  }
+  .backing .backing__title :before {
+    width: 60px;
+    height: 5px;
+  }
+}

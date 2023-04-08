@@ -6,7 +6,7 @@ import withForm from '../../utils/hocs/withForm';
 import { googleSignIn, passwordSignIn } from '../../utils/firebase';
 import ROUTES from '../../utils/routes';
 
-import './SignIn.scss';
+import './SignIn.css';
 
 const SignIn = ({handleChange, formState, setError}) => {
     const { error } = formState;

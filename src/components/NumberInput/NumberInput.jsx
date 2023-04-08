@@ -2,7 +2,7 @@ import React from 'react';
 
 import { titleCaseSentence } from "../../utils/helperFunctions";
 
-import './NumberInput.scss';
+import './NumberInput.css';
 
 const NumberInput = ({
         labelClassName = '',

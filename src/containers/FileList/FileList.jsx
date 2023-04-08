@@ -6,7 +6,7 @@ import { FirebaseUserContext } from '../../utils/context/user.context';
 import { deleteDoc, deleteFile, getAllDocs, updateDoc } from '../../utils/firebase';
 import { sortFiles } from '../../utils/helperFunctions';
 
-import './FileList.scss';
+import './FileList.css';
 
 const FileList = ({
     className = '',

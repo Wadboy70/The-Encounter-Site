@@ -5,7 +5,7 @@ import Button from '../../components/Button/Button';
 import withForm from '../../utils/hocs/withForm';
 import { createPasswordAcc } from '../../utils/firebase';
 
-import './SignUp.scss';
+import './SignUp.css';
 import { FirebaseUserContext } from '../../utils/context/user.context';
 import { Redirect } from 'react-router-dom';
 import ROUTES from '../../utils/routes';

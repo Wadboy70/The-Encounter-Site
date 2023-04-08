@@ -3,7 +3,7 @@ import videoInfo from '../../utils/constants/videoListDefaults';
 
 import withFetch from '../../utils/hocs/withFetch';
 
-import './PastSermonsSection.scss';
+import './PastSermonsSection.css';
 
 const PastSermonsSection = () => {
     

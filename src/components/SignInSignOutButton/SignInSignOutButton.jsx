@@ -5,7 +5,7 @@ import { signOut } from '../../utils/firebase';
 import ROUTES from '../../utils/routes';
 import Button from '../Button/Button';
 
-import './SignInSignOutButton.scss';
+import './SignInSignOutButton.css';
 
 const SignInSignOutButton = ({className = ''}) => {
     const [user, setUser] = useContext(FirebaseUserContext);

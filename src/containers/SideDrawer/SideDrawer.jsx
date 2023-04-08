@@ -9,7 +9,7 @@ import { ReactComponent as ContactIcon } from '../../assets/images/phone.svg'
 import { ReactComponent as HomeIcon } from '../../assets/images/home.svg'
 import CopyrightBorder from '../../components/CopyrightBorder/CopyrightBorder';
 
-import './SideDrawer.scss';
+import './SideDrawer.css';
 import ROUTES from '../../utils/routes';
 import SignInSignOutButton from '../../components/SignInSignOutButton/SignInSignOutButton';
 import { FirebaseUserContext } from '../../utils/context/user.context';

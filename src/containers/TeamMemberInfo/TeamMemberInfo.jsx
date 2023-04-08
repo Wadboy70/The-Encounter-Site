@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../components/Button/Button';
 
-import './TeamMemberInfo.scss';
+import './TeamMemberInfo.css';
 
 const TeamMemberInfo = ({url, description, name, link, className = ''}) => {
     return(

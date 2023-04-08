@@ -5,7 +5,7 @@ import Button from '../../components/Button/Button';
 import routes from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
-import './HomeWelcomeSection.scss';
+import './HomeWelcomeSection.css';
 
 const HomeWelcomeSection = () => (
     <section className = 'welcome'>

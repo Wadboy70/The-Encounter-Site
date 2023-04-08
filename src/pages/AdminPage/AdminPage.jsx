@@ -7,7 +7,7 @@ import withUserRedirect from '../../utils/hocs/withUserRedirect';
 import ManageTitheFile from '../../containers/ManageTitheFile/ManageTitheFile';
 import ManageHomepagePhotos from '../../containers/ManageHomepagePhotos/ManageHomepagePhotos';
 
-import './AdminPage.scss';
+import './AdminPage.css';
 
 const AdminPage = () => {
     return(

@@ -1,0 +1,51 @@
+@import "../../assets/colors.css";
+.displayItem {
+  width: 50%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.displayItem .displayItem__title,
+.displayItem .displayItem__content {
+  text-align: center;
+}
+.displayItem .displayItem__title {
+  font-size: calc(2vw + 2vh + 1vmin);
+  padding-bottom: 10px;
+}
+.displayItem .displayItem__content {
+  font-family: FuturaBook;
+  font-size: calc(1.2vw + 1.2vh + 0.6vmin);
+}
+.displayItem .displayItem__content {
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+.displayItem .displayItem__icon {
+  height: 50px;
+}
+.displayItem > * {
+  margin: 4px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .displayItem {
+    width: 25%;
+    margin: 2%;
+  }
+  .displayItem .displayItem__title {
+    font-size: calc(1.5vw + 1.5vh + 0.75vmin);
+  }
+  .displayItem .displayItem__content {
+    font-size: calc(0.75vw + 0.75vh + 0.375vmin);
+  }
+  .displayItem .displayItem__icon {
+    height: 70px;
+  }
+}

@@ -7,7 +7,7 @@ import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import imageUrls from '../../assets/imageUrls';
 import Button from '../../components/Button/Button';
 
-import './SermonsPage.scss';
+import './SermonsPage.css';
 
 const SermonsPage = () => {
     return(

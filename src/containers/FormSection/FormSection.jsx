@@ -11,7 +11,7 @@ import withForm from '../../utils/hocs/withForm';
 import { FORM_FIELD_INPUT_TYPE, FORM_SUBMIT_TYPE } from '../../utils/routes';
 import ReCAPTCHA from "react-google-recaptcha";
 
-import './FormSection.scss';
+import './FormSection.css';
 
 const FormSection = ({
         handleChange, 

@@ -1,0 +1,24 @@
+@import "../../assets/colors.css";
+.aboutInfoSection {
+  padding: 2% 5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.aboutDisplayBox {
+  flex-grow: 1;
+  justify-content: center;
+  margin: 1%;
+  border-radius: 3rem;
+  min-width: 300px;
+  width: 40%;
+}
+.aboutDisplayBox__title {
+  margin-bottom: 2%;
+  font-family: Cormorant;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.aboutDisplayBox__description {
+  font-size: 1.5rem;
+  text-align: left;
+}

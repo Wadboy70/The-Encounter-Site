@@ -1,0 +1,12 @@
+.datePicker{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.datePicker .datePicker__clock{
+    display: flex;
+}
+.datePicker .datePicker__clock > *{
+    margin-right: .5rem;
+    margin-top: .5rem;
+}

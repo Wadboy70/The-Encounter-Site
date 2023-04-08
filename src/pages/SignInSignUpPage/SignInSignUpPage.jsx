@@ -3,7 +3,7 @@ import React from 'react';
 import SignIn from '../../containers/SignIn/SignIn';
 import SignUp from '../../containers/SignUp/SignUp';
 
-import './SignInSignUpPage.scss';
+import './SignInSignUpPage.css';
 
 const SignInSignUpPage = () => {
 

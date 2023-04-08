@@ -1,0 +1,16 @@
+@import "../../assets/colors.css";
+
+.signInSignOut {
+  font-size: 1.2rem;
+  border-radius: 0;
+  border-width: 1px;
+  margin: 0;
+  font-family: Cormorant;
+  padding: 1% 2%;
+}
+.signInSignOut:active,
+.signInSignOut :hover {
+  color: var(--yellow);
+  border-color: var(--yellow);
+  transition: color 0.5s border-color 0.5s;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { titleCaseSentence } from "../../utils/helperFunctions";
 
-import './TextInput.scss';
+import './TextInput.css';
 
 const TextInput = ({
         labelClassName = '',

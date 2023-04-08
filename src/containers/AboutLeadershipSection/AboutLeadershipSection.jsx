@@ -4,7 +4,7 @@ import imageUrls from '../../assets/imageUrls';
 import DisplayBox from '../../components/DisplayBox/DisplayBox';
 import ROUTES from '../../utils/routes';
 
-import './AboutLeadershipSection.scss';
+import './AboutLeadershipSection.css';
 
 const AboutLeadershipSection = () => {
     

@@ -1,0 +1,25 @@
+@import "../../assets/colors.css";
+
+.nav {
+  height: 100%;
+  padding: 2%;
+}
+nav * {
+  text-decoration: none;
+  color: var(--white);
+}
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  height: 100%;
+}
+.nav ul li {
+  height: fit-content;
+  font-size: 1.2rem;
+}
+.nav a:hover,
+.nav a:active {
+  color: var(--yellow);
+}

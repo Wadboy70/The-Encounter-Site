@@ -4,7 +4,7 @@ import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import ROUTES from '../../utils/routes';
 import Button from '../../components/Button/Button';
 
-import './LeadershipPage.scss';
+import './LeadershipPage.css';
 import imageUrls from '../../assets/imageUrls';
 
 const LeadershipPage = () => {

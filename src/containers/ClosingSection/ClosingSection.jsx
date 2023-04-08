@@ -4,7 +4,7 @@ import DisplayBox from '../../components/DisplayBox/DisplayBox';
 import ROUTES from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
-import './ClosingSection.scss';
+import './ClosingSection.css';
 
 const ClosingSection = () => (
     <div className = 'closingSection'>

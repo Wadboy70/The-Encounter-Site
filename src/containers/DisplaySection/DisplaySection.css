@@ -1,0 +1,69 @@
+@import "../../assets/colors.css";
+.display {
+  width: 100%;
+  padding: 2% 5%;
+  display: flex;
+  flex-direction: column;
+}
+.ministryList {
+  background-color: var(--white);
+  border-radius: 2rem;
+  margin: 1rem;
+}
+.ministryList__title {
+  margin: 0.8rem;
+}
+.ministryList__ministries {
+  height: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.ministries__ministryItem {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  border-top: --navy 1px solid;
+  width: 90%;
+}
+.ministries__ministryItem :last-child {
+  border-bottom: --navy 1px solid;
+}
+.ministryItem__button {
+  min-height: 2rem;
+  max-height: 2rem;
+  width: 100%;
+  height: 8vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.ministryList * {
+  color: var(--navy);
+}
+@media only screen and (min-width: 768px) {
+  .display {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    height: 90vh;
+    gap: 1rem;
+  }
+  .display > * {
+    height: 80%;
+  }
+  .display__box {
+  }
+  .display__box > * {
+    height: calc(90vh * 0.8);
+    justify-content: center;
+  }
+  .ministryList .ministryList__ministries .ministries__ministryItem :last-child {
+          border-bottom: none;
+        }
+      
+}

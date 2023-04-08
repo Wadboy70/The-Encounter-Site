@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './HighlightSection.scss';
+import './HighlightSection.css';
 
 const HighlightSection = ({
     children,

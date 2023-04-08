@@ -2,7 +2,7 @@ import React from 'react';
 
 import { titleCaseSentence } from "../../utils/helperFunctions";
 
-import './CheckboxInput.scss';
+import './CheckboxInput.css';
 
 const CheckboxInput = ({
         labelClassName = '',

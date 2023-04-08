@@ -4,7 +4,7 @@ import { deleteDoc, getAllDocs } from '../../utils/firebase';
 import { DUPLICATE_PAGES, FORM_SUBMIT_TYPE } from '../../utils/routes';
 import Button from '../../components/Button/Button';
 
-import './ManageEventSignUp.scss';
+import './ManageEventSignUp.css';
 import { copyToClipboard, replaceWhitespace, replaceUnderscore, titleCaseSentence } from '../../utils/helperFunctions';
 
 const ManageEventSignUp = () => {

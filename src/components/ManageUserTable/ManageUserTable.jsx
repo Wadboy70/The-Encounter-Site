@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ManageUserTable.scss';
+import './ManageUserTable.css';
 
 const ManageUserTable = ({userCells}) => {
     return(

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import withFetch from '../../utils/hocs/withFetch';
 import imageUrls from '../../assets/imageUrls';
 
-import './SermonFrame.scss';
+import './SermonFrame.css';
 
 const SermonFrame = () => {
     const [isLive, setIsLive] = useState(undefined);

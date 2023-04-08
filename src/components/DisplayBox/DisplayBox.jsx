@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../Button/Button';
 
-import './DisplayBox.scss';
+import './DisplayBox.css';
 
 const DisplayBox = ({
     className = '',

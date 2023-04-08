@@ -1,0 +1,25 @@
+.closingSection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    padding: 0 5% 2% 5%;
+}
+.closingSection__display{
+    flex-grow: 1;
+}
+@media only screen and (min-width: 768px){
+    .closingSection{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .closingSection>*{
+        height: 80%;
+    }
+    .closingSection__display{
+    }
+    .closingSection__display>*{
+        height: calc(90vh*.8);
+        justify-content: center;
+    }
+}

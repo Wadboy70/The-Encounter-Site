@@ -6,7 +6,7 @@ import ManageUserWindow from '../../components/ManageUserWindow/ManageUserWindow
 import { getAllUsers, updateUserDoc } from "../../utils/firebase";
 import { titleCaseSentence, parseFirestoreDate } from '../../utils/helperFunctions'
 
-import './ManageUsers.scss'
+import './ManageUsers.css'
 
 const ManageUsers = () => {
     const [userList, setUserList] = useState(null);

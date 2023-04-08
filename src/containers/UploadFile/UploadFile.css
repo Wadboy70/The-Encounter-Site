@@ -1,0 +1,19 @@
+@import "../../assets/colors.css";
+.uploadFile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+}
+.uploadFile h2 {
+  margin-bottom: 2%;
+}
+.uploadFile__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.uploadFile__form * {
+  color: var(--white);
+}

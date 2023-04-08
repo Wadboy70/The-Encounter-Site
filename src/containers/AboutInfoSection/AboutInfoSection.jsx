@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './AboutInfoSection.scss';
+import './AboutInfoSection.css';
 
 const AboutInfoSection = () => {
     const aboutInfoValues = [

@@ -1,0 +1,44 @@
+@import "../../assets/colors.css";
+.calendarDateDisplay {
+  background-color: var(--white);
+  width: 90%;
+  padding: 2% 0;
+  margin: 1% 5%;
+  margin-bottom: 0;
+  border: 0px solid var(--white);
+  border-width: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.calendarDateDisplay * {
+  color: var(--navy);
+  text-align: left;
+  font-family: FuturaBook;
+}
+.calendarDateDisplay__title {
+  padding: 0 0 2% 2%;
+  align-self: center;
+}
+.calendarDateDisplay__events {
+}
+.calendarDateDisplay__events > :nth-child(2n-1) {
+  background-color: var(--gold);
+}
+.events__thisEvent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.thisEvent__delete {
+  display: inline-flex;
+}
+.events__removeButton {
+  white-space: nowrap;
+}
+.events__thisEvent > div {
+  padding: 5px 2%;
+}
+.events__thisEvent span {
+  font-weight: 500;
+}

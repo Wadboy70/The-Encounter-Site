@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from '../Button/Button';
 
-import './DisplayItem.scss';
+import './DisplayItem.css';
 
 const DisplayItem = ({info = {}, className = '', children}) => {
     const {icon, title, button, buttonProps} = info;

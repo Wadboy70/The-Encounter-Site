@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button/Button';
 import { addNewDoc, downloadFile, fileUpload } from '../../utils/firebase';
 
-import './UploadFile.scss'
+import './UploadFile.css'
 
 const UploadFile = ({
     path = '',

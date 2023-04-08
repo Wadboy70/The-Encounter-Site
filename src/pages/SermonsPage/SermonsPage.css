@@ -1,0 +1,19 @@
+@import "../../assets/colors.css";
+.sermonsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sermonsPage__content {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sermonsPage__recentTitle {
+  padding: 3%;
+}
+.sermonsPage__watch {
+  align-self: flex-end;
+}

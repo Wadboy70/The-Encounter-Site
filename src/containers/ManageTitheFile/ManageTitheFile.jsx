@@ -5,7 +5,7 @@ import FileList from '../FileList/FileList';
 import UploadFile from '../UploadFile/UploadFile';
 
 
-import './ManageTitheFile.scss';
+import './ManageTitheFile.css';
 
 const ManageTitheFile = () => {
 

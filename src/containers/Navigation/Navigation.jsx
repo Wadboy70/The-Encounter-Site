@@ -4,7 +4,7 @@ import Nav from "../../components/Nav/Nav";
 import Hamburger from '../../components/Hamburger/Hamburger';
 import Logo from '../../components/Logo/Logo';
 
-import './Navigation.scss';
+import './Navigation.css';
 const Navigation = ({drawerToggleHandler}) => {
     return (
         <header className = 'navigation'>

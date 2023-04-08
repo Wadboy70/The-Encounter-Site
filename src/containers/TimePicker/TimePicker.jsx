@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import Dropdown from '../../components/Dropdown/Dropdown';
 
-import './TimePicker.scss';
+import './TimePicker.css';
 
 const TimePicker = ({name = 'time', handleChangeManual}) => {
     const [timeState, setTimeState] = useState({

@@ -1,0 +1,8 @@
+@import "../../assets/colors.css";
+
+.manageHomepagePhotos {
+  border: --white 5px solid;
+  padding: 2%;
+  margin-top: 2%;
+  border-radius: 0.5rem;
+}

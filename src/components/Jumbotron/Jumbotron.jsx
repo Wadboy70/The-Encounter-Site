@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Jumbotron.scss';
+import './Jumbotron.css';
 
 const Jumbotron = ({image, title, caption}) => {
     return(

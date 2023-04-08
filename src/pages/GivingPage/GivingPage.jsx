@@ -10,7 +10,7 @@ import { ReactComponent as Mail } from '../../assets/images/mail.svg';
 import { ReactComponent as Phone } from '../../assets/images/cell.svg';
 import { ReactComponent as Computer } from '../../assets/images/computer.svg';
 
-import './GivingPage.scss';
+import './GivingPage.css';
 import { COLLECTIONS } from '../../utils/firebase';
 
 const GivingPage = () => {

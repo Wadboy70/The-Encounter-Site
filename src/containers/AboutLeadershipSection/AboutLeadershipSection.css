@@ -1,0 +1,6 @@
+@import "../../assets/colors.css";
+.aboutLeadershipSection {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}

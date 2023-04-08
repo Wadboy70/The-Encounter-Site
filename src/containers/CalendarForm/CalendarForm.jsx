@@ -7,7 +7,7 @@ import TimePicker from '../TimePicker/TimePicker';
 import { calendarDateFormatting, toMilitaryTime } from '../../utils/helperFunctions';
 import { addNewDoc, COLLECTIONS } from '../../utils/firebase';
 
-import './CalendarForm.scss';
+import './CalendarForm.css';
 import CheckboxInput from '../../components/CheckboxInput/CheckboxInput';
 import DatePicker from '../../components/DatePicker/DatePicker';
 import Dropdown from '../../components/Dropdown/Dropdown';

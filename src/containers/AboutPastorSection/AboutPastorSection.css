@@ -1,0 +1,54 @@
+@import "../../assets/colors.css";
+.aboutPastorSection {
+  background-color: var(--purple);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.aboutPastorSection__displayItem {
+  flex-grow: 1;
+  max-height: 100%;
+  min-height: 30vh;
+  min-width: 370px;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.displayItemPastor__title {
+  margin: 1rem;
+  min-height: fit-content;
+  border-bottom: 1px --white solid;
+  width: fit-content;
+}
+.aboutPastorSection__displayItem p {
+  flex-grow: 1;
+  font-size: calc(1vh + 1vw + 0.6vmin);
+  padding: 1rem;
+  line-height: normal;
+  margin: 0;
+  text-align: left;
+}
+.aboutPastorSection__photo {
+  height: auto;
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  .aboutPastorSection {
+    flex-direction: row;
+    height: fit-content;
+  }
+  .aboutPastorSection__displayItem {
+    height: fit-content;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .aboutPastorSection__photo {
+    height: 80vh;
+    width: auto;
+  }
+}

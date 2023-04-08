@@ -3,7 +3,7 @@ import DisplayBox from '../../components/DisplayBox/DisplayBox';
 import ROUTES from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
-import './DisplaySection.scss';
+import './DisplaySection.css';
 import Button from '../../components/Button/Button';
 
 const DisplaySection = () => {

@@ -5,7 +5,7 @@ import HomeWelcomeSection from '../../containers/HomeWelcomeSection/HomeWelcomeS
 import DisplaySection from '../../containers/DisplaySection/DisplaySection';
 import ClosingSection from '../../containers/ClosingSection/ClosingSection';
 
-import './HomePage.scss';
+import './HomePage.css';
 import HomeEventSection from '../../containers/HomeEventSection/HomeEventSection';
 
 const HomePage = () => (

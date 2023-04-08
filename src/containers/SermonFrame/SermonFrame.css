@@ -1,0 +1,21 @@
+@import "../../assets/colors.css";
+.sermonFrame {
+  width: 100%;
+  height: 45vw;
+  border: white 5px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+.sermonFrame h2 {
+  height: fit-content;
+}
+.sermonFrame__overlay {
+  width: 100%;
+  height: 100%;
+  background-color: var(--navyTransparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

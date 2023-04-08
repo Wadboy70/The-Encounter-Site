@@ -5,7 +5,7 @@ import { COLLECTIONS, getAllDocs } from '../../utils/firebase';
 import { calendarDateFormatting, calendarDateGetTime } from '../../utils/helperFunctions';
 import { FirebaseUserContext } from '../../utils/context/user.context';
 
-import './Calendar.scss';
+import './Calendar.css';
 import USER_TIERS from '../../utils/constants/userTiers';
 
 const CalendarComponent = ({

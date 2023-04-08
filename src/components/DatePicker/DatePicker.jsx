@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import Dropdown from '../../components/Dropdown/Dropdown';
 
-import './DatePicker.scss';
+import './DatePicker.css';
 
 const DatePicker = ({name = 'date', handleChangeManual, title = 'Date Picker'}) => {
     const today = new Date ();

@@ -1,0 +1,15 @@
+@import "../../assets/colors.css";
+.dropdownContainer {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown__title {
+  margin-bottom: 0.5rem;
+}
+.dropdown {
+  text-align: left;
+  color: var(--navy);
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+}

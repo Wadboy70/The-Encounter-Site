@@ -1,0 +1,90 @@
+@import "../../assets/colors.css";
+.givingPage {
+}
+.givingPage__givingContent {
+  margin-top: 4%;
+  padding: 0 5% 5% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.givingContent__description {
+  width: fit-content;
+  margin-bottom: 4%;
+  font-size: 1.7rem;
+  text-align: left;
+}
+.givingContent__waysToGive {
+  display: flex;
+  border: 10px solid var(--white);
+  flex-direction: column;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  min-height: 50vh;
+}
+.waysToGive__giveColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  border-bottom: 5px --white solid;
+}
+.giveColumn__title {
+  margin: 0.5rem 0;
+}
+.giveColumn__icon {
+  fill: var(--white);
+  height: 3rem;
+  width: auto;
+}
+.giveColumn__content {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+.giveColumn__description {
+  text-align: left;
+}
+.givingContent__button {
+  white-space: nowrap;
+}
+.giveColumn__appInstructions {
+}
+.giveColumn__appInstructions li {
+  list-style-type: none;
+  text-align: left;
+  font-size: 1.2rem;
+}
+.givingPage__titheFileList {
+  width: 40%;
+}
+
+@media only screen and (min-width: 768px) {
+  .givingPage {
+  }
+  .givingPage__givingContent {
+    margin-top: 4%;
+    padding: 0 5% 5% 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  .givingContent__waysToGive {
+    flex-direction: row;
+  }
+  .waysToGive__giveColumn {
+    width: 33%;
+    border-left: 5px --white solid;
+    border-right: 5px --white solid;
+    border-bottom: none;
+  }
+  .waysToGive__giveColumn :first-child {
+    border-left: none;
+  }
+  .waysToGive__giveColumn :last-child {
+    border-right: none;
+  }
+}

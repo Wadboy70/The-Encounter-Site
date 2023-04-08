@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Hamburger.scss';
+import './Hamburger.css';
 
 const Hamburger = ({op = () => {}, className = ''}) => (
     <button className = {`hamburger ${className}`} onClick = {op} aria-label = 'hamburger'>

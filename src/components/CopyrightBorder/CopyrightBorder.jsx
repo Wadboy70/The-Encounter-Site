@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './CopyrightBorder.scss';
+import './CopyrightBorder.css';
 
 const CopyrightBorder = ({className = ''}) => (
     <div className = {` copyrightBorder ${className}`}>

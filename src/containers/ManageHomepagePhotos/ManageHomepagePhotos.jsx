@@ -5,7 +5,7 @@ import FileList from '../FileList/FileList';
 import UploadFile from '../UploadFile/UploadFile';
 
 
-import './ManageHomepagePhotos.scss';
+import './ManageHomepagePhotos.css';
 
 const ManageHomepagePhotos = () => {
     const [refresh, setRefresh] = useState(0);

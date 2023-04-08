@@ -3,7 +3,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/images/rainbowLionCut.png';
 
-import './Logo.scss';
+import './Logo.css';
 
 const Logo = ({className = '', op = () => {}}) => (
     <div className = {`logo ${className}`} onClick = {op}>

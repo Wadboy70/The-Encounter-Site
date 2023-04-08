@@ -2,7 +2,7 @@ import React from 'react';
 
 import imageUrls from '../../assets/imageUrls';
 
-import './AboutPastorSection.scss';
+import './AboutPastorSection.css';
 
 const AboutPastorSection = () => {
 

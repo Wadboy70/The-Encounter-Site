@@ -7,7 +7,7 @@ import { calendarDateGetTime } from '../../utils/helperFunctions';
 import ROUTES from '../../utils/routes';
 import imageUrls from '../../assets/imageUrls';
 
-import "./HomeEventSection.scss";
+import "./HomeEventSection.css";
 
 const HomeEventSection = () => {
     

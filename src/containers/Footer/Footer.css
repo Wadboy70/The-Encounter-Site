@@ -1,0 +1,41 @@
+@import "../../assets/colors.css";
+.footer {
+  background-color: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-end;
+  padding: 0 5vw;
+  margin-top: 1rem;
+}
+.footer__logo {
+  grid-area: logo;
+  justify-items: flex-start;
+}
+.footer__social {
+  grid-area: social;
+  height: 13vh;
+  width: fit-content;
+  font-family: Cormorant;
+  margin: 2rem;
+  justify-self: end;
+}
+.footer__border {
+  grid-area: border;
+  width: 100%;
+  min-height: 5vh;
+  justify-self: center;
+}
+@media only screen and (min-width: 600px) {
+  .footer {
+    display: grid;
+    height: 20vh;
+    grid-template-areas:
+      "logo social"
+      "border border";
+    gap: 1rem;
+  }
+  .footer__social {
+    margin: unset;
+  }
+}

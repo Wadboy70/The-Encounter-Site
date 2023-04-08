@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import { siteMap } from '../../utils/routes';
 import SignInSignOutButton from '../SignInSignOutButton/SignInSignOutButton';
 
-import './Nav.scss';
+import './Nav.css';
 
 const Nav = ({className = ''}) => {
     return(

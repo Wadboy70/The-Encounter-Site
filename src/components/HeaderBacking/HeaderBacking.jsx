@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ReactComponent as Backing } from '../../assets/images/yellowBacking.svg';
 
-import './HeaderBacking.scss';
+import './HeaderBacking.css';
 
 const HeaderBacking = ({children, className = ''}) => (
     <div className = {`backing ${className}`}>

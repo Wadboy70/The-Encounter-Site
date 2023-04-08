@@ -4,7 +4,7 @@ import Jumbotron from '../../components/Jumbotron/Jumbotron';
 
 import FormSection from '../../containers/FormSection/FormSection';
 
-import './DuplicateInfoPage.scss';
+import './DuplicateInfoPage.css';
 
 const DuplicateInfoPage = ({info:{
     jumboImage,

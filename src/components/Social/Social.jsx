@@ -5,7 +5,7 @@ import Instagram from '../../assets/images/instagram.png';
 import  Youtube from '../../assets/images/youtube.png';
 import Button from '../Button/Button';
 
-import './Social.scss';
+import './Social.css';
 
 const Social = ({className = ''}) => (
     <div className = {`socialList ${className}`}>

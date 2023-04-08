@@ -1,0 +1,99 @@
+@import "../../assets/colors.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+@font-face {
+  font-family: "Cormorant";
+  src: url("../../assets/fonts/CormorantGaramond-Regular.ttf")
+    format("opentype");
+}
+@font-face {
+  font-family: "CormorantSemiBold";
+  src: url("../../assets/fonts/CormorantGaramond-SemiBold.ttf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FuturaBook";
+  src: url("../../assets/fonts/FuturaPTBook.otf") format("opentype");
+}
+@font-face {
+  font-family: "FuturaMedium";
+  src: url("../../assets/fonts/FuturaPTMedium.otf") format("opentype");
+}
+@font-face {
+  font-family: "FuturaDemi";
+  src: url("../../assets/fonts/FuturaPTDemi.otf") format("opentype");
+}
+.scrollbar {
+}
+.scrollbar ::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+
+.scrollbar ::-webkit-scrollbar {
+  width: 15px;
+  background-color: var(--white);
+}
+
+.scrollbar ::-webkit-scrollbar-thumb {
+  background-color: var(--navy);
+  border: 2px solid var(--white);
+}
+.changeColorOnHover {
+  transition: color 0.3s;
+}
+.changeColorOnHover :hover,
+.changeColorOnHover :active {
+  color: var(--yellow);
+}
+.changeColorOnHover * {
+  font-display: fallback;
+  transition: color 0.3s;
+}
+.changeColorOnHover * :hover,
+.changeColorOnHover * :active {
+  color: var(--yellow);
+}
+.App {
+  padding-top: 10vh;
+  min-height: 100vh;
+  font-family: Cormorant;
+  overflow: hidden;
+  background-color: var(--navy);
+}
+.App h1 {
+  font-family: CormorantSemiBold;
+  letter-spacing: 7px;
+  margin: 2%;
+}
+.App h2 {
+  font-family: FuturaBook;
+  letter-spacing: 6px;
+}
+.App p {
+  font-size: 1.3rem;
+}
+.App .underlineTitle {
+  border-bottom: white solid 1px;
+}
+.App select,
+.App input,
+.App textarea,
+.App option {
+  font-family: FuturaBook;
+  font-weight: 600;
+  color: var(--navy);
+}
+.App .hoverGrow {
+  transition: transform 0.5s;
+}
+.App .hoverGrow:hover {
+  transform: scale(1.05, 1.05);
+}

@@ -3,7 +3,7 @@ import FormSection from '../../containers/FormSection/FormSection';
 import { passwordReset } from '../../utils/firebase';
 import { FORM_FIELD_INPUT_TYPE } from '../../utils/routes';
 
-import './ForgotPassword.scss';
+import './ForgotPassword.css';
 
 const ForgotPassword = () => {
     const [message, setMessage] = useState(null);

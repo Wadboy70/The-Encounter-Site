@@ -1,0 +1,27 @@
+@import "../../assets/colors.css";
+
+.hamburger {
+  position: relative;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 24px;
+  width: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.hamburger:focus {
+  outline: none;
+}
+.hamburger:hover span {
+    background-color: var(--gold);
+  }
+  .hamburger span {
+  width: 30px;
+  height: 2px;
+  background-color: var(--white);
+  transition: background-color 0.25s;
+}
