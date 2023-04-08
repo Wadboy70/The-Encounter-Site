@@ -19,7 +19,7 @@ import DuplicateInfoPage from "../../pages/DuplicateInfoPage/DuplicateInfoPage";
 
 import "./App.css";
 import ForgotPassword from "../../pages/ForgotPassword/ForgotPassword";
-import LeadershipPage from "../../pages/LeadershipPage/LeadershipPage";
+// import LeadershipPage from "../../pages/LeadershipPage/LeadershipPage";
 import GivingPage from "../../pages/GivingPage/GivingPage";
 
 function App({ history }) {

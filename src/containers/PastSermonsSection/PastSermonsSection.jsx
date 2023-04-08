@@ -31,7 +31,7 @@ const PastSermonsSection = () => {
                         >
                             <img 
                                 src={vid?.snippet?.thumbnails?.medium?.url} 
-                                alt={vid?.snippet?.title}
+                                alt=""
                             />
                         </a>
                         <p className = 'vid__videoTitle'>
